@@ -11,7 +11,7 @@ const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 // webhook endpoint
-app.post(`/webhook/${TELEGRAM_TOKEN}`, async (req, res) => {
+app.post(`/webhook`, async (req, res) => {
   const message = req.body.message;
 
   if (!message || !message.text) {
