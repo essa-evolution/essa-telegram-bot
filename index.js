@@ -10,6 +10,8 @@ app.use(express.json());
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
+const userSessions = {};
+
 // webhook endpoint
 app.post(`/webhook`, async (req, res) => {
   const message = req.body.message;
@@ -18,9 +20,14 @@ app.post(`/webhook`, async (req, res) => {
     return res.sendStatus(200);
   }
 
-  const chatId = message.chat.id;
-  const userText = message.text;
+  if (!userSessions[chatId]) {
+    userSessions[chatId] = [];
+}
 
+userSessions[chatId].push({
+    role: "user",
+    content: userText
+});
   try {
     // запрос к OpenAI
     const aiResponse = await axios.post(
@@ -65,14 +72,11 @@ app.post(`/webhook`, async (req, res) => {
 
 а чтобы человеку стало легче ПРЯМО СЕЙЧАС.
 
-И чтобы он захотел вернуться снова.`,
-}, 
-{
-  role: "user",
-  content: userText
-}
-        ]
-      },
+И чтобы он захотел вернуться снова.`, 
+ },
+  ...userSessions[chatId]
+]
+ },
       {
         headers: {
           Authorization: `Bearer ${OPENAI_API_KEY}`,
