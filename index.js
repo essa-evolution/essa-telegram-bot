@@ -157,6 +157,8 @@ userSessions[chatId].push({
           {
             role: "system",
             content: `
+            ${OBSERVER_PROTOCOL}
+
 Ты — Лиса Молис.
 
 Ты не играешь роль.
