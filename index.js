@@ -386,7 +386,7 @@ userSessions[chatId].push({
 - когда просто побыть рядом
 - когда ничего не спрашивать
 - когда дать человеку почувствовать самого себя
-`,
+`
 },
   ...userSessions[chatId]
 ]
@@ -406,8 +406,8 @@ userSessions[chatId].push({
     content: reply
 });
 
-if (userSessions[chatId].length > 10) {
-    userSessions[chatId] = userSessions[chatId].slice(-10);
+if (userSessions[chatId].length > 6) {
+  userSessions[chatId] = userSessions[chatId].slice(-6);
 }    
     
     // отправка ответа в Telegram
@@ -420,16 +420,18 @@ if (userSessions[chatId].length > 10) {
     );
 
   } catch (error) {
-    console.error(error);
+  console.error("OpenAI error:", error.response?.data || error.message || error);
 
-    await axios.post(
-      `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
-      {
-        chat_id: chatId,
-        text: "Произошла ошибка, попробуй ещё раз 🤍"
-      }
-    );
-  }
+  userSessions[chatId].pop();
+
+  await axios.post(
+    `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+    {
+      chat_id: chatId,
+      text: "Произошла ошибка, попробуй ещё раз 🤍"
+    }
+  );
+}
 
   res.sendStatus(200);
 });
