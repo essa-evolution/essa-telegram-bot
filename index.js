@@ -214,7 +214,34 @@ userSessions[chatId].push({
     role: "user",
     content: userText
 });
+ function detectMode(userText) {
+  const text = userText.toLowerCase();
+
+  if (
+    text.includes("больно") ||
+    text.includes("один") ||
+    text.includes("одиноко") ||
+    text.includes("страшно") ||
+    text.includes("плохо")
+  ) {
+    return "SUPPORT";
+  }
+
+  if (
+    text.includes("сделай") ||
+    text.includes("создай") ||
+    text.includes("сгенерируй") ||
+    text.includes("напиши") ||
+    text.includes("видео") ||
+    text.includes("картинку")
+  ) {
+    return "EXECUTION";
+  }
+
+  return "LISA";
+}
   try {
+    const mode = detectMode(userText);
     // запрос к OpenAI
     const aiResponse = await axios.post(
       "https://api.openai.com/v1/chat/completions",
@@ -223,7 +250,9 @@ userSessions[chatId].push({
         messages: [
   {
     role: "system",
-content: `
+content:`
+MODE: ${mode}
+
 ${systemPrompt}
 
 ${OBSERVER_PROTOCOL}
