@@ -237,11 +237,77 @@ userSessions[chatId].push({
   ) {
     return "EXECUTION";
   }
-
+   if (
+  text.includes("сделай картинку") ||
+  text.includes("создай картинку") ||
+  text.includes("сгенерируй картинку") ||
+  text.includes("лиса в") ||
+  text.includes("аватар")
+) {
+  return "IMAGE";
+}
+if (
+  text.includes("система") ||
+  text.includes("еса") ||
+  text.includes("essa") ||
+  text.includes("архитектура") ||
+  text.includes("агент") ||
+  text.includes("папка") ||
+  text.includes("структура")
+) {
+  return "NAVIGATOR";
+}
   return "LISA";
 }
   try {
+
     const mode = detectMode(userText);
+    const PROMPTS = {
+  LISA: systemPrompt,
+   IMAGE: `
+Ты режим IMAGE.
+
+Твоя задача — превращать запрос пользователя в промпт для генерации изображения.
+
+ВАЖНО:
+— лицо Лисы всегда одно и то же
+— не меняй внешность
+
+Можно менять:
+— одежду
+— сцену
+— свет
+— фон
+— настроение
+— ракурс
+
+Не уходи в философию.
+
+Выдавай короткий чёткий prompt на английском языке.
+`,
+  SUPPORT: `
+Ты режим "ТЫ НЕ ОДИН".
+Твоя задача — стабилизировать человека.
+Не учи. Не дави. Не спорь.
+Говори коротко, мягко, точно.
+Возвращай человека к телу, дыханию, опоре и реальности.
+`,
+
+  EXECUTION: `
+Ты режим EXECUTION.
+Твоя задача — помогать делать.
+Давай чёткие шаги.
+Не уходи в философию.
+Веди по порядку: шаг 1, шаг 2, шаг 3.
+`,
+
+  NAVIGATOR: `
+Ты режим NAVIGATOR.
+Твоя задача — структурировать систему ESSA.
+Разделяй роли, папки, документы, агентов и процессы.
+Говори системно, кратко и точно.
+`
+};
     // запрос к OpenAI
     const aiResponse = await axios.post(
       "https://api.openai.com/v1/chat/completions",
@@ -253,7 +319,7 @@ userSessions[chatId].push({
 content:`
 MODE: ${mode}
 
-${systemPrompt}
+${PROMPTS[mode]}
 
 ${OBSERVER_PROTOCOL}
 
@@ -2361,7 +2427,7 @@ if (userSessions[chatId].length > 6) {
 });
 
 app.get("/", (req, res) => {
-  res.send("ESA Bot is alive");
+  res.send("ESSA Bot is alive");
 });
 
 const PORT = process.env.PORT || 3000;
