@@ -14,6 +14,32 @@ const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 const userSessions = {};
 
+async function generateVoice(text) {
+  try {
+    const response = await axios.post(
+      `https://api.elevenlabs.io/v1/text-to-speech/${ELEVENLABS_VOICE_ID}`,
+      {
+        text: text,
+        model_id: "eleven_multilingual_v2"
+      },
+      {
+        headers: {
+          "xi-api-key": ELEVENLABS_API_KEY,
+          "Content-Type": "application/json"
+        },
+        responseType: "arraybuffer"
+      }
+    );
+
+    return response.data;
+
+  } catch (error) {
+    console.error("ElevenLabs error:", error.response?.data || error.message);
+    return null;
+  }
+}
+
+
 function detectMode(userText) {
   const text = userText.toLowerCase();
 
@@ -1394,13 +1420,35 @@ ${PROMPTS[mode] || PROMPTS.NAVIGATOR}
       userSessions[chatId] = userSessions[chatId].slice(-10);
     }
 
-    await axios.post(
-      `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
-      {
-        chat_id: chatId,
-        text: reply
-      }
-    );
+    const voice = await generateVoice(reply);
+
+if (voice) {
+
+ const form = new FormData();
+
+form.append("chat_id", String(chatId));
+form.append(
+  "audio",
+  new Blob([voice], { type: "audio/mpeg" }),
+  "navigator.mp3"
+);
+
+await axios.post(
+  `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendAudio`,
+  form
+);
+
+} else {
+
+  await axios.post(
+    `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+    {
+      chat_id: chatId,
+      text: reply
+    }
+  );
+
+}
   } catch (error) {
     console.error("OpenAI error:", error.response?.data || error.message || error);
 
