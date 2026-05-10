@@ -1,5 +1,7 @@
 import express from "express";
 import axios from "axios";
+import fs from "fs";
+import path from "path";
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const ELEVENLABS_VOICE_ID = process.env.ELEVENLABS_VOICE_ID;
 import dotenv from "dotenv";
@@ -1455,9 +1457,6 @@ ${PROMPTS[mode] || PROMPTS.NAVIGATOR}
     const voice = await generateVoice(reply);
 
 if (voice) {
-  const fs = require("fs");
-  const path = require("path");
-
   const audioPath = path.join("/tmp", `navigator_${Date.now()}.mp3`);
 
   fs.writeFileSync(audioPath, Buffer.from(voice));
@@ -1467,6 +1466,7 @@ if (voice) {
   form.append("audio", fs.createReadStream(audioPath));
 
   await axios.post(
+   
     `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendAudio`,
     form,
     {
