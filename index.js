@@ -1475,7 +1475,6 @@ if (voice) {
   );
 
   fs.unlinkSync(audioPath);
-}
 
 } else {
 
