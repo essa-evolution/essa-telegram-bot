@@ -1455,20 +1455,27 @@ ${PROMPTS[mode] || PROMPTS.NAVIGATOR}
     const voice = await generateVoice(reply);
 
 if (voice) {
+  const fs = require("fs");
+  const path = require("path");
 
- const form = new FormData();
+  const audioPath = path.join("/tmp", `navigator_${Date.now()}.mp3`);
 
-form.append("chat_id", String(chatId));
-form.append(
-  "audio",
-  Buffer.from(voice),
-  "navigator.mp3"
-);
+  fs.writeFileSync(audioPath, Buffer.from(voice));
 
-await axios.post(
-  `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendAudio`,
-  form
-);
+  const form = new FormData();
+  form.append("chat_id", String(chatId));
+  form.append("audio", fs.createReadStream(audioPath));
+
+  await axios.post(
+    `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendAudio`,
+    form,
+    {
+      headers: form.getHeaders ? form.getHeaders() : {}
+    }
+  );
+
+  fs.unlinkSync(audioPath);
+}
 
 } else {
 
