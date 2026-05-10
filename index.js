@@ -34,7 +34,10 @@ async function generateVoice(text) {
     return response.data;
 
   } catch (error) {
-    console.error("ElevenLabs error:", error.response?.data || error.message);
+    console.error(
+  "ElevenLabs error:",
+  error.response?.data?.toString?.() || error.message || error
+);
     return null;
   }
 }
