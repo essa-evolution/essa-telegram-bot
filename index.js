@@ -1475,9 +1475,9 @@ if (voice) {
   );
 
   fs.unlinkSync(audioPath);
+}
 
-} else {
-
+if (!voice) {
   await axios.post(
     `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
     {
@@ -1485,7 +1485,6 @@ if (voice) {
       text: reply
     }
   );
-
 }
   } catch (error) {
     console.error("OpenAI error:", error.response?.data || error.message || error);
