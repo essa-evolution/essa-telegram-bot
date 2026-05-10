@@ -1429,7 +1429,7 @@ if (voice) {
 form.append("chat_id", String(chatId));
 form.append(
   "audio",
-  new Blob([voice], { type: "audio/mpeg" }),
+  Buffer.from(voice),
   "navigator.mp3"
 );
 
