@@ -1471,7 +1471,7 @@ if (voice) {
 
   await axios.post(
    
-    `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendAudio`,
+    `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendVoice`,
     form,
     {
       headers: form.getHeaders ? form.getHeaders() : {}
