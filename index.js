@@ -1459,6 +1459,13 @@ ${PROMPTS[mode] || PROMPTS.NAVIGATOR}
     }
 
     const voice = await generateVoice(reply);
+    await axios.post(
+  `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+  {
+    chat_id: chatId,
+    text: reply
+  }
+);
 
 if (voice) {
   const audioPath = path.join("/tmp", `navigator_${Date.now()}.mp3`);
