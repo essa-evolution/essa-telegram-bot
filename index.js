@@ -1495,15 +1495,16 @@ ${PROMPTS[mode] || PROMPTS.NAVIGATOR}
 `
   },
 
- ...userSessions[chatId]
-]
+...userSessions[chatId]
+],
 },
-headers: {
-          Authorization: `Bearer ${OPENAI_API_KEY}`,
-          "Content-Type": "application/json"
-        }
-      }
-    );
+{
+  headers: {
+    Authorization: `Bearer ${OPENAI_API_KEY}`,
+    "Content-Type": "application/json"
+  }
+}
+);
 
     const reply = aiResponse.data.choices[0].message.content;
 
