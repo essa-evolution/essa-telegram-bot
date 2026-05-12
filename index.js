@@ -1531,6 +1531,8 @@ if (voice) {
 
   const form = new FormData();
   form.append("chat_id", String(chatId));
+  form.append("title", "ESSA Navigator");
+form.append("performer", "ESSA Navigator");
  form.append("audio", fs.createReadStream(audioPath), {
   filename: "navigator.mp3",
 contentType: "audio/mpeg"
