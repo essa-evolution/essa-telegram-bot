@@ -1398,10 +1398,13 @@ ESSA Navigator помогает человеку понять, решить и �
 app.post("/webhook", async (req, res) => {
   const message = req.body.message;
 
-  if (!message || !message.text) {
-    return res.sendStatus(200);
-  }
+  if (!message) {
+  return res.sendStatus(200);
+}
 
+if (!message.text && !message.voice) {
+  return res.sendStatus(200);
+}
   const chatId = message.chat.id;
   const userText = message.text;
   const mode = detectMode(userText);
