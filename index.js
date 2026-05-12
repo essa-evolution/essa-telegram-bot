@@ -1477,24 +1477,26 @@ const mode = detectMode(userText);
 
   if (userSessions[chatId].length > 10) {
     userSessions[chatId] = userSessions[chatId].slice(-10);
-  }
+  ]
+},
 
   try {
     const aiResponse = await axios.post(
       "https://api.openai.com/v1/chat/completions",
       {
         model: "gpt-4o-mini",
-        messages: [
-          {
-            role: "system",
-            content: `
+ messages: [
+  {
+    role: "system",
+    content: `
 MODE: ${mode}
 
 ${PROMPTS[mode] || PROMPTS.NAVIGATOR}
 `
-          },
-          ...userSessions[chatId]
-        ]
+  },
+
+  ...userSessions[chatId]
+]
       },
       {
         headers: {
