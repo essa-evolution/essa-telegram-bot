@@ -1495,11 +1495,10 @@ ${PROMPTS[mode] || PROMPTS.NAVIGATOR}
 `
   },
 
-  ...userSessions[chatId]
+ ...userSessions[chatId]
 ]
-      },
-      {
-        headers: {
+},
+headers: {
           Authorization: `Bearer ${OPENAI_API_KEY}`,
           "Content-Type": "application/json"
         }
@@ -1518,7 +1517,7 @@ ${PROMPTS[mode] || PROMPTS.NAVIGATOR}
     }
 
     const voice = await generateVoice(reply);
-    await axios.post(
+  await axios.post(
   `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
   {
     chat_id: chatId,
