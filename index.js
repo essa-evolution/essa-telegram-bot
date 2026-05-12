@@ -36,6 +36,7 @@ async function downloadTelegramFile(fileId) {
     console.error("Ошибка скачивания файла:", error.message);
     return null;
   }
+}
   async function transcribeVoice(audioBuffer) {
   try {
 
