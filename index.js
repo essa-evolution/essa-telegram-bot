@@ -1469,7 +1469,7 @@ if (voice) {
   form.append("chat_id", String(chatId));
  form.append("audio", fs.createReadStream(audioPath), {
   filename: "navigator.mp3",
-  contentType: "audio/mpeg"
+contentType: "audio/mpeg"
 });
 
   await axios.post(
