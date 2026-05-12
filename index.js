@@ -1478,8 +1478,6 @@ const mode = detectMode(userText);
   if (userSessions[chatId].length > 10) {
     userSessions[chatId] = userSessions[chatId].slice(-10);
   }
-}
-
   try {
     const aiResponse = await axios.post(
       "https://api.openai.com/v1/chat/completions",
