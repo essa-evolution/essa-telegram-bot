@@ -36,6 +36,35 @@ async function downloadTelegramFile(fileId) {
     console.error("Ошибка скачивания файла:", error.message);
     return null;
   }
+  async function transcribeVoice(audioBuffer) {
+  try {
+
+    const formData = new FormData();
+
+    formData.append("file", audioBuffer, {
+      filename: "voice.ogg",
+      contentType: "audio/ogg"
+    });
+
+    formData.append("model", "whisper-1");
+
+    const response = await axios.post(
+      "https://api.openai.com/v1/audio/transcriptions",
+      formData,
+      {
+        headers: {
+          Authorization: `Bearer ${OPENAI_API_KEY}`,
+          ...formData.getHeaders()
+        }
+      }
+    );
+
+    return response.data.text;
+
+  } catch (error) {
+    console.error("Ошибка распознавания:", error.message);
+    return "";
+  }
 }
 async function generateVoice(text) {
 
@@ -1427,8 +1456,14 @@ if (!message.text && !message.voice) {
   return res.sendStatus(200);
 }
   const chatId = message.chat.id;
-  const userText = message.text;
-  const mode = detectMode(userText);
+ let userText = message.text || "";
+
+if (message.voice) {
+  const audioBuffer = await downloadTelegramFile(message.voice.file_id);
+  userText = await transcribeVoice(audioBuffer);
+}
+
+const mode = detectMode(userText);
 
   if (!userSessions[chatId]) {
     userSessions[chatId] = [];
