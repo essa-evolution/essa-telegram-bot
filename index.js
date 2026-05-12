@@ -16,8 +16,29 @@ const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 
 const userSessions = {};
+async function downloadTelegramFile(fileId) {
+  try {
+    const fileResponse = await axios.get(
+      `https://api.telegram.org/bot${TELEGRAM_TOKEN}/getFile?file_id=${fileId}`
+    );
 
+    const filePath = fileResponse.data.result.file_path;
+
+    const fileUrl = `https://api.telegram.org/file/bot${TELEGRAM_TOKEN}/${filePath}`;
+
+    const audioResponse = await axios.get(fileUrl, {
+      responseType: "arraybuffer"
+    });
+
+    return audioResponse.data;
+
+  } catch (error) {
+    console.error("Ошибка скачивания файла:", error.message);
+    return null;
+  }
+}
 async function generateVoice(text) {
+
   try {
     const response = await axios.post(
       `https://api.elevenlabs.io/v1/text-to-speech/${ELEVENLABS_VOICE_ID}`,
