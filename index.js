@@ -1522,7 +1522,7 @@ const mode = detectMode(userText);
     content: `
 MODE: ${mode}
 
-${PROMPTS[mode] || PROMPTS.NAVIGATOR}
+${SYSTEM_PROMPT}
 `
   },
 
