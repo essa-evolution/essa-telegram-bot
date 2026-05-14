@@ -3,6 +3,39 @@ import axios from "axios";
 import FormData from "form-data";
 import fs from "fs";
 import path from "path";
+// === ESSA NAVIGATOR SYSTEM FILES ===
+
+const CORE_SYSTEM = fs.readFileSync(
+path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt"),
+"utf8"
+);
+
+const GUIDANCE_MODE = fs.readFileSync(
+path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/01_GUIDANCE_MODE.txt"),
+"utf8"
+);
+
+const BEHAVIOR_RULES = fs.readFileSync(
+path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/02_BEHAVIOR_RULES.txt"),
+"utf8"
+);
+
+const ACTION_LOGIC = fs.readFileSync(
+path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/03_ACTION_LOGIC.txt"),
+"utf8"
+);
+
+// === FINAL SYSTEM PROMPT ===
+
+const SYSTEM_PROMPT = `
+${CORE_SYSTEM}
+
+${GUIDANCE_MODE}
+
+${BEHAVIOR_RULES}
+
+${ACTION_LOGIC}
+`;
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const ELEVENLABS_VOICE_ID = process.env.ELEVENLABS_VOICE_ID;
 import dotenv from "dotenv";
