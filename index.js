@@ -67,6 +67,40 @@ const pool = new Pool({
 });
 
 const userSessions = {};
+
+async function saveMessage(userId, role, message) {
+  try {
+    await pool.query(
+      `INSERT INTO navigator_memory (user_id, role, message)
+       VALUES ($1, $2, $3)`,
+      [userId, role, message]
+    );
+  } catch (error) {
+    console.error("Ошибка сохранения памяти:", error.message);
+  }
+}
+
+async function loadMemory(userId) {
+  try {
+    const result = await pool.query(
+      `SELECT role, message
+       FROM navigator_memory
+       WHERE user_id = $1
+       ORDER BY created_at DESC
+       LIMIT 20`,
+      [userId]
+    );
+
+    return result.rows.reverse().map(row => ({
+      role: row.role,
+      content: row.message
+    }));
+
+  } catch (error) {
+    console.error("Ошибка загрузки памяти:", error.message);
+    return [];
+  }
+}
 async function downloadTelegramFile(fileId) {
   try {
     const fileResponse = await axios.get(
