@@ -3,6 +3,9 @@ import axios from "axios";
 import FormData from "form-data";
 import fs from "fs";
 import path from "path";
+import dotenv from "dotenv";
+import pkg from "pg";
+const { Pool } = pkg;
 // === ESSA NAVIGATOR SYSTEM FILES ===
 
 const CORE_SYSTEM = fs.readFileSync(
@@ -45,7 +48,6 @@ ${MEMORY_RULES}
 `;
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const ELEVENLABS_VOICE_ID = process.env.ELEVENLABS_VOICE_ID;
-import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -54,6 +56,15 @@ app.use(express.json());
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+
+const DATABASE_URL = process.env.DATABASE_URL;
+
+const pool = new Pool({
+  connectionString: DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
 
 const userSessions = {};
 async function downloadTelegramFile(fileId) {
