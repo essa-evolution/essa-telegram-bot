@@ -1560,12 +1560,17 @@ const mode = detectMode(userText);
     content: userText
   });
 
+  await saveMessage(String(chatId), "user", userText);
+  
   if (userSessions[chatId].length > 10) {
     userSessions[chatId] = userSessions[chatId].slice(-10);
   }
+  
+  const memory = await loadMemory(String(chatId));
+  
   try {
     const aiResponse = await axios.post(
-      "https://api.openai.com/v1/chat/completions",
+    "https://api.openai.com/v1/chat/completions",
       {
         model: "gpt-4o-mini",
  messages: [
@@ -1577,7 +1582,7 @@ MODE: ${mode}
 ${SYSTEM_PROMPT}
 `
   },
-
+...memory,
 ...userSessions[chatId]
 ],
 },
@@ -1596,6 +1601,8 @@ ${SYSTEM_PROMPT}
       content: reply
     });
 
+  await saveMessage(String(chatId), "assistant", reply);
+    
     if (userSessions[chatId].length > 10) {
       userSessions[chatId] = userSessions[chatId].slice(-10);
     }
