@@ -42,6 +42,11 @@ path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/06_LANGUAGE_ADAPT
 "utf8"
 );
 
+const TOOL_LAYERS = fs.readFileSync(
+path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/07_TOOL_LAYERS.txt"),
+"utf8"
+);
+
 // === FINAL SYSTEM PROMPT ===
 
 const SYSTEM_PROMPT = `
@@ -58,6 +63,8 @@ ${MEMORY_RULES}
 ${RESPONSE_MODES}
 
 ${LANGUAGE_ADAPTATION}
+
+${TOOL_LAYERS}
 `;
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const ELEVENLABS_VOICE_ID = process.env.ELEVENLABS_VOICE_ID;
