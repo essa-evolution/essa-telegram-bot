@@ -7,7 +7,14 @@ import dotenv from "dotenv";
 import pkg from "pg";
 const { Pool } = pkg;
 // === ESSA NAVIGATOR SYSTEM FILES ===
-
+create table if not exists user_profiles (
+  id bigint generated always as identity primary key,
+  user_id text not null unique,
+  name text,
+  project text,
+  goal text,
+  created_at timestamp with time zone default timezone('utc'::text, now())
+);
 const CORE_SYSTEM = fs.readFileSync(
 path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt"),
 "utf8"
@@ -67,6 +74,43 @@ const pool = new Pool({
 });
 
 const userSessions = {};
+
+async function saveUserProfile(userId, name, project, goal) {
+  try {
+    await pool.query(
+      `
+      INSERT INTO user_profiles (user_id, name, project, goal)
+      VALUES ($1, $2, $3, $4)
+      ON CONFLICT (user_id)
+      DO UPDATE SET
+        name = EXCLUDED.name,
+        project = EXCLUDED.project,
+        goal = EXCLUDED.goal
+      `,
+      [userId, name, project, goal]
+    );
+  } catch (error) {
+    console.error("Ошибка сохранения профиля:", error.message);
+  }
+}
+
+async function loadUserProfile(userId) {
+  try {
+    const result = await pool.query(
+      `
+      SELECT * FROM user_profiles
+      WHERE user_id = $1
+      LIMIT 1
+      `,
+      [userId]
+    );
+
+    return result.rows[0] || null;
+  } catch (error) {
+    console.error("Ошибка загрузки профиля:", error.message);
+    return null;
+  }
+}
 
 async function saveMessage(userId, role, message) {
   try {
@@ -1567,6 +1611,7 @@ const mode = detectMode(userText);
   }
   
   const memory = await loadMemory(String(chatId));
+  const profile = await loadUserProfile(String(chatId));
   
   try {
     const aiResponse = await axios.post(
@@ -1576,8 +1621,11 @@ const mode = detectMode(userText);
  messages: [
   {
     role: "system",
-    content: `
+    content: ` 
 MODE: ${mode}
+
+USER PROFILE:
+${profile ? JSON.stringify(profile) : "No profile yet"}
 
 ${SYSTEM_PROMPT}
 `
