@@ -7,14 +7,6 @@ import dotenv from "dotenv";
 import pkg from "pg";
 const { Pool } = pkg;
 // === ESSA NAVIGATOR SYSTEM FILES ===
-create table if not exists user_profiles (
-  id bigint generated always as identity primary key,
-  user_id text not null unique,
-  name text,
-  project text,
-  goal text,
-  created_at timestamp with time zone default timezone('utc'::text, now())
-);
 const CORE_SYSTEM = fs.readFileSync(
 path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt"),
 "utf8"
