@@ -32,6 +32,16 @@ path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/04_MEMORY_RULES.t
 "utf8"
 );
 
+const RESPONSE_MODES = fs.readFileSync(
+path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/05_RESPONSE_MODES.txt"),
+"utf8"
+);
+
+const LANGUAGE_ADAPTATION = fs.readFileSync(
+path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/06_LANGUAGE_ADAPTATION.txt"),
+"utf8"
+);
+
 // === FINAL SYSTEM PROMPT ===
 
 const SYSTEM_PROMPT = `
@@ -44,6 +54,10 @@ ${BEHAVIOR_RULES}
 ${ACTION_LOGIC}
 
 ${MEMORY_RULES}
+
+${RESPONSE_MODES}
+
+${LANGUAGE_ADAPTATION}
 `;
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const ELEVENLABS_VOICE_ID = process.env.ELEVENLABS_VOICE_ID;
