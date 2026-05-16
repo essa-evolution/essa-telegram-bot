@@ -104,6 +104,40 @@ async function loadUserProfile(userId) {
   }
 }
 
+async function saveVocabulary(userId, phrase, meaning = "", tone = "", usage_context = "") {
+  try {
+    await pool.query(
+      `
+      INSERT INTO essa_vocabulary (user_id, phrase, meaning, tone, usage_context)
+      VALUES ($1, $2, $3, $4, $5)
+      `,
+      [userId, phrase, meaning, tone, usage_context]
+    );
+  } catch (error) {
+    console.error("Ошибка сохранения словаря:", error.message);
+  }
+}
+
+async function loadVocabulary(userId) {
+  try {
+    const result = await pool.query(
+      `
+      SELECT phrase
+      FROM essa_vocabulary
+      WHERE user_id = $1
+      ORDER BY created_at DESC
+      LIMIT 20
+      `,
+      [userId]
+    );
+
+    return result.rows.map(row => row.phrase);
+  } catch (error) {
+    console.error("Ошибка загрузки словаря:", error.message);
+    return [];
+  }
+}
+
 async function saveMessage(userId, role, message) {
   try {
     await pool.query(
@@ -1587,6 +1621,18 @@ if (message.voice) {
 
 const mode = detectMode(userText);
 
+  const possiblePhrase = userText.trim();
+
+if (
+  possiblePhrase.length > 5 &&
+  possiblePhrase.length < 80
+) {
+  await saveVocabulary(
+    String(chatId),
+    possiblePhrase
+  );
+}
+
   if (!userSessions[chatId]) {
     userSessions[chatId] = [];
   }
@@ -1604,6 +1650,7 @@ const mode = detectMode(userText);
   
   const memory = await loadMemory(String(chatId));
   const profile = await loadUserProfile(String(chatId));
+  const vocabulary = await loadVocabulary(String(chatId));
   
   try {
     const aiResponse = await axios.post(
@@ -1618,6 +1665,8 @@ MODE: ${mode}
 
 USER PROFILE:
 ${profile ? JSON.stringify(profile) : "No profile yet"}
+USER VOCABULARY:
+${vocabulary.length ? vocabulary.join(", ") : "No vocabulary yet"}
 
 ${SYSTEM_PROMPT}
 `
