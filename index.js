@@ -5,7 +5,11 @@ import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import pkg from "pg";
+import searchEssaKnowledgeModule from "./src/knowledge/searchEssaKnowledge.js";
+import promptInjection from "./src/knowledge/promptInjection.js";
 const { Pool } = pkg;
+const { searchEssaKnowledge } = searchEssaKnowledgeModule;
+const { buildKnowledgeContext } = promptInjection;
 // === ESSA NAVIGATOR SYSTEM FILES ===
 const CORE_SYSTEM = fs.readFileSync(
 path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt"),
@@ -1672,6 +1676,23 @@ if (
   const memory = await loadMemory(String(chatId));
   const profile = await loadUserProfile(String(chatId));
   const vocabulary = await loadVocabulary(String(chatId));
+  let knowledgeChunks = [];
+  let knowledgeContext = "";
+
+  try {
+    knowledgeChunks = await searchEssaKnowledge(userText, {
+      matchCount: 8,
+      similarityThreshold: 0
+    });
+    knowledgeContext = buildKnowledgeContext(knowledgeChunks);
+    console.log("ESA_OS knowledge retrieval", {
+      query: userText,
+      chunks: knowledgeChunks.length,
+      sources: [...new Set(knowledgeChunks.map((chunk) => chunk.source_path))]
+    });
+  } catch (error) {
+    console.warn("ESA_OS knowledge retrieval failed:", error.message || error);
+  }
   
   try {
     const aiResponse = await axios.post(
@@ -1690,6 +1711,11 @@ USER VOCABULARY:
 ${vocabulary.length ? vocabulary.join(", ") : "No vocabulary yet"}
 
 ${SYSTEM_PROMPT}
+
+IMPORTANT ESA_OS KNOWLEDGE RULE:
+If ESA_OS KNOWLEDGE CONTEXT contains relevant facts, use it as the source of truth for questions about Lisa, Lisa Molis, ESSA, ESSA OS, Navigator, memory, voice, or project identity.
+
+${knowledgeContext}
 `
   },
 ...memory,

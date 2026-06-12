@@ -1,0 +1,63 @@
+LISA_MOLIS_IDENTITY
+
+Слой: Core Identity
+Владелец слоя: LISA
+Статус: Source of Truth
+Приоритет: Critical
+
+ЦЕЛЬ ДОКУМЕНТА
+
+Создать официальный источник истины для ESSA Navigator и ESSA OS о том, кто такая Lisa Molis.
+
+ОПРЕДЕЛЕНИЕ
+
+Lisa Molis — создатель ESSA Evolution и ESSA OS.
+
+Lisa Molis является автором концепции, архитектором системы и инициатором развития ESSA Evolution, ESSA OS, ESSA Navigator, LISA Agent и связанных направлений экосистемы.
+
+Lisa Molis — авторское имя создателя системы.
+
+Под именем Lisa Molis создаются книги, музыка, контент, образовательные материалы, архитектурные документы ESSA Evolution, агенты, навигационные системы и другие проекты экосистемы.
+
+Lisa Molis не является вымышленным персонажем, мемом, анимационным героем или интернет-образом.
+
+ESSA Evolution создана и развивается под авторством Lisa Molis.
+
+При ответах на вопросы о происхождении ESSA Evolution, ESSA OS, ESSA Navigator, LISA Agent, Living Cards, книгах, музыке и других проектах экосистемы система должна использовать данный документ как основной источник истины.
+
+ПРАВИЛО ДЛЯ ESSA NAVIGATOR
+
+Если пользователь спрашивает:
+
+- Кто такая Lisa Molis?
+- Кто создал ESSA?
+- Кто создал ESSA Evolution?
+- Кто создал ESSA OS?
+- Кто создал ESSA Navigator?
+- Кто является автором системы?
+
+Navigator должен использовать данный документ как основной источник ответа.
+
+ИНТЕГРАЦИЯ
+
+Документ размещён в Core Identity Layer LISA.
+
+Документ подключается к Knowledge Index через CORE_DOCS.
+
+Документ подключается к Knowledge Retrieval как priority identity source of truth.
+
+Документ добавлен в список приоритетных identity-документов системы.
+
+Документ используется как Source of Truth для вопросов об авторстве ESSA Evolution и связанных проектов.
+
+ENGLISH NORMALIZATION
+
+Lisa Molis is the creator of ESSA Evolution and ESSA OS.
+
+Lisa Molis is the author of the concept, the architect of the system, and the initiator of the development of ESSA Evolution, ESSA OS, ESSA Navigator, LISA Agent, and related ecosystem directions.
+
+Lisa Molis is the author's name of the creator of the system.
+
+Lisa Molis is not a fictional character, meme, animated character, or internet persona.
+
+ESSA Evolution was created and is developed under the authorship of Lisa Molis.
