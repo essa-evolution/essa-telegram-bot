@@ -10,6 +10,7 @@ import promptInjection from "./src/knowledge/promptInjection.js";
 const { Pool } = pkg;
 const { searchEssaKnowledge } = searchEssaKnowledgeModule;
 const { buildKnowledgeContext } = promptInjection;
+dotenv.config();
 // === ESSA NAVIGATOR SYSTEM FILES ===
 const CORE_SYSTEM = fs.readFileSync(
 path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt"),
@@ -70,31 +71,131 @@ ${LANGUAGE_ADAPTATION}
 
 ${TOOL_LAYERS}
 `;
-const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
-const ELEVENLABS_VOICE_ID = process.env.ELEVENLABS_VOICE_ID;
-
-dotenv.config();
-
 const app = express();
 app.use(express.json());
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
+const ELEVENLABS_VOICE_ID = process.env.ELEVENLABS_VOICE_ID;
+const VOICE_ENABLED = process.env.VOICE_ENABLED !== "false";
 
 const DATABASE_URL = process.env.DATABASE_URL;
+const databaseUrlInfo = inspectDatabaseUrl(DATABASE_URL);
+const memoryDbEnabled = databaseUrlInfo.valid;
 
-const pool = new Pool({
-  connectionString: DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
+console.log("Memory DB config", {
+  configured: databaseUrlInfo.configured,
+  valid: databaseUrlInfo.valid,
+  protocol: databaseUrlInfo.protocol,
+  host: databaseUrlInfo.host,
+  database: databaseUrlInfo.database,
+  reason: databaseUrlInfo.reason,
+  url: databaseUrlInfo.redacted
 });
+
+const pool = memoryDbEnabled
+  ? new Pool({
+      connectionString: DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false
+      }
+    })
+  : null;
+
+let lastVoiceStatus = VOICE_ENABLED ? "READY" : "DISABLED";
+
+function inspectDatabaseUrl(value) {
+  if (!value || !String(value).trim()) {
+    return {
+      configured: false,
+      valid: false,
+      reason: "DATABASE_URL is missing",
+      redacted: "not set"
+    };
+  }
+
+  try {
+    const url = new URL(value);
+    const protocol = url.protocol.replace(":", "");
+    const validProtocol = protocol === "postgres" || protocol === "postgresql";
+    const host = url.hostname || "";
+    const database = url.pathname ? url.pathname.replace(/^\//, "") : "";
+    const redacted = url.protocol + "//" + (url.username || "user") + ":***@" + url.host + url.pathname;
+
+    if (!validProtocol) {
+      return {
+        configured: true,
+        valid: false,
+        protocol,
+        host,
+        database,
+        reason: "DATABASE_URL must start with postgres:// or postgresql://",
+        redacted
+      };
+    }
+
+    if (!host || host === "base") {
+      return {
+        configured: true,
+        valid: false,
+        protocol,
+        host,
+        database,
+        reason: "DATABASE_URL host is missing or resolves to dummy host base",
+        redacted
+      };
+    }
+
+    return {
+      configured: true,
+      valid: true,
+      protocol,
+      host,
+      database,
+      redacted
+    };
+  } catch (error) {
+    return {
+      configured: true,
+      valid: false,
+      reason: "DATABASE_URL is not a valid URL: " + error.message,
+      redacted: "invalid URL"
+    };
+  }
+}
+
+function emptyPgResult() {
+  return { rows: [], rowCount: 0 };
+}
+
+async function queryMemory(label, text, params = []) {
+  if (!pool) {
+    console.warn("Memory DB skipped", {
+      operation: label,
+      reason: databaseUrlInfo.reason,
+      url: databaseUrlInfo.redacted
+    });
+    return emptyPgResult();
+  }
+
+  try {
+    return await pool.query(text, params);
+  } catch (error) {
+    console.error("Memory DB failed", {
+      operation: label,
+      reason: error.message,
+      url: databaseUrlInfo.redacted
+    });
+    return emptyPgResult();
+  }
+}
 
 const userSessions = {};
 
 async function saveUserProfile(userId, name, project, goal) {
   try {
-    await pool.query(
+    await queryMemory("saveUserProfile", 
       `
       INSERT INTO user_profiles (user_id, name, project, goal)
       VALUES ($1, $2, $3, $4)
@@ -113,7 +214,7 @@ async function saveUserProfile(userId, name, project, goal) {
 
 async function loadUserProfile(userId) {
   try {
-    const result = await pool.query(
+    const result = await queryMemory("loadUserProfile", 
       `
       SELECT * FROM user_profiles
       WHERE user_id = $1
@@ -131,7 +232,7 @@ async function loadUserProfile(userId) {
 
 async function saveVocabulary(userId, phrase, meaning = "", tone = "", usage_context = "") {
   try {
-    await pool.query(
+    await queryMemory("saveVocabulary", 
       `
       INSERT INTO essa_vocabulary (user_id, phrase, meaning, tone, usage_context)
       VALUES ($1, $2, $3, $4, $5)
@@ -145,7 +246,7 @@ async function saveVocabulary(userId, phrase, meaning = "", tone = "", usage_con
 
 async function loadVocabulary(userId) {
   try {
-    const result = await pool.query(
+    const result = await queryMemory("loadVocabulary", 
       `
       SELECT phrase
       FROM essa_vocabulary
@@ -165,7 +266,7 @@ async function loadVocabulary(userId) {
 
 async function saveMessage(userId, role, message) {
   try {
-    await pool.query(
+    await queryMemory("saveMessage", 
       `INSERT INTO navigator_memory (user_id, role, message)
        VALUES ($1, $2, $3)`,
       [userId, role, message]
@@ -177,7 +278,7 @@ async function saveMessage(userId, role, message) {
 
 async function loadMemory(userId) {
   try {
-    const result = await pool.query(
+    const result = await queryMemory("loadMemory", 
       `SELECT role, message
        FROM navigator_memory
        WHERE user_id = $1
@@ -247,11 +348,32 @@ async function downloadTelegramFile(fileId) {
     return "";
   }
 }
+function parseElevenLabsError(error) {
+  const raw = error.response?.data?.toString?.() || error.message || String(error);
+
+  try {
+    const parsed = JSON.parse(raw);
+    return parsed.detail?.status || parsed.detail?.message || parsed.message || raw;
+  } catch (_) {
+    return raw;
+  }
+}
+
 async function generateVoice(text) {
+  if (!VOICE_ENABLED) {
+    lastVoiceStatus = "DISABLED";
+    return null;
+  }
+
+  if (!ELEVENLABS_API_KEY || !ELEVENLABS_VOICE_ID) {
+    lastVoiceStatus = "DISABLED_MISSING_ENV";
+    console.warn("ElevenLabs skipped: missing ELEVENLABS_API_KEY or ELEVENLABS_VOICE_ID");
+    return null;
+  }
 
   try {
     const response = await axios.post(
-      `https://api.elevenlabs.io/v1/text-to-speech/${ELEVENLABS_VOICE_ID}`,
+      "https://api.elevenlabs.io/v1/text-to-speech/" + ELEVENLABS_VOICE_ID,
       {
         text: text,
         model_id: "eleven_multilingual_v2"
@@ -265,17 +387,20 @@ async function generateVoice(text) {
       }
     );
 
+    lastVoiceStatus = "OK";
     return response.data;
-
   } catch (error) {
-    console.error(
-  "ElevenLabs error:",
-  error.response?.data?.toString?.() || error.message || error
-);
+    const reason = parseElevenLabsError(error);
+    lastVoiceStatus = String(reason).toLowerCase().includes("payment")
+      ? "PAYMENT_REQUIRED"
+      : "FAILED";
+    console.warn("ElevenLabs voice generation failed; falling back to text", {
+      status: lastVoiceStatus,
+      reason
+    });
     return null;
   }
 }
-
 
 function detectMode(userText) {
   const text = userText.toLowerCase();
@@ -1744,34 +1869,43 @@ ${knowledgeContext}
     }
 
     const voice = await generateVoice(reply);
+    let audioSent = false;
 
 if (voice) {
   const audioPath = path.join("/tmp", `navigator_${Date.now()}.mp3`);
 
-  fs.writeFileSync(audioPath, Buffer.from(voice));
+  try {
+    fs.writeFileSync(audioPath, Buffer.from(voice));
 
-  const form = new FormData();
-  form.append("chat_id", String(chatId));
-  form.append("title", "ESSA Navigator");
+    const form = new FormData();
+    form.append("chat_id", String(chatId));
+    form.append("title", "ESSA Navigator");
 form.append("performer", "ESSA Navigator");
  form.append("audio", fs.createReadStream(audioPath), {
   filename: "navigator.mp3",
 contentType: "audio/mpeg"
 });
 
-  await axios.post(
-   
-    `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendAudio`,
-    form,
-    {
-      headers: form.getHeaders ? form.getHeaders() : {}
-    }
-  );
+    await axios.post(
+     
+      `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendAudio`,
+      form,
+      {
+        headers: form.getHeaders ? form.getHeaders() : {}
+      }
+    );
 
-  fs.unlinkSync(audioPath);
+    audioSent = true;
+  } catch (error) {
+    console.warn("Telegram audio send failed; falling back to text", error.message || error);
+  } finally {
+    if (fs.existsSync(audioPath)) {
+      fs.unlinkSync(audioPath);
+    }
+  }
 }
 
-if (!voice) {
+if (!audioSent) {
   await axios.post(
     `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
     {
@@ -1797,10 +1931,85 @@ if (!voice) {
   res.sendStatus(200);
 });
 
+async function checkOpenAIHealth() {
+  if (!OPENAI_API_KEY) {
+    return { status: "FAILED", reason: "OPENAI_API_KEY is missing" };
+  }
+
+  try {
+    await axios.get("https://api.openai.com/v1/models", {
+      headers: { Authorization: "Bearer " + OPENAI_API_KEY },
+      timeout: 5000
+    });
+    return { status: "OK" };
+  } catch (error) {
+    return { status: "FAILED", reason: error.response?.data || error.message || String(error) };
+  }
+}
+
+async function checkRetrievalHealth() {
+  try {
+    const chunks = await searchEssaKnowledge("Lisa Molis", {
+      matchCount: 1,
+      similarityThreshold: 0
+    });
+    return { status: "OK", chunks: chunks.length };
+  } catch (error) {
+    return { status: "FAILED", reason: error.message || String(error) };
+  }
+}
+
+async function checkMemoryHealth() {
+  if (!pool) {
+    return {
+      status: "FAILED",
+      reason: databaseUrlInfo.reason,
+      url: databaseUrlInfo.redacted
+    };
+  }
+
+  try {
+    await pool.query("SELECT 1");
+    return { status: "OK", url: databaseUrlInfo.redacted };
+  } catch (error) {
+    return {
+      status: "FAILED",
+      reason: error.message,
+      url: databaseUrlInfo.redacted
+    };
+  }
+}
+
+function getVoiceHealth() {
+  if (!VOICE_ENABLED) return { status: "DISABLED" };
+  if (!ELEVENLABS_API_KEY || !ELEVENLABS_VOICE_ID) {
+    return { status: "DISABLED_MISSING_ENV" };
+  }
+  return { status: lastVoiceStatus };
+}
+
+app.get("/health", async (req, res) => {
+  const [openai, retrieval, memory] = await Promise.all([
+    checkOpenAIHealth(),
+    checkRetrievalHealth(),
+    checkMemoryHealth()
+  ]);
+
+  res.json({
+    telegramWebhook: {
+      status: TELEGRAM_TOKEN ? "ACTIVE" : "FAILED",
+      reason: TELEGRAM_TOKEN ? undefined : "TELEGRAM_TOKEN is missing"
+    },
+    openai,
+    supabaseRetrieval: retrieval,
+    memoryDb: memory,
+    voice: getVoiceHealth()
+  });
+});
+
 app.get("/", (req, res) => {
   res.send("ESSA Navigator is alive");
 });
-
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
