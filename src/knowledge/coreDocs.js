@@ -15,6 +15,55 @@ const CORE_DOCS = [
       "ESSA ecosystem origin"
     ]
   },
+
+  {
+    category: "presence_system",
+    title: "Presence Principles",
+    path: "ESSA_PRESENCE_SYSTEM/01_PRESENCE_PRINCIPLES.md",
+    layer: "presence_system"
+  },
+  {
+    category: "presence_system",
+    title: "Emotional Intelligence Layer",
+    path: "ESSA_PRESENCE_SYSTEM/02_EMOTIONAL_INTELLIGENCE_LAYER.md",
+    layer: "presence_system"
+  },
+  {
+    category: "presence_system",
+    title: "Support System",
+    path: "ESSA_PRESENCE_SYSTEM/03_SUPPORT_SYSTEM.md",
+    layer: "presence_system"
+  },
+  {
+    category: "presence_system",
+    title: "Journey Memory",
+    path: "ESSA_PRESENCE_SYSTEM/04_JOURNEY_MEMORY.md",
+    layer: "presence_system"
+  },
+  {
+    category: "presence_system",
+    title: "Companion Mode",
+    path: "ESSA_PRESENCE_SYSTEM/05_COMPANION_MODE.md",
+    layer: "presence_system"
+  },
+  {
+    category: "presence_system",
+    title: "Human Warmth Engine",
+    path: "ESSA_PRESENCE_SYSTEM/06_HUMAN_WARMTH_ENGINE.md",
+    layer: "presence_system"
+  },
+  {
+    category: "presence_system",
+    title: "ESSA Language System",
+    path: "ESSA_PRESENCE_SYSTEM/07_ESSA_LANGUAGE_SYSTEM.md",
+    layer: "presence_system"
+  },
+  {
+    category: "presence_system",
+    title: "Lisa Mode",
+    path: "ESSA_PRESENCE_SYSTEM/08_LISA_MODE.md",
+    layer: "presence_system"
+  },
   {
     category: "navigator_prompt",
     title: "Navigator Core System",
