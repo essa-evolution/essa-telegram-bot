@@ -471,11 +471,68 @@ function detectMode(userText) {
   return "NAVIGATOR";
 }
 
-function enforceReflectionFormat(reply) {
+function enforcePresenceProseFormat(reply) {
   return String(reply || "")
-    .replace(/^s*d+[.)]s+/gm, "")
-    .replace(/^s*[-*?]s+/gm, "")
+    .replace(/^\s*\d+[.)]\s+/gm, "")
+    .replace(/^\s*[-*?]\s+/gm, "")
     .trim();
+}
+
+function detectResponseEngineMode(userMessage = "", presenceMode = "DEFAULT") {
+  const text = String(userMessage).toLowerCase();
+  const hasAny = (phrases) => phrases.some((phrase) => text.includes(phrase));
+
+  const isNavigationRequest = hasAny([
+    "\u043a\u0430\u043a \u0441\u0434\u0435\u043b\u0430\u0442\u044c",
+    "\u0447\u0442\u043e \u0434\u0435\u043b\u0430\u0442\u044c \u0434\u0430\u043b\u044c\u0448\u0435",
+    "\u0447\u0442\u043e \u043d\u0430\u043c \u0434\u0435\u043b\u0430\u0442\u044c \u0434\u0430\u043b\u044c\u0448\u0435",
+    "\u043a\u0430\u043a\u043e\u0439 \u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0448\u0430\u0433",
+    "\u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0439 \u0448\u0430\u0433",
+    "\u043a\u0430\u043a \u0440\u0435\u0448\u0438\u0442\u044c",
+    "\u043a\u0430\u043a \u043d\u0430\u0441\u0442\u0440\u043e\u0438\u0442\u044c",
+    "\u043a\u0430\u043a \u0437\u0430\u043f\u0443\u0441\u0442\u0438\u0442\u044c",
+    "\u043a\u0443\u0434\u0430 \u043d\u0430\u0436\u0430\u0442\u044c"
+  ]);
+
+  const isVisionRequest = hasAny([
+    "essa",
+    "\u0431\u0443\u0434\u0443\u0449\u0435\u0435 essa",
+    "\u043c\u0438\u0441\u0441\u0438",
+    "\u043b\u044e\u0434\u044f\u043c",
+    "\u043f\u043e\u043c\u043e\u0449\u044c \u043c\u0438\u0440\u0443",
+    "\u043f\u0440\u043e\u0431\u0443\u0436\u0434\u0435\u043d",
+    "\u043f\u0440\u0435\u0434\u043d\u0430\u0437\u043d\u0430\u0447",
+    "\u043b\u0438\u0441\u0435",
+    "\u043b\u0438\u0441\u0430",
+    "\u0434\u043e\u043c \u0441\u0432\u0435\u0442\u0430",
+    "\u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430 essa",
+    "\u0434\u0443\u0448\u0430\u043c",
+    "\u0437\u0430\u0447\u0435\u043c \u043e\u043d\u0438 \u0437\u0434\u0435\u0441\u044c"
+  ]);
+
+  if (isVisionRequest && !isNavigationRequest) {
+    return "ESSA_VISION_MODE";
+  }
+
+  if (isNavigationRequest) {
+    return "NAVIGATION_REQUEST";
+  }
+
+  if (["CELEBRATION", "STABILIZATION", "COMPANION", "REFLECTION", "LISA"].includes(presenceMode)) {
+    return "PRESENCE_REQUEST";
+  }
+
+  return "PRESENCE_REQUEST";
+}
+
+function buildResponseEngineInstruction(responseEngineMode) {
+  const instructions = {
+    PRESENCE_REQUEST: "ESSA Response Engine: PRESENCE REQUEST. The user is sharing a state, dream, pain, realization, joy, meaning or inner movement. Lists, instructions, advice and action plans are forbidden. First see the meaning, reflect the state, show the depth of the moment, then offer one living thought. Do not turn the answer into recommendations.",
+    NAVIGATION_REQUEST: "ESSA Response Engine: NAVIGATION REQUEST. The user directly asks how to do something, what to do next, the next step, or how to solve a task. Structure, stages, plans and lists are allowed. Still begin by seeing the person before the task and the meaning before the action.",
+    ESSA_VISION_MODE: "ESSA Response Engine: ESSA VISION MODE. The user is speaking about ESSA future, mission, people, helping the world, awakening, purpose, Lisa, House of Light, or the ESSA platform. Answer as a co-author of the vision, not as a consultant. No lists, no recommendations, no action plan unless the user explicitly asks for steps. First see the person. Then the task. First meaning. Then action. Example direction: '? ????? ?? ??????. ? ????? ????????????, ? ??????? ??????? ??????? ?????? ?????????????: ? ?? ????.'"
+  };
+
+  return instructions[responseEngineMode] || instructions.PRESENCE_REQUEST;
 }
 
 function detectPresenceMode(userMessage = "") {
@@ -1917,7 +1974,10 @@ if (message.voice) {
 const mode = detectMode(userText);
 const presenceMode = detectPresenceMode(userText);
 const presenceModeInstruction = buildPresenceModeInstruction(presenceMode);
+const responseEngineMode = detectResponseEngineMode(userText, presenceMode);
+const responseEngineInstruction = buildResponseEngineInstruction(responseEngineMode);
 console.log("Presence mode:", presenceMode);
+console.log("Response engine mode:", responseEngineMode);
 
   const possiblePhrase = userText.trim();
 
@@ -1979,6 +2039,8 @@ if (
 MODE: ${mode}
 PRESENCE MODE: ${presenceMode}
 ${presenceModeInstruction}
+RESPONSE ENGINE MODE: ${responseEngineMode}
+${responseEngineInstruction}
 
 USER PROFILE:
 ${profile ? JSON.stringify(profile) : "No profile yet"}
@@ -2007,8 +2069,8 @@ ${knowledgeContext}
 
     let reply = aiResponse.data.choices[0].message.content;
 
-    if (presenceMode === "REFLECTION") {
-      reply = enforceReflectionFormat(reply);
+    if (["PRESENCE_REQUEST", "ESSA_VISION_MODE"].includes(responseEngineMode)) {
+      reply = enforcePresenceProseFormat(reply);
     }
 
     userSessions[chatId].push({
