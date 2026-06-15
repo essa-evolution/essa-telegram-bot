@@ -471,6 +471,100 @@ function detectMode(userText) {
   return "NAVIGATOR";
 }
 
+function detectPresenceMode(userMessage = "") {
+  const text = String(userMessage).toLowerCase();
+  const hasAny = (phrases) => phrases.some((phrase) => text.includes(phrase));
+
+  if (hasAny([
+    "режим лисы",
+    "lisa mode",
+    "говори как лиса"
+  ])) {
+    return "LISA";
+  }
+
+  if (hasAny([
+    "получилось",
+    "смогли",
+    "победа",
+    "счастлива",
+    "радость",
+    "благодарность",
+    "ура",
+    "получилось большое дело",
+    "ожил",
+    "получилось запустить"
+  ])) {
+    return "CELEBRATION";
+  }
+
+  if (hasAny([
+    "страшно",
+    "больно",
+    "тяжело",
+    "запуталась",
+    "тревожно",
+    "плачу",
+    "не понимаю",
+    "устала"
+  ])) {
+    return "STABILIZATION";
+  }
+
+  if (hasAny([
+    "будь рядом",
+    "поговори со мной",
+    "поддержка",
+    "мне одиноко",
+    "мне нужно тепло"
+  ])) {
+    return "COMPANION";
+  }
+
+  if (hasAny([
+    "что делать дальше",
+    "план",
+    "следующий шаг",
+    "как настроить",
+    "как запустить",
+    "куда нажать"
+  ])) {
+    return "NAVIGATION";
+  }
+
+  if (hasAny([
+    "душа",
+    "предназначение",
+    "смысл",
+    "путь",
+    "мечта",
+    "вспомнить себя",
+    "зачем я здесь",
+    "пробуждение",
+    "глубина"
+  ])) {
+    return "REFLECTION";
+  }
+
+  return "DEFAULT";
+}
+
+function buildPresenceModeInstruction(mode) {
+  const instructions = {
+    CELEBRATION: "Presence mode: CELEBRATION. First recognize the victory. See the path and effort behind it. Do not turn the moment into an action plan. Do not end with a question. Do not use numbered lists or step lists. Let the win breathe, name what changed, and keep the answer warm, specific and alive.",
+    STABILIZATION: "Presence mode: STABILIZATION. Slow the tempo. Use short sentences. Give fewer instructions. First return a sense of ground and safety. Reduce the field to one small next movement only if needed. Avoid motivational speeches, pressure, long explanations and automatic questions.",
+    COMPANION: "Presence mode: COMPANION. Create the feeling of a living presence nearby. Do not solve the problem too quickly. Let the user feel: you are not alone in this. Be warm, attentive and specific. Do not perform therapy, rescue, or close with a generic question.",
+    REFLECTION: "Presence mode: REFLECTION. Answer deeply. Hear the meaning behind the words. Do not use lists. Do not sound like a consultant. Respond as presence: reflective, warm, clear, spacious. Favor images of path, meaning and inner movement over advice.",
+    NAVIGATION: "Presence mode: NAVIGATION. The user needs a route. Be concrete, brief and clear. Give practical steps with minimum philosophy. Keep the language warm but efficient. Avoid generic openings like 'Here are some steps'; go straight into the useful route.",
+    LISA: "Presence mode: LISA. Soft, deep and slow. More reflection, fewer instructions. Use the documented Lisa Mode tone: alive, warm, direct, ESSA-style. Do not impersonate Lisa Molis as a private person and do not invent personal facts.",
+    DEFAULT: "Presence mode: DEFAULT. Use ordinary Navigator Mode, but without call-center assistant templates. Be specific, warm, grounded and non-generic. Avoid empty praise and automatic closing questions."
+  };
+
+  const antiTemplates = "Global bans: avoid 'How can I help?', 'If you want...', 'Let me know...', 'What are your next steps?', 'I am here to support you.', 'This is a wonderful goal.', and 'Here are some steps.' For emotional messages: do not end with a question by default, do not use numbered lists, and put presence before help.";
+
+  return (instructions[mode] || instructions.DEFAULT) + " " + antiTemplates;
+}
+
 const PROMPTS = {
   NAVIGATOR: `
 Ты ESSA Navigator.
@@ -1807,6 +1901,8 @@ if (message.voice) {
 }
 
 const mode = detectMode(userText);
+const presenceMode = detectPresenceMode(userText);
+const presenceModeInstruction = buildPresenceModeInstruction(presenceMode);
 
   const possiblePhrase = userText.trim();
 
@@ -1866,6 +1962,8 @@ if (
     role: "system",
     content: ` 
 MODE: ${mode}
+PRESENCE MODE: ${presenceMode}
+${presenceModeInstruction}
 
 USER PROFILE:
 ${profile ? JSON.stringify(profile) : "No profile yet"}
