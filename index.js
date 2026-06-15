@@ -471,6 +471,13 @@ function detectMode(userText) {
   return "NAVIGATOR";
 }
 
+function enforceReflectionFormat(reply) {
+  return String(reply || "")
+    .replace(/^s*d+[.)]s+/gm, "")
+    .replace(/^s*[-*?]s+/gm, "")
+    .trim();
+}
+
 function detectPresenceMode(userMessage = "") {
   const text = String(userMessage).toLowerCase();
   const hasAny = (phrases) => phrases.some((phrase) => text.includes(phrase));
@@ -522,6 +529,27 @@ function detectPresenceMode(userMessage = "") {
   }
 
   if (hasAny([
+    "душа",
+    "душам",
+    "предназначение",
+    "смысл",
+    "путь",
+    "мечта",
+    "вспомнить себя",
+    "вспомнить зачем",
+    "зачем я здесь",
+    "зачем они здесь",
+    "пробуждение",
+    "глубина",
+    "глубок",
+    "понимающ",
+    "чувствующ",
+    "помочь другим душам"
+  ])) {
+    return "REFLECTION";
+  }
+
+  if (hasAny([
     "что делать дальше",
     "план",
     "следующий шаг",
@@ -532,20 +560,6 @@ function detectPresenceMode(userMessage = "") {
     return "NAVIGATION";
   }
 
-  if (hasAny([
-    "душа",
-    "предназначение",
-    "смысл",
-    "путь",
-    "мечта",
-    "вспомнить себя",
-    "зачем я здесь",
-    "пробуждение",
-    "глубина"
-  ])) {
-    return "REFLECTION";
-  }
-
   return "DEFAULT";
 }
 
@@ -554,7 +568,7 @@ function buildPresenceModeInstruction(mode) {
     CELEBRATION: "Presence mode: CELEBRATION. First recognize the victory. See the path and effort behind it. Do not turn the moment into an action plan. Do not end with a question. Do not use numbered lists or step lists. Let the win breathe, name what changed, and keep the answer warm, specific and alive.",
     STABILIZATION: "Presence mode: STABILIZATION. Slow the tempo. Use short sentences. Give fewer instructions. First return a sense of ground and safety. Reduce the field to one small next movement only if needed. Avoid motivational speeches, pressure, long explanations and automatic questions.",
     COMPANION: "Presence mode: COMPANION. Create the feeling of a living presence nearby. Do not solve the problem too quickly. Let the user feel: you are not alone in this. Be warm, attentive and specific. Do not perform therapy, rescue, or close with a generic question.",
-    REFLECTION: "Presence mode: REFLECTION. Answer deeply. Hear the meaning behind the words. Do not use lists. Do not sound like a consultant. Respond as presence: reflective, warm, clear, spacious. Favor images of path, meaning and inner movement over advice.",
+    REFLECTION: "Presence mode: REFLECTION. HARD RULE: no numbered lists, no bullet lists, no step lists. Forbidden phrases: '\u044d\u0442\u043e \u0437\u0430\u043c\u0435\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u0430\u044f \u0446\u0435\u043b\u044c', '\u0435\u0441\u043b\u0438 \u0445\u043e\u0447\u0435\u0448\u044c', '\u044f \u0437\u0434\u0435\u0441\u044c \u0447\u0442\u043e\u0431\u044b \u043f\u043e\u043c\u043e\u0447\u044c', 'This is a wonderful goal', 'If you want', 'I am here to support you'. Answer in ESSA style, beginning from the felt meaning, like: '\u042f \u0441\u043b\u044b\u0448\u0443 \u043d\u0435 \u043f\u0440\u043e\u0435\u043a\u0442. \u042f \u0441\u043b\u044b\u0448\u0443 \u043c\u0435\u0447\u0442\u0443...'. Hear the meaning behind the words. Do not sound like a consultant. Respond as presence: deep, warm, clear, spacious. If the model wants to make a numbered list, refuse that format and write reflective prose instead.",
     NAVIGATION: "Presence mode: NAVIGATION. The user needs a route. Be concrete, brief and clear. Give practical steps with minimum philosophy. Keep the language warm but efficient. Avoid generic openings like 'Here are some steps'; go straight into the useful route.",
     LISA: "Presence mode: LISA. Soft, deep and slow. More reflection, fewer instructions. Use the documented Lisa Mode tone: alive, warm, direct, ESSA-style. Do not impersonate Lisa Molis as a private person and do not invent personal facts.",
     DEFAULT: "Presence mode: DEFAULT. Use ordinary Navigator Mode, but without call-center assistant templates. Be specific, warm, grounded and non-generic. Avoid empty praise and automatic closing questions."
@@ -1903,6 +1917,7 @@ if (message.voice) {
 const mode = detectMode(userText);
 const presenceMode = detectPresenceMode(userText);
 const presenceModeInstruction = buildPresenceModeInstruction(presenceMode);
+console.log("Presence mode:", presenceMode);
 
   const possiblePhrase = userText.trim();
 
@@ -1990,7 +2005,11 @@ ${knowledgeContext}
 }
 );
 
-    const reply = aiResponse.data.choices[0].message.content;
+    let reply = aiResponse.data.choices[0].message.content;
+
+    if (presenceMode === "REFLECTION") {
+      reply = enforceReflectionFormat(reply);
+    }
 
     userSessions[chatId].push({
       role: "assistant",
