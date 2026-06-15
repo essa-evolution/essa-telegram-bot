@@ -65,6 +65,13 @@ const CORE_DOCS = [
     layer: "presence_system"
   },
   {
+    category: "presence_system",
+    title: "ESSA Response Philosophy",
+    path: "ESSA_PRESENCE_SYSTEM/09_ESSA_RESPONSE_PHILOSOPHY.md",
+    layer: "presence_system",
+    priority: "high"
+  },
+  {
     category: "navigator_prompt",
     title: "Navigator Core System",
     path: "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt.docx"
