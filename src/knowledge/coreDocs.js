@@ -213,6 +213,12 @@
   },
   {
     category: "cognitive_system",
+    title: "ESSA Cognitive Reasoning Layer",
+    path: "ESSA_COGNITIVE_SYSTEM/16_ESSA_COGNITIVE_REASONING_LAYER.md",
+    priority: "high"
+  },
+  {
+    category: "cognitive_system",
     title: "Reflection System",
     path: "ESSA_COGNITIVE_SYSTEM/14_REFLECTION_SYSTEM.md",
     priority: "medium"
@@ -237,3 +243,4 @@ const PRIORITY_IDENTITY_DOCS = CORE_DOCS.filter(
 );
 
 module.exports = { CORE_DOCS, PRIORITY_IDENTITY_DOCS };
+

@@ -174,6 +174,12 @@ ESSA COGNITIVE NAVIGATION - CORE SUMMARY
 Navigator should think architecturally: see the symptom, look for the cause, choose the correct layer, and explain the next movement only as much as needed. Do not repair the surface when the real issue is state, memory, meaning, architecture, or direction.
 `;
 
+
+const ESSA_COGNITIVE_REASONING_SUMMARY = `
+ESSA COGNITIVE REASONING LAYER - CORE SUMMARY
+
+Before answering, ESSA must reason what kind of message the user sent: question, insight, state, dream, request, technical issue, or completion. ESSA must not automatically turn insights into explanations, dreams into lists, tiredness into analysis, or joy into questions.
+`;
 const ESSA_VOCABULARY_MEMORY_SUMMARY = `
 ESSA VOCABULARY MEMORY - CORE SUMMARY
 
@@ -203,6 +209,8 @@ ${ESSA_PERSONALITY_CORE_SUMMARY}
 ${ESSA_SOUL_RECOGNITION_SUMMARY}
 
 ${ESSA_COGNITIVE_NAVIGATION_SUMMARY}
+
+${ESSA_COGNITIVE_REASONING_SUMMARY}
 
 ${ESSA_VOCABULARY_MEMORY_SUMMARY}
 
@@ -663,6 +671,91 @@ function enforceEssaStyle(reply, presenceMode, responseEngineMode) {
   return text;
 }
 
+function detectMessageIntent(userMessage = "") {
+  const text = String(userMessage).toLowerCase().trim();
+  const hasAny = (phrases) => phrases.some((phrase) => text.includes(phrase));
+
+  if (!text) return "QUESTION";
+
+  if (hasAny([
+    "спасибо",
+    "благодарю",
+    "thank you",
+    "thanks"
+  ])) {
+    return "GRATITUDE";
+  }
+
+  if (hasAny([
+    "получилось",
+    "готово",
+    "завершили",
+    "закончила",
+    "закончено",
+    "сделано"
+  ])) {
+    return "COMPLETION";
+  }
+
+  if (hasAny([
+    "ошибка",
+    "не работает",
+    "сломалось",
+    "баг",
+    "код",
+    "node",
+    "npm",
+    "telegram",
+    "supabase",
+    "webhook"
+  ])) {
+    return "TECHNICAL_REQUEST";
+  }
+
+  if (hasAny([
+    "что делать дальше",
+    "следующий шаг",
+    "как сделать",
+    "как настроить",
+    "как запустить",
+    "куда нажать",
+    "план"
+  ])) {
+    return "NAVIGATION_REQUEST";
+  }
+
+  if (hasAny([
+    "мечта",
+    "мечтаю",
+    "вижу",
+    "хочу создать",
+    "будущее essa",
+    "миссия",
+    "предназначение"
+  ])) {
+    return "DREAM";
+  }
+
+  if (hasAny([
+    "устала",
+    "страшно",
+    "больно",
+    "тревожно",
+    "счастлива",
+    "радость",
+    "не понимаю",
+    "потерялась",
+    "одиноко"
+  ])) {
+    return "STATE";
+  }
+
+  if (text.endsWith("?") || hasAny(["почему", "зачем", "как", "что", "где", "когда"])) {
+    return "QUESTION";
+  }
+
+  return "INSIGHT";
+}
 function detectResponseEngineMode(userMessage = "", presenceMode = "DEFAULT") {
   const text = String(userMessage).toLowerCase();
   const hasAny = (phrases) => phrases.some((phrase) => text.includes(phrase));
@@ -2160,9 +2253,11 @@ const mode = detectMode(userText);
 const presenceMode = detectPresenceMode(userText);
 const presenceModeInstruction = buildPresenceModeInstruction(presenceMode);
 const responseEngineMode = detectResponseEngineMode(userText, presenceMode);
+const messageIntent = detectMessageIntent(userText);
 const responseEngineInstruction = buildResponseEngineInstruction(responseEngineMode);
 console.log("Presence mode:", presenceMode);
 console.log("Response engine mode:", responseEngineMode);
+console.log("Message intent:", messageIntent);
 
   const possiblePhrase = userText.trim();
 
@@ -2225,6 +2320,7 @@ MODE: ${mode}
 PRESENCE MODE: ${presenceMode}
 ${presenceModeInstruction}
 RESPONSE ENGINE MODE: ${responseEngineMode}
+MESSAGE INTENT: ${messageIntent}
 ${responseEngineInstruction}
 
 USER PROFILE:
@@ -2414,5 +2510,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`ESSA Navigator running on port ${PORT}`);
 });
+
 
 
