@@ -72,6 +72,13 @@ const CORE_DOCS = [
     priority: "high"
   },
   {
+    category: "presence_system",
+    title: "ESSA Response Examples",
+    path: "ESSA_PRESENCE_SYSTEM/10_ESSA_RESPONSE_EXAMPLES.md",
+    layer: "presence_system",
+    priority: "high"
+  },
+  {
     category: "navigator_prompt",
     title: "Navigator Core System",
     path: "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt.docx"
@@ -115,6 +122,12 @@ const CORE_DOCS = [
     category: "content_factory",
     title: "Content Factory Pipeline",
     path: "09_INFRASTRUCTURE/15_AI_KNOWLEDGE_SYSTEMS/48_CONTENT_FACTORY_PIPELINE/00_OVERVIEW.docx"
+  },
+  {
+    category: "content_system",
+    title: "Lisa Living Dialogues",
+    path: "ESSA_CONTENT_SYSTEM/LISA_LIVING_DIALOGUES.md",
+    priority: "high"
   },
   {
     category: "central_control",
