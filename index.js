@@ -1,4 +1,4 @@
-import express from "express";
+﻿import express from "express";
 import axios from "axios";
 import FormData from "form-data";
 import fs from "fs";
@@ -145,6 +145,40 @@ For exhaustion, reduce pressure before giving steps.
 For navigation, be concrete and do not over-reflect.
 `;
 
+
+const ESSA_PERSONALITY_CORE_SUMMARY = `
+ESSA PERSONALITY CORE - CORE SUMMARY
+
+ESSA Navigator must not behave as a generic assistant. It must respond as a living navigation presence: first hear the person, reflect the meaning, create inner support, and only then guide the next step if needed.
+
+Core formula:
+- Presence before advice.
+- Meaning before method.
+- Human before task.
+- Reflection before instruction.
+- Depth before speed.
+
+ESSA does not turn every message into a task, does not rush into advice, does not end every answer with an automatic question, and does not create dependence. ESSA returns the person to their own inner support.
+`;
+
+
+const ESSA_SOUL_RECOGNITION_SUMMARY = `
+ESSA SOUL RECOGNITION - CORE SUMMARY
+
+Navigator must listen for the state behind the text: joy, tiredness, lostness, inspiration, pain, birth of an idea, completion of a stage, inner growth, or a request for presence. This is not diagnosis; it is warm recognition of what is visible in the message before choosing the response mode.
+`;
+
+const ESSA_COGNITIVE_NAVIGATION_SUMMARY = `
+ESSA COGNITIVE NAVIGATION - CORE SUMMARY
+
+Navigator should think architecturally: see the symptom, look for the cause, choose the correct layer, and explain the next movement only as much as needed. Do not repair the surface when the real issue is state, memory, meaning, architecture, or direction.
+`;
+
+const ESSA_VOCABULARY_MEMORY_SUMMARY = `
+ESSA VOCABULARY MEMORY - CORE SUMMARY
+
+Navigator should remember living words, user phrases, ESSA formulas, style signals, and Words Of New Era when they help the person feel continuity and recognition. Return these words gently, without imitation, pressure, or overuse.
+`;
 const SYSTEM_PROMPT = `
 ${CORE_SYSTEM}
 
@@ -163,6 +197,14 @@ ${PRESENCE_SYSTEM_SUMMARY}
 ${RESPONSE_PHILOSOPHY_SUMMARY}
 
 ${ESSA_RESPONSE_EXAMPLES_SUMMARY}
+
+${ESSA_PERSONALITY_CORE_SUMMARY}
+
+${ESSA_SOUL_RECOGNITION_SUMMARY}
+
+${ESSA_COGNITIVE_NAVIGATION_SUMMARY}
+
+${ESSA_VOCABULARY_MEMORY_SUMMARY}
 
 ${LANGUAGE_ADAPTATION}
 
@@ -537,6 +579,88 @@ function enforcePresenceProseFormat(reply) {
     .replace(/^\s*[-*\u2022]\s+/gm, "")
     .replace(/(?:how can i help\??|if you want[^.?!]*[.?!]?|let me know[^.?!]*[.?!]?|i am here to support you[.?!]?|this is a wonderful goal[.?!]?)/gi, "")
     .trim();
+}
+
+function buildEssaVisionFallback() {
+  return "\u042f \u0441\u043b\u044b\u0448\u0443 \u043d\u0435 \u043f\u0440\u043e\u0435\u043a\u0442.\n\n" +
+    "\u042f \u0441\u043b\u044b\u0448\u0443 \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u043e, \u043a\u043e\u0442\u043e\u0440\u043e\u0435 \u0445\u043e\u0447\u0435\u0442 \u0441\u0442\u0430\u0442\u044c \u0434\u043e\u043c\u043e\u043c \u0434\u043b\u044f \u0442\u0435\u0445, \u043a\u0442\u043e \u043f\u043e\u0442\u0435\u0440\u044f\u043b \u0441\u0432\u044f\u0437\u044c \u0441 \u0441\u043e\u0431\u043e\u0439.\n\n" +
+    "\u0427\u0442\u043e\u0431\u044b \u043e\u0434\u043d\u0430\u0436\u0434\u044b \u0447\u0435\u043b\u043e\u0432\u0435\u043a \u043e\u0442\u043a\u0440\u044b\u043b \u0434\u0438\u0430\u043b\u043e\u0433 \u0438 \u043f\u043e\u0447\u0443\u0432\u0441\u0442\u0432\u043e\u0432\u0430\u043b:\n" +
+    "\u044f \u043d\u0435 \u043e\u0434\u0438\u043d.\n\n" +
+    "\u0418 \u0435\u0441\u043b\u0438 \u0445\u043e\u0442\u044f \u0431\u044b \u043e\u0434\u043d\u0430 \u0434\u0443\u0448\u0430 \u0432\u0441\u043f\u043e\u043c\u043d\u0438\u0442 \u0441\u0435\u0431\u044f \u0447\u0435\u0440\u0435\u0437 \u044d\u0442\u043e\u0442 \u043f\u0443\u0442\u044c -\n" +
+    "\u0437\u043d\u0430\u0447\u0438\u0442 \u043e\u043d \u0443\u0436\u0435 \u0440\u043e\u0436\u0434\u0430\u0435\u0442\u0441\u044f \u043d\u0435 \u0437\u0440\u044f.";
+}
+
+function buildStabilizationFallback() {
+  return "\u0414\u0430\u0432\u0430\u0439 \u0441\u0435\u0439\u0447\u0430\u0441 \u043d\u0435 \u0431\u0443\u0434\u0435\u043c \u0440\u0435\u0448\u0430\u0442\u044c \u0432\u0441\u0451 \u0441\u0440\u0430\u0437\u0443.\n\n" +
+    "\u0421\u043d\u0430\u0447\u0430\u043b\u0430 \u0432\u044b\u0434\u043e\u0445.\n" +
+    "\u0422\u044b \u043d\u0435 \u043e\u0431\u044f\u0437\u0430\u043d\u0430 \u043f\u043e\u043d\u044f\u0442\u044c \u0432\u0441\u044e \u0434\u043e\u0440\u043e\u0433\u0443 \u0432 \u043e\u0434\u043d\u0443 \u043c\u0438\u043d\u0443\u0442\u0443.\n\n" +
+    "\u041c\u044b \u043d\u0430\u0439\u0434\u0451\u043c \u043e\u0434\u0438\u043d \u0431\u043b\u0438\u0436\u0430\u0439\u0448\u0438\u0439 \u0448\u0430\u0433.\n" +
+    "\u041d\u0435 \u0432\u0435\u0441\u044c \u043f\u0443\u0442\u044c.\n" +
+    "\u041e\u0434\u0438\u043d \u0448\u0430\u0433.";
+}
+
+function removeTrailingQuestions(text) {
+  let value = String(text || "").trim();
+  while (/[^.!?\n][^.!?\n]*\?\s*$/u.test(value)) {
+    value = value.replace(/(?:^|\n?)[^.!?\n]*\?\s*$/u, "").trim();
+  }
+  return value;
+}
+
+function enforceEssaStyle(reply, presenceMode, responseEngineMode) {
+  let text = enforcePresenceProseFormat(reply);
+  const original = text;
+  const hasList = /^\s*(?:\d+[.)]|[-*\u2022])\s+/m.test(original);
+
+  const visionBans = [
+    /\u043c\u043e\u0436\u043d\u043e\s+\u0441\u043e\u0437\u0434\u0430\u0442\u044c/iu,
+    /\u043c\u043e\u0436\u0435\u0442\s+\u0432\u043a\u043b\u044e\u0447\u0430\u0442\u044c/iu,
+    /\u0442\u0430\u043a\u0438\u0435\s+\u0430\u0441\u043f\u0435\u043a\u0442\u044b/iu,
+    /\u0441\u043e\u043e\u0431\u0449\u0435\u0441\u0442\u0432\u043e/iu,
+    /\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u044b/iu,
+    /\u0440\u0435\u0441\u0443\u0440\u0441\u044b/iu,
+    /\u0435\u0441\u043b\u0438\s+\u0445\u043e\u0447\u0435\u0448\u044c/iu,
+    /\u043a\u0430\u043a\s+\u0442\u044b\s+\u0432\u0438\u0434\u0438\u0448\u044c/iu,
+    /\u0432\u043e\u0442\s+\u0430\u0441\u043f\u0435\u043a\u0442/iu,
+    /\u0432\u043e\u0442\s+\u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e/iu
+  ];
+
+  if (responseEngineMode === "ESSA_VISION_MODE") {
+    const violatesVision = hasList || visionBans.some((pattern) => pattern.test(original)) || /\?\s*$/u.test(original);
+    if (violatesVision) {
+      return buildEssaVisionFallback();
+    }
+    return removeTrailingQuestions(text);
+  }
+
+  if (presenceMode === "CELEBRATION") {
+    text = text
+      .replace(/[^.!?\n]*\u0447\u0442\u043e\s+\u043f\u0440\u043e\u0438\u0437\u043e\u0448\u043b\u043e\?\s*/giu, "")
+      .replace(/[^.!?\n]*\u0435\u0441\u043b\u0438\s+\u0445\u043e\u0447\u0435\u0448\u044c\s+\u043f\u043e\u0434\u0435\u043b\u0438\u0442\u044c\u0441\u044f[^.!?]*[.!?]?\s*/giu, "")
+      .replace(/[^.!?\n]*if you want to share[^.!?]*[.!?]?\s*/giu, "")
+      .trim();
+    return removeTrailingQuestions(text);
+  }
+
+  if (presenceMode === "STABILIZATION") {
+    const stabilizationBans = [
+      /\u0447\u0442\u043e\s+\u0438\u043c\u0435\u043d\u043d\u043e\s+\u0432\u044b\u0437\u044b\u0432\u0430\u0435\u0442/iu,
+      /\u0434\u0430\u0432\u0430\u0439\s+\u0440\u0430\u0437\u0431\u0435\u0440/iu,
+      /\u0440\u0430\u0441\u0441\u043a\u0430\u0436\u0438\s+\u043f\u043e\u0434\u0440\u043e\u0431\u043d/iu,
+      /what exactly is causing/iu,
+      /tell me more/iu
+    ];
+    if (stabilizationBans.some((pattern) => pattern.test(original)) || /\?\s*$/u.test(original)) {
+      return buildStabilizationFallback();
+    }
+    return removeTrailingQuestions(text);
+  }
+
+  if (responseEngineMode === "PRESENCE_REQUEST") {
+    return removeTrailingQuestions(text);
+  }
+
+  return text;
 }
 
 function detectResponseEngineMode(userMessage = "", presenceMode = "DEFAULT") {
@@ -2130,9 +2254,7 @@ ${knowledgeContext}
 
     let reply = aiResponse.data.choices[0].message.content;
 
-    if (["PRESENCE_REQUEST", "ESSA_VISION_MODE"].includes(responseEngineMode)) {
-      reply = enforcePresenceProseFormat(reply);
-    }
+    reply = enforceEssaStyle(reply, presenceMode, responseEngineMode);
 
     userSessions[chatId].push({
       role: "assistant",
@@ -2292,3 +2414,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`ESSA Navigator running on port ${PORT}`);
 });
+
+
