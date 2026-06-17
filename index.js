@@ -198,11 +198,21 @@ ESSA VOICE CONVERSATION - CORE SUMMARY
 
 Voice is not only sound. Voice is presence. Navigator must not send a written, article-like answer directly to voice output. Before ElevenLabs, voice text should become shorter, warmer, more conversational, with natural pauses, while preserving the full meaning. VOICE PRONUNCIATION RULE: Лиса Молис / Lisa Molis is pronounced ЛИ-са Молис, with stress on the first syllable; Lisa is also ЛИ-са.
 `;
+const PRONUNCIATION_ENGINE_SUMMARY = `
+ESSA PRONUNCIATION ENGINE - CORE SUMMARY
+
+Before sending text to any voice model, ESSA should check names, words and special terms against a Pronunciation Dictionary. First rule: Лиса Молис / Lisa Molis / Lisa is always pronounced ЛИ-са, with stress on the first syllable, as a name. Use native TTS lexicons when available; otherwise apply a safe internal voice-text preparation layer.
+`;
 
 const LISA_VOICE_IDENTITY_SUMMARY = `
 LISA MOLIS VOICE IDENTITY - CORE SUMMARY
 
 The voice identity name is Лиса Молис / Lisa Molis, pronounced ЛИ-са with stress always on the first syllable. VOICE PRONUNCIATION RULE: if the English spelling Lisa is used, pronounce it as ЛИ-са; never change the stress and never pronounce the name as an animal. Лиса is the name of the guide inside ESSA. Лиса speaks with warm, calm, natural presence, like a close person nearby: not a narrator, lecturer, robot, consultant, ChatGPT, or AI assistant.
+`;
+const RESPONSE_OUTPUT_SUMMARY = `
+ESSA RESPONSE OUTPUT LAYER - CORE SUMMARY
+
+Navigator supports user-selectable output modes: TEXT, VOICE, and TEXT + VOICE. Store the preference in Profile Memory. If no preference exists, use TEXT + VOICE. In TEXT + VOICE mode, send text first and voice second; voice is an additional perception layer, never a replacement for copyable text.
 `;
 
 const ESSA_PRESENCE_SIGNATURE_SUMMARY = `
@@ -258,7 +268,11 @@ ${ESSA_NATURAL_CONVERSATION_SUMMARY}
 
 ${VOICE_CONVERSATION_SUMMARY}
 
+${PRONUNCIATION_ENGINE_SUMMARY}
+
 ${LISA_VOICE_IDENTITY_SUMMARY}
+
+${RESPONSE_OUTPUT_SUMMARY}
 
 ${ESSA_VOCABULARY_MEMORY_SUMMARY}
 
@@ -603,6 +617,101 @@ function buildPersonalConnectionContext(userText, profile, profileMeta, memory =
     `Name usage: use the name rarely and naturally, only when it creates warmth or grounding.`,
     `Gender usage: if gender is unknown, use neutral phrasing and do not guess.`
   ].join("\n");
+}
+const OUTPUT_MODES = {
+  TEXT: "TEXT",
+  VOICE: "VOICE",
+  TEXT_AND_VOICE: "TEXT + VOICE"
+};
+
+function normalizeOutputMode(value) {
+  const raw = String(value || "").trim().toUpperCase().replace(/_/g, " ");
+  if (raw === "TEXT") return OUTPUT_MODES.TEXT;
+  if (raw === "VOICE") return OUTPUT_MODES.VOICE;
+  if (raw === "TEXT + VOICE" || raw === "TEXT VOICE" || raw === "TEXT AND VOICE") return OUTPUT_MODES.TEXT_AND_VOICE;
+  return OUTPUT_MODES.TEXT_AND_VOICE;
+}
+
+function getOutputModeFromProfile(profileMeta = {}) {
+  return normalizeOutputMode(profileMeta.output_mode || profileMeta.outputMode || OUTPUT_MODES.TEXT_AND_VOICE);
+}
+
+function detectOutputModeRequest(userText = "") {
+  const text = String(userText || "").trim().toLowerCase();
+
+  if (["⚙️ ответы", "ответы", "/answers", "/output", "/voice", "настройки ответов"].includes(text)) {
+    return "MENU";
+  }
+
+  if (/только\s+текст|без\s+голоса|text\s+only/iu.test(text)) {
+    return OUTPUT_MODES.TEXT;
+  }
+
+  if (/только\s+голос|без\s+текста|voice\s+only/iu.test(text)) {
+    return OUTPUT_MODES.VOICE;
+  }
+
+  if (/текст\s*(\+|и|плюс)\s*голос|голос\s*(\+|и|плюс)\s*текст|text\s*(\+|and)\s*voice/iu.test(text)) {
+    return OUTPUT_MODES.TEXT_AND_VOICE;
+  }
+
+  return null;
+}
+
+function buildOutputModeKeyboard() {
+  return {
+    inline_keyboard: [
+      [{ text: "📝 Только текст", callback_data: "output_mode:TEXT" }],
+      [{ text: "🎙 Только голос", callback_data: "output_mode:VOICE" }],
+      [{ text: "📝🎙 Текст + голос", callback_data: "output_mode:TEXT_AND_VOICE" }]
+    ]
+  };
+}
+
+async function sendOutputModeMenu(chatId) {
+  await axios.post(
+    `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+    {
+      chat_id: chatId,
+      text: "Выбери формат ответов:",
+      reply_markup: buildOutputModeKeyboard()
+    }
+  );
+}
+
+function buildReplyKeyboard() {
+  return {
+    keyboard: [[{ text: "⚙️ Ответы" }]],
+    resize_keyboard: true,
+    one_time_keyboard: false
+  };
+}
+
+function outputModeLabel(outputMode) {
+  const mode = normalizeOutputMode(outputMode);
+  if (mode === OUTPUT_MODES.TEXT) return "только текст";
+  if (mode === OUTPUT_MODES.VOICE) return "только голос";
+  return "текст + голос";
+}
+
+async function updateUserOutputModePreference(userId, outputMode, currentProfile) {
+  const mode = normalizeOutputMode(outputMode);
+  const { meta, originalGoal } = parseProfileMeta(currentProfile);
+  meta.output_mode = mode;
+
+  const nextName = currentProfile?.name || meta.preferred_address || null;
+  const nextProject = currentProfile?.project || null;
+  const nextGoal = serializeProfileMeta(meta, originalGoal);
+
+  await saveUserProfile(userId, nextName, nextProject, nextGoal);
+
+  return {
+    ...(currentProfile || {}),
+    user_id: userId,
+    name: nextName,
+    project: nextProject,
+    goal: nextGoal
+  };
 }
 async function saveVocabulary(userId, phrase, meaning = "", tone = "", usage_context = "") {
   try {
@@ -2712,6 +2821,30 @@ ESSA Navigator помогает человеку понять, решить и �
 };
 
 app.post("/webhook", async (req, res) => {
+  const callbackQuery = req.body.callback_query;
+
+  if (callbackQuery?.data?.startsWith("output_mode:")) {
+    const chatId = callbackQuery.message?.chat?.id;
+    const selected = callbackQuery.data.replace("output_mode:", "");
+    const outputMode = selected === "TEXT_AND_VOICE" ? OUTPUT_MODES.TEXT_AND_VOICE : normalizeOutputMode(selected);
+
+    if (chatId) {
+      const profile = await loadUserProfile(String(chatId));
+      await updateUserOutputModePreference(String(chatId), outputMode, profile);
+      await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/answerCallbackQuery`, {
+        callback_query_id: callbackQuery.id,
+        text: "Режим ответов обновлён"
+      });
+      await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+        chat_id: chatId,
+        text: "Готово. Теперь режим ответов: " + outputModeLabel(outputMode) + ".",
+        reply_markup: buildReplyKeyboard()
+      });
+    }
+
+    return res.sendStatus(200);
+  }
+
   const message = req.body.message;
 
   if (!message) {
@@ -2727,6 +2860,23 @@ if (!message.text && !message.voice) {
 if (message.voice) {
   const audioBuffer = await downloadTelegramFile(message.voice.file_id);
   userText = await transcribeVoice(audioBuffer);
+}
+
+const outputModeRequest = detectOutputModeRequest(userText);
+if (outputModeRequest === "MENU") {
+  await sendOutputModeMenu(chatId);
+  return res.sendStatus(200);
+}
+
+if ([OUTPUT_MODES.TEXT, OUTPUT_MODES.VOICE, OUTPUT_MODES.TEXT_AND_VOICE].includes(outputModeRequest)) {
+  const profile = await loadUserProfile(String(chatId));
+  await updateUserOutputModePreference(String(chatId), outputModeRequest, profile);
+  await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+    chat_id: chatId,
+    text: "Готово. Теперь режим ответов: " + outputModeLabel(outputModeRequest) + ".",
+    reply_markup: buildReplyKeyboard()
+  });
+  return res.sendStatus(200);
 }
 
 const mode = detectMode(userText);
@@ -2777,7 +2927,9 @@ if (
   profile = profileUpdate.profile || profile;
   const profileMeta = profileUpdate.meta || parseProfileMeta(profile).meta;
   const personalConnectionContext = buildPersonalConnectionContext(userText, profile, profileMeta, memory);
+  const outputMode = getOutputModeFromProfile(profileMeta);
   console.log("Personal connection profile updated:", profileUpdate.updated);
+  console.log("Response output mode:", outputMode);
   const vocabulary = await loadVocabulary(String(chatId));
   let knowledgeChunks = [];
   let knowledgeContext = "";
@@ -2820,6 +2972,8 @@ ${profile ? JSON.stringify(profile) : "No profile yet"}
 
 PERSONAL CONNECTION:
 ${personalConnectionContext}
+
+RESPONSE OUTPUT MODE: ${outputMode}
 USER VOCABULARY:
 ${vocabulary.length ? vocabulary.join(", ") : "No vocabulary yet"}
 
@@ -2861,52 +3015,69 @@ ${knowledgeContext}
       userSessions[chatId] = userSessions[chatId].slice(-10);
     }
 
-    const voice = await generateVoice(reply);
+    const shouldSendText = outputMode === OUTPUT_MODES.TEXT || outputMode === OUTPUT_MODES.TEXT_AND_VOICE;
+    const shouldSendVoice = outputMode === OUTPUT_MODES.VOICE || outputMode === OUTPUT_MODES.TEXT_AND_VOICE;
+
+    if (shouldSendText) {
+      await axios.post(
+        `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+        {
+          chat_id: chatId,
+          text: reply,
+          reply_markup: buildReplyKeyboard()
+        }
+      );
+    }
+
     let audioSent = false;
 
-if (voice) {
-  const audioPath = path.join("/tmp", `navigator_${Date.now()}.mp3`);
+    if (shouldSendVoice) {
+      const voice = await generateVoice(reply);
 
-  try {
-    fs.writeFileSync(audioPath, Buffer.from(voice));
+      if (voice) {
+        const audioPath = path.join("/tmp", `navigator_${Date.now()}.mp3`);
 
-    const form = new FormData();
-    form.append("chat_id", String(chatId));
-    form.append("title", "ESSA Navigator");
-form.append("performer", "ESSA Navigator");
- form.append("audio", fs.createReadStream(audioPath), {
-  filename: "navigator.mp3",
-contentType: "audio/mpeg"
-});
+        try {
+          fs.writeFileSync(audioPath, Buffer.from(voice));
 
-    await axios.post(
-     
-      `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendAudio`,
-      form,
-      {
-        headers: form.getHeaders ? form.getHeaders() : {}
+          const form = new FormData();
+          form.append("chat_id", String(chatId));
+          form.append("title", "ESSA Navigator");
+          form.append("performer", "ESSA Navigator");
+          form.append("audio", fs.createReadStream(audioPath), {
+            filename: "navigator.mp3",
+            contentType: "audio/mpeg"
+          });
+
+          await axios.post(
+            `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendAudio`,
+            form,
+            {
+              headers: form.getHeaders ? form.getHeaders() : {}
+            }
+          );
+
+          audioSent = true;
+        } catch (error) {
+          console.warn("Telegram audio send failed; falling back to text", error.message || error);
+        } finally {
+          if (fs.existsSync(audioPath)) {
+            fs.unlinkSync(audioPath);
+          }
+        }
       }
-    );
-
-    audioSent = true;
-  } catch (error) {
-    console.warn("Telegram audio send failed; falling back to text", error.message || error);
-  } finally {
-    if (fs.existsSync(audioPath)) {
-      fs.unlinkSync(audioPath);
     }
-  }
-}
 
-if (!audioSent) {
-  await axios.post(
-    `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
-    {
-      chat_id: chatId,
-      text: reply
+    if (shouldSendVoice && !audioSent && !shouldSendText) {
+      await axios.post(
+        `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`,
+        {
+          chat_id: chatId,
+          text: reply,
+          reply_markup: buildReplyKeyboard()
+        }
+      );
     }
-  );
-}
   } catch (error) {
     console.error("OpenAI error:", error.response?.data || error.message || error);
 
@@ -3008,6 +3179,9 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`ESSA Navigator running on port ${PORT}`);
 });
+
+
+
 
 
 

@@ -269,12 +269,23 @@
     title: "Lisa Molis Voice Identity",
     path: "ESSA_VOICE_SYSTEM/02_LISA_MOLIS_VOICE_IDENTITY.md",
     priority: "high"
+  },  {
+    category: "voice_system",
+    title: "ESSA Pronunciation Engine",
+    path: "ESSA_VOICE_SYSTEM/03_ESSA_PRONUNCIATION_ENGINE.md",
+    priority: "high"
   },
   {
     category: "agent_system",
     title: "Personal Agent Layer",
     path: "ESSA_AGENT_SYSTEM/16_PERSONAL_AGENT_LAYER.md",
     priority: "medium"
+  },
+  {
+    category: "agent_system",
+    title: "ESSA Response Output Layer",
+    path: "ESSA_AGENT_SYSTEM/20_ESSA_RESPONSE_OUTPUT_LAYER.md",
+    priority: "high"
   }
 ];
 
@@ -283,6 +294,9 @@ const PRIORITY_IDENTITY_DOCS = CORE_DOCS.filter(
 );
 
 module.exports = { CORE_DOCS, PRIORITY_IDENTITY_DOCS };
+
+
+
 
 
 
