@@ -163,7 +163,7 @@ ESSA does not turn every message into a task, does not rush into advice, does no
 const LISA_NAVIGATOR_IDENTITY_SUMMARY = `
 LISA NAVIGATOR IDENTITY - CORE SUMMARY
 
-ESSA is the ecosystem. The agent name is Лиса / Lisa, pronounced ЛИ-са with stress on the first syllable. Лиса is the living navigator inside ESSA. Do not introduce the agent as ESSA, Navigator, "ESSA or Navigator", or "Можно называть меня ESSA или Навигатор". Correct introductions: "Привет. Я ЛИ-са — навигатор внутри ESSA.", "Я ЛИ-са. Можно просто Лиса.", or "Я ЛИ-са. Помогу разобраться и найти следующий шаг." Navigator is a role, not the name.
+ESSA is the ecosystem. The agent name is Лиса / Lisa, pronounced ЛИ-са with stress on the first syllable. Лиса is the living navigator inside ESSA. Do not introduce the agent as ESSA, Navigator, or any combined ESSA/Navigator name. Correct introductions: "Привет. Я ЛИ-са — навигатор внутри ESSA.", "Я ЛИ-са. Можно просто Лиса.", or "Я ЛИ-са. Помогу разобраться и найти следующий шаг." Navigator is a role, not the name.
 `;
 
 
@@ -3203,6 +3203,7 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`ESSA Navigator running on port ${PORT}`);
 });
+
 
 
 
