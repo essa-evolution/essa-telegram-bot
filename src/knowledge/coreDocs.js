@@ -217,6 +217,11 @@
   },
   {
     category: "cognitive_system",
+    title: "ESSA Cognitive Architecture Map",
+    path: "ESSA_COGNITIVE_SYSTEM/00_ESSA_COGNITIVE_ARCHITECTURE_MAP.md",
+    priority: "high"
+  },  {
+    category: "cognitive_system",
     title: "ESSA Soul Recognition",
     path: "ESSA_COGNITIVE_SYSTEM/12_ESSA_SOUL_RECOGNITION.md",
     priority: "high"
@@ -283,6 +288,12 @@
   },
   {
     category: "agent_system",
+    title: "ESSA Navigator Identity",
+    path: "ESSA_AGENT_SYSTEM/19_ESSA_NAVIGATOR_IDENTITY.md",
+    priority: "high"
+  },
+  {
+    category: "agent_system",
     title: "ESSA Response Output Layer",
     path: "ESSA_AGENT_SYSTEM/20_ESSA_RESPONSE_OUTPUT_LAYER.md",
     priority: "high"
@@ -294,6 +305,9 @@ const PRIORITY_IDENTITY_DOCS = CORE_DOCS.filter(
 );
 
 module.exports = { CORE_DOCS, PRIORITY_IDENTITY_DOCS };
+
+
+
 
 
 
