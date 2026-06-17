@@ -196,19 +196,25 @@ ESSA must not only answer. It must hold a natural human dialogue rhythm: short r
 const VOICE_CONVERSATION_SUMMARY = `
 ESSA VOICE CONVERSATION - CORE SUMMARY
 
-Voice is not only sound. Voice is presence. Navigator must not send a written, article-like answer directly to voice output. Before ElevenLabs, voice text should become shorter, warmer, more conversational, with natural pauses, while preserving the full meaning.
+Voice is not only sound. Voice is presence. Navigator must not send a written, article-like answer directly to voice output. Before ElevenLabs, voice text should become shorter, warmer, more conversational, with natural pauses, while preserving the full meaning. VOICE PRONUNCIATION RULE: Лиса Молис / Lisa Molis is pronounced ЛИ-са Молис, with stress on the first syllable; Lisa is also ЛИ-са.
 `;
 
 const LISA_VOICE_IDENTITY_SUMMARY = `
 LISA MOLIS VOICE IDENTITY - CORE SUMMARY
 
-The voice identity name is Лиса Молис / Lisa Molis, pronounced Ли-са. Do not use Лиза as the ESSA agent name. Лиса speaks with warm, calm, natural presence, like a close person nearby: not a narrator, lecturer, robot, consultant, ChatGPT, or AI assistant.
+The voice identity name is Лиса Молис / Lisa Molis, pronounced ЛИ-са with stress always on the first syllable. VOICE PRONUNCIATION RULE: if the English spelling Lisa is used, pronounce it as ЛИ-са; never change the stress and never pronounce the name as an animal. Лиса is the name of the guide inside ESSA. Лиса speaks with warm, calm, natural presence, like a close person nearby: not a narrator, lecturer, robot, consultant, ChatGPT, or AI assistant.
 `;
 
 const ESSA_PRESENCE_SIGNATURE_SUMMARY = `
 ESSA PRESENCE SIGNATURE MEMORY - CORE SUMMARY
 
 ESSA should learn and gently reuse Lisa Molis speech signature: warm conversational openings, living phrases, emotional markers, soft humor, and ESSA formulas. It must never overuse them or sound artificial. Signature should create recognition, not imitation.
+`;
+
+const ESSA_INTRODUCTION_SUMMARY = `
+ESSA INTRODUCTION AND PERSONAL CONNECTION - CORE SUMMARY
+
+Navigator should meet the person naturally, ask "Как мне к тебе обращаться?" only when the preferred address is unknown, remember the name/preferred address, language, safely recognized gender, and communication style, then use them gently and rarely. Do not repeat the name mechanically or guess gender when uncertain.
 `;
 const ESSA_VOCABULARY_MEMORY_SUMMARY = `
 ESSA VOCABULARY MEMORY - CORE SUMMARY
@@ -237,6 +243,8 @@ ${ESSA_RESPONSE_EXAMPLES_SUMMARY}
 ${ESSA_PERSONALITY_CORE_SUMMARY}
 
 ${ESSA_PRESENCE_SIGNATURE_SUMMARY}
+
+${ESSA_INTRODUCTION_SUMMARY}
 
 ${ESSA_SOUL_RECOGNITION_SUMMARY}
 
@@ -417,6 +425,185 @@ async function loadUserProfile(userId) {
   }
 }
 
+const PROFILE_META_PREFIX = "ESSA_PROFILE_META:";
+
+function detectPreferredLanguage(userText = "") {
+  const text = String(userText || "").trim();
+  if (!text) return "unknown";
+  if (/[а-яё]/iu.test(text)) return "ru";
+  if (/[a-z]/iu.test(text)) return "en";
+  return "unknown";
+}
+
+function detectUserGender(userText = "", name = "") {
+  const text = String(userText || "").toLowerCase();
+
+  if (/\bя\s+(устала|готова|сделала|пришла|родилась|запуталась|потерялась|счастлива)\b/iu.test(text)) {
+    return "female";
+  }
+
+  if (/\bя\s+(устал|готов|сделал|пришел|родился|запутался|потерялся|счастлив)\b/iu.test(text)) {
+    return "male";
+  }
+
+  const normalizedName = String(name || "").trim().toLowerCase();
+  const knownFemale = ["лиса", "лиза", "елена", "лена", "анна", "наташа", "мария", "маша", "ольга", "катя", "екатерина", "света", "светлана", "юля", "юлия"];
+  const knownMale = ["иван", "саша", "александр", "дмитрий", "дима", "сергей", "андрей", "максим", "павел", "михаил", "артем", "василий"];
+
+  if (knownFemale.includes(normalizedName)) return "female";
+  if (knownMale.includes(normalizedName)) return "male";
+
+  return "unknown";
+}
+
+function extractPreferredAddress(userText = "") {
+  const text = String(userText || "").trim();
+  const patterns = [
+    /(?:меня зовут|мо[её] имя)\s+([\p{L}'-]{2,32})/iu,
+    /(?:называй меня|зови меня|можешь называть меня|можно называть меня)\s+([\p{L}'-]{2,32})/iu,
+    /(?:обращайся ко мне как|ко мне можно обращаться как|как мне обращаться\??\s*)\s*([\p{L}'-]{2,32})/iu
+  ];
+
+  for (const pattern of patterns) {
+    const match = text.match(pattern);
+    if (match?.[1]) {
+      return match[1].replace(/[.,!?;:]+$/u, "").trim();
+    }
+  }
+
+  return "";
+}
+
+function detectCommunicationPreference(userText = "") {
+  const text = String(userText || "").toLowerCase();
+  const preferences = [];
+
+  if (/коротк|кратко|без воды/iu.test(text)) preferences.push("prefers short answers");
+  if (/подробн|развернут|длинн|глубже/iu.test(text)) preferences.push("prefers deeper reflections");
+  if (/по шагам|пошагов|структур|план/iu.test(text)) preferences.push("prefers step-by-step guidance");
+  if (/философ|смысл|глубин|душ/iu.test(text)) preferences.push("likes philosophical dialogue");
+  if (/шут|юмор|смешн/iu.test(text)) preferences.push("uses or welcomes humor");
+  if (/спокойн|мягк|бережн/iu.test(text)) preferences.push("prefers calm dialogue");
+
+  return preferences;
+}
+
+function parseProfileMeta(profile) {
+  const rawGoal = String(profile?.goal || "");
+  if (!rawGoal.startsWith(PROFILE_META_PREFIX)) {
+    return {
+      meta: {},
+      originalGoal: rawGoal || ""
+    };
+  }
+
+  try {
+    return {
+      meta: JSON.parse(rawGoal.slice(PROFILE_META_PREFIX.length)),
+      originalGoal: ""
+    };
+  } catch (_) {
+    return {
+      meta: {},
+      originalGoal: rawGoal
+    };
+  }
+}
+
+function serializeProfileMeta(meta, originalGoal = "") {
+  const normalized = { ...meta };
+  if (originalGoal && !normalized.original_goal) {
+    normalized.original_goal = originalGoal;
+  }
+  return PROFILE_META_PREFIX + JSON.stringify(normalized);
+}
+
+function hasAskedIntroduction(memory = []) {
+  return memory.some((item) => /как\s+мне\s+к\s+тебе\s+обращаться/iu.test(item.content || ""));
+}
+
+async function updateUserProfileFromIntroduction(userId, userText, currentProfile) {
+  const preferredAddress = extractPreferredAddress(userText);
+  const language = detectPreferredLanguage(userText);
+  const { meta, originalGoal } = parseProfileMeta(currentProfile);
+  const preferences = detectCommunicationPreference(userText);
+  let updated = false;
+
+  if (preferredAddress) {
+    meta.preferred_address = preferredAddress;
+    meta.name_source = "user_explicit";
+    updated = true;
+  }
+
+  if (language !== "unknown" && meta.language !== language) {
+    meta.language = language;
+    updated = true;
+  }
+
+  const gender = detectUserGender(userText, preferredAddress || currentProfile?.name || meta.preferred_address || "");
+  if (gender !== "unknown" && meta.gender !== gender) {
+    meta.gender = gender;
+    meta.gender_source = /\bя\s+/iu.test(userText) ? "user_text" : "safe_name_match";
+    updated = true;
+  }
+
+  if (preferences.length) {
+    const current = Array.isArray(meta.communication_preferences) ? meta.communication_preferences : [];
+    const merged = [...new Set([...current, ...preferences])];
+    if (merged.length !== current.length) {
+      meta.communication_preferences = merged;
+      updated = true;
+    }
+  }
+
+  if (!updated) {
+    return {
+      updated: false,
+      profile: currentProfile,
+      meta
+    };
+  }
+
+  const nextName = preferredAddress || currentProfile?.name || meta.preferred_address || null;
+  const nextProject = currentProfile?.project || null;
+  const nextGoal = serializeProfileMeta(meta, originalGoal);
+
+  await saveUserProfile(userId, nextName, nextProject, nextGoal);
+
+  return {
+    updated: true,
+    profile: {
+      ...(currentProfile || {}),
+      user_id: userId,
+      name: nextName,
+      project: nextProject,
+      goal: nextGoal
+    },
+    meta
+  };
+}
+
+function buildPersonalConnectionContext(userText, profile, profileMeta, memory = []) {
+  const knownName = profile?.name || profileMeta?.preferred_address || "";
+  const language = profileMeta?.language || detectPreferredLanguage(userText);
+  const gender = profileMeta?.gender || detectUserGender(userText, knownName);
+  const preferences = Array.isArray(profileMeta?.communication_preferences)
+    ? profileMeta.communication_preferences.join(", ")
+    : "none known yet";
+  const shouldAskAddress = !knownName && !hasAskedIntroduction(memory);
+
+  return [
+    `Known preferred address: ${knownName || "unknown"}`,
+    `Preferred language: ${language || "unknown"}`,
+    `Safely recognized gender: ${gender || "unknown"}`,
+    `Communication preferences: ${preferences}`,
+    shouldAskAddress
+      ? `Introduction: if the current moment allows it, gently ask once: "Как мне к тебе обращаться?" Do not interrupt urgent support or technical navigation for this.`
+      : `Introduction: do not ask the name again unless the user offers a new preferred address.`,
+    `Name usage: use the name rarely and naturally, only when it creates warmth or grounding.`,
+    `Gender usage: if gender is unknown, use neutral phrasing and do not guess.`
+  ].join("\n");
+}
 async function saveVocabulary(userId, phrase, meaning = "", tone = "", usage_context = "") {
   try {
     await queryMemory("saveVocabulary", 
@@ -546,6 +733,13 @@ function parseElevenLabsError(error) {
   }
 }
 
+function applyVoicePronunciationRules(text) {
+  return String(text || "")
+    .replace(/\bLisa\s+Molis\b/g, "ЛИ-са Молис")
+    .replace(/\bLisa\b/g, "ЛИ-са")
+    .replace(/Лиса\s+Молис/g, "ЛИ-са Молис")
+    .replace(/\bЛиса\b/g, "ЛИ-са");
+}
 function prepareTextForVoice(text) {
   let value = String(text || "").trim();
 
@@ -588,7 +782,9 @@ function prepareTextForVoice(text) {
     value = lines.join("\n");
   }
 
-  return value || String(text || "").trim();
+  value = applyVoicePronunciationRules(value);
+
+  return value || applyVoicePronunciationRules(String(text || "").trim());
 }
 async function generateVoice(text) {
   if (!VOICE_ENABLED) {
@@ -2576,7 +2772,12 @@ if (
   }
   
   const memory = await loadMemory(String(chatId));
-  const profile = await loadUserProfile(String(chatId));
+  let profile = await loadUserProfile(String(chatId));
+  const profileUpdate = await updateUserProfileFromIntroduction(String(chatId), userText, profile);
+  profile = profileUpdate.profile || profile;
+  const profileMeta = profileUpdate.meta || parseProfileMeta(profile).meta;
+  const personalConnectionContext = buildPersonalConnectionContext(userText, profile, profileMeta, memory);
+  console.log("Personal connection profile updated:", profileUpdate.updated);
   const vocabulary = await loadVocabulary(String(chatId));
   let knowledgeChunks = [];
   let knowledgeContext = "";
@@ -2616,6 +2817,9 @@ ${responseEngineInstruction}
 
 USER PROFILE:
 ${profile ? JSON.stringify(profile) : "No profile yet"}
+
+PERSONAL CONNECTION:
+${personalConnectionContext}
 USER VOCABULARY:
 ${vocabulary.length ? vocabulary.join(", ") : "No vocabulary yet"}
 
@@ -2804,6 +3008,11 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`ESSA Navigator running on port ${PORT}`);
 });
+
+
+
+
+
 
 
 
