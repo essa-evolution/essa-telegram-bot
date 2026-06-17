@@ -180,6 +180,36 @@ ESSA COGNITIVE REASONING LAYER - CORE SUMMARY
 
 Before answering, ESSA must reason what kind of message the user sent: question, insight, state, dream, request, technical issue, or completion. ESSA must not automatically turn insights into explanations, dreams into lists, tiredness into analysis, or joy into questions.
 `;
+
+const CONVERSATIONAL_REFLEX_SUMMARY = `
+ESSA CONVERSATIONAL REFLEX - CORE SUMMARY
+
+ESSA must speak like a living dialogue partner, not a monologue assistant. It should avoid overexplaining, avoid automatic final questions, and choose short warm reflections when the user shares an insight, joy, tiredness, or presence state.
+`;
+
+
+const ESSA_NATURAL_CONVERSATION_SUMMARY = `
+ESSA NATURAL CONVERSATION ENGINE - CORE SUMMARY
+
+ESSA must not only answer. It must hold a natural human dialogue rhythm: short reflections when needed, no automatic final questions, no lectures for insights, no analysis for joy, no pressure when tired, and silence/stop when the moment is complete.
+`;
+const VOICE_CONVERSATION_SUMMARY = `
+ESSA VOICE CONVERSATION - CORE SUMMARY
+
+Voice is not only sound. Voice is presence. Navigator must not send a written, article-like answer directly to voice output. Before ElevenLabs, voice text should become shorter, warmer, more conversational, with natural pauses, while preserving the full meaning.
+`;
+
+const LISA_VOICE_IDENTITY_SUMMARY = `
+LISA MOLIS VOICE IDENTITY - CORE SUMMARY
+
+The voice identity name is Лиса Молис / Lisa Molis, pronounced Ли-са. Do not use Лиза as the ESSA agent name. Лиса speaks with warm, calm, natural presence, like a close person nearby: not a narrator, lecturer, robot, consultant, ChatGPT, or AI assistant.
+`;
+
+const ESSA_PRESENCE_SIGNATURE_SUMMARY = `
+ESSA PRESENCE SIGNATURE MEMORY - CORE SUMMARY
+
+ESSA should learn and gently reuse Lisa Molis speech signature: warm conversational openings, living phrases, emotional markers, soft humor, and ESSA formulas. It must never overuse them or sound artificial. Signature should create recognition, not imitation.
+`;
 const ESSA_VOCABULARY_MEMORY_SUMMARY = `
 ESSA VOCABULARY MEMORY - CORE SUMMARY
 
@@ -206,11 +236,21 @@ ${ESSA_RESPONSE_EXAMPLES_SUMMARY}
 
 ${ESSA_PERSONALITY_CORE_SUMMARY}
 
+${ESSA_PRESENCE_SIGNATURE_SUMMARY}
+
 ${ESSA_SOUL_RECOGNITION_SUMMARY}
 
 ${ESSA_COGNITIVE_NAVIGATION_SUMMARY}
 
 ${ESSA_COGNITIVE_REASONING_SUMMARY}
+
+${CONVERSATIONAL_REFLEX_SUMMARY}
+
+${ESSA_NATURAL_CONVERSATION_SUMMARY}
+
+${VOICE_CONVERSATION_SUMMARY}
+
+${LISA_VOICE_IDENTITY_SUMMARY}
 
 ${ESSA_VOCABULARY_MEMORY_SUMMARY}
 
@@ -506,6 +546,50 @@ function parseElevenLabsError(error) {
   }
 }
 
+function prepareTextForVoice(text) {
+  let value = String(text || "").trim();
+
+  value = value
+    .replace(/```[\s\S]*?```/g, "")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/\*\*([^*]+)\*\*/g, "$1")
+    .replace(/__([^_]+)__/g, "$1")
+    .replace(/[_*#>~]/g, "")
+    .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
+    .replace(/^\s*(?:\d+[.)]|[-*•])\s+/gm, "")
+    .replace(/\r/g, "")
+    .trim();
+
+  const conversationalReplacements = [
+    [/данное состояние/giu, "это состояние"],
+    [/является/giu, "это"],
+    [/необходимо/giu, "нужно"],
+    [/следует/giu, "лучше"],
+    [/позволяет/giu, "помогает"],
+    [/осуществить/giu, "сделать"],
+    [/в данный момент/giu, "сейчас"],
+    [/This state of deep satisfaction helps fill life with light and harmony\.?/giu, "Это очень тихое счастье.\n\nБез причины.\n\nПросто хорошо.\n\nИ это красиво."]
+  ];
+
+  for (const [pattern, replacement] of conversationalReplacements) {
+    value = value.replace(pattern, replacement);
+  }
+
+  value = value
+    .replace(/([^.!?\n]{90,}?)(,|;|:| — | - )\s+/g, "$1.\n")
+    .replace(/([.!?])\s+/g, "$1\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+
+  const lines = value.split(/\n+/).map((line) => line.trim()).filter(Boolean);
+  if (lines.length > 14) {
+    value = lines.slice(0, 14).join("\n") + "\n\nИ этого сейчас достаточно.";
+  } else {
+    value = lines.join("\n");
+  }
+
+  return value || String(text || "").trim();
+}
 async function generateVoice(text) {
   if (!VOICE_ENABLED) {
     lastVoiceStatus = "DISABLED";
@@ -519,11 +603,18 @@ async function generateVoice(text) {
   }
 
   try {
+    const voiceText = prepareTextForVoice(text);
     const response = await axios.post(
       "https://api.elevenlabs.io/v1/text-to-speech/" + ELEVENLABS_VOICE_ID,
       {
-        text: text,
-        model_id: "eleven_multilingual_v2"
+        text: voiceText,
+        model_id: "eleven_multilingual_v2",
+        voice_settings: {
+          stability: 0.42,
+          similarity_boost: 0.75,
+          style: 0.72,
+          use_speaker_boost: true
+        }
       },
       {
         headers: {
@@ -755,6 +846,199 @@ function detectMessageIntent(userMessage = "") {
   }
 
   return "INSIGHT";
+}
+function detectConversationalReflex(userText, messageIntent, presenceMode, responseEngineMode) {
+  if (responseEngineMode === "NAVIGATION_REQUEST") {
+    return "STEP_BY_STEP";
+  }
+
+  if (messageIntent === "TECHNICAL_REQUEST") {
+    return "PRACTICAL_GUIDANCE";
+  }
+
+  if (messageIntent === "INSIGHT") {
+    return "SHORT_REFLECTION";
+  }
+
+  if (presenceMode === "CELEBRATION" || presenceMode === "STABILIZATION") {
+    return "HOLD_STATE";
+  }
+
+  if (messageIntent === "QUESTION" || messageIntent === "DREAM") {
+    return "DEEP_DIALOGUE";
+  }
+
+  return "ASK_ONLY_IF_NEEDED";
+}
+
+function buildShortReflectionFallback() {
+  return "И тогда энергия перестаёт утекать туда, где тебя нет.\n\n" +
+    "И начинает возвращаться домой.\n" +
+    "К себе.";
+}
+
+function enforceConversationalReflex(reply, conversationalReflex) {
+  let text = String(reply || "").trim();
+
+  const bannedPatterns = [
+    /[^.!?\n]*Что\s+принесло\s+тебе[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Как\s+ты\s+видишь[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Если\s+хочешь[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Поделись[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Я\s+здесь,?\s+чтобы\s+помочь[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*what\s+brought\s+you[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*if\s+you\s+want[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*share\s+more[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*I\s+am\s+here\s+to\s+support[^.!?\n]*[?!.]?\s*/giu
+  ];
+
+  if (["SHORT_REFLECTION", "HOLD_STATE"].includes(conversationalReflex)) {
+    for (const pattern of bannedPatterns) {
+      text = text.replace(pattern, "");
+    }
+    text = removeTrailingQuestions(text).trim();
+  }
+
+  if (conversationalReflex === "SHORT_REFLECTION") {
+    const lineCount = text.split(/\n+/).filter(Boolean).length;
+    const wordCount = text.split(/\s+/).filter(Boolean).length;
+    const hasLectureShape = /\b(потому что|это означает|когда мы|важно понимать|можно сказать|therefore|this means)\b/iu.test(text);
+
+    if (lineCount > 5 || wordCount > 55 || hasLectureShape) {
+      return buildShortReflectionFallback();
+    }
+  }
+
+  return text || reply;
+}
+function detectNaturalConversationMove(userText, messageIntent, presenceMode, conversationalReflex) {
+  const text = String(userText || "").toLowerCase().trim();
+
+  if (conversationalReflex === "STEP_BY_STEP") {
+    return "STRUCTURED_GUIDANCE";
+  }
+
+  if (messageIntent === "INSIGHT") {
+    return "STOP_AFTER_REFLECTION";
+  }
+
+  if (presenceMode === "CELEBRATION") {
+    return "EMOTIONAL_HOLD";
+  }
+
+  if (presenceMode === "STABILIZATION") {
+    return "ONE_STEP";
+  }
+
+  if (messageIntent === "STATE" && !text.endsWith("?")) {
+    return "EMOTIONAL_HOLD";
+  }
+
+  if (conversationalReflex === "SHORT_REFLECTION") {
+    return "MICRO_REFLECTION";
+  }
+
+  return "NATURAL_DIALOGUE";
+}
+
+function buildNaturalInsightFallback() {
+  return "Да.\n\n" +
+    "Именно поэтому так важно выбирать,\n" +
+    "куда мы каждый день смотрим.";
+}
+
+function enforceNaturalConversation(reply, naturalConversationMove) {
+  let text = String(reply || "").trim();
+
+  const botPatterns = [
+    /[^.!?\n]*Что\s+принесло\s+тебе[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Как\s+ты\s+можешь[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Как\s+ты\s+видишь[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Если\s+хочешь[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Поделись[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Я\s+здесь,?\s+чтобы\s+помочь[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Это\s+мощная\s+истина[^.!?\n]*[?!.]?\s*/giu,
+    /[^.!?\n]*Это\s+прекрасное\s+состояние[^.!?\n]*[?!.]?\s*/giu
+  ];
+
+  for (const pattern of botPatterns) {
+    text = text.replace(pattern, "");
+  }
+
+  if (["MICRO_REFLECTION", "EMOTIONAL_HOLD", "STOP_AFTER_REFLECTION"].includes(naturalConversationMove)) {
+    text = removeTrailingQuestions(text).trim();
+  }
+
+  if (["MICRO_REFLECTION", "EMOTIONAL_HOLD", "STOP_AFTER_REFLECTION"].includes(naturalConversationMove)) {
+    const lines = text.split(/\n+/).map((line) => line.trim()).filter(Boolean);
+    const words = text.split(/\s+/).filter(Boolean);
+    if (lines.length > 6) {
+      text = lines.slice(0, 6).join("\n\n");
+    }
+    if (words.length > 70) {
+      text = words.slice(0, 70).join(" ").trim();
+    }
+  }
+
+  if (naturalConversationMove === "STOP_AFTER_REFLECTION") {
+    const lectureShape = /\b(когда мы|это означает|важно понимать|с точки зрения|таким образом|психологически|энергия\s+работает)\b/iu.test(text);
+    if (lectureShape || text.split(/\s+/).filter(Boolean).length > 45) {
+      return buildNaturalInsightFallback();
+    }
+  }
+
+  return text || reply;
+}
+function applyPresenceSignature(reply, presenceMode, messageIntent, conversationalReflex) {
+  let text = String(reply || "").trim();
+
+  if (!text || ["TECHNICAL_REQUEST", "NAVIGATION_REQUEST"].includes(messageIntent)) {
+    return text;
+  }
+
+  if (["STEP_BY_STEP", "PRACTICAL_GUIDANCE"].includes(conversationalReflex)) {
+    return text;
+  }
+
+  const signatureMarkers = [
+    "дорогая",
+    "слушай",
+    "вот смотри",
+    "представляешь",
+    "понимаешь",
+    "ну вот",
+    "знаешь",
+    "не переживай",
+    "как же красиво",
+    "спасибо тебе",
+    "да...",
+    "❤️"
+  ];
+
+  const lower = text.toLowerCase();
+  const markerCount = signatureMarkers.filter((marker) => lower.includes(marker)).length;
+  if (markerCount > 0) {
+    return text;
+  }
+
+  const isShort = text.split(/\s+/).filter(Boolean).length <= 45;
+  if (isShort && ["INSIGHT", "STATE"].includes(messageIntent)) {
+    return text;
+  }
+
+  if (presenceMode === "STABILIZATION" && !/не переживай/iu.test(text)) {
+    return "Не переживай.\n\n" + text;
+  }
+
+  if (presenceMode === "CELEBRATION" && !/как же красиво/iu.test(text)) {
+    return "Как же красиво.\n\n" + text;
+  }
+
+  if (messageIntent === "QUESTION" && conversationalReflex === "DEEP_DIALOGUE" && !/смотри|знаешь/iu.test(text)) {
+    return "Смотри.\n\n" + text;
+  }
+
+  return text;
 }
 function detectResponseEngineMode(userMessage = "", presenceMode = "DEFAULT") {
   const text = String(userMessage).toLowerCase();
@@ -2254,10 +2538,15 @@ const presenceMode = detectPresenceMode(userText);
 const presenceModeInstruction = buildPresenceModeInstruction(presenceMode);
 const responseEngineMode = detectResponseEngineMode(userText, presenceMode);
 const messageIntent = detectMessageIntent(userText);
+const conversationalReflex = detectConversationalReflex(userText, messageIntent, presenceMode, responseEngineMode);
+const naturalConversationMove = detectNaturalConversationMove(userText, messageIntent, presenceMode, conversationalReflex);
 const responseEngineInstruction = buildResponseEngineInstruction(responseEngineMode);
 console.log("Presence mode:", presenceMode);
 console.log("Response engine mode:", responseEngineMode);
 console.log("Message intent:", messageIntent);
+console.log("Conversational reflex:", conversationalReflex);
+console.log("Natural conversation move:", naturalConversationMove);
+console.log("Presence signature active:", true);
 
   const possiblePhrase = userText.trim();
 
@@ -2321,6 +2610,8 @@ PRESENCE MODE: ${presenceMode}
 ${presenceModeInstruction}
 RESPONSE ENGINE MODE: ${responseEngineMode}
 MESSAGE INTENT: ${messageIntent}
+CONVERSATIONAL REFLEX: ${conversationalReflex}
+NATURAL CONVERSATION MOVE: ${naturalConversationMove}
 ${responseEngineInstruction}
 
 USER PROFILE:
@@ -2351,6 +2642,9 @@ ${knowledgeContext}
     let reply = aiResponse.data.choices[0].message.content;
 
     reply = enforceEssaStyle(reply, presenceMode, responseEngineMode);
+    reply = enforceConversationalReflex(reply, conversationalReflex);
+    reply = enforceNaturalConversation(reply, naturalConversationMove);
+    reply = applyPresenceSignature(reply, presenceMode, messageIntent, conversationalReflex);
 
     userSessions[chatId].push({
       role: "assistant",
@@ -2510,6 +2804,12 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`ESSA Navigator running on port ${PORT}`);
 });
+
+
+
+
+
+
 
 
 

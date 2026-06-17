@@ -200,6 +200,12 @@
   },
 
   {
+    category: "memory_system",
+    title: "ESSA Presence Signature Memory",
+    path: "ESSA_MEMORY_SYSTEM/10_ESSA_PRESENCE_SIGNATURE_MEMORY.md",
+    priority: "high"
+  },
+  {
     category: "cognitive_system",
     title: "ESSA Soul Recognition",
     path: "ESSA_COGNITIVE_SYSTEM/12_ESSA_SOUL_RECOGNITION.md",
@@ -219,6 +225,18 @@
   },
   {
     category: "cognitive_system",
+    title: "ESSA Conversational Reflex Layer",
+    path: "ESSA_COGNITIVE_SYSTEM/17_ESSA_CONVERSATIONAL_REFLEX_LAYER.md",
+    priority: "high"
+  },
+  {
+    category: "cognitive_system",
+    title: "ESSA Natural Conversation Engine",
+    path: "ESSA_COGNITIVE_SYSTEM/18_ESSA_NATURAL_CONVERSATION_ENGINE.md",
+    priority: "high"
+  },
+  {
+    category: "cognitive_system",
     title: "Reflection System",
     path: "ESSA_COGNITIVE_SYSTEM/14_REFLECTION_SYSTEM.md",
     priority: "medium"
@@ -230,6 +248,18 @@
     priority: "medium"
   },
 
+  {
+    category: "voice_system",
+    title: "ESSA Voice Conversation Layer",
+    path: "ESSA_VOICE_SYSTEM/01_ESSA_VOICE_CONVERSATION_LAYER.md",
+    priority: "high"
+  },
+  {
+    category: "voice_system",
+    title: "Lisa Molis Voice Identity",
+    path: "ESSA_VOICE_SYSTEM/02_LISA_MOLIS_VOICE_IDENTITY.md",
+    priority: "high"
+  },
   {
     category: "agent_system",
     title: "Personal Agent Layer",
@@ -243,4 +273,9 @@ const PRIORITY_IDENTITY_DOCS = CORE_DOCS.filter(
 );
 
 module.exports = { CORE_DOCS, PRIORITY_IDENTITY_DOCS };
+
+
+
+
+
 
