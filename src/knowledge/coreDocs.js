@@ -204,6 +204,16 @@
     title: "ESSA Presence Signature Memory",
     path: "ESSA_MEMORY_SYSTEM/10_ESSA_PRESENCE_SIGNATURE_MEMORY.md",
     priority: "high"
+  },  {
+    category: "memory_system",
+    title: "ESSA Introduction And Personal Connection",
+    path: "ESSA_MEMORY_SYSTEM/11_ESSA_INTRODUCTION_AND_PERSONAL_CONNECTION.md",
+    priority: "high"
+  },  {
+    category: "memory_system",
+    title: "ESSA User Profile Schema",
+    path: "ESSA_MEMORY_SYSTEM/12_ESSA_USER_PROFILE_SCHEMA.md",
+    priority: "high"
   },
   {
     category: "cognitive_system",
@@ -273,6 +283,8 @@ const PRIORITY_IDENTITY_DOCS = CORE_DOCS.filter(
 );
 
 module.exports = { CORE_DOCS, PRIORITY_IDENTITY_DOCS };
+
+
 
 
 
