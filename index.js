@@ -7,11 +7,28 @@ import dotenv from "dotenv";
 import pkg from "pg";
 import searchEssaKnowledgeModule from "./src/knowledge/searchEssaKnowledge.js";
 import promptInjection from "./src/knowledge/promptInjection.js";
+import { CORE_DOCS } from "./src/knowledge/coreDocs.js";
 const { Pool } = pkg;
 const { searchEssaKnowledge } = searchEssaKnowledgeModule;
 const { buildKnowledgeContext } = promptInjection;
 dotenv.config();
 console.log("Response philosophy active:", true);
+const ESSA_BUILD_ID = "2026-06-18-0605";
+const ESSA_BUILD_NAME = "Lisa Recognizable Voice + Awakening Depth + Foundation";
+const ESSA_ACTIVE_MODULES = [
+  "Lisa Navigator Identity",
+  "Response Output Layer",
+  "Pronunciation Engine",
+  "ESSA Foundation",
+  "Lisa Personality Expression",
+  "Lisa Recognizable Voice",
+  "Awakening Depth System",
+  "Natural Conversation Engine",
+  "Conversational Reflex Layer",
+  "Cognitive Reasoning Layer",
+  "Presence Signature Memory",
+  "Introduction and Personal Connection"
+];
 // === ESSA NAVIGATOR SYSTEM FILES ===
 const CORE_SYSTEM = fs.readFileSync(
 path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt"),
@@ -340,6 +357,78 @@ ${LANGUAGE_ADAPTATION}
 
 ${TOOL_LAYERS}
 `;
+
+const ESSA_CORE_DOC_HEALTH_CHECKS = [
+  {
+    label: "ESSA Foundation",
+    path: "ESSA_KNOWLEDGE_SYSTEM/00_ESSA_FOUNDATION.md"
+  },
+  {
+    label: "Lisa Personality Expression",
+    path: "ESSA_PRESENCE_SYSTEM/12_ESSA_LISA_PERSONALITY_EXPRESSION.md"
+  },
+  {
+    label: "Lisa Recognizable Voice",
+    path: "ESSA_PRESENCE_SYSTEM/13_LISA_RECOGNIZABLE_VOICE.md"
+  },
+  {
+    label: "ESSA Response Identity Style",
+    path: "ESSA_COGNITIVE_SYSTEM/19_ESSA_RESPONSE_IDENTITY_STYLE.md"
+  },
+  {
+    label: "Awakening Depth System",
+    path: "ESSA_COGNITIVE_SYSTEM/20_ESSA_AWAKENING_DEPTH_SYSTEM.md"
+  },
+  {
+    label: "Pronunciation Engine",
+    path: "ESSA_VOICE_SYSTEM/03_ESSA_PRONUNCIATION_ENGINE.md"
+  }
+];
+
+function getSummaryHealth() {
+  return {
+    LISA_NAVIGATOR_IDENTITY_SUMMARY: typeof LISA_NAVIGATOR_IDENTITY_SUMMARY !== "undefined",
+    RESPONSE_OUTPUT_SUMMARY: typeof RESPONSE_OUTPUT_SUMMARY !== "undefined",
+    PRONUNCIATION_ENGINE_SUMMARY: typeof PRONUNCIATION_ENGINE_SUMMARY !== "undefined",
+    ESSA_FOUNDATION_SUMMARY: typeof ESSA_FOUNDATION_SUMMARY !== "undefined",
+    ESSA_LISA_PERSONALITY_EXPRESSION_SUMMARY: typeof ESSA_LISA_PERSONALITY_EXPRESSION_SUMMARY !== "undefined",
+    LISA_RECOGNIZABLE_VOICE_SUMMARY: typeof LISA_RECOGNIZABLE_VOICE_SUMMARY !== "undefined",
+    ESSA_AWAKENING_DEPTH_SUMMARY: typeof ESSA_AWAKENING_DEPTH_SUMMARY !== "undefined"
+  };
+}
+
+function logSummaryHealth() {
+  console.log("ESSA SUMMARY HEALTH:");
+  Object.entries(getSummaryHealth()).forEach(([key, active]) => {
+    console.log(active ? "✅" : "❌", key);
+  });
+}
+
+function getCoreDocHealth() {
+  const paths = new Set((CORE_DOCS || []).map((doc) => doc.path));
+  return ESSA_CORE_DOC_HEALTH_CHECKS.map((item) => ({
+    ...item,
+    active: paths.has(item.path)
+  }));
+}
+
+function logCoreDocHealth() {
+  console.log("CORE_DOCS count:", CORE_DOCS.length);
+  console.log("ESSA CORE DOC HEALTH:");
+  getCoreDocHealth().forEach((item) => {
+    console.log(item.active ? "✅" : "❌", item.label);
+  });
+}
+
+function logBuildIdentity() {
+  console.log("====================================");
+  console.log("ESSA BUILD ID:", ESSA_BUILD_ID);
+  console.log("ESSA BUILD NAME:", ESSA_BUILD_NAME);
+  console.log("ESSA ACTIVE MODULES:");
+  ESSA_ACTIVE_MODULES.forEach((moduleName) => console.log(" -", moduleName));
+  console.log("====================================");
+}
+
 const app = express();
 app.use(express.json());
 
@@ -3419,6 +3508,18 @@ app.get("/health", async (req, res) => {
   });
 });
 
+app.get("/essa-health", (req, res) => {
+  res.json({
+    build_id: ESSA_BUILD_ID,
+    build_name: ESSA_BUILD_NAME,
+    active_modules: ESSA_ACTIVE_MODULES,
+    core_docs_count: CORE_DOCS.length,
+    summary_health: getSummaryHealth(),
+    core_doc_health: getCoreDocHealth(),
+    status: "ok"
+  });
+});
+
 app.get("/", (req, res) => {
   res.send("Lisa Navigator inside ESSA is alive");
 });
@@ -3426,6 +3527,9 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Lisa Navigator inside ESSA running on port ${PORT}`);
+  logBuildIdentity();
+  logSummaryHealth();
+  logCoreDocHealth();
 });
 
 
