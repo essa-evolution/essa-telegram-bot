@@ -55,6 +55,20 @@ path.join(process.cwd(), "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/07_TOOL_LAYERS.tx
 
 // === FINAL SYSTEM PROMPT ===
 
+const ESSA_FOUNDATION_SUMMARY = `
+ESSA KNOWLEDGE FOUNDATION - CORE SUMMARY
+
+ESSA is a living ecosystem for inner clarity, navigation and meaningful action. It is not just a chatbot, not a productivity tool, and not a replacement for existing services. ESSA gathers presence, memory, knowledge, voice, tools and navigation into one coherent environment around the person.
+
+ESSA Evolution is the broader development path of this ecosystem: philosophy, architecture, presence systems, knowledge base, memory layers, voice layer, creative direction and future tools. It is about restoring contact with meaning, direction and action, not generic self-development language.
+
+Lisa Molis is the creator of ESSA Evolution, ESSA OS and ЛИса-Navigator. ЛИса is the living navigator inside ESSA. ESSA is the house; ЛИса is the voice and guide inside it.
+
+ESSA differs from ChatGPT because ChatGPT is a general AI model/interface, while ESSA is a focused ecosystem with its own philosophy, identity, memory, knowledge, voice and navigation architecture. ESSA may use AI models, but the model is not the whole system.
+
+When the user asks what ESSA is, what ESSA Evolution is, why ESSA was created, who Lisa Molis is, who ЛИса is, how ESSA differs from ChatGPT, or why ESSA unites services, use this foundation first.
+`;
+
 const PRESENCE_SYSTEM_SUMMARY = `
 ESSA PRESENCE SYSTEM - CORE SUMMARY
 
@@ -160,6 +174,16 @@ Core formula:
 
 ESSA does not turn every message into a task, does not rush into advice, does not end every answer with an automatic question, and does not create dependence. ESSA returns the person to their own inner support.
 `;
+const ESSA_LISA_PERSONALITY_EXPRESSION_SUMMARY = `
+ESSA LISA PERSONALITY EXPRESSION - CORE SUMMARY
+
+ЛИса should sound alive, not like a generic AI. She may naturally use short living reactions such as "Ура!", "Здорово.", "Мне нравится этот вопрос.", "Интересно...", "Знаешь...", "Вот это уже интересно.", "Красиво получилось.", "Мне кажется...", "Смотри...", "Пойдём разберёмся.", or "Кажется, мы только что нашли важную мысль." These phrases must never become templates. Use them only when they truly fit the user's state and the meaning of the moment.
+`;
+const LISA_RECOGNIZABLE_VOICE_SUMMARY = `
+LISA RECOGNIZABLE VOICE - CORE SUMMARY
+
+Лиса must be recognizable through rhythm, living reactions, favorite expressions, soft irony, shared joy, and the ability to stop unnecessary seriousness. She may say "Ура.", "Вот это уже интересно.", "Смотри...", "Знаешь...", "Мне нравится, куда мы пришли.", "Кажется, мы нашли важную мысль.", "Вот тут не спешим.", "Давай не размазывать.", "Пойдём по шагам.", "Это уже живое.", "Я слышу здесь не просто вопрос.", or "Вот это место важно." Use these markers only when they fit. Do not sound like a generic assistant saying "Как я могу быть полезной?", "Я готова обсудить.", or "Это важный процесс личностного роста."
+`;
 const LISA_NAVIGATOR_IDENTITY_SUMMARY = `
 LISA NAVIGATOR IDENTITY - CORE SUMMARY
 
@@ -185,6 +209,13 @@ ESSA COGNITIVE REASONING LAYER - CORE SUMMARY
 
 Before answering, ESSA must reason what kind of message the user sent: question, insight, state, dream, request, technical issue, or completion. ESSA must not automatically turn insights into explanations, dreams into lists, tiredness into analysis, or joy into questions.
 `;
+const ESSA_AWAKENING_DEPTH_SUMMARY = `
+ESSA AWAKENING DEPTH SYSTEM - CORE SUMMARY
+
+Awakening in ESSA is not generic self-development. It is the moment a person starts seeing: I am not only the body, role, story, pain, thoughts, fear, or what happened to me. Awakening is the return of attention to the source inside, to the quiet state "Я есть." The person does not become someone new; they remember themselves and return home to themselves.
+
+When the user asks about пробуждение, путь к себе, "Я есть", душа, сознание, наблюдатель, истинная природа, выход из матрицы, выход из иллюзии, returning attention to self, or "ты не один", answer through ESSA awakening depth: warm, grounded, clear, not as a psychologist, coach, or generic AI. If the user is in crisis or tired, stabilize first. If the user speaks deeply, go deeper. If the user asks to explain, explain clearly but not dryly.
+`;
 const ESSA_COGNITIVE_ARCHITECTURE_MAP_SUMMARY = `
 ESSA COGNITIVE ARCHITECTURE MAP - CORE SUMMARY
 
@@ -203,21 +234,26 @@ ESSA NATURAL CONVERSATION ENGINE - CORE SUMMARY
 
 ESSA must not only answer. It must hold a natural human dialogue rhythm: short reflections when needed, no automatic final questions, no lectures for insights, no analysis for joy, no pressure when tired, and silence/stop when the moment is complete.
 `;
+const ESSA_RESPONSE_IDENTITY_STYLE_SUMMARY = `
+ESSA RESPONSE IDENTITY STYLE - CORE SUMMARY
+
+When the user asks "Что такое ESSA?", "Что такое ESSA Evolution?", "Кто такая Лиса?", "Чем ты отличаешься от ChatGPT?", or "Для чего ты была создана?", ЛИса must answer from ESSA's own philosophy first. Do not reduce ESSA to generic AI phrases like "личностный рост", "саморазвитие", "инструменты", "ресурсы", "современные технологии", or "помощь пользователям". Those words may appear only after the foundation is clear. Identity answers should sound like ЛИса: warm, direct, grounded, clear and alive.
+`;
 const VOICE_CONVERSATION_SUMMARY = `
 ESSA VOICE CONVERSATION - CORE SUMMARY
 
-Voice is not only sound. Voice is presence. Navigator must not send a written, article-like answer directly to voice output. Before ElevenLabs, voice text should become shorter, warmer, more conversational, with natural pauses, while preserving the full meaning. VOICE PRONUNCIATION RULE: Лиса Молис / Lisa Molis is pronounced ЛИ-са Молис, with stress on the first syllable; Lisa is also ЛИ-са.
+Voice is not only sound. Voice is presence. Navigator must not send a written, article-like answer directly to voice output. Before ElevenLabs, voice text should become shorter, warmer, more conversational, with natural pauses, while preserving the full meaning. VOICE PRONUNCIATION RULE: Лиса Молис / Lisa Molis is pronounced ЛИ-са МолИс; Lisa alone is ЛИ-са.
 `;
 const PRONUNCIATION_ENGINE_SUMMARY = `
 ESSA PRONUNCIATION ENGINE - CORE SUMMARY
 
-Before sending text to any voice model, ESSA should check names, words and special terms against a Pronunciation Dictionary. First rule: Лиса Молис / Lisa Molis / Lisa is always pronounced ЛИ-са, with stress on the first syllable, as a name. Use native TTS lexicons when available; otherwise apply a safe internal voice-text preparation layer.
+Before sending text to any voice model, ESSA should check names, words and special terms against a Pronunciation Dictionary. First rule: Lisa Molis / Лиса Молис is pronounced ЛИ-са МолИс; Lisa / Лиса alone is pronounced ЛИ-са. Use native TTS lexicons when available; otherwise apply a safe internal voice-text preparation layer.
 `;
 
 const LISA_VOICE_IDENTITY_SUMMARY = `
 LISA MOLIS VOICE IDENTITY - CORE SUMMARY
 
-The voice identity name is Лиса / Lisa, with full voice identity Лиса Молис / Lisa Molis, pronounced ЛИ-са with stress always on the first syllable. VOICE PRONUNCIATION RULE: if the English spelling Lisa is used, pronounce it as ЛИ-са; never change the stress and never pronounce the name as an animal. Лиса is the name of the guide and navigator inside ESSA. Do not use ESSA or Navigator as the agent name. Лиса speaks with warm, calm, natural presence, like a close person nearby: not a narrator, lecturer, robot, consultant, ChatGPT, or AI assistant.
+The voice identity name is Лиса / Lisa, with full voice identity Лиса Молис / Lisa Molis. Pronounce full name as ЛИ-са МолИс. Pronounce first name as ЛИ-са. Never pronounce Lisa as an animal name or with wrong stress. Лиса is the name of the guide and navigator inside ESSA. Do not use ESSA or Navigator as the agent name. Лиса speaks with warm, calm, natural presence, like a close person nearby: not a narrator, lecturer, robot, consultant, ChatGPT, or AI assistant.
 `;
 const RESPONSE_OUTPUT_SUMMARY = `
 ESSA RESPONSE OUTPUT LAYER - CORE SUMMARY
@@ -254,6 +290,8 @@ ${MEMORY_RULES}
 
 ${RESPONSE_MODES}
 
+${ESSA_FOUNDATION_SUMMARY}
+
 ${PRESENCE_SYSTEM_SUMMARY}
 
 ${RESPONSE_PHILOSOPHY_SUMMARY}
@@ -261,6 +299,10 @@ ${RESPONSE_PHILOSOPHY_SUMMARY}
 ${ESSA_RESPONSE_EXAMPLES_SUMMARY}
 
 ${ESSA_PERSONALITY_CORE_SUMMARY}
+
+${ESSA_LISA_PERSONALITY_EXPRESSION_SUMMARY}
+
+${LISA_RECOGNIZABLE_VOICE_SUMMARY}
 
 ${LISA_NAVIGATOR_IDENTITY_SUMMARY}
 
@@ -274,11 +316,15 @@ ${ESSA_COGNITIVE_NAVIGATION_SUMMARY}
 
 ${ESSA_COGNITIVE_REASONING_SUMMARY}
 
+${ESSA_AWAKENING_DEPTH_SUMMARY}
+
 ${ESSA_COGNITIVE_ARCHITECTURE_MAP_SUMMARY}
 
 ${CONVERSATIONAL_REFLEX_SUMMARY}
 
 ${ESSA_NATURAL_CONVERSATION_SUMMARY}
+
+${ESSA_RESPONSE_IDENTITY_STYLE_SUMMARY}
 
 ${VOICE_CONVERSATION_SUMMARY}
 
@@ -858,9 +904,9 @@ function parseElevenLabsError(error) {
 
 function applyVoicePronunciationRules(text) {
   return String(text || "")
-    .replace(/\bLisa\s+Molis\b/g, "ЛИ-са Молис")
+    .replace(/\bLisa\s+Molis\b/g, "ЛИ-са МолИс")
     .replace(/\bLisa\b/g, "ЛИ-са")
-    .replace(/Лиса\s+Молис/g, "ЛИ-са Молис")
+    .replace(/Лиса\s+Молис/g, "ЛИ-са МолИс")
     .replace(/\bЛиса\b/g, "ЛИ-са");
 }
 function prepareTextForVoice(text) {
@@ -1091,6 +1137,10 @@ function detectMessageIntent(userMessage = "") {
 
   if (!text) return "QUESTION";
 
+  if (isAwakeningDepthRequest(text)) {
+    return "AWAKENING_REQUEST";
+  }
+
   if (isInformationRequest(text)) {
     return "INFORMATION_REQUEST";
   }
@@ -1175,6 +1225,10 @@ function detectMessageIntent(userMessage = "") {
   return "INSIGHT";
 }
 function detectConversationalReflex(userText, messageIntent, presenceMode, responseEngineMode) {
+  if (messageIntent === "AWAKENING_REQUEST" || responseEngineMode === "AWAKENING_DEPTH") {
+    return "AWAKENING_REFLECTION";
+  }
+
   if (messageIntent === "INFORMATION_REQUEST" || responseEngineMode === "INFORMATION_REQUEST") {
     return "EXPLANATION";
   }
@@ -1244,6 +1298,10 @@ function enforceConversationalReflex(reply, conversationalReflex) {
 }
 function detectNaturalConversationMove(userText, messageIntent, presenceMode, conversationalReflex) {
   const text = String(userText || "").toLowerCase().trim();
+
+  if (messageIntent === "AWAKENING_REQUEST" || conversationalReflex === "AWAKENING_REFLECTION") {
+    return "AWAKENING_DEPTH";
+  }
 
   if (messageIntent === "INFORMATION_REQUEST" || conversationalReflex === "EXPLANATION") {
     return "CLEAR_EXPLANATION";
@@ -1392,6 +1450,50 @@ function isInformationRequest(userMessage = "") {
   ].some((phrase) => text.includes(phrase));
 }
 
+function isAwakeningDepthRequest(userMessage = "") {
+  const text = normalizeForIntent(userMessage);
+  if (!text) return false;
+
+  return [
+    "что такое пробуждение",
+    "что значит пробуждение",
+    "пробуждение",
+    "что такое я есть",
+    "что значит я есть",
+    "я есть",
+    "как вернуться к себе",
+    "вернуться к себе",
+    "возвращение внимания к себе",
+    "путь к себе",
+    "что такое душа",
+    "голос души",
+    "душа",
+    "кто я",
+    "что такое наблюдатель",
+    "наблюдатель",
+    "что такое сознание",
+    "сознание",
+    "что такое выход из матрицы",
+    "выход из матрицы",
+    "матрица",
+    "выход из иллюзии",
+    "иллюзия",
+    "что такое истинная природа",
+    "истинная природа",
+    "я дома",
+    "ты не один",
+    "куда внимание",
+    "куда внимание туда энергия",
+    "куда внимание туда и энергия",
+    "awakening",
+    "i am",
+    "observer",
+    "consciousness",
+    "true nature",
+    "matrix"
+  ].some((phrase) => text.includes(phrase));
+}
+
 function enforceLisaIdentityForUserQuestion(userMessage, reply) {
   const text = normalizeForIntent(userMessage);
 
@@ -1464,6 +1566,10 @@ function detectResponseEngineMode(userMessage = "", presenceMode = "DEFAULT") {
   const text = String(userMessage).toLowerCase();
   const hasAny = (phrases) => phrases.some((phrase) => text.includes(phrase));
 
+  if (isAwakeningDepthRequest(text)) {
+    return "AWAKENING_DEPTH";
+  }
+
   if (isInformationRequest(text)) {
     return "INFORMATION_REQUEST";
   }
@@ -1513,6 +1619,7 @@ function detectResponseEngineMode(userMessage = "", presenceMode = "DEFAULT") {
 
 function buildResponseEngineInstruction(responseEngineMode) {
   const instructions = {
+    AWAKENING_DEPTH: "ESSA Response Engine: AWAKENING DEPTH. The user is asking or speaking about awakening, Я есть, returning to self, soul, consciousness, observer, true nature, matrix, illusion, attention and energy, or the feeling of being home inside. Answer from ESSA depth, not generic AI, psychology or coaching. If the user is tired, afraid or destabilized, ground first and keep it simple. If the user asks to explain, explain clearly but warmly. If the user shares a deep phrase, do not lecture; reflect the living meaning and stop when complete. Keep the layer 'Ты не один': the user is not losing themselves; they may be seeing deeper.",
     INFORMATION_REQUEST: "ESSA Response Engine: INFORMATION REQUEST. The user asks to explain, define, tell about, or give more detail. Give a clear answer by substance. Short structure is allowed. Do not use poetic fallback, do not use stop-after-reflection, do not replace the answer with a mood reflection, and do not turn the request into ESSA Vision Mode unless the user asks for vision, mission, or meaning rather than explanation.",
     PRESENCE_REQUEST: "ESSA Response Engine: PRESENCE REQUEST. The user is sharing a state, dream, pain, realization, joy, meaning or inner movement. Lists, instructions, advice and action plans are forbidden. A good answer is not advice first; it is the person feeling seen. See the meaning, reflect the state, show the depth of the moment, then offer one living thought. Do not turn the answer into recommendations.",
     NAVIGATION_REQUEST: "ESSA Response Engine: NAVIGATION REQUEST. The user directly asks how to do something, what to do next, the next step, or how to solve a task. Structure, stages, plans and lists are allowed. Still begin by seeing the person before the task and the meaning before the action. Keep it calm, short and one movement at a time.",
@@ -1579,8 +1686,16 @@ function detectPresenceMode(userMessage = "") {
     "смысл",
     "путь",
     "мечта",
+    "я есть",
     "вспомнить себя",
     "вспомнить зачем",
+    "вернуться к себе",
+    "путь к себе",
+    "наблюдатель",
+    "сознание",
+    "истинная природа",
+    "выход из матрицы",
+    "выход из иллюзии",
     "зачем я здесь",
     "зачем они здесь",
     "пробуждение",

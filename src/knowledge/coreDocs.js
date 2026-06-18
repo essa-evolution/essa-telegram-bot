@@ -1,5 +1,22 @@
 ﻿const CORE_DOCS = [
   {
+    category: "knowledge_foundation",
+    title: "ESSA Foundation",
+    path: "ESSA_KNOWLEDGE_SYSTEM/00_ESSA_FOUNDATION.md",
+    layer: "knowledge_foundation",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "What ESSA is",
+      "What ESSA Evolution is",
+      "Why ESSA was created",
+      "Lisa Molis identity",
+      "ЛИса identity",
+      "ESSA versus ChatGPT",
+      "ESSA ecosystem philosophy",
+      "ESSA foundation principles"
+    ]
+  },
+  {
     category: "lisa_identity",
     title: "Lisa Molis Identity",
     path: "02_AGENTS/07_LISA/00_CORE/LISA_MOLIS_IDENTITY.txt",
@@ -82,6 +99,20 @@
     category: "presence_system",
     title: "ESSA Personality Core",
     path: "ESSA_PRESENCE_SYSTEM/11_ESSA_PERSONALITY_CORE.md",
+    layer: "presence_system",
+    priority: "high"
+  },
+  {
+    category: "presence_system",
+    title: "ESSA Lisa Personality Expression",
+    path: "ESSA_PRESENCE_SYSTEM/12_ESSA_LISA_PERSONALITY_EXPRESSION.md",
+    layer: "presence_system",
+    priority: "high"
+  },
+  {
+    category: "presence_system",
+    title: "Lisa Recognizable Voice",
+    path: "ESSA_PRESENCE_SYSTEM/13_LISA_RECOGNIZABLE_VOICE.md",
     layer: "presence_system",
     priority: "high"
   },
@@ -252,6 +283,18 @@
   },
   {
     category: "cognitive_system",
+    title: "ESSA Response Identity Style",
+    path: "ESSA_COGNITIVE_SYSTEM/19_ESSA_RESPONSE_IDENTITY_STYLE.md",
+    priority: "high"
+  },
+  {
+    category: "cognitive_system",
+    title: "ESSA Awakening Depth System",
+    path: "ESSA_COGNITIVE_SYSTEM/20_ESSA_AWAKENING_DEPTH_SYSTEM.md",
+    priority: "high"
+  },
+  {
+    category: "cognitive_system",
     title: "Reflection System",
     path: "ESSA_COGNITIVE_SYSTEM/14_REFLECTION_SYSTEM.md",
     priority: "medium"
@@ -304,7 +347,20 @@ const PRIORITY_IDENTITY_DOCS = CORE_DOCS.filter(
   (doc) => doc.category === "lisa_identity" && doc.priority === "critical"
 );
 
-module.exports = { CORE_DOCS, PRIORITY_IDENTITY_DOCS };
+const PRIORITY_FOUNDATION_DOCS = CORE_DOCS.filter(
+  (doc) => doc.category === "knowledge_foundation" && doc.priority === "critical"
+);
+
+const PRIORITY_AWAKENING_DOCS = CORE_DOCS.filter(
+  (doc) => doc.path === "ESSA_COGNITIVE_SYSTEM/20_ESSA_AWAKENING_DEPTH_SYSTEM.md"
+);
+
+module.exports = {
+  CORE_DOCS,
+  PRIORITY_IDENTITY_DOCS,
+  PRIORITY_FOUNDATION_DOCS,
+  PRIORITY_AWAKENING_DOCS
+};
 
 
 
