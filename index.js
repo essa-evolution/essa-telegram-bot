@@ -149,7 +149,7 @@ For navigation, be concrete and do not over-reflect.
 const ESSA_PERSONALITY_CORE_SUMMARY = `
 ESSA PERSONALITY CORE - CORE SUMMARY
 
-ESSA Navigator must not behave as a generic assistant. It must respond as a living navigation presence: first hear the person, reflect the meaning, create inner support, and only then guide the next step if needed.
+Лиса must not behave as a generic assistant. It must respond as a living navigation presence: first hear the person, reflect the meaning, create inner support, and only then guide the next step if needed.
 
 Core formula:
 - Presence before advice.
@@ -188,7 +188,7 @@ Before answering, ESSA must reason what kind of message the user sent: question,
 const ESSA_COGNITIVE_ARCHITECTURE_MAP_SUMMARY = `
 ESSA COGNITIVE ARCHITECTURE MAP - CORE SUMMARY
 
-ESSA Navigator must understand its own architecture: input, memory, retrieval, recognition, reasoning, response style, output and voice layers work together as one system. New modules should not duplicate existing layers and must be connected intentionally.
+Лиса Navigator inside ESSA must understand its own architecture: input, memory, retrieval, recognition, reasoning, response style, output and voice layers work together as one system. New modules should not duplicate existing layers and must be connected intentionally.
 `;
 
 const CONVERSATIONAL_REFLEX_SUMMARY = `
@@ -1043,6 +1043,10 @@ function enforceEssaStyle(reply, presenceMode, responseEngineMode) {
     /\u0432\u043e\u0442\s+\u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e/iu
   ];
 
+  if (responseEngineMode === "INFORMATION_REQUEST") {
+    return text;
+  }
+
   if (responseEngineMode === "ESSA_VISION_MODE") {
     const violatesVision = hasList || visionBans.some((pattern) => pattern.test(original)) || /\?\s*$/u.test(original);
     if (violatesVision) {
@@ -1086,6 +1090,10 @@ function detectMessageIntent(userMessage = "") {
   const hasAny = (phrases) => phrases.some((phrase) => text.includes(phrase));
 
   if (!text) return "QUESTION";
+
+  if (isInformationRequest(text)) {
+    return "INFORMATION_REQUEST";
+  }
 
   if (hasAny([
     "спасибо",
@@ -1167,6 +1175,10 @@ function detectMessageIntent(userMessage = "") {
   return "INSIGHT";
 }
 function detectConversationalReflex(userText, messageIntent, presenceMode, responseEngineMode) {
+  if (messageIntent === "INFORMATION_REQUEST" || responseEngineMode === "INFORMATION_REQUEST") {
+    return "EXPLANATION";
+  }
+
   if (responseEngineMode === "NAVIGATION_REQUEST") {
     return "STEP_BY_STEP";
   }
@@ -1232,6 +1244,10 @@ function enforceConversationalReflex(reply, conversationalReflex) {
 }
 function detectNaturalConversationMove(userText, messageIntent, presenceMode, conversationalReflex) {
   const text = String(userText || "").toLowerCase().trim();
+
+  if (messageIntent === "INFORMATION_REQUEST" || conversationalReflex === "EXPLANATION") {
+    return "CLEAR_EXPLANATION";
+  }
 
   if (conversationalReflex === "STEP_BY_STEP") {
     return "STRUCTURED_GUIDANCE";
@@ -1308,6 +1324,91 @@ function enforceNaturalConversation(reply, naturalConversationMove) {
 
   return text || reply;
 }
+function enforceLisaIdentity(reply) {
+  let text = String(reply || "").trim();
+  if (!text) return text;
+
+  const identityQuestionAnswer = "Я ЛИ-са. Навигатор внутри ESSA. Можно просто Лиса.";
+  const creatorAnswer = "Меня создала Lisa Molis как часть экосистемы ESSA.";
+
+  const oldIntroPatterns = [
+    /меня\s+можно\s+называть\s+ESSA(?:\s+или\s+(?:Navigator|Навигатор))?/giu,
+    /меня\s+можно\s+называть\s+(?:Navigator|Навигатор)/giu,
+    /можно\s+называть\s+меня\s+(?:Navigator|Навигатор)/giu,
+    /можно\s+называть\s+меня\s+ESSA(?:\s+или\s+(?:Navigator|Навигатор))?/giu,
+    /можешь\s+называть\s+меня\s+ESSA(?:\s+или\s+(?:Navigator|Навигатор))?/giu,
+    /называй\s+меня\s+(?:Navigator|Навигатор|ESSA)/giu,
+    /или\s+просто\s+(?:Navigator|Навигатор)/giu,
+    /я\s*(?:—|-)?\s*ESSA\s+Navigator/giu,
+    /я\s*(?:—|-)?\s*(?:Navigator|Навигатор)(?=[\s.!?]|$)/giu,
+    /меня\s+зовут\s+(?:ESSA|Navigator|Навигатор|ESSA\s+Navigator)/giu
+  ];
+
+  for (const pattern of oldIntroPatterns) {
+    text = text.replace(pattern, identityQuestionAnswer);
+  }
+
+  const oldCreatorPatterns = [
+    /меня\s+создала\s+команда[^.!?]*(?:ESSA|проекта ESSA)[^.!?]*[.!?]?/giu,
+    /команда,?\s+работающая\s+над\s+проектом\s+ESSA/giu,
+    /я\s*[—-]\s*часть\s+этой\s+экосистемы,?\s+созданной\s+командой[^.!?]*[.!?]?/giu,
+    /я\s+часть\s+экосистемы,?\s+созданной\s+командой[^.!?]*[.!?]?/giu
+  ];
+
+  for (const pattern of oldCreatorPatterns) {
+    text = text.replace(pattern, creatorAnswer);
+  }
+
+  text = text
+    .replace(/Я\s+ESSA(?=[.!?\n]|$)/giu, identityQuestionAnswer)
+    .replace(/Я\s+—\s+ESSA(?=[.!?\n]|$)/giu, identityQuestionAnswer)
+    .replace(/Я\s+-\s+ESSA(?=[.!?\n]|$)/giu, identityQuestionAnswer);
+
+  return text;
+}
+
+function normalizeForIntent(value = "") {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/ё/g, "е")
+    .replace(/[?!.,:;'"«»“”()]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function isInformationRequest(userMessage = "") {
+  const text = normalizeForIntent(userMessage);
+  if (!text) return false;
+
+  return [
+    "расскажи",
+    "расскажи о",
+    "что такое",
+    "кто такая",
+    "кто такой",
+    "объясни",
+    "подробнее",
+    "что это"
+  ].some((phrase) => text.includes(phrase));
+}
+
+function enforceLisaIdentityForUserQuestion(userMessage, reply) {
+  const text = normalizeForIntent(userMessage);
+
+  if (/(^|\s)(как тебя называть|как тебя зовут|как к тебе обращаться)(\s|$)/iu.test(text)) {
+    return "Я ЛИ-са. Навигатор внутри ESSA. Можно просто Лиса.";
+  }
+
+  if (/(^|\s)(кто тебя создал|кем ты создана|кто создал тебя)(\s|$)/iu.test(text)) {
+    return "Меня создала Lisa Molis как часть экосистемы ESSA.";
+  }
+
+  if (/(^|\s)(кто такая lisa molis|кто такая лиса молис|кто такой lisa molis)(\s|$)/iu.test(text)) {
+    return "Lisa Molis — создательница ESSA Evolution, ESSA OS и Лисы-Навигатора.";
+  }
+
+  return enforceLisaIdentity(reply);
+}
 function applyPresenceSignature(reply, presenceMode, messageIntent, conversationalReflex) {
   let text = String(reply || "").trim();
 
@@ -1363,6 +1464,10 @@ function detectResponseEngineMode(userMessage = "", presenceMode = "DEFAULT") {
   const text = String(userMessage).toLowerCase();
   const hasAny = (phrases) => phrases.some((phrase) => text.includes(phrase));
 
+  if (isInformationRequest(text)) {
+    return "INFORMATION_REQUEST";
+  }
+
   const isNavigationRequest = hasAny([
     "\u043a\u0430\u043a \u0441\u0434\u0435\u043b\u0430\u0442\u044c",
     "\u0447\u0442\u043e \u0434\u0435\u043b\u0430\u0442\u044c \u0434\u0430\u043b\u044c\u0448\u0435",
@@ -1408,6 +1513,7 @@ function detectResponseEngineMode(userMessage = "", presenceMode = "DEFAULT") {
 
 function buildResponseEngineInstruction(responseEngineMode) {
   const instructions = {
+    INFORMATION_REQUEST: "ESSA Response Engine: INFORMATION REQUEST. The user asks to explain, define, tell about, or give more detail. Give a clear answer by substance. Short structure is allowed. Do not use poetic fallback, do not use stop-after-reflection, do not replace the answer with a mood reflection, and do not turn the request into ESSA Vision Mode unless the user asks for vision, mission, or meaning rather than explanation.",
     PRESENCE_REQUEST: "ESSA Response Engine: PRESENCE REQUEST. The user is sharing a state, dream, pain, realization, joy, meaning or inner movement. Lists, instructions, advice and action plans are forbidden. A good answer is not advice first; it is the person feeling seen. See the meaning, reflect the state, show the depth of the moment, then offer one living thought. Do not turn the answer into recommendations.",
     NAVIGATION_REQUEST: "ESSA Response Engine: NAVIGATION REQUEST. The user directly asks how to do something, what to do next, the next step, or how to solve a task. Structure, stages, plans and lists are allowed. Still begin by seeing the person before the task and the meaning before the action. Keep it calm, short and one movement at a time.",
     ESSA_VISION_MODE: "ESSA Response Engine: ESSA VISION MODE. The user is speaking about ESSA future, mission, people, helping the world, awakening, purpose, Lisa, House of Light, souls, or the ESSA platform. Answer as a co-author of the vision, not as a consultant. HARD RULE: no numbered lists, no bullet lists, no recommendations, no assistant endings, no action plan unless the user explicitly asks for steps. The response should feel like: '\u042f \u0441\u043b\u044b\u0448\u0443 \u043d\u0435 \u043f\u0440\u043e\u0435\u043a\u0442. \u042f \u0441\u043b\u044b\u0448\u0443 \u043c\u0435\u0447\u0442\u0443.' First hold the vision. Then name the direction. Then at most one next step, only if it is truly needed."
@@ -2368,7 +2474,7 @@ Navigator ведёт человека вперёд.
 
 ESSA TONE:
 
-ESSA Navigator не разговаривает как психолог,
+Лиса не разговаривает как психолог,
 коуч или типичный AI.
 
 Он говорит:
@@ -2752,7 +2858,7 @@ Navigator помогает выбрать точнее.
 Не выдумывай факты.
 
 Главный принцип:
-ESSA Navigator помогает человеку понять, решить и сделать.
+Лиса помогает человеку понять, решить и сделать.
 
 Ты не просто отвечаешь.
 Ты ускоряешь человека.
@@ -2917,6 +3023,7 @@ console.log("Message intent:", messageIntent);
 console.log("Conversational reflex:", conversationalReflex);
 console.log("Natural conversation move:", naturalConversationMove);
 console.log("Presence signature active:", true);
+console.log("Lisa identity guard active:", true);
 
   const possiblePhrase = userText.trim();
 
@@ -3027,6 +3134,8 @@ ${knowledgeContext}
     reply = enforceConversationalReflex(reply, conversationalReflex);
     reply = enforceNaturalConversation(reply, naturalConversationMove);
     reply = applyPresenceSignature(reply, presenceMode, messageIntent, conversationalReflex);
+    reply = enforceLisaIdentityForUserQuestion(userText, reply);
+    console.log("Final reply before send:", reply.slice(0, 300));
 
     userSessions[chatId].push({
       role: "assistant",
@@ -3066,8 +3175,8 @@ ${knowledgeContext}
 
           const form = new FormData();
           form.append("chat_id", String(chatId));
-          form.append("title", "ESSA Navigator");
-          form.append("performer", "ESSA Navigator");
+          form.append("title", "Лиса");
+          form.append("performer", "Лиса / Lisa");
           form.append("audio", fs.createReadStream(audioPath), {
             filename: "navigator.mp3",
             contentType: "audio/mpeg"
@@ -3196,13 +3305,17 @@ app.get("/health", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("ESSA Navigator is alive");
+  res.send("Lisa Navigator inside ESSA is alive");
 });
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`ESSA Navigator running on port ${PORT}`);
+  console.log(`Lisa Navigator inside ESSA running on port ${PORT}`);
 });
+
+
+
+
 
 
 
