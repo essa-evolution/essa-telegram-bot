@@ -18,12 +18,18 @@ The same word should keep the same pronunciation every time it appears in the vo
 Dictionary entry:
 
 - Written forms: `Лиса Молис`, `Lisa Molis`, `Лиса`, `Lisa`
-- Pronunciation: `ЛИ-са`
-- Stress: first syllable only
+- Pronunciation for full name: `ЛИ-са МолИс`
+- Pronunciation for first name: `ЛИ-са`
+- Stress: `ЛИ-са`; `МолИс`
 - Meaning: this is a name
 - Boundary: never pronounce it as the name of an animal
+- Never pronounce: `Лиса МолИс`, `Лиса Молис` with wrong stress, or `Lisa Molis` as an English name
 
 At any number of repetitions in the text, use the same pronunciation rule.
+
+If a voice engine supports a native pronunciation dictionary, lexicon, phoneme dictionary, custom vocabulary or equivalent feature, ESSA should use the native mechanism first.
+
+If the current voice engine does not support this natively, ESSA must use internal text preparation before TTS.
 
 ## Pronunciation Dictionary Architecture
 The future pronunciation dictionary should support:
@@ -56,10 +62,11 @@ Example:
 {
   "term": "Lisa Molis",
   "variants": ["Lisa Molis", "Лиса Молис", "Lisa", "Лиса"],
-  "pronunciation": "ЛИ-са",
-  "stress": "first_syllable",
+  "pronunciation": "ЛИ-са МолИс",
+  "short_pronunciation": "ЛИ-са",
+  "stress": "ЛИ-са; МолИс",
   "meaning": "guide name inside ESSA",
-  "boundary": "never pronounce as animal name"
+  "boundary": "never pronounce as animal name or with unstressed Molis"
 }
 ```
 
