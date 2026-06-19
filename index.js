@@ -429,6 +429,117 @@ function logBuildIdentity() {
   console.log("====================================");
 }
 
+function getStartupSystems() {
+  return {
+    identity: true,
+    knowledge: Array.isArray(CORE_DOCS) && CORE_DOCS.length > 0,
+    presence: true,
+    personality: true,
+    conversation: true,
+    awakening_depth: true,
+    voice: VOICE_ENABLED && Boolean(ELEVENLABS_API_KEY) && Boolean(ELEVENLABS_VOICE_ID),
+    pronunciation: true,
+    output_modes: true,
+    memory: Boolean(DATABASE_URL)
+  };
+}
+
+function buildStartupWarnings() {
+  const warnings = [];
+
+  if (!Array.isArray(CORE_DOCS) || CORE_DOCS.length === 0) {
+    warnings.push("CORE_DOCS is empty");
+  }
+
+  if (!OPENAI_API_KEY) {
+    warnings.push("OPENAI_API_KEY missing");
+  }
+
+  if (!TELEGRAM_TOKEN) {
+    warnings.push("TELEGRAM_TOKEN missing");
+  }
+
+  if (!DATABASE_URL) {
+    warnings.push("DATABASE_URL missing");
+  }
+
+  if (VOICE_ENABLED && !ELEVENLABS_API_KEY) {
+    warnings.push("ELEVENLABS_API_KEY missing");
+  }
+
+  if (VOICE_ENABLED && !ELEVENLABS_VOICE_ID) {
+    warnings.push("ELEVENLABS_VOICE_ID missing");
+  }
+
+  return warnings;
+}
+
+function getStartupStatus() {
+  const warnings = buildStartupWarnings();
+  const hasCriticalWarning = warnings.some((warning) =>
+    warning === "OPENAI_API_KEY missing" ||
+    warning === "TELEGRAM_TOKEN missing" ||
+    warning === "CORE_DOCS is empty"
+  );
+
+  if (hasCriticalWarning) {
+    return "NOT READY";
+  }
+
+  const hasVoiceWarning = warnings.some((warning) => warning.startsWith("ELEVENLABS_"));
+  const hasMemoryWarning = warnings.includes("DATABASE_URL missing");
+
+  if (hasVoiceWarning && hasMemoryWarning) {
+    return "READY WITH VOICE AND MEMORY WARNING";
+  }
+
+  if (hasVoiceWarning) {
+    return "READY WITH VOICE WARNING";
+  }
+
+  if (hasMemoryWarning) {
+    return "READY WITH MEMORY WARNING";
+  }
+
+  return "READY";
+}
+
+function logStartupReport() {
+  const warnings = buildStartupWarnings();
+  const status = getStartupStatus();
+
+  console.log("");
+  console.log("====================================");
+  console.log("ESSA STARTUP REPORT");
+  console.log("Build ID:", ESSA_BUILD_ID);
+  console.log("Build Name:", ESSA_BUILD_NAME);
+  console.log("Core Docs:", CORE_DOCS.length);
+  console.log("------------------------------------");
+  console.log("Systems:");
+  console.log("✅ Identity: Lisa Navigator inside ESSA");
+  console.log(getStartupSystems().knowledge ? "✅ Knowledge: CORE_DOCS loaded" : "❌ Knowledge: CORE_DOCS empty");
+  console.log("✅ Presence: active");
+  console.log("✅ Personality: active");
+  console.log("✅ Conversation: active");
+  console.log("✅ Awakening Depth: active");
+  console.log(getStartupSystems().voice ? "✅ Voice: ElevenLabs bridge active" : "⚠️ Voice: ElevenLabs bridge warning");
+  console.log("✅ Pronunciation: active");
+  console.log("✅ Output Modes: text / voice / text+voice");
+  console.log(getStartupSystems().memory ? "✅ Memory: profile/session/vocabulary layers available" : "⚠️ Memory: DATABASE_URL warning");
+  console.log("------------------------------------");
+
+  if (warnings.length === 0) {
+    console.log("Warnings: none");
+  } else {
+    console.log("Warnings:");
+    warnings.forEach((warning) => console.log(" -", warning));
+  }
+
+  console.log("Status:", status);
+  console.log("====================================");
+  console.log("");
+}
+
 const app = express();
 app.use(express.json());
 
@@ -3512,11 +3623,13 @@ app.get("/essa-health", (req, res) => {
   res.json({
     build_id: ESSA_BUILD_ID,
     build_name: ESSA_BUILD_NAME,
+    status: getStartupStatus(),
     active_modules: ESSA_ACTIVE_MODULES,
     core_docs_count: CORE_DOCS.length,
+    systems: getStartupSystems(),
+    warnings: buildStartupWarnings(),
     summary_health: getSummaryHealth(),
-    core_doc_health: getCoreDocHealth(),
-    status: "ok"
+    core_doc_health: getCoreDocHealth()
   });
 });
 
@@ -3530,6 +3643,7 @@ app.listen(PORT, () => {
   logBuildIdentity();
   logSummaryHealth();
   logCoreDocHealth();
+  logStartupReport();
 });
 
 
