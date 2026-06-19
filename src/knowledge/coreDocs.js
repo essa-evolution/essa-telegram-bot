@@ -324,6 +324,12 @@
     priority: "high"
   },
   {
+    category: "voice_system",
+    title: "ESSA Voice Provider Interface",
+    path: "ESSA_VOICE_SYSTEM/04_ESSA_VOICE_PROVIDER_INTERFACE.md",
+    priority: "high"
+  },
+  {
     category: "agent_system",
     title: "Personal Agent Layer",
     path: "ESSA_AGENT_SYSTEM/16_PERSONAL_AGENT_LAYER.md",

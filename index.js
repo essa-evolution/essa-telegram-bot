@@ -19,6 +19,7 @@ const ESSA_ACTIVE_MODULES = [
   "Lisa Navigator Identity",
   "Response Output Layer",
   "Pronunciation Engine",
+  "Voice Provider Interface",
   "ESSA Foundation",
   "Lisa Personality Expression",
   "Lisa Recognizable Voice",
@@ -272,6 +273,11 @@ LISA MOLIS VOICE IDENTITY - CORE SUMMARY
 
 The voice identity name is Лиса / Lisa, with full voice identity Лиса Молис / Lisa Molis. Pronounce full name as ЛИ-са МолИс. Pronounce first name as ЛИ-са. Never pronounce Lisa as an animal name or with wrong stress. Лиса is the name of the guide and navigator inside ESSA. Do not use ESSA or Navigator as the agent name. Лиса speaks with warm, calm, natural presence, like a close person nearby: not a narrator, lecturer, robot, consultant, ChatGPT, or AI assistant.
 `;
+const VOICE_PROVIDER_INTERFACE_SUMMARY = `
+ESSA VOICE PROVIDER INTERFACE - CORE SUMMARY
+
+ESSA Voice System must not depend on a single TTS service. ElevenLabs is the current production provider and safe fallback adapter, not the architectural core. All voice providers should receive text after the shared voice preparation and pronunciation layer. Future providers may include XTTS, Piper, Kokoro, LocalVoiceProvider and FallbackTextProvider. Telegram output, memory and response generation should call the stable generateVoice(text) wrapper while the provider interface chooses the active TTS engine internally.
+`;
 const RESPONSE_OUTPUT_SUMMARY = `
 ESSA RESPONSE OUTPUT LAYER - CORE SUMMARY
 
@@ -349,6 +355,8 @@ ${PRONUNCIATION_ENGINE_SUMMARY}
 
 ${LISA_VOICE_IDENTITY_SUMMARY}
 
+${VOICE_PROVIDER_INTERFACE_SUMMARY}
+
 ${RESPONSE_OUTPUT_SUMMARY}
 
 ${ESSA_VOCABULARY_MEMORY_SUMMARY}
@@ -382,6 +390,10 @@ const ESSA_CORE_DOC_HEALTH_CHECKS = [
   {
     label: "Pronunciation Engine",
     path: "ESSA_VOICE_SYSTEM/03_ESSA_PRONUNCIATION_ENGINE.md"
+  },
+  {
+    label: "Voice Provider Interface",
+    path: "ESSA_VOICE_SYSTEM/04_ESSA_VOICE_PROVIDER_INTERFACE.md"
   }
 ];
 
@@ -390,6 +402,7 @@ function getSummaryHealth() {
     LISA_NAVIGATOR_IDENTITY_SUMMARY: typeof LISA_NAVIGATOR_IDENTITY_SUMMARY !== "undefined",
     RESPONSE_OUTPUT_SUMMARY: typeof RESPONSE_OUTPUT_SUMMARY !== "undefined",
     PRONUNCIATION_ENGINE_SUMMARY: typeof PRONUNCIATION_ENGINE_SUMMARY !== "undefined",
+    VOICE_PROVIDER_INTERFACE_SUMMARY: typeof VOICE_PROVIDER_INTERFACE_SUMMARY !== "undefined",
     ESSA_FOUNDATION_SUMMARY: typeof ESSA_FOUNDATION_SUMMARY !== "undefined",
     ESSA_LISA_PERSONALITY_EXPRESSION_SUMMARY: typeof ESSA_LISA_PERSONALITY_EXPRESSION_SUMMARY !== "undefined",
     LISA_RECOGNIZABLE_VOICE_SUMMARY: typeof LISA_RECOGNIZABLE_VOICE_SUMMARY !== "undefined",
@@ -513,6 +526,7 @@ function logStartupReport() {
   console.log("ESSA STARTUP REPORT");
   console.log("Build ID:", ESSA_BUILD_ID);
   console.log("Build Name:", ESSA_BUILD_NAME);
+  console.log("Voice Provider:", getVoiceProvider());
   console.log("Core Docs:", CORE_DOCS.length);
   console.log("------------------------------------");
   console.log("Systems:");
@@ -573,6 +587,10 @@ const pool = memoryDbEnabled
   : null;
 
 let lastVoiceStatus = VOICE_ENABLED ? "READY" : "DISABLED";
+
+function getVoiceProvider() {
+  return (process.env.VOICE_PROVIDER || "elevenlabs").toLowerCase();
+}
 
 function inspectDatabaseUrl(value) {
   if (!value || !String(value).trim()) {
@@ -1155,7 +1173,7 @@ function prepareTextForVoice(text) {
 
   return value || applyVoicePronunciationRules(String(text || "").trim());
 }
-async function generateVoice(text) {
+async function generateVoiceElevenLabs(text) {
   if (!VOICE_ENABLED) {
     lastVoiceStatus = "DISABLED";
     return null;
@@ -1203,6 +1221,55 @@ async function generateVoice(text) {
     });
     return null;
   }
+}
+
+async function generateVoiceXTTS(text) {
+  throw new Error("XTTS provider is not implemented yet");
+}
+
+async function generateVoicePiper(text) {
+  throw new Error("Piper provider is not implemented yet");
+}
+
+async function generateVoiceKokoro(text) {
+  throw new Error("Kokoro provider is not implemented yet");
+}
+
+async function generateVoiceWithProvider(text) {
+  const provider = getVoiceProvider();
+
+  console.log("Voice provider:", provider);
+
+  try {
+    if (provider === "elevenlabs") {
+      return await generateVoiceElevenLabs(text);
+    }
+
+    if (provider === "xtts") {
+      return await generateVoiceXTTS(text);
+    }
+
+    if (provider === "piper") {
+      return await generateVoicePiper(text);
+    }
+
+    if (provider === "kokoro") {
+      return await generateVoiceKokoro(text);
+    }
+  } catch (error) {
+    console.warn("Voice provider failed, falling back to ElevenLabs:", {
+      provider,
+      reason: error.message || String(error)
+    });
+    return await generateVoiceElevenLabs(text);
+  }
+
+  console.warn("Unknown voice provider, falling back to ElevenLabs:", provider);
+  return await generateVoiceElevenLabs(text);
+}
+
+async function generateVoice(text) {
+  return await generateVoiceWithProvider(text);
 }
 
 function detectMode(userText) {
@@ -3593,11 +3660,13 @@ async function checkMemoryHealth() {
 }
 
 function getVoiceHealth() {
-  if (!VOICE_ENABLED) return { status: "DISABLED" };
+  const provider = getVoiceProvider();
+
+  if (!VOICE_ENABLED) return { status: "DISABLED", provider };
   if (!ELEVENLABS_API_KEY || !ELEVENLABS_VOICE_ID) {
-    return { status: "DISABLED_MISSING_ENV" };
+    return { status: "DISABLED_MISSING_ENV", provider };
   }
-  return { status: lastVoiceStatus };
+  return { status: lastVoiceStatus, provider };
 }
 
 app.get("/health", async (req, res) => {
@@ -3624,6 +3693,7 @@ app.get("/essa-health", (req, res) => {
     build_id: ESSA_BUILD_ID,
     build_name: ESSA_BUILD_NAME,
     status: getStartupStatus(),
+    voice_provider: getVoiceProvider(),
     active_modules: ESSA_ACTIVE_MODULES,
     core_docs_count: CORE_DOCS.length,
     systems: getStartupSystems(),
