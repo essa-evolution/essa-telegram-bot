@@ -3903,7 +3903,8 @@ body.workspace-mode .workspace-right-panel,
   }
 }
 
-.autonomous-workflow-panel {
+.autonomous-workflow-panel,
+.production-workflow-panel {
   display: grid;
   gap: 16px;
   width: 100%;
@@ -3911,11 +3912,13 @@ body.workspace-mode .workspace-right-panel,
   color: #162033;
 }
 
-.autonomous-workflow-panel[hidden] {
+.autonomous-workflow-panel[hidden],
+.production-workflow-panel[hidden] {
   display: none;
 }
 
 .autonomous-workflow-hero,
+.production-workflow-hero,
 .workflow-panel-card {
   display: grid;
   gap: 12px;
@@ -3925,23 +3928,27 @@ body.workspace-mode .workspace-right-panel,
   box-shadow: 0 10px 30px rgba(18, 32, 52, 0.06);
 }
 
-.autonomous-workflow-hero {
+.autonomous-workflow-hero,
+.production-workflow-hero {
   padding: 22px;
   background: #f6fbf8;
 }
 
 .autonomous-workflow-hero h2,
+.production-workflow-hero h2,
 .workflow-panel-card h3 {
   margin: 0;
   letter-spacing: 0;
 }
 
-.autonomous-workflow-hero h2 {
+.autonomous-workflow-hero h2,
+.production-workflow-hero h2 {
   font-size: 28px;
   line-height: 1.15;
 }
 
 .autonomous-workflow-hero p,
+.production-workflow-hero p,
 .workflow-panel-card p {
   margin: 0;
   line-height: 1.5;
@@ -4008,6 +4015,32 @@ body.workspace-mode .workspace-right-panel,
   border-radius: 8px;
   padding: 8px 10px;
   font: inherit;
+}
+
+.production-targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.production-target {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 10px;
+  border: 1px solid rgba(20, 35, 58, 0.14);
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #162033;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.production-workflow-form,
+.production-workflow-plan,
+.production-workflow-boundaries {
+  min-width: 0;
 }
 
 .workflow-dag {
@@ -4137,7 +4170,8 @@ body.workspace-mode .workspace-right-panel,
 }
 
 @media (max-width: 640px) {
-  .autonomous-workflow-panel {
+  .autonomous-workflow-panel,
+  .production-workflow-panel {
     padding: 12px;
   }
 
@@ -4147,7 +4181,8 @@ body.workspace-mode .workspace-right-panel,
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .autonomous-workflow-hero h2 {
+  .autonomous-workflow-hero h2,
+  .production-workflow-hero h2 {
     font-size: 24px;
   }
 }

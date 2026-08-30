@@ -100,6 +100,7 @@
           <button class="nav-item" type="button" data-space="Product Discovery" data-hash="#product-discovery">Product Discovery</button>
           <button class="nav-item" type="button" data-space="Execution Workspace" data-hash="#execution/VIDEO_TRIM">Execution Workspace</button>
           <button class="nav-item" type="button" data-space="Workflow Orchestration" data-hash="#workflow/LOCAL_MEDIA_REPURPOSE_PROOF">Workflow Orchestration</button>
+          <button class="nav-item" type="button" data-space="ESSA Production Workflow" data-hash="#production/workflow/PODCAST_TO_SHORTS_FOUNDATION">Production Workflow</button>
           <button class="nav-item" type="button" data-space="ESSA Business" data-hash="#business">ESSA Business</button>
           <button class="nav-item" type="button" data-space="Путь ESSA" data-hash="#path">Путь ESSA</button>
           <button class="nav-item" type="button" data-space="ESSA Property" data-hash="#property">ESSA Property</button>
@@ -300,6 +301,7 @@
         <section class="product-discovery-panel" id="product-discovery-panel" aria-label="ESSA Product Discovery" hidden></section>
         <section class="safe-local-execution-panel" id="safe-local-execution-panel" aria-label="Safe Local Execution Workspace" hidden></section>
         <section class="autonomous-workflow-panel" id="autonomous-workflow-panel" aria-label="Autonomous Workflow Orchestration" hidden></section>
+        <section class="production-workflow-panel" id="production-workflow-panel" aria-label="ESSA Production Workflow" hidden></section>
         <section class="business-panel" id="business-panel" aria-label="ESSA Business" hidden></section>
 
         <section class="property-passport-panel" id="property-panel" aria-label="ESSA Property Passport" hidden></section>
@@ -413,6 +415,7 @@
           "#product-discovery": "Product Discovery",
           "#execution": "Execution Workspace",
           "#workflow": "Workflow Orchestration",
+          "#production/workflow/PODCAST_TO_SHORTS_FOUNDATION": "ESSA Production Workflow",
           "#property": "ESSA Property",
           "#property-ingestion-review": "ESSA Property Ingestion Review",
           "#property-review-queue": "ESSA Property Review Queue",
@@ -439,6 +442,7 @@
           "Product Discovery": "#product-discovery",
           "Execution Workspace": "#execution/VIDEO_TRIM",
           "Workflow Orchestration": "#workflow/LOCAL_MEDIA_REPURPOSE_PROOF",
+          "ESSA Production Workflow": "#production/workflow/PODCAST_TO_SHORTS_FOUNDATION",
           "ESSA Property": "#property",
           "ESSA Property Ingestion Review": "#property-ingestion-review",
           "ESSA Property Review Queue": "#property-review-queue",
@@ -481,6 +485,7 @@
           const productDiscovery = document.querySelector("#product-discovery-panel");
           const executionWorkspace = document.querySelector("#safe-local-execution-panel");
           const autonomousWorkflow = document.querySelector("#autonomous-workflow-panel");
+          const productionWorkflow = document.querySelector("#production-workflow-panel");
           const property = document.querySelector("#property-panel");
           const addProperty = document.querySelector("#add-property-panel");
           const propertyMandate = document.querySelector("#property-mandate-panel");
@@ -504,6 +509,7 @@
           if (productDiscovery) productDiscovery.hidden = label !== "Product Discovery";
           if (executionWorkspace) executionWorkspace.hidden = label !== "Execution Workspace";
           if (autonomousWorkflow) autonomousWorkflow.hidden = label !== "Workflow Orchestration";
+          if (productionWorkflow) productionWorkflow.hidden = label !== "ESSA Production Workflow";
           if (property) property.hidden = label !== "ESSA Property";
           if (addProperty) addProperty.hidden = label !== "Add Property to ESSA";
           if (propertyMandate) propertyMandate.hidden = label !== "ESSA Property Mandate";
@@ -533,6 +539,8 @@
               ? "Execution Workspace"
             : window.location.hash.startsWith("#workflow")
               ? "Workflow Orchestration"
+            : window.location.hash.startsWith("#production/workflow/PODCAST_TO_SHORTS_FOUNDATION")
+              ? "ESSA Production Workflow"
             : window.location.hash.startsWith("#add-property")
               ? "Add Property to ESSA"
             : window.location.hash.startsWith("#property-authority-activation")

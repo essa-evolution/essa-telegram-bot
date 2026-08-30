@@ -40,6 +40,9 @@ import {
   initAutonomousWorkflowWorkspace
 } from "./modules/autonomousWorkflowUi.js";
 import {
+  initProductionWorkflowWorkspace
+} from "./modules/productionWorkflowUi.js";
+import {
   renderPropertyPassportUi
 } from "./modules/propertyPassportUi.js";
 import {
@@ -141,6 +144,7 @@ const projectWorkspacePanel = document.querySelector("#project-workspace-panel")
 const productDiscoveryPanel = document.querySelector("#product-discovery-panel");
 const executionWorkspacePanel = document.querySelector("#safe-local-execution-panel");
 const autonomousWorkflowPanel = document.querySelector("#autonomous-workflow-panel");
+const productionWorkflowPanel = document.querySelector("#production-workflow-panel");
 const businessPanel = document.querySelector("#business-panel");
 const propertyPanel = document.querySelector("#property-panel");
 const propertyIngestionReviewPanel = document.querySelector("#property-ingestion-review-panel");
@@ -173,6 +177,7 @@ const openActiveIdentityButton = document.querySelector("#open-active-identity")
 const changeActiveIdentityButton = document.querySelector("#change-active-identity");
 
 const PRODUCTION_STUDIO = "ESSA Production Studio";
+const PRODUCTION_WORKFLOW_MODULE = "ESSA Production Workflow";
 const PRODUCT_DISCOVERY_MODULE = "Product Discovery";
 const SAFE_LOCAL_EXECUTION_MODULE = "Execution Workspace";
 const AUTONOMOUS_WORKFLOW_MODULE = "Workflow Orchestration";
@@ -201,6 +206,7 @@ const SPACE_BY_HASH = {
   "#product-discovery": PRODUCT_DISCOVERY_MODULE,
   "#execution": SAFE_LOCAL_EXECUTION_MODULE,
   "#workflow": AUTONOMOUS_WORKFLOW_MODULE,
+  "#production/workflow/PODCAST_TO_SHORTS_FOUNDATION": PRODUCTION_WORKFLOW_MODULE,
   "#business": BUSINESS_MODULE,
   "#path": "Путь ESSA",
   "#property": PROPERTY_MODULE,
@@ -3362,6 +3368,9 @@ function setActive(label) {
     if (autonomousWorkflowPanel) {
       autonomousWorkflowPanel.hidden = label !== AUTONOMOUS_WORKFLOW_MODULE;
     }
+    if (productionWorkflowPanel) {
+      productionWorkflowPanel.hidden = label !== PRODUCTION_WORKFLOW_MODULE;
+    }
     if (businessPanel) {
       businessPanel.hidden = label !== BUSINESS_MODULE;
     }
@@ -3414,6 +3423,7 @@ function setActive(label) {
       panel.hidden = label === PRODUCT_DISCOVERY_MODULE ||
         label === SAFE_LOCAL_EXECUTION_MODULE ||
         label === AUTONOMOUS_WORKFLOW_MODULE ||
+        label === PRODUCTION_WORKFLOW_MODULE ||
         label === BUSINESS_MODULE ||
         label === PROPERTY_MODULE ||
         label === ADD_PROPERTY_MODULE ||
@@ -3484,6 +3494,15 @@ function setActive(label) {
         initAutonomousWorkflowWorkspace(autonomousWorkflowPanel);
       } catch (error) {
         console.warn("[setActive] initAutonomousWorkflowWorkspace failed", error);
+        updateWorkspaceDebugIndicator(`setActive failed: ${error.message}`);
+      }
+    }
+
+    if (label === PRODUCTION_WORKFLOW_MODULE) {
+      try {
+        initProductionWorkflowWorkspace(productionWorkflowPanel);
+      } catch (error) {
+        console.warn("[setActive] initProductionWorkflowWorkspace failed", error);
         updateWorkspaceDebugIndicator(`setActive failed: ${error.message}`);
       }
     }
@@ -3732,6 +3751,8 @@ function applyHashRoute() {
       ? SAFE_LOCAL_EXECUTION_MODULE
     : hash.startsWith("#workflow")
       ? AUTONOMOUS_WORKFLOW_MODULE
+    : hash.startsWith("#production/workflow/PODCAST_TO_SHORTS_FOUNDATION")
+      ? PRODUCTION_WORKFLOW_MODULE
     : hash.startsWith("#business")
       ? BUSINESS_MODULE
     : hash.startsWith("#add-property")

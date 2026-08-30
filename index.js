@@ -44,6 +44,11 @@ import {
   rollbackSafeLocalWorkspaceResult,
   safeLocalWorkspaceCapabilities
 } from "./src/capabilities/index.js";
+import {
+  createGoalToContentExecutionWorkflow,
+  createGoalToContentWorkflowFoundationProof,
+  createGoalToContentWorkflowViewModel
+} from "./src/production/index.js";
 const { Pool } = pkg;
 const { searchEssaKnowledge } = searchEssaKnowledgeModule;
 const { buildKnowledgeContext } = promptInjection;
@@ -2672,6 +2677,40 @@ app.post("/api/workflow/local-media-repurpose/proof", (req, res) => {
   });
   return res.json({
     ok: result.proof.status === "PHASE_21Q_AUTONOMOUS_WORKFLOW_ORCHESTRATION_PASS",
+    proof: result.proof,
+    proofPath: result.proofPath
+  });
+});
+
+app.get("/api/production/workflow/podcast-to-shorts-foundation", (req, res) => {
+  const workflow = createGoalToContentExecutionWorkflow({
+    rawGoal: req.query.goal,
+    topic: req.query.topic,
+    hostIdentityId: req.query.hostIdentityId,
+    language: req.query.language,
+    masterFormat: req.query.masterFormat,
+    shortFormTargets: String(req.query.shortFormTargets || "")
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean)
+  });
+
+  return res.json({
+    ok: true,
+    workflow,
+    viewModel: createGoalToContentWorkflowViewModel(workflow),
+    counters: workflow.externalActionCounters
+  });
+});
+
+app.post("/api/production/workflow/podcast-to-shorts-foundation/proof", (req, res) => {
+  const result = createGoalToContentWorkflowFoundationProof({
+    cwd: process.cwd(),
+    ...(req.body || {})
+  });
+
+  return res.json({
+    ok: result.proof.status === "PHASE_21R_GOAL_TO_CONTENT_WORKFLOW_FOUNDATION_PASS",
     proof: result.proof,
     proofPath: result.proofPath
   });

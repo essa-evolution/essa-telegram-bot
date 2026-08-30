@@ -1,0 +1,2597 @@
+{
+  "status": "PHASE_21R_GOAL_TO_CONTENT_WORKFLOW_FOUNDATION_PASS",
+  "phase": "21R",
+  "generatedAt": "2026-08-30T14:53:34.145Z",
+  "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+  "productionGoal": {
+    "modelType": "ProductionGoal",
+    "goalId": "production_goal_7e1f3304b3e3",
+    "rawGoal": "Сделай мне подкаст на тему: почему человек теряет себя в отношениях. Ведущая - LISA. После мастер-подкаста подготовь короткие ролики для short-form.",
+    "topic": "почему человек теряет себя в отношениях",
+    "requestedMasterArtifact": "master_podcast",
+    "requestedDerivatives": [
+      "short_form_clips"
+    ],
+    "humanOwner": "Lisa",
+    "createdAt": "2026-08-30T14:53:34.137Z",
+    "source": "human_goal"
+  },
+  "productionIntent": {
+    "modelType": "ProductionIntent",
+    "intentId": "production_intent_76584d01f53f",
+    "intentType": "PODCAST_WITH_SHORT_FORM_DERIVATIVES",
+    "goalId": "production_goal_7e1f3304b3e3",
+    "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+    "language": "ru",
+    "hostIdentityId": "lisa",
+    "hostDisplayName": "LISA",
+    "masterFormat": "master_podcast",
+    "shortFormTargets": [
+      "TikTok",
+      "Instagram Reels",
+      "YouTube Shorts"
+    ],
+    "outputStyle": "meaning_first_conversational",
+    "executionEnabled": false,
+    "providerExecutionEnabled": false,
+    "publishingEnabled": false,
+    "createdAt": "2026-08-30T14:53:34.140Z"
+  },
+  "workflow": {
+    "modelType": "ExecutionWorkflow",
+    "workflowId": "workflow_goal_to_content_60aff51ca6d5",
+    "workflowVersion": "1.0.0-2db75e0bb300",
+    "goal": "Сделай мне подкаст на тему: почему человек теряет себя в отношениях. Ведущая - LISA. После мастер-подкаста подготовь короткие ролики для short-form.",
+    "productionGoal": {
+      "modelType": "ProductionGoal",
+      "goalId": "production_goal_7e1f3304b3e3",
+      "rawGoal": "Сделай мне подкаст на тему: почему человек теряет себя в отношениях. Ведущая - LISA. После мастер-подкаста подготовь короткие ролики для short-form.",
+      "topic": "почему человек теряет себя в отношениях",
+      "requestedMasterArtifact": "master_podcast",
+      "requestedDerivatives": [
+        "short_form_clips"
+      ],
+      "humanOwner": "Lisa",
+      "createdAt": "2026-08-30T14:53:34.137Z",
+      "source": "human_goal"
+    },
+    "productionIntent": {
+      "modelType": "ProductionIntent",
+      "intentId": "production_intent_76584d01f53f",
+      "intentType": "PODCAST_WITH_SHORT_FORM_DERIVATIVES",
+      "goalId": "production_goal_7e1f3304b3e3",
+      "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+      "language": "ru",
+      "hostIdentityId": "lisa",
+      "hostDisplayName": "LISA",
+      "masterFormat": "master_podcast",
+      "shortFormTargets": [
+        "TikTok",
+        "Instagram Reels",
+        "YouTube Shorts"
+      ],
+      "outputStyle": "meaning_first_conversational",
+      "executionEnabled": false,
+      "providerExecutionEnabled": false,
+      "publishingEnabled": false,
+      "createdAt": "2026-08-30T14:53:34.140Z"
+    },
+    "goalClass": "GOAL_TO_CONTENT_PRODUCTION",
+    "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+    "recipeVersion": "1.0.0",
+    "workflowClass": "LOCAL_PLUS_INTELLIGENCE",
+    "status": "PREFLIGHT_BLOCKED",
+    "sourceAssets": [],
+    "materialInputs": {
+      "topic": "почему человек теряет себя в отношениях",
+      "hostIdentityId": "lisa",
+      "language": "ru",
+      "masterFormat": "master_podcast",
+      "shortFormTargets": [
+        "TikTok",
+        "Instagram Reels",
+        "YouTube Shorts"
+      ],
+      "goal": {
+        "modelType": "ProductionGoal",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "rawGoal": "Сделай мне подкаст на тему: почему человек теряет себя в отношениях. Ведущая - LISA. После мастер-подкаста подготовь короткие ролики для short-form.",
+        "topic": "почему человек теряет себя в отношениях",
+        "requestedMasterArtifact": "master_podcast",
+        "requestedDerivatives": [
+          "short_form_clips"
+        ],
+        "humanOwner": "Lisa",
+        "createdAt": "2026-08-30T14:53:34.137Z",
+        "source": "human_goal"
+      },
+      "intent": {
+        "modelType": "ProductionIntent",
+        "intentId": "production_intent_76584d01f53f",
+        "intentType": "PODCAST_WITH_SHORT_FORM_DERIVATIVES",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+        "language": "ru",
+        "hostIdentityId": "lisa",
+        "hostDisplayName": "LISA",
+        "masterFormat": "master_podcast",
+        "shortFormTargets": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
+        ],
+        "outputStyle": "meaning_first_conversational",
+        "executionEnabled": false,
+        "providerExecutionEnabled": false,
+        "publishingEnabled": false,
+        "createdAt": "2026-08-30T14:53:34.140Z"
+      },
+      "contentBrief": null,
+      "scriptArtifact": null,
+      "voiceRights": "NEEDS_RIGHTS_PROOF",
+      "avatarRights": "NEEDS_RIGHTS_PROOF"
+    },
+    "materialInputResolution": {
+      "modelType": "MaterialInputResolution",
+      "goal": {
+        "modelType": "ProductionGoal",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "rawGoal": "Сделай мне подкаст на тему: почему человек теряет себя в отношениях. Ведущая - LISA. После мастер-подкаста подготовь короткие ролики для short-form.",
+        "topic": "почему человек теряет себя в отношениях",
+        "requestedMasterArtifact": "master_podcast",
+        "requestedDerivatives": [
+          "short_form_clips"
+        ],
+        "humanOwner": "Lisa",
+        "createdAt": "2026-08-30T14:53:34.137Z",
+        "source": "human_goal"
+      },
+      "intent": {
+        "modelType": "ProductionIntent",
+        "intentId": "production_intent_76584d01f53f",
+        "intentType": "PODCAST_WITH_SHORT_FORM_DERIVATIVES",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+        "language": "ru",
+        "hostIdentityId": "lisa",
+        "hostDisplayName": "LISA",
+        "masterFormat": "master_podcast",
+        "shortFormTargets": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
+        ],
+        "outputStyle": "meaning_first_conversational",
+        "executionEnabled": false,
+        "providerExecutionEnabled": false,
+        "publishingEnabled": false,
+        "createdAt": "2026-08-30T14:53:34.140Z"
+      },
+      "known": {
+        "topic": "почему человек теряет себя в отношениях",
+        "hostIdentityId": "lisa",
+        "language": "ru",
+        "masterFormat": "master_podcast",
+        "shortFormTargets": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
+        ]
+      },
+      "missing": [],
+      "materialInputs": {
+        "topic": "почему человек теряет себя в отношениях",
+        "hostIdentityId": "lisa",
+        "language": "ru",
+        "masterFormat": "master_podcast",
+        "shortFormTargets": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
+        ],
+        "goal": {
+          "modelType": "ProductionGoal",
+          "goalId": "production_goal_7e1f3304b3e3",
+          "rawGoal": "Сделай мне подкаст на тему: почему человек теряет себя в отношениях. Ведущая - LISA. После мастер-подкаста подготовь короткие ролики для short-form.",
+          "topic": "почему человек теряет себя в отношениях",
+          "requestedMasterArtifact": "master_podcast",
+          "requestedDerivatives": [
+            "short_form_clips"
+          ],
+          "humanOwner": "Lisa",
+          "createdAt": "2026-08-30T14:53:34.137Z",
+          "source": "human_goal"
+        },
+        "intent": {
+          "modelType": "ProductionIntent",
+          "intentId": "production_intent_76584d01f53f",
+          "intentType": "PODCAST_WITH_SHORT_FORM_DERIVATIVES",
+          "goalId": "production_goal_7e1f3304b3e3",
+          "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+          "language": "ru",
+          "hostIdentityId": "lisa",
+          "hostDisplayName": "LISA",
+          "masterFormat": "master_podcast",
+          "shortFormTargets": [
+            "TikTok",
+            "Instagram Reels",
+            "YouTube Shorts"
+          ],
+          "outputStyle": "meaning_first_conversational",
+          "executionEnabled": false,
+          "providerExecutionEnabled": false,
+          "publishingEnabled": false,
+          "createdAt": "2026-08-30T14:53:34.140Z"
+        },
+        "contentBrief": null,
+        "scriptArtifact": null,
+        "voiceRights": "NEEDS_RIGHTS_PROOF",
+        "avatarRights": "NEEDS_RIGHTS_PROOF"
+      },
+      "classifications": {
+        "topic": "HUMAN_GOAL",
+        "hostIdentityId": "CANONICAL_IDENTITY_REF",
+        "language": "CANONICAL_DEFAULT_OR_USER_INPUT",
+        "masterFormat": "PRODUCTION_FORMAT",
+        "shortFormTargets": "DISTRIBUTION_TARGETS_NOT_PUBLISHING",
+        "voiceRights": "RIGHTS_AND_PROVIDER_BOUNDARY",
+        "avatarRights": "RIGHTS_AND_PROVIDER_BOUNDARY"
+      },
+      "noInventedInputs": true,
+      "providerBoundary": {
+        "voiceProviderConfigured": false,
+        "voiceProviderCallRequiredLater": true,
+        "voiceProviderCallMade": false,
+        "avatarProviderCallRequiredLater": true,
+        "avatarProviderCallMade": false,
+        "providerNamesHiddenInNormalUx": true
+      }
+    },
+    "steps": [
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_1_CONTENT_BRIEF",
+        "label": "Content brief",
+        "capabilityId": "CONTENT_BRIEF",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "PLANNED",
+        "dependsOn": [],
+        "inputBindings": [],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "contentBrief",
+            "outputType": "ContentBrief"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": false,
+        "blockers": [],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_2_SCRIPT_GENERATE",
+        "label": "Script generation",
+        "capabilityId": "SCRIPT_GENERATE",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "PLANNED",
+        "dependsOn": [
+          "STEP_1_CONTENT_BRIEF"
+        ],
+        "inputBindings": [
+          {
+            "inputName": "contentBrief",
+            "source": "STEP_OUTPUT",
+            "stepId": "STEP_1_CONTENT_BRIEF",
+            "outputName": "contentBrief",
+            "expectedType": "ContentBrief"
+          }
+        ],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "scriptArtifact",
+            "outputType": "ScriptArtifact"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": false,
+        "blockers": [],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_3_SCRIPT_QUALITY_REVIEW",
+        "label": "Script quality review",
+        "capabilityId": "SCRIPT_QUALITY_REVIEW",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "PLANNED",
+        "dependsOn": [
+          "STEP_2_SCRIPT_GENERATE"
+        ],
+        "inputBindings": [
+          {
+            "inputName": "scriptArtifact",
+            "source": "STEP_OUTPUT",
+            "stepId": "STEP_2_SCRIPT_GENERATE",
+            "outputName": "scriptArtifact",
+            "expectedType": "ScriptArtifact"
+          }
+        ],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "scriptQualityGate",
+            "outputType": "QualityGate"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": false,
+        "blockers": [],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_4_VOICE_RENDER",
+        "label": "Voice render",
+        "capabilityId": "VOICE_GENERATE",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "BLOCKED",
+        "dependsOn": [
+          "STEP_2_SCRIPT_GENERATE",
+          "STEP_3_SCRIPT_QUALITY_REVIEW"
+        ],
+        "inputBindings": [
+          {
+            "inputName": "scriptArtifact",
+            "source": "STEP_OUTPUT",
+            "stepId": "STEP_2_SCRIPT_GENERATE",
+            "outputName": "scriptArtifact",
+            "expectedType": "ScriptArtifact"
+          },
+          {
+            "inputName": "voiceRights",
+            "source": "WORKFLOW_CONTEXT",
+            "key": "voiceRights",
+            "expectedType": "RightsState"
+          }
+        ],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "voiceArtifact",
+            "outputType": "VoiceArtifact"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": true,
+        "blockers": [
+          "BLOCKED_PROVIDER_EXECUTION_BOUNDARY"
+        ],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_5_AVATAR_RENDER",
+        "label": "Avatar render",
+        "capabilityId": "AVATAR_RENDER",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "BLOCKED",
+        "dependsOn": [
+          "STEP_3_SCRIPT_QUALITY_REVIEW"
+        ],
+        "inputBindings": [
+          {
+            "inputName": "avatarRights",
+            "source": "WORKFLOW_CONTEXT",
+            "key": "avatarRights",
+            "expectedType": "RightsState"
+          }
+        ],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "avatarArtifact",
+            "outputType": "AvatarArtifact"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": true,
+        "blockers": [
+          "BLOCKED_PROVIDER_EXECUTION_BOUNDARY"
+        ],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_6_MASTER_ASSEMBLE",
+        "label": "Master assemble",
+        "capabilityId": "MASTER_ASSEMBLE",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "PLANNED",
+        "dependsOn": [
+          "STEP_4_VOICE_RENDER",
+          "STEP_5_AVATAR_RENDER"
+        ],
+        "inputBindings": [
+          {
+            "inputName": "voiceArtifact",
+            "source": "STEP_OUTPUT",
+            "stepId": "STEP_4_VOICE_RENDER",
+            "outputName": "voiceArtifact",
+            "expectedType": "VoiceArtifact"
+          },
+          {
+            "inputName": "avatarArtifact",
+            "source": "STEP_OUTPUT",
+            "stepId": "STEP_5_AVATAR_RENDER",
+            "outputName": "avatarArtifact",
+            "expectedType": "AvatarArtifact"
+          }
+        ],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "masterContentArtifact",
+            "outputType": "MasterContentArtifact"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": false,
+        "blockers": [],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_7_MASTER_VERIFY",
+        "label": "Master verify",
+        "capabilityId": "MASTER_VERIFY",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "PLANNED",
+        "dependsOn": [
+          "STEP_6_MASTER_ASSEMBLE"
+        ],
+        "inputBindings": [
+          {
+            "inputName": "masterContentArtifact",
+            "source": "STEP_OUTPUT",
+            "stepId": "STEP_6_MASTER_ASSEMBLE",
+            "outputName": "masterContentArtifact",
+            "expectedType": "MasterContentArtifact"
+          }
+        ],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "masterVerification",
+            "outputType": "MasterVerification"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": false,
+        "blockers": [],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_8_SEMANTIC_CLIP_PLAN",
+        "label": "Semantic clip plan",
+        "capabilityId": "SEMANTIC_CLIP_PLAN",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "PLANNED",
+        "dependsOn": [
+          "STEP_7_MASTER_VERIFY"
+        ],
+        "inputBindings": [
+          {
+            "inputName": "masterVerification",
+            "source": "STEP_OUTPUT",
+            "stepId": "STEP_7_MASTER_VERIFY",
+            "outputName": "masterVerification",
+            "expectedType": "MasterVerification"
+          }
+        ],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "semanticClipPlan",
+            "outputType": "SemanticClipPlan"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": false,
+        "blockers": [],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_9_SHORT_FORM_DERIVATIVES",
+        "label": "Short-form derivatives",
+        "capabilityId": "SHORT_FORM_DERIVATIVES",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "PLANNED",
+        "dependsOn": [
+          "STEP_8_SEMANTIC_CLIP_PLAN"
+        ],
+        "inputBindings": [
+          {
+            "inputName": "semanticClipPlan",
+            "source": "STEP_OUTPUT",
+            "stepId": "STEP_8_SEMANTIC_CLIP_PLAN",
+            "outputName": "semanticClipPlan",
+            "expectedType": "SemanticClipPlan"
+          }
+        ],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "shortFormDerivatives",
+            "outputType": "ShortFormDerivativeSet"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": false,
+        "blockers": [],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_10_SHORT_FORM_QUALITY_REVIEW",
+        "label": "Short-form quality review",
+        "capabilityId": "SHORT_FORM_QUALITY_REVIEW",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "PLANNED",
+        "dependsOn": [
+          "STEP_9_SHORT_FORM_DERIVATIVES"
+        ],
+        "inputBindings": [
+          {
+            "inputName": "shortFormDerivatives",
+            "source": "STEP_OUTPUT",
+            "stepId": "STEP_9_SHORT_FORM_DERIVATIVES",
+            "outputName": "shortFormDerivatives",
+            "expectedType": "ShortFormDerivativeSet"
+          }
+        ],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "shortFormQualityGate",
+            "outputType": "QualityGate"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": false,
+        "blockers": [],
+        "warnings": [],
+        "parallelizable": false
+      },
+      {
+        "modelType": "ExecutionWorkflowStep",
+        "stepId": "STEP_11_HUMAN_REVIEW_CHECKPOINT",
+        "label": "Human review checkpoint",
+        "capabilityId": "HUMAN_REVIEW_CHECKPOINT",
+        "executionClass": "LOCAL_PLUS_INTELLIGENCE",
+        "status": "PLANNED",
+        "dependsOn": [
+          "STEP_10_SHORT_FORM_QUALITY_REVIEW"
+        ],
+        "inputBindings": [],
+        "resolvedInputs": {},
+        "outputBindings": [
+          {
+            "outputName": "humanReviewCheckpoint",
+            "outputType": "HumanReviewCheckpoint"
+          }
+        ],
+        "outputs": {},
+        "preflight": null,
+        "eligibility": null,
+        "executionId": null,
+        "result": null,
+        "verification": null,
+        "attempts": 0,
+        "maxAutomaticRetries": 0,
+        "providerBoundary": false,
+        "blockers": [],
+        "warnings": [],
+        "parallelizable": false
+      }
+    ],
+    "dependencies": [
+      {
+        "from": "STEP_1_CONTENT_BRIEF",
+        "to": "STEP_2_SCRIPT_GENERATE"
+      },
+      {
+        "from": "STEP_2_SCRIPT_GENERATE",
+        "to": "STEP_3_SCRIPT_QUALITY_REVIEW"
+      },
+      {
+        "from": "STEP_2_SCRIPT_GENERATE",
+        "to": "STEP_4_VOICE_RENDER"
+      },
+      {
+        "from": "STEP_3_SCRIPT_QUALITY_REVIEW",
+        "to": "STEP_4_VOICE_RENDER"
+      },
+      {
+        "from": "STEP_3_SCRIPT_QUALITY_REVIEW",
+        "to": "STEP_5_AVATAR_RENDER"
+      },
+      {
+        "from": "STEP_4_VOICE_RENDER",
+        "to": "STEP_6_MASTER_ASSEMBLE"
+      },
+      {
+        "from": "STEP_5_AVATAR_RENDER",
+        "to": "STEP_6_MASTER_ASSEMBLE"
+      },
+      {
+        "from": "STEP_6_MASTER_ASSEMBLE",
+        "to": "STEP_7_MASTER_VERIFY"
+      },
+      {
+        "from": "STEP_7_MASTER_VERIFY",
+        "to": "STEP_8_SEMANTIC_CLIP_PLAN"
+      },
+      {
+        "from": "STEP_8_SEMANTIC_CLIP_PLAN",
+        "to": "STEP_9_SHORT_FORM_DERIVATIVES"
+      },
+      {
+        "from": "STEP_9_SHORT_FORM_DERIVATIVES",
+        "to": "STEP_10_SHORT_FORM_QUALITY_REVIEW"
+      },
+      {
+        "from": "STEP_10_SHORT_FORM_QUALITY_REVIEW",
+        "to": "STEP_11_HUMAN_REVIEW_CHECKPOINT"
+      }
+    ],
+    "inputBindings": [
+      {
+        "stepId": "STEP_1_CONTENT_BRIEF",
+        "inputName": "contentBrief",
+        "source": "STEP_OUTPUT",
+        "outputName": "contentBrief",
+        "expectedType": "ContentBrief"
+      },
+      {
+        "stepId": "STEP_2_SCRIPT_GENERATE",
+        "inputName": "scriptArtifact",
+        "source": "STEP_OUTPUT",
+        "outputName": "scriptArtifact",
+        "expectedType": "ScriptArtifact"
+      },
+      {
+        "stepId": "STEP_2_SCRIPT_GENERATE",
+        "inputName": "scriptArtifact",
+        "source": "STEP_OUTPUT",
+        "outputName": "scriptArtifact",
+        "expectedType": "ScriptArtifact"
+      },
+      {
+        "stepId": "STEP_4_VOICE_RENDER",
+        "inputName": "voiceRights",
+        "source": "WORKFLOW_CONTEXT",
+        "key": "voiceRights",
+        "expectedType": "RightsState"
+      },
+      {
+        "stepId": "STEP_5_AVATAR_RENDER",
+        "inputName": "avatarRights",
+        "source": "WORKFLOW_CONTEXT",
+        "key": "avatarRights",
+        "expectedType": "RightsState"
+      },
+      {
+        "stepId": "STEP_4_VOICE_RENDER",
+        "inputName": "voiceArtifact",
+        "source": "STEP_OUTPUT",
+        "outputName": "voiceArtifact",
+        "expectedType": "VoiceArtifact"
+      },
+      {
+        "stepId": "STEP_5_AVATAR_RENDER",
+        "inputName": "avatarArtifact",
+        "source": "STEP_OUTPUT",
+        "outputName": "avatarArtifact",
+        "expectedType": "AvatarArtifact"
+      },
+      {
+        "stepId": "STEP_6_MASTER_ASSEMBLE",
+        "inputName": "masterContentArtifact",
+        "source": "STEP_OUTPUT",
+        "outputName": "masterContentArtifact",
+        "expectedType": "MasterContentArtifact"
+      },
+      {
+        "stepId": "STEP_7_MASTER_VERIFY",
+        "inputName": "masterVerification",
+        "source": "STEP_OUTPUT",
+        "outputName": "masterVerification",
+        "expectedType": "MasterVerification"
+      },
+      {
+        "stepId": "STEP_8_SEMANTIC_CLIP_PLAN",
+        "inputName": "semanticClipPlan",
+        "source": "STEP_OUTPUT",
+        "outputName": "semanticClipPlan",
+        "expectedType": "SemanticClipPlan"
+      },
+      {
+        "stepId": "STEP_9_SHORT_FORM_DERIVATIVES",
+        "inputName": "shortFormDerivatives",
+        "source": "STEP_OUTPUT",
+        "outputName": "shortFormDerivatives",
+        "expectedType": "ShortFormDerivativeSet"
+      }
+    ],
+    "outputBindings": [
+      {
+        "stepId": "STEP_1_CONTENT_BRIEF",
+        "outputName": "contentBrief",
+        "outputType": "ContentBrief"
+      },
+      {
+        "stepId": "STEP_2_SCRIPT_GENERATE",
+        "outputName": "scriptArtifact",
+        "outputType": "ScriptArtifact"
+      },
+      {
+        "stepId": "STEP_3_SCRIPT_QUALITY_REVIEW",
+        "outputName": "scriptQualityGate",
+        "outputType": "QualityGate"
+      },
+      {
+        "stepId": "STEP_4_VOICE_RENDER",
+        "outputName": "voiceArtifact",
+        "outputType": "VoiceArtifact"
+      },
+      {
+        "stepId": "STEP_5_AVATAR_RENDER",
+        "outputName": "avatarArtifact",
+        "outputType": "AvatarArtifact"
+      },
+      {
+        "stepId": "STEP_6_MASTER_ASSEMBLE",
+        "outputName": "masterContentArtifact",
+        "outputType": "MasterContentArtifact"
+      },
+      {
+        "stepId": "STEP_7_MASTER_VERIFY",
+        "outputName": "masterVerification",
+        "outputType": "MasterVerification"
+      },
+      {
+        "stepId": "STEP_8_SEMANTIC_CLIP_PLAN",
+        "outputName": "semanticClipPlan",
+        "outputType": "SemanticClipPlan"
+      },
+      {
+        "stepId": "STEP_9_SHORT_FORM_DERIVATIVES",
+        "outputName": "shortFormDerivatives",
+        "outputType": "ShortFormDerivativeSet"
+      },
+      {
+        "stepId": "STEP_10_SHORT_FORM_QUALITY_REVIEW",
+        "outputName": "shortFormQualityGate",
+        "outputType": "QualityGate"
+      },
+      {
+        "stepId": "STEP_11_HUMAN_REVIEW_CHECKPOINT",
+        "outputName": "humanReviewCheckpoint",
+        "outputType": "HumanReviewCheckpoint"
+      }
+    ],
+    "approvals": [
+      {
+        "approvalId": "approve_content_brief",
+        "checkpoint": "after_content_brief",
+        "required": true,
+        "status": "PENDING"
+      },
+      {
+        "approvalId": "approve_provider_execution",
+        "checkpoint": "before_voice_avatar_render",
+        "required": true,
+        "status": "PENDING"
+      },
+      {
+        "approvalId": "approve_master",
+        "checkpoint": "after_master_verify",
+        "required": true,
+        "status": "PENDING"
+      },
+      {
+        "approvalId": "approve_short_form_package",
+        "checkpoint": "before_publish_or_distribution",
+        "required": true,
+        "status": "PENDING"
+      }
+    ],
+    "readiness": {
+      "modelType": "GoalToContentWorkflowPreflight",
+      "workflowId": "workflow_goal_to_content_60aff51ca6d5",
+      "workflowVersion": "1.0.0-2db75e0bb300",
+      "workflowReady": false,
+      "futureExecutionReady": true,
+      "missingInputs": [],
+      "dependencyIssues": [],
+      "bindingIssues": [],
+      "capabilityIssues": [],
+      "providerBoundaryIssues": [
+        "VOICE_RENDER_PROVIDER_BOUNDARY",
+        "AVATAR_RENDER_PROVIDER_BOUNDARY"
+      ],
+      "masterVerificationIssues": [
+        "MASTER_NOT_VERIFIED"
+      ],
+      "materialApprovals": [
+        {
+          "approvalId": "approve_content_brief",
+          "checkpoint": "after_content_brief",
+          "required": true,
+          "status": "PENDING"
+        },
+        {
+          "approvalId": "approve_provider_execution",
+          "checkpoint": "before_voice_avatar_render",
+          "required": true,
+          "status": "PENDING"
+        },
+        {
+          "approvalId": "approve_master",
+          "checkpoint": "after_master_verify",
+          "required": true,
+          "status": "PENDING"
+        },
+        {
+          "approvalId": "approve_short_form_package",
+          "checkpoint": "before_publish_or_distribution",
+          "required": true,
+          "status": "PENDING"
+        }
+      ],
+      "blockers": [
+        "VOICE_RENDER_PROVIDER_BOUNDARY",
+        "AVATAR_RENDER_PROVIDER_BOUNDARY",
+        "MASTER_NOT_VERIFIED"
+      ],
+      "warnings": [
+        "foundation_prepares_execution_grade_plan_only"
+      ],
+      "externalActionCounters": {
+        "externalProviderCalls": 0,
+        "externalModelCalls": 0,
+        "paidProviderCalls": 0,
+        "externalCalls": 0,
+        "paymentActions": 0,
+        "publishActions": 0,
+        "deployActions": 0,
+        "adActions": 0,
+        "socialDispatches": 0,
+        "externalAccountMutations": 0,
+        "productionDbMutations": 0,
+        "envKeyBillingChanges": 0,
+        "workflowExecutionRequests": 0,
+        "stepExecutionRequests": 0,
+        "voiceProviderCalls": 0,
+        "avatarProviderCalls": 0,
+        "contentIntelligenceProviderCalls": 0
+      }
+    },
+    "executionPolicy": {
+      "policy": "SAFE_SEQUENTIAL",
+      "parallelExecutionEnabled": false,
+      "maxAutomaticRetries": 0,
+      "providerExecutionEnabled": false
+    },
+    "failurePolicy": {
+      "policy": "STOP_ON_REQUIRED_STEP_FAILURE",
+      "stopOnRequiredStepFailure": true
+    },
+    "rollbackPolicy": {
+      "strategy": "SELECTIVE_INVALIDATION_OF_DOWNSTREAM_DERIVATIVES",
+      "sourceAffected": false
+    },
+    "capabilityComposition": {
+      "modelType": "CapabilityCompositionPlan",
+      "primaryCapability": "CONTENT_BRIEF",
+      "requiredCapabilities": [
+        "CONTENT_BRIEF",
+        "SCRIPT_GENERATE",
+        "SCRIPT_QUALITY_REVIEW",
+        "VOICE_GENERATE",
+        "AVATAR_RENDER",
+        "MASTER_ASSEMBLE",
+        "MASTER_VERIFY",
+        "SEMANTIC_CLIP_PLAN",
+        "SHORT_FORM_DERIVATIVES",
+        "SHORT_FORM_QUALITY_REVIEW",
+        "HUMAN_REVIEW_CHECKPOINT"
+      ],
+      "missingCapabilities": [],
+      "localOrDeterministicCapabilities": [
+        "CONTENT_BRIEF",
+        "SCRIPT_QUALITY_REVIEW",
+        "MASTER_VERIFY",
+        "SEMANTIC_CLIP_PLAN",
+        "SHORT_FORM_QUALITY_REVIEW",
+        "HUMAN_REVIEW_CHECKPOINT"
+      ],
+      "providerBoundaryCapabilities": [
+        "VOICE_GENERATE",
+        "AVATAR_RENDER"
+      ],
+      "approvalPoints": [
+        "content_brief",
+        "provider_execution",
+        "master_review",
+        "short_form_review"
+      ]
+    },
+    "generatedArtifacts": {
+      "contentBrief": {
+        "modelType": "ContentBrief",
+        "artifactId": "content_brief_60aff51ca6d5",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "intentId": "production_intent_76584d01f53f",
+        "topic": "почему человек теряет себя в отношениях",
+        "hostIdentityId": "lisa",
+        "language": "ru",
+        "masterFormat": "master_podcast",
+        "shortFormTargets": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
+        ],
+        "angle": "человек теряет себя в отношениях, когда подменяет внутреннюю опору слиянием, страхом потери и ролью удобного человека",
+        "nonGoals": [
+          "publish",
+          "payment",
+          "provider_execution",
+          "invent_missing_facts"
+        ],
+        "verificationRequired": [
+          "topic_present",
+          "host_present",
+          "derivatives_present"
+        ],
+        "providerCalls": 0
+      },
+      "scriptArtifact": {
+        "modelType": "ScriptArtifact",
+        "artifactId": "script_artifact_60aff51ca6d5",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "intentId": "production_intent_76584d01f53f",
+        "sourceBriefId": "content_brief_60aff51ca6d5",
+        "language": "ru",
+        "hostDisplayName": "LISA",
+        "status": "DRAFT_NOT_RENDERED",
+        "sections": [
+          "opening_hook",
+          "loss_of_self_pattern",
+          "emotional_dependency_loop",
+          "return_to_self_practices",
+          "closing_reflection"
+        ],
+        "qualityGate": {
+          "status": "PLANNED",
+          "checks": [
+            "meaning_preserved",
+            "Lisa_voice_direction_present",
+            "no_generic_motivation_mask",
+            "short_form_extractability"
+          ]
+        },
+        "externalModelCalls": 0
+      },
+      "masterArtifact": {
+        "modelType": "MasterContentArtifact",
+        "artifactId": "master_content_e3c0db8cb375",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "intentId": "production_intent_76584d01f53f",
+        "sourceScriptArtifactId": "script_artifact_60aff51ca6d5",
+        "immutable": true,
+        "format": "master_podcast",
+        "verificationState": "PENDING_PROVIDER_OUTPUT",
+        "verified": false,
+        "assembled": false,
+        "providerCalls": 0,
+        "publishingEnabled": false,
+        "lineage": [
+          "content_brief_60aff51ca6d5",
+          "script_artifact_60aff51ca6d5"
+        ]
+      },
+      "semanticClipPlan": {
+        "modelType": "SemanticClipPlan",
+        "planId": "semantic_clip_plan_8ceb56b3de75",
+        "masterContentAssetId": "master_content_e3c0db8cb375",
+        "strategy": "meaning_first_sequence",
+        "clips": [
+          {
+            "clipId": "clip_1",
+            "theme": "страх потерять другого",
+            "platformTargets": [
+              "TikTok",
+              "Instagram Reels",
+              "YouTube Shorts"
+            ],
+            "status": "PLANNED"
+          },
+          {
+            "clipId": "clip_2",
+            "theme": "роль удобного человека",
+            "platformTargets": [
+              "TikTok",
+              "Instagram Reels"
+            ],
+            "status": "PLANNED"
+          },
+          {
+            "clipId": "clip_3",
+            "theme": "возвращение к себе",
+            "platformTargets": [
+              "YouTube Shorts",
+              "Instagram Reels"
+            ],
+            "status": "PLANNED"
+          }
+        ],
+        "masterVerifiedRequired": true,
+        "providerCalls": 0
+      },
+      "shortFormDerivatives": [
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_43293b048ea6",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_1",
+          "platform": "TikTok",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "TikTok clip_1",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "TikTok",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_d5dab87e6e7f",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_1",
+          "platform": "Instagram Reels",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "Instagram Reels clip_1",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "Instagram Reels",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_b764bc41e7af",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_1",
+          "platform": "YouTube Shorts",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "YouTube Shorts clip_1",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "YouTube Shorts",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_ca254855da7c",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_2",
+          "platform": "TikTok",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "TikTok clip_2",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "TikTok",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_7d93bfbf1486",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_2",
+          "platform": "Instagram Reels",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "Instagram Reels clip_2",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "Instagram Reels",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_9fc5314226b4",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_3",
+          "platform": "YouTube Shorts",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "YouTube Shorts clip_3",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "YouTube Shorts",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_9bacd10ce646",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_3",
+          "platform": "Instagram Reels",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "Instagram Reels clip_3",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "Instagram Reels",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        }
+      ]
+    },
+    "finalOutputs": [],
+    "verification": null,
+    "lineage": {
+      "nodes": [
+        "production_goal_7e1f3304b3e3",
+        "production_intent_76584d01f53f",
+        "content_brief_60aff51ca6d5",
+        "script_artifact_60aff51ca6d5",
+        "master_content_e3c0db8cb375",
+        "semantic_clip_plan_8ceb56b3de75"
+      ],
+      "edges": [
+        {
+          "from": "production_goal_7e1f3304b3e3",
+          "to": "production_intent_76584d01f53f",
+          "type": "GOAL_TO_INTENT"
+        },
+        {
+          "from": "production_intent_76584d01f53f",
+          "to": "content_brief_60aff51ca6d5",
+          "type": "INTENT_TO_BRIEF"
+        },
+        {
+          "from": "content_brief_60aff51ca6d5",
+          "to": "script_artifact_60aff51ca6d5",
+          "type": "BRIEF_TO_SCRIPT"
+        },
+        {
+          "from": "script_artifact_60aff51ca6d5",
+          "to": "master_content_e3c0db8cb375",
+          "type": "SCRIPT_TO_MASTER"
+        },
+        {
+          "from": "master_content_e3c0db8cb375",
+          "to": "semantic_clip_plan_8ceb56b3de75",
+          "type": "MASTER_TO_CLIP_PLAN"
+        }
+      ]
+    },
+    "audit": [
+      {
+        "event": "goal_to_content_workflow_compiled",
+        "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+        "reused": [
+          "ExecutionWorkflow",
+          "validateWorkflowDag",
+          "validateWorkflowBindings",
+          "ContentVariant",
+          "LisaCharacterCore",
+          "LisaProductionProfile",
+          "VoiceBinding"
+        ],
+        "at": "2026-08-30T14:53:34.144Z"
+      }
+    ],
+    "externalActionCounters": {
+      "externalProviderCalls": 0,
+      "externalModelCalls": 0,
+      "paidProviderCalls": 0,
+      "externalCalls": 0,
+      "paymentActions": 0,
+      "publishActions": 0,
+      "deployActions": 0,
+      "adActions": 0,
+      "socialDispatches": 0,
+      "externalAccountMutations": 0,
+      "productionDbMutations": 0,
+      "envKeyBillingChanges": 0,
+      "workflowExecutionRequests": 0,
+      "stepExecutionRequests": 0,
+      "voiceProviderCalls": 0,
+      "avatarProviderCalls": 0,
+      "contentIntelligenceProviderCalls": 0
+    },
+    "createdAt": "2026-08-30T14:53:34.144Z",
+    "updatedAt": "2026-08-30T14:53:34.144Z",
+    "executionFrontier": {
+      "modelType": "ExecutionFrontier",
+      "state": "BLOCKED_ON_PROVIDER_BOUNDARY",
+      "currentStepId": "STEP_4_VOICE_RENDER",
+      "nextAllowedAction": "COLLECT_INPUT_OR_APPROVAL",
+      "blockedStepIds": [
+        "STEP_4_VOICE_RENDER",
+        "STEP_5_AVATAR_RENDER"
+      ],
+      "resumeToken": "resume_goal_to_content_fd56a676ccfc",
+      "selectiveInvalidationPolicy": {
+        "onScriptChange": [
+          "STEP_4_VOICE_RENDER",
+          "STEP_5_AVATAR_RENDER",
+          "STEP_6_MASTER_ASSEMBLE",
+          "STEP_7_MASTER_VERIFY",
+          "STEP_8_SEMANTIC_CLIP_PLAN",
+          "STEP_9_SHORT_FORM_DERIVATIVES",
+          "STEP_10_SHORT_FORM_QUALITY_REVIEW",
+          "STEP_11_HUMAN_REVIEW_CHECKPOINT"
+        ],
+        "onMasterChange": [
+          "STEP_8_SEMANTIC_CLIP_PLAN",
+          "STEP_9_SHORT_FORM_DERIVATIVES",
+          "STEP_10_SHORT_FORM_QUALITY_REVIEW",
+          "STEP_11_HUMAN_REVIEW_CHECKPOINT"
+        ]
+      },
+      "staleWorkflowBlocked": false
+    }
+  },
+  "viewModel": {
+    "modelType": "GoalToContentWorkflowViewModel",
+    "route": "#production/workflow/PODCAST_TO_SHORTS_FOUNDATION",
+    "title": "Podcast to Shorts",
+    "ctaLabel": "Подготовить производство",
+    "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+    "goal": "Сделай мне подкаст на тему: почему человек теряет себя в отношениях. Ведущая - LISA. После мастер-подкаста подготовь короткие ролики для short-form.",
+    "topic": "почему человек теряет себя в отношениях",
+    "status": "PREFLIGHT_BLOCKED",
+    "workflowClass": "LOCAL_PLUS_INTELLIGENCE",
+    "workflowVersion": "1.0.0-2db75e0bb300",
+    "formDefaults": {
+      "topic": "почему человек теряет себя в отношениях",
+      "hostIdentityId": "lisa",
+      "language": "ru",
+      "masterFormat": "master_podcast",
+      "shortFormTargets": [
+        "TikTok",
+        "Instagram Reels",
+        "YouTube Shorts"
+      ]
+    },
+    "steps": [
+      {
+        "stepId": "STEP_1_CONTENT_BRIEF",
+        "label": "Content brief",
+        "capabilityId": "CONTENT_BRIEF",
+        "status": "PLANNED",
+        "blockers": [],
+        "dependsOn": [],
+        "providerBoundary": false
+      },
+      {
+        "stepId": "STEP_2_SCRIPT_GENERATE",
+        "label": "Script generation",
+        "capabilityId": "SCRIPT_GENERATE",
+        "status": "PLANNED",
+        "blockers": [],
+        "dependsOn": [
+          "STEP_1_CONTENT_BRIEF"
+        ],
+        "providerBoundary": false
+      },
+      {
+        "stepId": "STEP_3_SCRIPT_QUALITY_REVIEW",
+        "label": "Script quality review",
+        "capabilityId": "SCRIPT_QUALITY_REVIEW",
+        "status": "PLANNED",
+        "blockers": [],
+        "dependsOn": [
+          "STEP_2_SCRIPT_GENERATE"
+        ],
+        "providerBoundary": false
+      },
+      {
+        "stepId": "STEP_4_VOICE_RENDER",
+        "label": "Voice render",
+        "capabilityId": "VOICE_GENERATE",
+        "status": "BLOCKED",
+        "blockers": [
+          "BLOCKED_PROVIDER_EXECUTION_BOUNDARY"
+        ],
+        "dependsOn": [
+          "STEP_2_SCRIPT_GENERATE",
+          "STEP_3_SCRIPT_QUALITY_REVIEW"
+        ],
+        "providerBoundary": true
+      },
+      {
+        "stepId": "STEP_5_AVATAR_RENDER",
+        "label": "Avatar render",
+        "capabilityId": "AVATAR_RENDER",
+        "status": "BLOCKED",
+        "blockers": [
+          "BLOCKED_PROVIDER_EXECUTION_BOUNDARY"
+        ],
+        "dependsOn": [
+          "STEP_3_SCRIPT_QUALITY_REVIEW"
+        ],
+        "providerBoundary": true
+      },
+      {
+        "stepId": "STEP_6_MASTER_ASSEMBLE",
+        "label": "Master assemble",
+        "capabilityId": "MASTER_ASSEMBLE",
+        "status": "PLANNED",
+        "blockers": [],
+        "dependsOn": [
+          "STEP_4_VOICE_RENDER",
+          "STEP_5_AVATAR_RENDER"
+        ],
+        "providerBoundary": false
+      },
+      {
+        "stepId": "STEP_7_MASTER_VERIFY",
+        "label": "Master verify",
+        "capabilityId": "MASTER_VERIFY",
+        "status": "PLANNED",
+        "blockers": [],
+        "dependsOn": [
+          "STEP_6_MASTER_ASSEMBLE"
+        ],
+        "providerBoundary": false
+      },
+      {
+        "stepId": "STEP_8_SEMANTIC_CLIP_PLAN",
+        "label": "Semantic clip plan",
+        "capabilityId": "SEMANTIC_CLIP_PLAN",
+        "status": "PLANNED",
+        "blockers": [],
+        "dependsOn": [
+          "STEP_7_MASTER_VERIFY"
+        ],
+        "providerBoundary": false
+      },
+      {
+        "stepId": "STEP_9_SHORT_FORM_DERIVATIVES",
+        "label": "Short-form derivatives",
+        "capabilityId": "SHORT_FORM_DERIVATIVES",
+        "status": "PLANNED",
+        "blockers": [],
+        "dependsOn": [
+          "STEP_8_SEMANTIC_CLIP_PLAN"
+        ],
+        "providerBoundary": false
+      },
+      {
+        "stepId": "STEP_10_SHORT_FORM_QUALITY_REVIEW",
+        "label": "Short-form quality review",
+        "capabilityId": "SHORT_FORM_QUALITY_REVIEW",
+        "status": "PLANNED",
+        "blockers": [],
+        "dependsOn": [
+          "STEP_9_SHORT_FORM_DERIVATIVES"
+        ],
+        "providerBoundary": false
+      },
+      {
+        "stepId": "STEP_11_HUMAN_REVIEW_CHECKPOINT",
+        "label": "Human review checkpoint",
+        "capabilityId": "HUMAN_REVIEW_CHECKPOINT",
+        "status": "PLANNED",
+        "blockers": [],
+        "dependsOn": [
+          "STEP_10_SHORT_FORM_QUALITY_REVIEW"
+        ],
+        "providerBoundary": false
+      }
+    ],
+    "materialInputs": {
+      "modelType": "MaterialInputResolution",
+      "goal": {
+        "modelType": "ProductionGoal",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "rawGoal": "Сделай мне подкаст на тему: почему человек теряет себя в отношениях. Ведущая - LISA. После мастер-подкаста подготовь короткие ролики для short-form.",
+        "topic": "почему человек теряет себя в отношениях",
+        "requestedMasterArtifact": "master_podcast",
+        "requestedDerivatives": [
+          "short_form_clips"
+        ],
+        "humanOwner": "Lisa",
+        "createdAt": "2026-08-30T14:53:34.137Z",
+        "source": "human_goal"
+      },
+      "intent": {
+        "modelType": "ProductionIntent",
+        "intentId": "production_intent_76584d01f53f",
+        "intentType": "PODCAST_WITH_SHORT_FORM_DERIVATIVES",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+        "language": "ru",
+        "hostIdentityId": "lisa",
+        "hostDisplayName": "LISA",
+        "masterFormat": "master_podcast",
+        "shortFormTargets": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
+        ],
+        "outputStyle": "meaning_first_conversational",
+        "executionEnabled": false,
+        "providerExecutionEnabled": false,
+        "publishingEnabled": false,
+        "createdAt": "2026-08-30T14:53:34.140Z"
+      },
+      "known": {
+        "topic": "почему человек теряет себя в отношениях",
+        "hostIdentityId": "lisa",
+        "language": "ru",
+        "masterFormat": "master_podcast",
+        "shortFormTargets": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
+        ]
+      },
+      "missing": [],
+      "materialInputs": {
+        "topic": "почему человек теряет себя в отношениях",
+        "hostIdentityId": "lisa",
+        "language": "ru",
+        "masterFormat": "master_podcast",
+        "shortFormTargets": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
+        ],
+        "goal": {
+          "modelType": "ProductionGoal",
+          "goalId": "production_goal_7e1f3304b3e3",
+          "rawGoal": "Сделай мне подкаст на тему: почему человек теряет себя в отношениях. Ведущая - LISA. После мастер-подкаста подготовь короткие ролики для short-form.",
+          "topic": "почему человек теряет себя в отношениях",
+          "requestedMasterArtifact": "master_podcast",
+          "requestedDerivatives": [
+            "short_form_clips"
+          ],
+          "humanOwner": "Lisa",
+          "createdAt": "2026-08-30T14:53:34.137Z",
+          "source": "human_goal"
+        },
+        "intent": {
+          "modelType": "ProductionIntent",
+          "intentId": "production_intent_76584d01f53f",
+          "intentType": "PODCAST_WITH_SHORT_FORM_DERIVATIVES",
+          "goalId": "production_goal_7e1f3304b3e3",
+          "recipeId": "PODCAST_TO_SHORTS_FOUNDATION",
+          "language": "ru",
+          "hostIdentityId": "lisa",
+          "hostDisplayName": "LISA",
+          "masterFormat": "master_podcast",
+          "shortFormTargets": [
+            "TikTok",
+            "Instagram Reels",
+            "YouTube Shorts"
+          ],
+          "outputStyle": "meaning_first_conversational",
+          "executionEnabled": false,
+          "providerExecutionEnabled": false,
+          "publishingEnabled": false,
+          "createdAt": "2026-08-30T14:53:34.140Z"
+        },
+        "contentBrief": null,
+        "scriptArtifact": null,
+        "voiceRights": "NEEDS_RIGHTS_PROOF",
+        "avatarRights": "NEEDS_RIGHTS_PROOF"
+      },
+      "classifications": {
+        "topic": "HUMAN_GOAL",
+        "hostIdentityId": "CANONICAL_IDENTITY_REF",
+        "language": "CANONICAL_DEFAULT_OR_USER_INPUT",
+        "masterFormat": "PRODUCTION_FORMAT",
+        "shortFormTargets": "DISTRIBUTION_TARGETS_NOT_PUBLISHING",
+        "voiceRights": "RIGHTS_AND_PROVIDER_BOUNDARY",
+        "avatarRights": "RIGHTS_AND_PROVIDER_BOUNDARY"
+      },
+      "noInventedInputs": true,
+      "providerBoundary": {
+        "voiceProviderConfigured": false,
+        "voiceProviderCallRequiredLater": true,
+        "voiceProviderCallMade": false,
+        "avatarProviderCallRequiredLater": true,
+        "avatarProviderCallMade": false,
+        "providerNamesHiddenInNormalUx": true
+      }
+    },
+    "readiness": {
+      "modelType": "GoalToContentWorkflowPreflight",
+      "workflowId": "workflow_goal_to_content_60aff51ca6d5",
+      "workflowVersion": "1.0.0-2db75e0bb300",
+      "workflowReady": false,
+      "futureExecutionReady": true,
+      "missingInputs": [],
+      "dependencyIssues": [],
+      "bindingIssues": [],
+      "capabilityIssues": [],
+      "providerBoundaryIssues": [
+        "VOICE_RENDER_PROVIDER_BOUNDARY",
+        "AVATAR_RENDER_PROVIDER_BOUNDARY"
+      ],
+      "masterVerificationIssues": [
+        "MASTER_NOT_VERIFIED"
+      ],
+      "materialApprovals": [
+        {
+          "approvalId": "approve_content_brief",
+          "checkpoint": "after_content_brief",
+          "required": true,
+          "status": "PENDING"
+        },
+        {
+          "approvalId": "approve_provider_execution",
+          "checkpoint": "before_voice_avatar_render",
+          "required": true,
+          "status": "PENDING"
+        },
+        {
+          "approvalId": "approve_master",
+          "checkpoint": "after_master_verify",
+          "required": true,
+          "status": "PENDING"
+        },
+        {
+          "approvalId": "approve_short_form_package",
+          "checkpoint": "before_publish_or_distribution",
+          "required": true,
+          "status": "PENDING"
+        }
+      ],
+      "blockers": [
+        "VOICE_RENDER_PROVIDER_BOUNDARY",
+        "AVATAR_RENDER_PROVIDER_BOUNDARY",
+        "MASTER_NOT_VERIFIED"
+      ],
+      "warnings": [
+        "foundation_prepares_execution_grade_plan_only"
+      ],
+      "externalActionCounters": {
+        "externalProviderCalls": 0,
+        "externalModelCalls": 0,
+        "paidProviderCalls": 0,
+        "externalCalls": 0,
+        "paymentActions": 0,
+        "publishActions": 0,
+        "deployActions": 0,
+        "adActions": 0,
+        "socialDispatches": 0,
+        "externalAccountMutations": 0,
+        "productionDbMutations": 0,
+        "envKeyBillingChanges": 0,
+        "workflowExecutionRequests": 0,
+        "stepExecutionRequests": 0,
+        "voiceProviderCalls": 0,
+        "avatarProviderCalls": 0,
+        "contentIntelligenceProviderCalls": 0
+      }
+    },
+    "executionFrontier": {
+      "modelType": "ExecutionFrontier",
+      "state": "BLOCKED_ON_PROVIDER_BOUNDARY",
+      "currentStepId": "STEP_4_VOICE_RENDER",
+      "nextAllowedAction": "COLLECT_INPUT_OR_APPROVAL",
+      "blockedStepIds": [
+        "STEP_4_VOICE_RENDER",
+        "STEP_5_AVATAR_RENDER"
+      ],
+      "resumeToken": "resume_goal_to_content_fd56a676ccfc",
+      "selectiveInvalidationPolicy": {
+        "onScriptChange": [
+          "STEP_4_VOICE_RENDER",
+          "STEP_5_AVATAR_RENDER",
+          "STEP_6_MASTER_ASSEMBLE",
+          "STEP_7_MASTER_VERIFY",
+          "STEP_8_SEMANTIC_CLIP_PLAN",
+          "STEP_9_SHORT_FORM_DERIVATIVES",
+          "STEP_10_SHORT_FORM_QUALITY_REVIEW",
+          "STEP_11_HUMAN_REVIEW_CHECKPOINT"
+        ],
+        "onMasterChange": [
+          "STEP_8_SEMANTIC_CLIP_PLAN",
+          "STEP_9_SHORT_FORM_DERIVATIVES",
+          "STEP_10_SHORT_FORM_QUALITY_REVIEW",
+          "STEP_11_HUMAN_REVIEW_CHECKPOINT"
+        ]
+      },
+      "staleWorkflowBlocked": false
+    },
+    "artifacts": {
+      "contentBrief": {
+        "modelType": "ContentBrief",
+        "artifactId": "content_brief_60aff51ca6d5",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "intentId": "production_intent_76584d01f53f",
+        "topic": "почему человек теряет себя в отношениях",
+        "hostIdentityId": "lisa",
+        "language": "ru",
+        "masterFormat": "master_podcast",
+        "shortFormTargets": [
+          "TikTok",
+          "Instagram Reels",
+          "YouTube Shorts"
+        ],
+        "angle": "человек теряет себя в отношениях, когда подменяет внутреннюю опору слиянием, страхом потери и ролью удобного человека",
+        "nonGoals": [
+          "publish",
+          "payment",
+          "provider_execution",
+          "invent_missing_facts"
+        ],
+        "verificationRequired": [
+          "topic_present",
+          "host_present",
+          "derivatives_present"
+        ],
+        "providerCalls": 0
+      },
+      "scriptArtifact": {
+        "modelType": "ScriptArtifact",
+        "artifactId": "script_artifact_60aff51ca6d5",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "intentId": "production_intent_76584d01f53f",
+        "sourceBriefId": "content_brief_60aff51ca6d5",
+        "language": "ru",
+        "hostDisplayName": "LISA",
+        "status": "DRAFT_NOT_RENDERED",
+        "sections": [
+          "opening_hook",
+          "loss_of_self_pattern",
+          "emotional_dependency_loop",
+          "return_to_self_practices",
+          "closing_reflection"
+        ],
+        "qualityGate": {
+          "status": "PLANNED",
+          "checks": [
+            "meaning_preserved",
+            "Lisa_voice_direction_present",
+            "no_generic_motivation_mask",
+            "short_form_extractability"
+          ]
+        },
+        "externalModelCalls": 0
+      },
+      "masterArtifact": {
+        "modelType": "MasterContentArtifact",
+        "artifactId": "master_content_e3c0db8cb375",
+        "goalId": "production_goal_7e1f3304b3e3",
+        "intentId": "production_intent_76584d01f53f",
+        "sourceScriptArtifactId": "script_artifact_60aff51ca6d5",
+        "immutable": true,
+        "format": "master_podcast",
+        "verificationState": "PENDING_PROVIDER_OUTPUT",
+        "verified": false,
+        "assembled": false,
+        "providerCalls": 0,
+        "publishingEnabled": false,
+        "lineage": [
+          "content_brief_60aff51ca6d5",
+          "script_artifact_60aff51ca6d5"
+        ]
+      },
+      "semanticClipPlan": {
+        "modelType": "SemanticClipPlan",
+        "planId": "semantic_clip_plan_8ceb56b3de75",
+        "masterContentAssetId": "master_content_e3c0db8cb375",
+        "strategy": "meaning_first_sequence",
+        "clips": [
+          {
+            "clipId": "clip_1",
+            "theme": "страх потерять другого",
+            "platformTargets": [
+              "TikTok",
+              "Instagram Reels",
+              "YouTube Shorts"
+            ],
+            "status": "PLANNED"
+          },
+          {
+            "clipId": "clip_2",
+            "theme": "роль удобного человека",
+            "platformTargets": [
+              "TikTok",
+              "Instagram Reels"
+            ],
+            "status": "PLANNED"
+          },
+          {
+            "clipId": "clip_3",
+            "theme": "возвращение к себе",
+            "platformTargets": [
+              "YouTube Shorts",
+              "Instagram Reels"
+            ],
+            "status": "PLANNED"
+          }
+        ],
+        "masterVerifiedRequired": true,
+        "providerCalls": 0
+      },
+      "shortFormDerivatives": [
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_43293b048ea6",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_1",
+          "platform": "TikTok",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "TikTok clip_1",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "TikTok",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_d5dab87e6e7f",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_1",
+          "platform": "Instagram Reels",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "Instagram Reels clip_1",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "Instagram Reels",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_b764bc41e7af",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_1",
+          "platform": "YouTube Shorts",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "YouTube Shorts clip_1",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "YouTube Shorts",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_ca254855da7c",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_2",
+          "platform": "TikTok",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "TikTok clip_2",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "TikTok",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_7d93bfbf1486",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_2",
+          "platform": "Instagram Reels",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "Instagram Reels clip_2",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "Instagram Reels",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_9fc5314226b4",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_3",
+          "platform": "YouTube Shorts",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "YouTube Shorts clip_3",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "YouTube Shorts",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        },
+        {
+          "modelType": "ShortFormDerivative",
+          "derivativeId": "short_form_derivative_9bacd10ce646",
+          "masterContentAssetId": "master_content_e3c0db8cb375",
+          "semanticClipId": "clip_3",
+          "platform": "Instagram Reels",
+          "status": "PLANNED_FROM_MASTER",
+          "masterLineageRequired": true,
+          "contentVariant": {
+            "modelType": "ContentVariant",
+            "variantId": "content_variant_fixture",
+            "masterContentAssetId": "master_content_e3c0db8cb375",
+            "parentVariantId": null,
+            "experimentId": null,
+            "generationId": null,
+            "contentAssetRef": null,
+            "variantLabel": "Instagram Reels clip_3",
+            "changeSet": {
+              "modelType": "VariantChangeSet",
+              "changeSetId": "variant_change_set_fixture",
+              "changes": [
+                {
+                  "dimension": "FORMAT",
+                  "from": "master_podcast",
+                  "to": "short_form_clip",
+                  "rationale": "Create a controlled short-form derivative from the immutable master.",
+                  "meaningful": true
+                }
+              ],
+              "changedDimensions": [
+                "FORMAT"
+              ],
+              "variableState": "SINGLE_VARIABLE",
+              "causalConfidenceAdjustment": "NORMAL",
+              "explicitChangeRequired": true
+            },
+            "hypothesisRef": null,
+            "audienceRef": null,
+            "platformRef": "Instagram Reels",
+            "offerRef": null,
+            "campaignRef": null,
+            "createdAt": "1970-01-01T00:00:00.000Z",
+            "lineage": {
+              "masterContentAssetId": "master_content_e3c0db8cb375",
+              "parentVariantId": null,
+              "rootContentAssetId": "master_content_e3c0db8cb375",
+              "derivationType": "VARIANT"
+            },
+            "status": "DRAFT",
+            "orphanVariant": false,
+            "publishEnabled": false,
+            "providerCalls": 0,
+            "externalCalls": 0
+          },
+          "providerCalls": 0,
+          "publishEnabled": false
+        }
+      ]
+    },
+    "contentIntelligenceHandoff": {
+      "enabled": true,
+      "masterContentAssetId": "master_content_e3c0db8cb375",
+      "variantCount": 7,
+      "experimentStartState": "PLANNED_NOT_RUN",
+      "providerCalls": 0,
+      "publishEnabled": false
+    },
+    "lisa": {
+      "characterCoreRef": "02_AGENTS/07_LISA/00_CORE/LISA_CHARACTER_CORE.md",
+      "productionProfileId": "lisa_production_profile",
+      "characterCoreDuplicated": false,
+      "productionProfileDuplicated": false,
+      "explanation": "Lisa Character Core and Lisa Production Profile are resolved as canonical references; this workflow does not fork identity."
+    },
+    "providerLabels": {
+      "normalUx": [
+        "voice provider boundary",
+        "avatar provider boundary"
+      ],
+      "debugOnly": [
+        "configured voice binding can be inspected in diagnostics"
+      ]
+    },
+    "counters": {
+      "externalProviderCalls": 0,
+      "externalModelCalls": 0,
+      "paidProviderCalls": 0,
+      "externalCalls": 0,
+      "paymentActions": 0,
+      "publishActions": 0,
+      "deployActions": 0,
+      "adActions": 0,
+      "socialDispatches": 0,
+      "externalAccountMutations": 0,
+      "productionDbMutations": 0,
+      "envKeyBillingChanges": 0,
+      "workflowExecutionRequests": 0,
+      "stepExecutionRequests": 0,
+      "voiceProviderCalls": 0,
+      "avatarProviderCalls": 0,
+      "contentIntelligenceProviderCalls": 0
+    }
+  },
+  "checks": {
+    "productionGoalContract": true,
+    "productionIntentContract": true,
+    "existingExecutionWorkflowReused": true,
+    "recipeStepCount": true,
+    "dagValid": true,
+    "bindingsValid": true,
+    "materialInputsClassified": true,
+    "noInventedInputs": true,
+    "providerBoundaryBlocked": true,
+    "voiceCallMade": false,
+    "avatarCallMade": false,
+    "externalProviderCalls": 0,
+    "paymentActions": 0,
+    "publishActions": 0,
+    "contentVariantIntegrated": true,
+    "humanReviewCheckpointPresent": true,
+    "route": "#production/workflow/PODCAST_TO_SHORTS_FOUNDATION"
+  },
+  "counters": {
+    "externalProviderCalls": 0,
+    "externalModelCalls": 0,
+    "paidProviderCalls": 0,
+    "externalCalls": 0,
+    "paymentActions": 0,
+    "publishActions": 0,
+    "deployActions": 0,
+    "adActions": 0,
+    "socialDispatches": 0,
+    "externalAccountMutations": 0,
+    "productionDbMutations": 0,
+    "envKeyBillingChanges": 0,
+    "workflowExecutionRequests": 0,
+    "stepExecutionRequests": 0,
+    "voiceProviderCalls": 0,
+    "avatarProviderCalls": 0,
+    "contentIntelligenceProviderCalls": 0
+  }
+}

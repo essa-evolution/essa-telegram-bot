@@ -1,0 +1,222 @@
+{
+  "artifactType": "GoalToContentWorkflowBrowserProof",
+  "phase": "21R",
+  "route": "http://127.0.0.1:3221/workspace/#production/workflow/PODCAST_TO_SHORTS_FOUNDATION",
+  "viewports": [
+    {
+      "id": "desktop_1440x900",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "id": "desktop_1280x720",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "tablet_768x1024",
+      "width": 768,
+      "height": 1024
+    },
+    {
+      "id": "mobile_390x844",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "status": "PHASE_21R_BROWSER_WORKFLOW_PASS",
+  "results": [
+    {
+      "viewportId": "desktop_1440x900",
+      "viewport": {
+        "id": "desktop_1440x900",
+        "width": 1440,
+        "height": 900
+      },
+      "screenshots": [
+        "artifacts\\production\\phase21r\\screenshots\\desktop_1440x900_production_workflow.png",
+        "artifacts\\production\\phase21r\\screenshots\\desktop_1440x900_production_workflow_refreshed.png"
+      ],
+      "checks": {
+        "routeOpened": true,
+        "panelVisible": true,
+        "routeRecorded": true,
+        "ctaVisible": true,
+        "formFieldsVisible": true,
+        "shortTargetsVisible": true,
+        "dagVisible": true,
+        "providerBoundaryVisible": true,
+        "frontierVisible": true,
+        "contentIntelligenceVisible": true,
+        "lisaVisible": true,
+        "noPublishPaymentProviderExecution": true,
+        "normalUxNoProviderBrand": true,
+        "noHorizontalOverflow": true,
+        "noZeroSizeCriticalElements": true,
+        "firstViewportSignal": true,
+        "metrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "clientHeight": 900,
+          "badRects": []
+        }
+      },
+      "refreshedChecks": {
+        "topicPreserved": true,
+        "ctaStillSingle": true,
+        "stepCountStillEleven": true,
+        "frontierStillBlocked": true
+      },
+      "status": "PASS"
+    },
+    {
+      "viewportId": "desktop_1280x720",
+      "viewport": {
+        "id": "desktop_1280x720",
+        "width": 1280,
+        "height": 720
+      },
+      "screenshots": [
+        "artifacts\\production\\phase21r\\screenshots\\desktop_1280x720_production_workflow.png",
+        "artifacts\\production\\phase21r\\screenshots\\desktop_1280x720_production_workflow_refreshed.png"
+      ],
+      "checks": {
+        "routeOpened": true,
+        "panelVisible": true,
+        "routeRecorded": true,
+        "ctaVisible": true,
+        "formFieldsVisible": true,
+        "shortTargetsVisible": true,
+        "dagVisible": true,
+        "providerBoundaryVisible": true,
+        "frontierVisible": true,
+        "contentIntelligenceVisible": true,
+        "lisaVisible": true,
+        "noPublishPaymentProviderExecution": true,
+        "normalUxNoProviderBrand": true,
+        "noHorizontalOverflow": true,
+        "noZeroSizeCriticalElements": true,
+        "firstViewportSignal": true,
+        "metrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "clientHeight": 720,
+          "badRects": []
+        }
+      },
+      "refreshedChecks": {
+        "topicPreserved": true,
+        "ctaStillSingle": true,
+        "stepCountStillEleven": true,
+        "frontierStillBlocked": true
+      },
+      "status": "PASS"
+    },
+    {
+      "viewportId": "tablet_768x1024",
+      "viewport": {
+        "id": "tablet_768x1024",
+        "width": 768,
+        "height": 1024
+      },
+      "screenshots": [
+        "artifacts\\production\\phase21r\\screenshots\\tablet_768x1024_production_workflow.png",
+        "artifacts\\production\\phase21r\\screenshots\\tablet_768x1024_production_workflow_refreshed.png"
+      ],
+      "checks": {
+        "routeOpened": true,
+        "panelVisible": true,
+        "routeRecorded": true,
+        "ctaVisible": true,
+        "formFieldsVisible": true,
+        "shortTargetsVisible": true,
+        "dagVisible": true,
+        "providerBoundaryVisible": true,
+        "frontierVisible": true,
+        "contentIntelligenceVisible": true,
+        "lisaVisible": true,
+        "noPublishPaymentProviderExecution": true,
+        "normalUxNoProviderBrand": true,
+        "noHorizontalOverflow": true,
+        "noZeroSizeCriticalElements": true,
+        "firstViewportSignal": true,
+        "metrics": {
+          "scrollWidth": 768,
+          "clientWidth": 768,
+          "clientHeight": 1024,
+          "badRects": []
+        }
+      },
+      "refreshedChecks": {
+        "topicPreserved": true,
+        "ctaStillSingle": true,
+        "stepCountStillEleven": true,
+        "frontierStillBlocked": true
+      },
+      "status": "PASS"
+    },
+    {
+      "viewportId": "mobile_390x844",
+      "viewport": {
+        "id": "mobile_390x844",
+        "width": 390,
+        "height": 844
+      },
+      "screenshots": [
+        "artifacts\\production\\phase21r\\screenshots\\mobile_390x844_production_workflow.png",
+        "artifacts\\production\\phase21r\\screenshots\\mobile_390x844_production_workflow_refreshed.png"
+      ],
+      "checks": {
+        "routeOpened": true,
+        "panelVisible": true,
+        "routeRecorded": true,
+        "ctaVisible": true,
+        "formFieldsVisible": true,
+        "shortTargetsVisible": true,
+        "dagVisible": true,
+        "providerBoundaryVisible": true,
+        "frontierVisible": true,
+        "contentIntelligenceVisible": true,
+        "lisaVisible": true,
+        "noPublishPaymentProviderExecution": true,
+        "normalUxNoProviderBrand": true,
+        "noHorizontalOverflow": true,
+        "noZeroSizeCriticalElements": true,
+        "firstViewportSignal": true,
+        "metrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "clientHeight": 844,
+          "badRects": []
+        }
+      },
+      "refreshedChecks": {
+        "topicPreserved": true,
+        "ctaStillSingle": true,
+        "stepCountStillEleven": true,
+        "frontierStillBlocked": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "browserErrors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "externalCounters": {
+    "externalProviderCalls": 0,
+    "externalModelCalls": 0,
+    "paidProviderCalls": 0,
+    "externalCalls": 0,
+    "paymentActions": 0,
+    "publishActions": 0,
+    "deployActions": 0,
+    "adActions": 0,
+    "socialDispatches": 0,
+    "externalAccountMutations": 0,
+    "productionDbMutations": 0,
+    "envKeyBillingChanges": 0
+  },
+  "createdAt": "2026-08-30T14:55:51.065Z"
+}
