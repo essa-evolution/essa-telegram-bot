@@ -1,0 +1,96 @@
+{
+  "status": "PHASE_22H_PROPERTY_INGESTION_PROOF_PASS",
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "results": [
+    {
+      "id": "owner-new-property",
+      "label": "Scenario A - Owner submission creates new Property",
+      "status": "PASS",
+      "propertyId": "prop_georgia_batumi_owner_local_residence_owner_tower_0707"
+    },
+    {
+      "id": "developer-unit",
+      "label": "Scenario B - Developer unit creates canonical Property",
+      "status": "PASS",
+      "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501"
+    },
+    {
+      "id": "agency-same-unit",
+      "label": "Scenario C - Agency listing resolves to same Property ID",
+      "status": "PASS",
+      "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501"
+    },
+    {
+      "id": "duplicate-source",
+      "label": "Scenario D - Duplicate source creates no duplicate Property",
+      "status": "PASS",
+      "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501"
+    },
+    {
+      "id": "conflicting-price",
+      "label": "Scenario E - Conflicting price keeps two observations",
+      "status": "PASS",
+      "prices": [
+        125000,
+        125000,
+        125000,
+        130000,
+        123000,
+        120000
+      ]
+    },
+    {
+      "id": "invalid-quarantine",
+      "label": "Scenario F - Invalid source goes to quarantine",
+      "status": "PASS",
+      "quarantineCount": 1
+    },
+    {
+      "id": "reobserved-history",
+      "label": "Scenario G - Re-observed listing preserves history",
+      "status": "PASS",
+      "prices": [
+        125000,
+        125000,
+        125000,
+        130000,
+        123000,
+        120000,
+        null
+      ]
+    },
+    {
+      "id": "source-removed-property-remains",
+      "label": "Scenario H - Source listing disappears and Property remains",
+      "status": "PASS"
+    },
+    {
+      "id": "discovery-passport",
+      "label": "Scenario I - Ingested Property reaches Discovery and Passport",
+      "status": "PASS",
+      "discoveryCount": 2,
+      "passportSourceRefs": 9
+    },
+    {
+      "id": "navigator-lisa-lineage",
+      "label": "Scenario J - Navigator/Lisa receive bounded source-lineage context",
+      "status": "PASS",
+      "boundedContext": {
+        "selectedCount": 1,
+        "omittedCount": 2,
+        "usedChars": 479,
+        "maxChars": 1800,
+        "maxItems": 4
+      }
+    }
+  ],
+  "auditCount": 10,
+  "quarantineCount": 1,
+  "canonicalPropertyCount": 3,
+  "listingSnapshotCount": 9
+}

@@ -1,0 +1,291 @@
+{
+  "status": "PHASE_22D_PROPERTY_DETAIL_NAVIGATION_PROOF_PASS",
+  "route": "http://localhost:3120/workspace/#property",
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "results": [
+    {
+      "id": "handoff",
+      "label": "Scenario A - Product Discovery to ESSA Property handoff",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22d\\01_product_discovery_handoff.png",
+        "artifacts\\property\\phase22d\\02_property_overview_with_navigation.png"
+      ],
+      "finalUrl": "http://localhost:3120/workspace/#property",
+      "checks": {
+        "hash": "#property",
+        "propertyVisible": true,
+        "productDiscoveryVisible": false,
+        "currentSection": "overview",
+        "propertyIdVisible": true,
+        "navVisible": true,
+        "activeNavVisible": true,
+        "sourceDrillDownVisible": true,
+        "factTraceVisible": true,
+        "verificationDetailVisible": true,
+        "riskDetailVisible": true,
+        "lisaContextVisible": true,
+        "guideVisible": true,
+        "guideCompleted": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "sections",
+      "label": "Scenario B - Overview to Verification to Sources to Risks",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22d\\03_verification_detail.png",
+        "artifacts\\property\\phase22d\\04_source_drill_down.png",
+        "artifacts\\property\\phase22d\\05_risk_detail.png"
+      ],
+      "finalUrl": "http://localhost:3120/workspace/#property?section=risks",
+      "checks": {
+        "hash": "#property?section=risks",
+        "propertyVisible": true,
+        "productDiscoveryVisible": false,
+        "currentSection": "risks",
+        "propertyIdVisible": true,
+        "navVisible": true,
+        "activeNavVisible": true,
+        "sourceDrillDownVisible": true,
+        "factTraceVisible": true,
+        "verificationDetailVisible": true,
+        "riskDetailVisible": true,
+        "lisaContextVisible": true,
+        "guideVisible": true,
+        "guideCompleted": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "stale-trace",
+      "label": "Scenario C - Stale fixture risk detail and source traceability",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22d\\06_stale_risk_source_trace.png"
+      ],
+      "finalUrl": "http://localhost:3120/workspace/#property?fixture=stale&section=risks",
+      "checks": {
+        "hash": "#property?fixture=stale&section=risks",
+        "propertyVisible": true,
+        "productDiscoveryVisible": false,
+        "currentSection": "risks",
+        "propertyIdVisible": true,
+        "navVisible": true,
+        "activeNavVisible": true,
+        "sourceDrillDownVisible": true,
+        "factTraceVisible": true,
+        "verificationDetailVisible": true,
+        "riskDetailVisible": true,
+        "lisaContextVisible": true,
+        "guideVisible": true,
+        "guideCompleted": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "incomplete-lisa",
+      "label": "Scenario D - Incomplete fixture missing/unverified and Lisa",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22d\\07_incomplete_lisa_context.png"
+      ],
+      "finalUrl": "http://localhost:3120/workspace/#property?fixture=incomplete&section=lisa",
+      "checks": {
+        "hash": "#property?fixture=incomplete&section=lisa",
+        "propertyVisible": true,
+        "productDiscoveryVisible": false,
+        "currentSection": "lisa",
+        "propertyIdVisible": true,
+        "navVisible": true,
+        "activeNavVisible": true,
+        "sourceDrillDownVisible": true,
+        "factTraceVisible": true,
+        "verificationDetailVisible": true,
+        "riskDetailVisible": true,
+        "lisaContextVisible": true,
+        "guideVisible": true,
+        "guideCompleted": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "guide",
+      "label": "Scenario E - Guide Me read-only walkthrough",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22d\\08_guided_mode_complete.png"
+      ],
+      "finalUrl": "http://localhost:3120/workspace/#property?section=lisa&guide=1&guideStep=6",
+      "checks": {
+        "hash": "#property?section=lisa&guide=1&guideStep=6",
+        "propertyVisible": true,
+        "productDiscoveryVisible": false,
+        "currentSection": "lisa",
+        "propertyIdVisible": true,
+        "navVisible": true,
+        "activeNavVisible": true,
+        "sourceDrillDownVisible": true,
+        "factTraceVisible": true,
+        "verificationDetailVisible": true,
+        "riskDetailVisible": true,
+        "lisaContextVisible": true,
+        "guideVisible": true,
+        "guideCompleted": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "mobile",
+      "label": "Scenario F - Mobile/narrow navigation",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22d\\09_mobile_navigation.png"
+      ],
+      "finalUrl": "http://localhost:3120/workspace/#property?fixture=incomplete&section=lisa",
+      "checks": {
+        "hash": "#property?fixture=incomplete&section=lisa",
+        "propertyVisible": true,
+        "productDiscoveryVisible": false,
+        "currentSection": "lisa",
+        "propertyIdVisible": true,
+        "navVisible": true,
+        "activeNavVisible": true,
+        "sourceDrillDownVisible": true,
+        "factTraceVisible": true,
+        "verificationDetailVisible": true,
+        "riskDetailVisible": true,
+        "lisaContextVisible": true,
+        "guideVisible": true,
+        "guideCompleted": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "scrollHeight": 7849,
+          "clientHeight": 844
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

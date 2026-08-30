@@ -1,0 +1,786 @@
+[
+  {
+    "findingId": "ui_finding_1787015342244_espm48",
+    "type": "VISUAL_REVIEW_REQUIRED",
+    "severity": "MEDIUM",
+    "confidence": 0.86,
+    "target": "http://localhost:3000/workspace/#navigator",
+    "location": "button.nav-item",
+    "summary": "TABLET has measurable clipped visible text: \"Главная\".",
+    "evidence": [
+      {
+        "kind": "clipped_text_element",
+        "tagName": "button",
+        "className": "nav-item",
+        "text": "Главная",
+        "rect": {
+          "x": -72,
+          "y": 84,
+          "width": 80,
+          "height": 49,
+          "right": 8,
+          "bottom": 133
+        },
+        "clientWidth": 80,
+        "scrollWidth": 80,
+        "clientHeight": 49,
+        "scrollHeight": 49,
+        "display": "block",
+        "visibility": "visible",
+        "horizontallyClipped": true,
+        "verticallyClipped": false
+      }
+    ],
+    "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20t\\tablet_768x1024_after.png",
+    "domEvidence": [
+      {
+        "key": "workspaceShell",
+        "selector": ".workspace-shell",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 2202,
+          "right": 768,
+          "bottom": 2202
+        }
+      },
+      {
+        "key": "workspaceNavigation",
+        "selector": ".sidebar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 154,
+          "right": 768,
+          "bottom": 154
+        }
+      },
+      {
+        "key": "navigationList",
+        "selector": ".nav-list",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 84,
+          "width": 768,
+          "height": 53,
+          "right": 768,
+          "bottom": 137
+        }
+      },
+      {
+        "key": "mainPanel",
+        "selector": ".main-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 154,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 1178
+        }
+      },
+      {
+        "key": "workspaceTitle",
+        "selector": "#workspace-title",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 29,
+          "y": 179,
+          "width": 710,
+          "height": 23,
+          "right": 739,
+          "bottom": 202
+        }
+      },
+      {
+        "key": "navigatorChatHistory",
+        "selector": ".chat-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 242,
+          "width": 740,
+          "height": 790,
+          "right": 754,
+          "bottom": 1032
+        }
+      },
+      {
+        "key": "navigatorPrompt",
+        "selector": ".prompt-bar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 14,
+          "y": 1042,
+          "width": 740,
+          "height": 122,
+          "right": 754,
+          "bottom": 1164
+        }
+      },
+      {
+        "key": "productionStudioPanel",
+        "selector": "#production-studio-panel",
+        "exists": true,
+        "visible": false,
+        "zeroSize": true,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      },
+      {
+        "key": "metricsPanel",
+        "selector": ".metrics-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 0,
+          "y": 1178,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 2202
+        }
+      }
+    ],
+    "consoleEvidence": [],
+    "resourceEvidence": [],
+    "userImpact": "A visible navigation or control label may be truncated for users at this viewport.",
+    "verificationMethod": "element scroll/client geometry and viewport bounds",
+    "requiresVisualReview": true,
+    "status": "FINDING_CONFIRMED",
+    "projectId": "phase20t_project",
+    "taskId": "phase20t_task",
+    "traceId": "phase20t_tablet_browser_trace",
+    "viewport": {
+      "id": "tablet",
+      "label": "TABLET",
+      "width": 768,
+      "height": 1024
+    },
+    "createdAt": "2026-08-18T01:09:02.244Z"
+  },
+  {
+    "findingId": "ui_finding_1787015342244_w7fu0m",
+    "type": "VISUAL_REVIEW_REQUIRED",
+    "severity": "MEDIUM",
+    "confidence": 0.86,
+    "target": "http://localhost:3000/workspace/#navigator",
+    "location": "button.nav-item",
+    "summary": "TABLET has measurable clipped visible text: \"ESSA Production Studio\".",
+    "evidence": [
+      {
+        "kind": "clipped_text_element",
+        "tagName": "button",
+        "className": "nav-item",
+        "text": "ESSA Production Studio",
+        "rect": {
+          "x": 619,
+          "y": 84,
+          "width": 189,
+          "height": 49,
+          "right": 808,
+          "bottom": 133
+        },
+        "clientWidth": 189,
+        "scrollWidth": 189,
+        "clientHeight": 49,
+        "scrollHeight": 49,
+        "display": "block",
+        "visibility": "visible",
+        "horizontallyClipped": true,
+        "verticallyClipped": false
+      }
+    ],
+    "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20t\\tablet_768x1024_after.png",
+    "domEvidence": [
+      {
+        "key": "workspaceShell",
+        "selector": ".workspace-shell",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 2202,
+          "right": 768,
+          "bottom": 2202
+        }
+      },
+      {
+        "key": "workspaceNavigation",
+        "selector": ".sidebar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 154,
+          "right": 768,
+          "bottom": 154
+        }
+      },
+      {
+        "key": "navigationList",
+        "selector": ".nav-list",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 84,
+          "width": 768,
+          "height": 53,
+          "right": 768,
+          "bottom": 137
+        }
+      },
+      {
+        "key": "mainPanel",
+        "selector": ".main-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 154,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 1178
+        }
+      },
+      {
+        "key": "workspaceTitle",
+        "selector": "#workspace-title",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 29,
+          "y": 179,
+          "width": 710,
+          "height": 23,
+          "right": 739,
+          "bottom": 202
+        }
+      },
+      {
+        "key": "navigatorChatHistory",
+        "selector": ".chat-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 242,
+          "width": 740,
+          "height": 790,
+          "right": 754,
+          "bottom": 1032
+        }
+      },
+      {
+        "key": "navigatorPrompt",
+        "selector": ".prompt-bar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 14,
+          "y": 1042,
+          "width": 740,
+          "height": 122,
+          "right": 754,
+          "bottom": 1164
+        }
+      },
+      {
+        "key": "productionStudioPanel",
+        "selector": "#production-studio-panel",
+        "exists": true,
+        "visible": false,
+        "zeroSize": true,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      },
+      {
+        "key": "metricsPanel",
+        "selector": ".metrics-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 0,
+          "y": 1178,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 2202
+        }
+      }
+    ],
+    "consoleEvidence": [],
+    "resourceEvidence": [],
+    "userImpact": "A visible navigation or control label may be truncated for users at this viewport.",
+    "verificationMethod": "element scroll/client geometry and viewport bounds",
+    "requiresVisualReview": true,
+    "status": "FINDING_CONFIRMED",
+    "projectId": "phase20t_project",
+    "taskId": "phase20t_task",
+    "traceId": "phase20t_tablet_browser_trace",
+    "viewport": {
+      "id": "tablet",
+      "label": "TABLET",
+      "width": 768,
+      "height": 1024
+    },
+    "createdAt": "2026-08-18T01:09:02.244Z"
+  },
+  {
+    "findingId": "ui_finding_1787015343113_e6au7k",
+    "type": "VISUAL_REVIEW_REQUIRED",
+    "severity": "MEDIUM",
+    "confidence": 0.86,
+    "target": "http://localhost:3000/workspace/#navigator",
+    "location": "button.nav-item",
+    "summary": "MOBILE has measurable clipped visible text: \"Главная\".",
+    "evidence": [
+      {
+        "kind": "clipped_text_element",
+        "tagName": "button",
+        "className": "nav-item",
+        "text": "Главная",
+        "rect": {
+          "x": -72,
+          "y": 84,
+          "width": 80,
+          "height": 49,
+          "right": 8,
+          "bottom": 133
+        },
+        "clientWidth": 80,
+        "scrollWidth": 80,
+        "clientHeight": 49,
+        "scrollHeight": 49,
+        "display": "block",
+        "visibility": "visible",
+        "horizontallyClipped": true,
+        "verticallyClipped": false
+      }
+    ],
+    "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20t\\mobile_390x844_after.png",
+    "domEvidence": [
+      {
+        "key": "workspaceShell",
+        "selector": ".workspace-shell",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 1842,
+          "right": 390,
+          "bottom": 1842
+        }
+      },
+      {
+        "key": "workspaceNavigation",
+        "selector": ".sidebar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 154,
+          "right": 390,
+          "bottom": 154
+        }
+      },
+      {
+        "key": "navigationList",
+        "selector": ".nav-list",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 84,
+          "width": 390,
+          "height": 53,
+          "right": 390,
+          "bottom": 137
+        }
+      },
+      {
+        "key": "mainPanel",
+        "selector": ".main-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 154,
+          "width": 390,
+          "height": 844,
+          "right": 390,
+          "bottom": 998
+        }
+      },
+      {
+        "key": "workspaceTitle",
+        "selector": "#workspace-title",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 29,
+          "y": 179,
+          "width": 332,
+          "height": 23,
+          "right": 361,
+          "bottom": 202
+        }
+      },
+      {
+        "key": "navigatorChatHistory",
+        "selector": ".chat-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 259,
+          "width": 362,
+          "height": 554,
+          "right": 376,
+          "bottom": 813
+        }
+      },
+      {
+        "key": "navigatorPrompt",
+        "selector": ".prompt-bar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 823,
+          "width": 362,
+          "height": 161,
+          "right": 376,
+          "bottom": 984
+        }
+      },
+      {
+        "key": "productionStudioPanel",
+        "selector": "#production-studio-panel",
+        "exists": true,
+        "visible": false,
+        "zeroSize": true,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      },
+      {
+        "key": "metricsPanel",
+        "selector": ".metrics-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 0,
+          "y": 998,
+          "width": 390,
+          "height": 844,
+          "right": 390,
+          "bottom": 1842
+        }
+      }
+    ],
+    "consoleEvidence": [],
+    "resourceEvidence": [],
+    "userImpact": "A visible navigation or control label may be truncated for users at this viewport.",
+    "verificationMethod": "element scroll/client geometry and viewport bounds",
+    "requiresVisualReview": true,
+    "status": "FINDING_CONFIRMED",
+    "projectId": "phase20t_project",
+    "taskId": "phase20t_task",
+    "traceId": "phase20t_mobile_browser_trace",
+    "viewport": {
+      "id": "mobile",
+      "label": "MOBILE",
+      "width": 390,
+      "height": 844
+    },
+    "createdAt": "2026-08-18T01:09:03.113Z"
+  },
+  {
+    "findingId": "ui_finding_1787015343114_x7r4ws",
+    "type": "VISUAL_REVIEW_REQUIRED",
+    "severity": "MEDIUM",
+    "confidence": 0.86,
+    "target": "http://localhost:3000/workspace/#navigator",
+    "location": "button.nav-item",
+    "summary": "MOBILE has measurable clipped visible text: \"Путь ESSA\".",
+    "evidence": [
+      {
+        "kind": "clipped_text_element",
+        "tagName": "button",
+        "className": "nav-item",
+        "text": "Путь ESSA",
+        "rect": {
+          "x": 385,
+          "y": 84,
+          "width": 96,
+          "height": 49,
+          "right": 481,
+          "bottom": 133
+        },
+        "clientWidth": 96,
+        "scrollWidth": 96,
+        "clientHeight": 49,
+        "scrollHeight": 49,
+        "display": "block",
+        "visibility": "visible",
+        "horizontallyClipped": true,
+        "verticallyClipped": false
+      }
+    ],
+    "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20t\\mobile_390x844_after.png",
+    "domEvidence": [
+      {
+        "key": "workspaceShell",
+        "selector": ".workspace-shell",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 1842,
+          "right": 390,
+          "bottom": 1842
+        }
+      },
+      {
+        "key": "workspaceNavigation",
+        "selector": ".sidebar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 154,
+          "right": 390,
+          "bottom": 154
+        }
+      },
+      {
+        "key": "navigationList",
+        "selector": ".nav-list",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 84,
+          "width": 390,
+          "height": 53,
+          "right": 390,
+          "bottom": 137
+        }
+      },
+      {
+        "key": "mainPanel",
+        "selector": ".main-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 154,
+          "width": 390,
+          "height": 844,
+          "right": 390,
+          "bottom": 998
+        }
+      },
+      {
+        "key": "workspaceTitle",
+        "selector": "#workspace-title",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 29,
+          "y": 179,
+          "width": 332,
+          "height": 23,
+          "right": 361,
+          "bottom": 202
+        }
+      },
+      {
+        "key": "navigatorChatHistory",
+        "selector": ".chat-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 259,
+          "width": 362,
+          "height": 554,
+          "right": 376,
+          "bottom": 813
+        }
+      },
+      {
+        "key": "navigatorPrompt",
+        "selector": ".prompt-bar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 823,
+          "width": 362,
+          "height": 161,
+          "right": 376,
+          "bottom": 984
+        }
+      },
+      {
+        "key": "productionStudioPanel",
+        "selector": "#production-studio-panel",
+        "exists": true,
+        "visible": false,
+        "zeroSize": true,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      },
+      {
+        "key": "metricsPanel",
+        "selector": ".metrics-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 0,
+          "y": 998,
+          "width": 390,
+          "height": 844,
+          "right": 390,
+          "bottom": 1842
+        }
+      }
+    ],
+    "consoleEvidence": [],
+    "resourceEvidence": [],
+    "userImpact": "A visible navigation or control label may be truncated for users at this viewport.",
+    "verificationMethod": "element scroll/client geometry and viewport bounds",
+    "requiresVisualReview": true,
+    "status": "FINDING_CONFIRMED",
+    "projectId": "phase20t_project",
+    "taskId": "phase20t_task",
+    "traceId": "phase20t_mobile_browser_trace",
+    "viewport": {
+      "id": "mobile",
+      "label": "MOBILE",
+      "width": 390,
+      "height": 844
+    },
+    "createdAt": "2026-08-18T01:09:03.114Z"
+  }
+]

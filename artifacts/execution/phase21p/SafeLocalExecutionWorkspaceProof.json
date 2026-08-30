@@ -1,0 +1,385 @@
+{
+  "artifactType": "SafeLocalExecutionWorkspaceProof",
+  "phase": "21P",
+  "status": "PHASE_21P_SAFE_LOCAL_EXECUTION_WORKSPACE_PASS",
+  "target": "http://127.0.0.1:3210/workspace/#execution/VIDEO_TRIM",
+  "routes": [
+    "#execution/MEDIA_PROBE",
+    "#execution/VIDEO_TRIM",
+    "#execution/VIDEO_RESIZE",
+    "#execution/AUDIO_EXTRACT",
+    "#execution/IMAGE_RESIZE"
+  ],
+  "capabilitiesExecuted": [
+    "MEDIA_PROBE",
+    "VIDEO_TRIM",
+    "VIDEO_RESIZE",
+    "AUDIO_EXTRACT"
+  ],
+  "deferredCapabilities": [
+    "VIDEO_TRANSCODE",
+    "IMAGE_RESIZE",
+    "IMAGE_CONVERT"
+  ],
+  "sourceAssetPolicy": {
+    "usesSyntheticLocalFixture": true,
+    "sourcePathInRoute": false,
+    "sourceOverwriteAllowed": false
+  },
+  "browserErrors": {
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "failedRequests": 0,
+    "runtimeExceptions": 0
+  },
+  "browserErrorDetails": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "runtimeExceptions": []
+  },
+  "externalActionCounters": {
+    "externalProviderCalls": 0,
+    "externalModelCalls": 0,
+    "paidProviderCalls": 0,
+    "externalCalls": 0,
+    "paymentActions": 0,
+    "publishActions": 0,
+    "deployActions": 0,
+    "adActions": 0,
+    "externalAccountMutations": 0,
+    "productionDbMutations": 0,
+    "envKeyBillingChanges": 0
+  },
+  "screenshots": [
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_media_probe_ready.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_media_probe_success.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_video_trim_ready.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_video_trim_success.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_video_resize_ready.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_video_resize_success.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_audio_extract_ready.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_audio_extract_success.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_invalid_range_blocked.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_rollback_completed.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_deferred_image_resize.png",
+    "artifacts\\execution\\phase21p\\screenshots\\desktop_product_discovery_handoff.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_media_probe_ready.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_media_probe_success.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_video_trim_ready.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_video_trim_success.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_video_resize_ready.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_video_resize_success.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_audio_extract_ready.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_audio_extract_success.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_invalid_range_blocked.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_rollback_completed.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_deferred_image_resize.png",
+    "artifacts\\execution\\phase21p\\screenshots\\mobile_product_discovery_handoff.png"
+  ],
+  "results": [
+    {
+      "viewport": {
+        "id": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "status": "PASS",
+      "capabilityResults": [
+        {
+          "capabilityId": "MEDIA_PROBE",
+          "screenshots": [
+            "artifacts\\execution\\phase21p\\screenshots\\desktop_media_probe_ready.png",
+            "artifacts\\execution\\phase21p\\screenshots\\desktop_media_probe_success.png"
+          ],
+          "status": "PASS",
+          "checks": {
+            "workspaceVisible": true,
+            "routeRecorded": true,
+            "successVisible": true,
+            "sourcePreservedVisible": true,
+            "verificationVisible": true,
+            "zeroExternalVisible": true,
+            "artifactOrObservationVisible": true,
+            "noHorizontalOverflow": true,
+            "metrics": {
+              "scrollWidth": 1440,
+              "clientWidth": 1440
+            }
+          }
+        },
+        {
+          "capabilityId": "VIDEO_TRIM",
+          "screenshots": [
+            "artifacts\\execution\\phase21p\\screenshots\\desktop_video_trim_ready.png",
+            "artifacts\\execution\\phase21p\\screenshots\\desktop_video_trim_success.png"
+          ],
+          "status": "PASS",
+          "checks": {
+            "workspaceVisible": true,
+            "routeRecorded": true,
+            "successVisible": true,
+            "sourcePreservedVisible": true,
+            "verificationVisible": true,
+            "zeroExternalVisible": true,
+            "artifactOrObservationVisible": true,
+            "noHorizontalOverflow": true,
+            "metrics": {
+              "scrollWidth": 1440,
+              "clientWidth": 1440
+            }
+          }
+        },
+        {
+          "capabilityId": "VIDEO_RESIZE",
+          "screenshots": [
+            "artifacts\\execution\\phase21p\\screenshots\\desktop_video_resize_ready.png",
+            "artifacts\\execution\\phase21p\\screenshots\\desktop_video_resize_success.png"
+          ],
+          "status": "PASS",
+          "checks": {
+            "workspaceVisible": true,
+            "routeRecorded": true,
+            "successVisible": true,
+            "sourcePreservedVisible": true,
+            "verificationVisible": true,
+            "zeroExternalVisible": true,
+            "artifactOrObservationVisible": true,
+            "noHorizontalOverflow": true,
+            "metrics": {
+              "scrollWidth": 1440,
+              "clientWidth": 1440
+            }
+          }
+        },
+        {
+          "capabilityId": "AUDIO_EXTRACT",
+          "screenshots": [
+            "artifacts\\execution\\phase21p\\screenshots\\desktop_audio_extract_ready.png",
+            "artifacts\\execution\\phase21p\\screenshots\\desktop_audio_extract_success.png"
+          ],
+          "status": "PASS",
+          "checks": {
+            "workspaceVisible": true,
+            "routeRecorded": true,
+            "successVisible": true,
+            "sourcePreservedVisible": true,
+            "verificationVisible": true,
+            "zeroExternalVisible": true,
+            "artifactOrObservationVisible": true,
+            "noHorizontalOverflow": true,
+            "metrics": {
+              "scrollWidth": 1440,
+              "clientWidth": 1440
+            }
+          }
+        }
+      ],
+      "invalidInput": {
+        "screenshots": [
+          "artifacts\\execution\\phase21p\\screenshots\\desktop_invalid_range_blocked.png"
+        ],
+        "status": "PASS",
+        "checks": {
+          "blockedLabelVisible": true,
+          "ctaDisabled": true
+        }
+      },
+      "rollback": {
+        "screenshots": [
+          "artifacts\\execution\\phase21p\\screenshots\\desktop_rollback_completed.png"
+        ],
+        "status": "PASS",
+        "checks": {
+          "rolledBackVisible": true,
+          "sourcePreservedVisible": true,
+          "artifactCardsGone": true
+        }
+      },
+      "deferred": {
+        "screenshots": [
+          "artifacts\\execution\\phase21p\\screenshots\\desktop_deferred_image_resize.png"
+        ],
+        "status": "PASS",
+        "checks": {
+          "blockedVisible": true,
+          "ctaDisabled": true
+        }
+      },
+      "handoff": {
+        "screenshots": [
+          "artifacts\\execution\\phase21p\\screenshots\\desktop_product_discovery_handoff.png"
+        ],
+        "status": "PASS",
+        "checks": {
+          "routeOpened": true,
+          "workspaceVisible": true,
+          "previewDidNotExecute": true
+        }
+      }
+    },
+    {
+      "viewport": {
+        "id": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "capabilityResults": [
+        {
+          "capabilityId": "MEDIA_PROBE",
+          "screenshots": [
+            "artifacts\\execution\\phase21p\\screenshots\\mobile_media_probe_ready.png",
+            "artifacts\\execution\\phase21p\\screenshots\\mobile_media_probe_success.png"
+          ],
+          "status": "PASS",
+          "checks": {
+            "workspaceVisible": true,
+            "routeRecorded": true,
+            "successVisible": true,
+            "sourcePreservedVisible": true,
+            "verificationVisible": true,
+            "zeroExternalVisible": true,
+            "artifactOrObservationVisible": true,
+            "noHorizontalOverflow": true,
+            "metrics": {
+              "scrollWidth": 390,
+              "clientWidth": 390
+            }
+          }
+        },
+        {
+          "capabilityId": "VIDEO_TRIM",
+          "screenshots": [
+            "artifacts\\execution\\phase21p\\screenshots\\mobile_video_trim_ready.png",
+            "artifacts\\execution\\phase21p\\screenshots\\mobile_video_trim_success.png"
+          ],
+          "status": "PASS",
+          "checks": {
+            "workspaceVisible": true,
+            "routeRecorded": true,
+            "successVisible": true,
+            "sourcePreservedVisible": true,
+            "verificationVisible": true,
+            "zeroExternalVisible": true,
+            "artifactOrObservationVisible": true,
+            "noHorizontalOverflow": true,
+            "metrics": {
+              "scrollWidth": 390,
+              "clientWidth": 390
+            }
+          }
+        },
+        {
+          "capabilityId": "VIDEO_RESIZE",
+          "screenshots": [
+            "artifacts\\execution\\phase21p\\screenshots\\mobile_video_resize_ready.png",
+            "artifacts\\execution\\phase21p\\screenshots\\mobile_video_resize_success.png"
+          ],
+          "status": "PASS",
+          "checks": {
+            "workspaceVisible": true,
+            "routeRecorded": true,
+            "successVisible": true,
+            "sourcePreservedVisible": true,
+            "verificationVisible": true,
+            "zeroExternalVisible": true,
+            "artifactOrObservationVisible": true,
+            "noHorizontalOverflow": true,
+            "metrics": {
+              "scrollWidth": 390,
+              "clientWidth": 390
+            }
+          }
+        },
+        {
+          "capabilityId": "AUDIO_EXTRACT",
+          "screenshots": [
+            "artifacts\\execution\\phase21p\\screenshots\\mobile_audio_extract_ready.png",
+            "artifacts\\execution\\phase21p\\screenshots\\mobile_audio_extract_success.png"
+          ],
+          "status": "PASS",
+          "checks": {
+            "workspaceVisible": true,
+            "routeRecorded": true,
+            "successVisible": true,
+            "sourcePreservedVisible": true,
+            "verificationVisible": true,
+            "zeroExternalVisible": true,
+            "artifactOrObservationVisible": true,
+            "noHorizontalOverflow": true,
+            "metrics": {
+              "scrollWidth": 390,
+              "clientWidth": 390
+            }
+          }
+        }
+      ],
+      "invalidInput": {
+        "screenshots": [
+          "artifacts\\execution\\phase21p\\screenshots\\mobile_invalid_range_blocked.png"
+        ],
+        "status": "PASS",
+        "checks": {
+          "blockedLabelVisible": true,
+          "ctaDisabled": true
+        }
+      },
+      "rollback": {
+        "screenshots": [
+          "artifacts\\execution\\phase21p\\screenshots\\mobile_rollback_completed.png"
+        ],
+        "status": "PASS",
+        "checks": {
+          "rolledBackVisible": true,
+          "sourcePreservedVisible": true,
+          "artifactCardsGone": true
+        }
+      },
+      "deferred": {
+        "screenshots": [
+          "artifacts\\execution\\phase21p\\screenshots\\mobile_deferred_image_resize.png"
+        ],
+        "status": "PASS",
+        "checks": {
+          "blockedVisible": true,
+          "ctaDisabled": true
+        }
+      },
+      "handoff": {
+        "screenshots": [
+          "artifacts\\execution\\phase21p\\screenshots\\mobile_product_discovery_handoff.png"
+        ],
+        "status": "PASS",
+        "checks": {
+          "routeOpened": true,
+          "workspaceVisible": true,
+          "previewDidNotExecute": true
+        }
+      }
+    }
+  ],
+  "serverOutputTail": [
+    "[workspace-static] /modules/executionUi.js",
+    "[workspace-static] /modules/safeLocalExecutionWorkspaceUi.js",
+    "[workspace-static] /modules/autonomousWorkflowUi.js",
+    "[workspace-static] /modules/propertyPassportUi.js",
+    "[workspace-static] /modules/propertyIngestionReviewUi.js",
+    "[workspace-static] /modules/propertyReviewQueueUi.js",
+    "[workspace-static] /modules/propertyExecutionProofUi.js",
+    "[workspace-static] /modules/addPropertyUi.js",
+    "[workspace-static] /modules/propertyMandateUi.js",
+    "[workspace-static] /modules/propertyMandateReviewUi.js",
+    "[workspace-static] /modules/propertyAuthorityActivationUi.js",
+    "[workspace-static] /modules/propertyCreationProofUi.js",
+    "[workspace-static] /modules/propertySaleListingProofUi.js",
+    "[workspace-static] /modules/propertyPublicationReadinessUi.js",
+    "[workspace-static] /modules/propertyMarketplacePublicationUi.js",
+    "[workspace-static] /modules/propertyBuyerLeadUi.js",
+    "[workspace-static] /modules/propertyConversationUi.js",
+    "[workspace-static] /modules/propertyViewingUi.js",
+    "[workspace-static] /modules/localExecutor.js",
+    ""
+  ],
+  "createdAt": "2026-08-30T00:03:22.242Z"
+}

@@ -1,0 +1,46 @@
+{
+  "ok": true,
+  "status": "DOCUMENTATION_PROOF_VERIFIED",
+  "providerCallMade": true,
+  "artifactPath": "artifacts\\agentToolLayer\\context7\\phase20l\\documentation_artifact.json",
+  "verificationPath": "artifacts\\agentToolLayer\\context7\\phase20l\\verification.json",
+  "contextPath": "artifacts\\agentToolLayer\\context7\\phase20l\\documentation_context_package.json",
+  "artifactSummary": {
+    "artifactId": "documentation_result_1787009780457_8l1mwz",
+    "providerId": "context7",
+    "library": "@supabase/supabase-js",
+    "requestedVersion": "^2.45.4",
+    "resolvedLibraryId": "/supabase/supabase-js",
+    "resolvedVersion": null,
+    "sourceRefs": [
+      {
+        "sourceId": "context7_content_1",
+        "title": null,
+        "provider": "context7"
+      }
+    ],
+    "contentChars": 1986,
+    "snippetCount": 6,
+    "versionResolution": {
+      "status": "VERSION_NOT_RESOLVED",
+      "resolvedVersion": null,
+      "compatibleMajor": 2
+    }
+  },
+  "verification": {
+    "ok": true,
+    "validation": {
+      "ok": true,
+      "errors": []
+    },
+    "checks": {
+      "nonEmptyResult": true,
+      "libraryMatches": true,
+      "readOnly": true,
+      "noFileChanges": true,
+      "noDatabaseChanges": true,
+      "provenanceExists": true,
+      "linkedToTaskProjectTrace": true
+    }
+  }
+}

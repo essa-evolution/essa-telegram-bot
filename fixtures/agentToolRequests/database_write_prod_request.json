@@ -1,0 +1,22 @@
+{
+  "requestId": "phase20i_db_prod_write_request",
+  "taskId": "phase20i_task",
+  "requestedByProvider": "gemini_agent_future",
+  "requestedByAgent": "database_planner",
+  "toolId": "database.supabase.mock",
+  "capability": "write_with_approval",
+  "action": "write_rows",
+  "input": {
+    "writeScope": "development_only_with_explicit_approval",
+    "operation": "insert",
+    "table": "navigator_memory"
+  },
+  "intendedOutcome": "Write production database row.",
+  "permissionLevel": "READ_ONLY",
+  "environment": "PRODUCTION",
+  "estimatedCost": "LOW_COST_EXTERNAL",
+  "sideEffectClass": "EXTERNAL_WRITE",
+  "reason": "Unsafe production write attempt.",
+  "confidence": 0.5,
+  "traceId": "phase20i_db_prod_write_trace"
+}

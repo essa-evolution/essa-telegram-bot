@@ -1,0 +1,20 @@
+{
+  "requestId": "phase20i_security_request",
+  "taskId": "phase20i_task",
+  "requestedByProvider": "local_agent_future",
+  "requestedByAgent": "security_planner",
+  "toolId": "security.testing.mock",
+  "capability": "static_policy_review",
+  "action": "security_test",
+  "input": {
+    "scope": "local_source_metadata"
+  },
+  "intendedOutcome": "Run future security-sensitive review.",
+  "permissionLevel": "READ_ONLY",
+  "environment": "LOCAL",
+  "estimatedCost": "FREE",
+  "sideEffectClass": "SECURITY_SENSITIVE",
+  "reason": "Security-sensitive tooling must remain blocked.",
+  "confidence": 0.72,
+  "traceId": "phase20i_security_trace"
+}

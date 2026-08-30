@@ -1,0 +1,340 @@
+{
+  "artifactName": "OxAlphaResearchArtifact",
+  "researchTimestamp": "2026-08-27T04:47:56.5168075+04:00",
+  "scope": "Fresh public-source reconnaissance only. No Ox Alpha calls, no OpenRouter integration, no API keys, no external upload of ESSA source/data.",
+  "summary": {
+    "currentConclusion": "Ox Alpha was a short-lived stealth/preview alias. As of this research, OpenRouter identifies it as Z.ai's GLM-5.3-Flash, and the live OpenRouter models API lists z-ai/glm-5.3-flash rather than stealth/ox-alpha.",
+    "recommendedEssaStatus": "Do not integrate Ox Alpha alias. Keep GLM-5.3-Flash in Tech Radar as WATCH/RESEARCH ONLY until data handling, provider routing, pricing stability, and independent benchmark reproducibility are revalidated."
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "sourceTier": 1,
+      "title": "OpenRouter Ox Alpha model page",
+      "url": "https://openrouter.ai/stealth/ox-alpha/api",
+      "evidence": "States Ox Alpha was developed and operated by ZAI, revealed as ZAI GLM-5.3-Flash; also preserves earlier stealth-language, 1M context, release Aug 20, 2026, and prompt/completion retention notice."
+    },
+    {
+      "id": "S2",
+      "sourceTier": 1,
+      "title": "OpenRouter GLM-5.3-Flash page",
+      "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
+      "evidence": "Lists current model id z-ai/glm-5.3-flash, release Aug 26, 2026, pricing, discount through Sept 9, providers, modalities, context, max output, tools, and structured-output limitations."
+    },
+    {
+      "id": "S3",
+      "sourceTier": 1,
+      "title": "OpenRouter models API",
+      "url": "https://openrouter.ai/api/v1/models",
+      "evidence": "Current metadata lists z-ai/glm-5.3-flash with text+image+video input, text output, context_length 1,310,720, top_provider context 1,048,576, max_completion_tokens 131,072, supported tools and structured_outputs. No current stealth/ox-alpha entry was found in the fetched model list."
+    },
+    {
+      "id": "S4",
+      "sourceTier": 1,
+      "title": "Z.ai GLM-5.3-Flash announcement",
+      "url": "https://z.ai/blog/glm-5.3-flash",
+      "evidence": "Z.ai announces GLM-5.3-Flash as first natively multimodal GLM-5 model, 320B total/18B active, hybrid sparse+linear attention, 30T multimodal pretraining corpus, served during prior week on Chinese AI chips, and available on Z.ai, ZCode, and Hugging Face."
+    },
+    {
+      "id": "S5",
+      "sourceTier": 1,
+      "title": "Hugging Face model card: zai-org/GLM-5.3-Flash",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "evidence": "Official Z.ai org model card with MIT license, safetensors, 321B params, text-generation usage examples, SGLang/vLLM deployment pointers, model-introduction and benchmark footnotes."
+    },
+    {
+      "id": "S6",
+      "sourceTier": 1,
+      "title": "OpenCode models documentation",
+      "url": "https://opencode.ai/docs/models/",
+      "evidence": "OpenCode states it uses AI SDK and Models.dev, supports 75+ providers and local models, but current recommended models list does not include Ox Alpha."
+    },
+    {
+      "id": "S7",
+      "sourceTier": 1,
+      "title": "OpenCode Zen documentation",
+      "url": "https://dev.opencode.ai/docs/zen/",
+      "evidence": "Current Zen endpoint table still shows 'Ox Alpha Free' with model id x-preview-f-free; OpenCode privacy section claims most Zen providers use zero-retention/no-training except listed exceptions, and Ox Alpha is not listed among exceptions."
+    },
+    {
+      "id": "S8",
+      "sourceTier": 1,
+      "title": "OpenCode Data: unknown/ox-alpha",
+      "url": "https://opencode.ai/data/unknown/ox-alpha",
+      "evidence": "Lists ox-alpha under Unknown with rank, token usage, zero spend, and many metadata fields as Unknown."
+    },
+    {
+      "id": "S9",
+      "sourceTier": 1,
+      "title": "OpenRouter Stealth Program EULA",
+      "url": "https://openrouter.ai/terms/stealth",
+      "evidence": "Stealth models may be free for limited periods to collect user content; OpenRouter may share user content with stealth providers for training/improvement; stealth models can be removed anytime."
+    },
+    {
+      "id": "S10",
+      "sourceTier": 1,
+      "title": "OpenRouter Privacy Policy",
+      "url": "https://openrouter.ai/privacy",
+      "evidence": "OpenRouter transmits inputs to selected/routed model providers; providers have differing retention/training practices; OpenRouter says it does not use inputs/outputs for model training."
+    },
+    {
+      "id": "S11",
+      "sourceTier": 1,
+      "title": "Z.ai Terms of Use",
+      "url": "https://docs.z.ai/legal-agreement/terms-of-use",
+      "evidence": "For individual users, Z.ai reserves rights to process user content for service improvement/development; for API services, it says user content is not used for developing/improving services unless explicitly agreed."
+    },
+    {
+      "id": "S12",
+      "sourceTier": 1,
+      "title": "Z.ai Privacy Policy and API DPA",
+      "url": "https://docs.z.ai/legal-agreement/privacy-policy",
+      "evidence": "Personal data retention varies; API DPA says Company acts as processor and, for API Section 4(b), does not store content provided/generated while using API services, processing it in real time."
+    },
+    {
+      "id": "S13",
+      "sourceTier": 2,
+      "title": "Business Insider report on Z.ai reveal",
+      "url": "https://www.businessinsider.com/ox-alpha-model-made-by-china-z-ai-2026-8",
+      "evidence": "Reports Z.ai confirmed Ox Alpha was an anonymous trial version of GLM-5.3-Flash released on OpenRouter/OpenCode for feedback."
+    },
+    {
+      "id": "S14",
+      "sourceTier": 3,
+      "title": "OpenCode GitHub issue #45286",
+      "url": "https://github.com/anomalyco/opencode/issues/45286",
+      "evidence": "Community issue says z-ai/glm-5.3-flash should be added and that it replaces the well-known stealth/ox-alpha which is gone."
+    },
+    {
+      "id": "S15",
+      "sourceTier": 4,
+      "title": "Community/social mirrors of OpenCode posts",
+      "url": "https://mobile.twstalker.com/nexxeln",
+      "evidence": "Mirrored social posts claim Ox Alpha was free for a week, 1M context, multimodal, zero retention, generous limits, and 100T tokens/day capacity. Useful but not authoritative."
+    }
+  ],
+  "claims": [
+    {
+      "claim": "Ox Alpha currently exists as a listed historical/redirect-style OpenRouter page, but the live model identifier to use now is z-ai/glm-5.3-flash, not stealth/ox-alpha.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S1", "S2", "S3"],
+      "conflicts": ["OpenCode Zen docs still list Ox Alpha Free as x-preview-f-free."],
+      "unknowns": ["Whether OpenCode's x-preview-f-free still routes successfully today was not tested because that would require provider/API use."],
+      "requiresRevalidation": ["Before any ESSA design update, re-fetch OpenRouter models API and OpenCode Zen models endpoint."]
+    },
+    {
+      "claim": "Exact current model identifier on OpenRouter is z-ai/glm-5.3-flash; old alias was stealth/ox-alpha.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S1", "S2", "S3"],
+      "conflicts": [],
+      "unknowns": [],
+      "requiresRevalidation": ["Model IDs can change; verify at implementation time."]
+    },
+    {
+      "claim": "Developer/operator identity is now officially confirmed as Z.ai/ZAI by OpenRouter and Z.ai materials; earlier anonymity/speculation is obsolete for current status.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S1", "S2", "S4", "S5", "S13"],
+      "conflicts": ["Older Aug 22-24 articles correctly described the developer as unknown at that time."],
+      "unknowns": ["Exact contractual subprocessor chain during stealth preview remains only partly visible."],
+      "requiresRevalidation": []
+    },
+    {
+      "claim": "Ox Alpha first appeared/released on OpenRouter on Aug 20, 2026; GLM-5.3-Flash was released Aug 26, 2026.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S1", "S2", "S4"],
+      "conflicts": [],
+      "unknowns": [],
+      "requiresRevalidation": []
+    },
+    {
+      "claim": "Ox Alpha/OpenRouter preview was free; current GLM-5.3-Flash is paid on OpenRouter at $0.15/M input and $0.50/M output standard, with $0.075/M input and $0.25/M output discount through Sept 9, 2026 16:00 UTC on listed discounted providers.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S2", "S3"],
+      "conflicts": ["Older preview pages/articles say free; that was time-bound and alias-specific."],
+      "unknowns": ["Z.ai direct pricing page may lag current release-specific pricing."],
+      "requiresRevalidation": ["Pricing and discount expiration must be checked live before budgeting."]
+    },
+    {
+      "claim": "A claim that Ox Alpha was 'free until August 27' is plausible as a one-week preview from Aug 20, but the authoritative current paid discount expiration is Sept 9, 2026 for GLM-5.3-Flash on OpenRouter.",
+      "status": "PROBABLE",
+      "confidence": "MEDIUM",
+      "evidence": ["S1", "S2", "S15"],
+      "conflicts": ["OpenRouter stealth EULA says limited period but does not name Aug 27; social posts say 'for the next week'/'next 6 days'."],
+      "unknowns": ["Exact time the free alias stopped serving for every route."],
+      "requiresRevalidation": ["Do not rely on any free period without live provider metadata."]
+    },
+    {
+      "claim": "Context window is about 1M tokens: OpenRouter page says 1M, API top provider says 1,048,576, API model context_length says 1,310,720.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S2", "S3", "S5"],
+      "conflicts": ["Different metadata fields expose 1,048,576 vs 1,310,720."],
+      "unknowns": ["Whether every provider reliably supports full context in production."],
+      "requiresRevalidation": ["Use top_provider/context plus provider endpoint metadata for implementation caps."]
+    },
+    {
+      "claim": "Maximum output is 131,072 completion tokens on OpenRouter for GLM-5.3-Flash.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S2", "S3"],
+      "conflicts": ["Z.ai benchmark footnotes mention larger max generation for a specific HLE evaluation setup, not necessarily public API max output."],
+      "unknowns": [],
+      "requiresRevalidation": ["Check provider-specific max_completion_tokens at runtime."]
+    },
+    {
+      "claim": "Supported API inputs on OpenRouter are text, image, and video; output is text. Audio is not listed for GLM-5.3-Flash on OpenRouter.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S2", "S3"],
+      "conflicts": ["Hugging Face model card currently appears under text-generation and image/text examples; OpenRouter exposes video as an input modality."],
+      "unknowns": ["Exact video container limits, sampling behavior, maximum duration, and whether every routed provider supports video equivalently."],
+      "requiresRevalidation": ["Before media use, verify provider-specific multimodal request schema and video limits."]
+    },
+    {
+      "claim": "Tool/function calling is supported through tools/tool_choice; structured output is partially supported via response_format/structured_outputs, but OpenRouter FAQ says JSON-schema enforcement is not supported.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S2", "S3"],
+      "conflicts": ["API metadata includes structured_outputs, while FAQ narrows this to response_format without schema enforcement."],
+      "unknowns": ["Practical reliability of tool calling and schema adherence on complex ESSA tasks."],
+      "requiresRevalidation": ["Run local benchmark harness only after explicit approval and without sensitive ESSA data."]
+    },
+    {
+      "claim": "Coding and agentic capabilities are claimed by OpenRouter, Z.ai, and OpenCode; benchmark evidence is mostly vendor/platform reported, not yet independently reproduced at large scale.",
+      "status": "PROBABLE",
+      "confidence": "MEDIUM",
+      "evidence": ["S2", "S4", "S5", "S6", "S7"],
+      "conflicts": ["Community posts report both strong and mixed outcomes; no fully independent ESSA-relevant benchmark was found in this research pass."],
+      "unknowns": ["Reliability across ESSA's production, governance, media, and property workflows."],
+      "requiresRevalidation": ["Treat as candidate benchmark target, not production model."]
+    },
+    {
+      "claim": "The model can directly accept video input via supported provider routes, but autonomous video editing/rendering is not model-native; full video production requires an agent harness plus tools such as browser/computer use, FFmpeg, renderers, or app automation.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S2", "S3", "S4", "S5"],
+      "conflicts": ["Viral/social claims describe full video workflows, but Z.ai's own text describes ZCode Browser Use and Computer Use as agent actions, not the model itself rendering final video."],
+      "unknowns": ["How well the model reasons over long video natively versus sampled frames/transcripts in each provider stack."],
+      "requiresRevalidation": ["Separate MODEL_CAPABILITY, AGENT_HARNESS_CAPABILITY, and EXTERNAL_TOOL_CAPABILITY in all ESSA docs."]
+    },
+    {
+      "claim": "Claims that Ox Alpha beats GPT-5.6 Sol or Claude Fable 5 are not verified. Z.ai's current GLM-5.3-Flash benchmark table compares against GPT-5.6 Terra and Opus 4.8, not GPT-5.6 Sol or Claude Fable 5; older GLM-5.3 page shows GLM-5.3 behind GPT-5.6 Sol and Fable 5 on DeepSWE.",
+      "status": "UNVERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S4", "S13"],
+      "conflicts": ["A community 10-task DeepSWE screenshot reportedly placed Ox Alpha above Fable 5 and GPT-5.6 Sol, but this is not an authoritative benchmark."],
+      "unknowns": ["No reproducible, public, same-harness comparison of Ox Alpha/GLM-5.3-Flash vs GPT-5.6 Sol and Claude Fable 5 was found."],
+      "requiresRevalidation": ["Do not encode superiority claims in ESSA Tech Radar."]
+    },
+    {
+      "claim": "OpenRouter stealth-route data handling is conflicting: the Ox Alpha model page says prompts/completions were retained by provider and not used for training, while the generic Stealth EULA says stealth user content may be collected/shared for stealth-model training and improvement.",
+      "status": "CONFLICTING",
+      "confidence": "HIGH",
+      "evidence": ["S1", "S9", "S10"],
+      "conflicts": ["Model-specific notice vs generic EULA differ on training/improvement."],
+      "unknowns": ["Which statement controls for the exact stealth/ox-alpha preview period and each downstream provider route."],
+      "requiresRevalidation": ["Require legal/security review before sending any ESSA data through OpenRouter or stealth-like routes."]
+    },
+    {
+      "claim": "OpenCode Zen claims zero retention/no training for providers except listed exceptions, and Ox Alpha is not listed as an exception; however OpenRouter's route had different retention terms.",
+      "status": "CONFLICTING",
+      "confidence": "HIGH",
+      "evidence": ["S7", "S1", "S9"],
+      "conflicts": ["Different routes have different privacy promises."],
+      "unknowns": ["Whether OpenCode's current x-preview-f-free still exists and what provider agreement applied during Aug 20-27."],
+      "requiresRevalidation": ["Provider route must be treated as part of the model identity in ESSA."]
+    },
+    {
+      "claim": "Z.ai API terms distinguish individual users from API customers: individual content may be used for improvement/development; API End User Content is not used for service improvement unless explicitly agreed, and API DPA claims no storage of submitted/generated content during API service use.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S11", "S12"],
+      "conflicts": ["OpenRouter/OpenCode routing terms may differ from direct Z.ai API terms."],
+      "unknowns": ["Subprocessors for each OpenRouter provider route are not fully enumerated in the reviewed sources."],
+      "requiresRevalidation": ["Direct Z.ai API legal terms and any DPA must be reviewed before enterprise use."]
+    },
+    {
+      "claim": "Current OpenRouter routes for GLM-5.3-Flash include Z.ai, NovitaAI, GMICloud, Cloudflare, DeepInfra, io.net, and Baseten.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S2"],
+      "conflicts": [],
+      "unknowns": ["Provider-specific subprocessors, regions, retention, and video support equivalence."],
+      "requiresRevalidation": ["Pin/exclude providers only after provider-specific security review."]
+    },
+    {
+      "claim": "Open weights are publicly available under MIT license on Hugging Face.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S4", "S5"],
+      "conflicts": [],
+      "unknowns": ["Operational feasibility/cost of local serving for ESSA not assessed in this read-only research."],
+      "requiresRevalidation": ["If considering local/offline use, perform separate supply-chain, weight provenance, license, and hardware review."]
+    },
+    {
+      "claim": "There are security concerns relevant to ESSA: stealth alias disappearance risk, route-dependent retention/training terms, multimodal biometric/personal-data exposure, provider/subprocessor ambiguity, and cyber/malicious-code policy restrictions.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S1", "S2", "S9", "S10", "S11", "S12"],
+      "conflicts": [],
+      "unknowns": ["Whether enterprise/private deployments can fully disable logging across all providers."],
+      "requiresRevalidation": ["No ESSA source, secrets, user media, or customer data should be sent until reviewed and approved."]
+    },
+    {
+      "claim": "Ox Alpha was a temporary alias/stealth evaluation model.",
+      "status": "VERIFIED",
+      "confidence": "HIGH",
+      "evidence": ["S1", "S2", "S4", "S13"],
+      "conflicts": [],
+      "unknowns": [],
+      "requiresRevalidation": []
+    }
+  ],
+  "factCheck": {
+    "confirmed": [
+      "Ox Alpha was the stealth/preview alias for Z.ai GLM-5.3-Flash.",
+      "OpenRouter currently lists GLM-5.3-Flash as z-ai/glm-5.3-flash; Ox Alpha page exists as a revealed historical listing.",
+      "OpenRouter GLM-5.3-Flash supports text/image/video input and text output, tools/tool_choice, response_format/structured output flags, about 1M context, and 131,072 max completion tokens.",
+      "Current OpenRouter pricing is paid, with a 50% discount through Sept 9, 2026 16:00 UTC on listed discounted providers.",
+      "GLM-5.3-Flash weights are on Hugging Face under MIT license."
+    ],
+    "likely": [
+      "The free preview ran approximately one week from Aug 20, 2026, making Aug 27 a plausible end date, but exact route-by-route cutoff was not verified by calling providers.",
+      "The model is strong enough to merit ESSA benchmark research, especially coding/agentic workflows, but production reliability is unproven."
+    ],
+    "unverified": [
+      "Ox Alpha beats GPT-5.6 Sol.",
+      "Ox Alpha beats Claude Fable 5.",
+      "Ox Alpha can perform full video-production workflows without agent/tool orchestration.",
+      "Every provider route supports video input equally and directly rather than via preprocessing."
+    ],
+    "falseOrMisleading": [
+      "Calling Ox Alpha currently anonymous is outdated/misleading after Z.ai/OpenRouter reveal.",
+      "Calling video rendering/editing a native model capability is misleading; rendering/editing is an external tool or agent harness capability.",
+      "Treating OpenRouter, OpenCode, Claude Code, ZCode, FFmpeg/renderers, and Ox Alpha/GLM-5.3-Flash as one capability layer is misleading."
+    ],
+    "unknown": [
+      "Exact prompt/completion retention for each historical route and provider.",
+      "Provider/subprocessor details for all current OpenRouter providers.",
+      "Real-world reliability on ESSA-specific workloads.",
+      "Provider-specific video limits and whether video understanding is native on each route."
+    ],
+    "essaRelevance": [
+      "Candidate for future benchmark architecture only after route-specific security review.",
+      "Useful comparison point for long-context coding/agent tasks and multimodal reasoning, not an ESSA default model.",
+      "Any Tech Radar entry should say 'GLM-5.3-Flash, formerly Ox Alpha alias' rather than treating Ox Alpha as a stable model."
+    ],
+    "essaSecurityConcerns": [
+      "Do not send ESSA source, secrets, user data, or media to stealth/unknown routes.",
+      "OpenRouter stealth terms and model-specific notices conflict enough to require review.",
+      "Multimodal inputs may include biometric/personal data; provider route must be approved before use.",
+      "Avoid claims of direct media production; keep model reasoning separate from local FFmpeg/browser/render execution."
+    ],
+    "recommendedEssaStatus": "WATCH / RESEARCH ONLY. Do not integrate the Ox Alpha alias. If Phase 21K-OX proceeds, update Tech Radar around GLM-5.3-Flash as a revalidation-gated candidate, and build benchmark architecture that can test model capability separately from agent harness and external tools."
+  }
+}

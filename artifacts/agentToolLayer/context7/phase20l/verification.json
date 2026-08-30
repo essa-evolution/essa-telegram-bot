@@ -1,0 +1,16 @@
+{
+  "ok": true,
+  "validation": {
+    "ok": true,
+    "errors": []
+  },
+  "checks": {
+    "nonEmptyResult": true,
+    "libraryMatches": true,
+    "readOnly": true,
+    "noFileChanges": true,
+    "noDatabaseChanges": true,
+    "provenanceExists": true,
+    "linkedToTaskProjectTrace": true
+  }
+}

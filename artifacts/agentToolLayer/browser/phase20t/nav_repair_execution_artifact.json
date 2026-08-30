@@ -1,0 +1,46 @@
+{
+  "artifactId": "phase20t_nav_repair_execution",
+  "type": "RepairExecutionArtifact",
+  "phase": "20T",
+  "target": "http://localhost:3000/workspace/#navigator",
+  "scope": "nav-only responsive repair",
+  "createdAt": "2026-08-18T00:00:00.000Z",
+  "maxRepairAttempts": 1,
+  "repairAttempt": 1,
+  "rootCause": {
+    "selector": ".nav-list > .nav-item",
+    "breakpoint": "@media (max-width: 820px)",
+    "reason": "Phase 20S used scrollIntoView for active nav alignment inside the horizontal nav scroller. At tablet/mobile sizes it left active/relevant items at viewport edges and could push the first item partially outside the visible viewport. The scroller also had no symmetric inline padding inside the scrollable content."
+  },
+  "sourceEvidence": {
+    "phase20r": "artifacts/agentToolLayer/browser/phase20r/ui_findings.json",
+    "phase20s": "artifacts/agentToolLayer/browser/phase20s/ui_repair_comparison_artifact.json"
+  },
+  "changedFiles": [
+    {
+      "path": "workspace/styles.css",
+      "reason": "Add symmetric inline scroll space to the mobile/tablet horizontal nav without changing desktop/laptop layout or chat/prompt behavior.",
+      "rollback": "Restore the Phase 20S .nav-list padding-bottom-only rule."
+    },
+    {
+      "path": "workspace/app.js",
+      "reason": "Replace browser-dependent active-item scrollIntoView alignment with deterministic bounded scrollLeft positioning.",
+      "rollback": "Restore Phase 20S scrollActiveNavigationItem implementation using scrollIntoView."
+    }
+  ],
+  "forbiddenChangesObserved": {
+    "chatPromptLayoutChanged": false,
+    "backendChanged": false,
+    "envChanged": false,
+    "providerCalls": 0,
+    "deploys": 0
+  },
+  "expectedOutcome": {
+    "tabletProductionStudioVisible": true,
+    "mobileNavigatorVisible": true,
+    "homeNotUnintentionallyClipped": true,
+    "chatPromptOverlapRemainsFixed": true,
+    "documentHorizontalOverflow": false
+  },
+  "traceId": "phase20t_nav_repair_trace"
+}

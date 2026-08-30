@@ -1,0 +1,484 @@
+{
+  "artifactId": "phase20s_ui_repair_comparison_1787015011039",
+  "type": "UIRepairComparisonArtifact",
+  "phase": "20S",
+  "target": "http://localhost:3000/workspace/#navigator",
+  "createdAt": "2026-08-18T01:03:31.039Z",
+  "originalFindingCount": 4,
+  "afterFindingCount": 4,
+  "findingResults": [
+    {
+      "sourceFindingId": "ui_finding_1787013659480_u8oe6g",
+      "viewport": {
+        "id": "tablet",
+        "label": "TABLET",
+        "width": 768,
+        "height": 1024
+      },
+      "type": "LAYOUT_OVERFLOW",
+      "location": "navigatorChatHistory / navigatorPrompt",
+      "beforeSummary": "TABLET has geometry-backed overlap between navigatorChatHistory and navigatorPrompt.",
+      "beforeEvidence": [
+        {
+          "kind": "geometry_overlap",
+          "a": "navigatorChatHistory",
+          "b": "navigatorPrompt",
+          "overlapArea": 90280,
+          "smallerAreaRatio": 1
+        }
+      ],
+      "afterEvidence": [],
+      "beforeGeometry": {
+        "chatHistory": {
+          "x": 14,
+          "y": 242,
+          "width": 740,
+          "height": 782,
+          "right": 754,
+          "bottom": 1024
+        },
+        "prompt": {
+          "x": 14,
+          "y": 902,
+          "width": 740,
+          "height": 122,
+          "right": 754,
+          "bottom": 1024
+        }
+      },
+      "afterGeometry": {
+        "chatHistory": {
+          "x": 14,
+          "y": 242,
+          "width": 740,
+          "height": 790,
+          "right": 754,
+          "bottom": 1032
+        },
+        "prompt": {
+          "x": 14,
+          "y": 1042,
+          "width": 740,
+          "height": 122,
+          "right": 754,
+          "bottom": 1164
+        }
+      },
+      "beforeScreenshot": "artifacts\\agentToolLayer\\browser\\phase20r\\tablet_768x1024.png",
+      "afterScreenshot": "artifacts\\agentToolLayer\\browser\\phase20s\\tablet_768x1024_after.png",
+      "result": "FIXED"
+    },
+    {
+      "sourceFindingId": "ui_finding_1787013659480_5gto5k",
+      "viewport": {
+        "id": "tablet",
+        "label": "TABLET",
+        "width": 768,
+        "height": 1024
+      },
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "location": "button.nav-item",
+      "beforeSummary": "TABLET has measurable clipped visible text: \"ESSA Production Studio\".",
+      "beforeEvidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "ESSA Production Studio",
+          "rect": {
+            "x": 707,
+            "y": 84,
+            "width": 189,
+            "height": 49,
+            "right": 896,
+            "bottom": 133
+          },
+          "clientWidth": 189,
+          "scrollWidth": 189,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ],
+      "afterEvidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "ESSA Production Studio",
+          "rect": {
+            "x": 635,
+            "y": 84,
+            "width": 189,
+            "height": 49,
+            "right": 824,
+            "bottom": 133
+          },
+          "clientWidth": 189,
+          "scrollWidth": 189,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ],
+      "beforeGeometry": {
+        "chatHistory": {
+          "x": 14,
+          "y": 242,
+          "width": 740,
+          "height": 782,
+          "right": 754,
+          "bottom": 1024
+        },
+        "prompt": {
+          "x": 14,
+          "y": 902,
+          "width": 740,
+          "height": 122,
+          "right": 754,
+          "bottom": 1024
+        }
+      },
+      "afterGeometry": {
+        "chatHistory": {
+          "x": 14,
+          "y": 242,
+          "width": 740,
+          "height": 790,
+          "right": 754,
+          "bottom": 1032
+        },
+        "prompt": {
+          "x": 14,
+          "y": 1042,
+          "width": 740,
+          "height": 122,
+          "right": 754,
+          "bottom": 1164
+        }
+      },
+      "beforeScreenshot": "artifacts\\agentToolLayer\\browser\\phase20r\\tablet_768x1024.png",
+      "afterScreenshot": "artifacts\\agentToolLayer\\browser\\phase20s\\tablet_768x1024_after.png",
+      "result": "PARTIALLY_FIXED"
+    },
+    {
+      "sourceFindingId": "ui_finding_1787013660344_lpwhef",
+      "viewport": {
+        "id": "mobile",
+        "label": "MOBILE",
+        "width": 390,
+        "height": 844
+      },
+      "type": "LAYOUT_OVERFLOW",
+      "location": "navigatorChatHistory / navigatorPrompt",
+      "beforeSummary": "MOBILE has geometry-backed overlap between navigatorChatHistory and navigatorPrompt.",
+      "beforeEvidence": [
+        {
+          "kind": "geometry_overlap",
+          "a": "navigatorChatHistory",
+          "b": "navigatorPrompt",
+          "overlapArea": 44164,
+          "smallerAreaRatio": 0.76
+        }
+      ],
+      "afterEvidence": [],
+      "beforeGeometry": {
+        "chatHistory": {
+          "x": 14,
+          "y": 259,
+          "width": 362,
+          "height": 546,
+          "right": 376,
+          "bottom": 805
+        },
+        "prompt": {
+          "x": 14,
+          "y": 683,
+          "width": 362,
+          "height": 161,
+          "right": 376,
+          "bottom": 844
+        }
+      },
+      "afterGeometry": {
+        "chatHistory": {
+          "x": 14,
+          "y": 259,
+          "width": 362,
+          "height": 554,
+          "right": 376,
+          "bottom": 813
+        },
+        "prompt": {
+          "x": 14,
+          "y": 823,
+          "width": 362,
+          "height": 161,
+          "right": 376,
+          "bottom": 984
+        }
+      },
+      "beforeScreenshot": "artifacts\\agentToolLayer\\browser\\phase20r\\mobile_390x844.png",
+      "afterScreenshot": "artifacts\\agentToolLayer\\browser\\phase20s\\mobile_390x844_after.png",
+      "result": "FIXED"
+    },
+    {
+      "sourceFindingId": "ui_finding_1787013660344_m76ao8",
+      "viewport": {
+        "id": "mobile",
+        "label": "MOBILE",
+        "width": 390,
+        "height": 844
+      },
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "location": "button.nav-item.active",
+      "beforeSummary": "MOBILE has measurable clipped visible text: \"Chat ESSA Navigator\".",
+      "beforeEvidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item active",
+          "text": "Chat ESSA Navigator",
+          "rect": {
+            "x": 297,
+            "y": 84,
+            "width": 168,
+            "height": 49,
+            "right": 465,
+            "bottom": 133
+          },
+          "clientWidth": 168,
+          "scrollWidth": 168,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ],
+      "afterEvidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item active",
+          "text": "Chat ESSA Navigator",
+          "rect": {
+            "x": 225,
+            "y": 84,
+            "width": 168,
+            "height": 49,
+            "right": 393,
+            "bottom": 133
+          },
+          "clientWidth": 168,
+          "scrollWidth": 168,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ],
+      "beforeGeometry": {
+        "chatHistory": {
+          "x": 14,
+          "y": 259,
+          "width": 362,
+          "height": 546,
+          "right": 376,
+          "bottom": 805
+        },
+        "prompt": {
+          "x": 14,
+          "y": 683,
+          "width": 362,
+          "height": 161,
+          "right": 376,
+          "bottom": 844
+        }
+      },
+      "afterGeometry": {
+        "chatHistory": {
+          "x": 14,
+          "y": 259,
+          "width": 362,
+          "height": 554,
+          "right": 376,
+          "bottom": 813
+        },
+        "prompt": {
+          "x": 14,
+          "y": 823,
+          "width": 362,
+          "height": 161,
+          "right": 376,
+          "bottom": 984
+        }
+      },
+      "beforeScreenshot": "artifacts\\agentToolLayer\\browser\\phase20r\\mobile_390x844.png",
+      "afterScreenshot": "artifacts\\agentToolLayer\\browser\\phase20s\\mobile_390x844_after.png",
+      "result": "PARTIALLY_FIXED"
+    }
+  ],
+  "newFindings": [
+    {
+      "findingId": "ui_finding_1787014931122_h14l3o",
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "severity": "MEDIUM",
+      "viewport": {
+        "id": "tablet",
+        "label": "TABLET",
+        "width": 768,
+        "height": 1024
+      },
+      "location": "button.nav-item",
+      "summary": "TABLET has measurable clipped visible text: \"Главная\".",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "Главная",
+          "rect": {
+            "x": -56,
+            "y": 84,
+            "width": 80,
+            "height": 49,
+            "right": 24,
+            "bottom": 133
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ],
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\tablet_768x1024_after.png"
+    },
+    {
+      "findingId": "ui_finding_1787014931963_mpvy3g",
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "severity": "MEDIUM",
+      "viewport": {
+        "id": "mobile",
+        "label": "MOBILE",
+        "width": 390,
+        "height": 844
+      },
+      "location": "button.nav-item",
+      "summary": "MOBILE has measurable clipped visible text: \"Главная\".",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "Главная",
+          "rect": {
+            "x": -56,
+            "y": 84,
+            "width": 80,
+            "height": 49,
+            "right": 24,
+            "bottom": 133
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ],
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\mobile_390x844_after.png"
+    }
+  ],
+  "viewportSummary": [
+    {
+      "viewport": {
+        "id": "desktop",
+        "label": "DESKTOP",
+        "width": 1440,
+        "height": 900,
+        "screenshotName": "desktop_1440x900.png"
+      },
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\desktop_1440x900_after.png"
+    },
+    {
+      "viewport": {
+        "id": "laptop",
+        "label": "LAPTOP",
+        "width": 1280,
+        "height": 720,
+        "screenshotName": "laptop_1280x720.png"
+      },
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\laptop_1280x720_after.png"
+    },
+    {
+      "viewport": {
+        "id": "tablet",
+        "label": "TABLET",
+        "width": 768,
+        "height": 1024,
+        "screenshotName": "tablet_768x1024.png"
+      },
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\tablet_768x1024_after.png"
+    },
+    {
+      "viewport": {
+        "id": "mobile",
+        "label": "MOBILE",
+        "width": 390,
+        "height": 844,
+        "screenshotName": "mobile_390x844.png"
+      },
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\mobile_390x844_after.png"
+    }
+  ],
+  "responsiveClassification": "RESPONSIVE",
+  "interactionCount": 0,
+  "mutationCount": 0,
+  "overallResult": "REPAIR_PARTIAL",
+  "rollback": {
+    "performed": false,
+    "reason": "No HIGH/CRITICAL desktop/laptop regression detected."
+  },
+  "providerApiCalls": 0
+}

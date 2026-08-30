@@ -1,0 +1,21 @@
+{
+  "requestId": "phase20i_deploy_request",
+  "taskId": "phase20i_task",
+  "requestedByProvider": "future_openai_agent",
+  "requestedByAgent": "deployment_planner",
+  "toolId": "deployment.provider.mock",
+  "capability": "deploy",
+  "action": "deploy",
+  "input": {
+    "writeScope": "production_deployment",
+    "target": "production"
+  },
+  "intendedOutcome": "Deploy workspace build.",
+  "permissionLevel": "READ_ONLY",
+  "environment": "PRODUCTION",
+  "estimatedCost": "PAID_EXTERNAL",
+  "sideEffectClass": "DEPLOY",
+  "reason": "Provider requests production deploy.",
+  "confidence": 0.66,
+  "traceId": "phase20i_deploy_trace"
+}

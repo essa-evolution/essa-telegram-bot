@@ -1,0 +1,41 @@
+{
+  "artifactId": "documentation_result_1787008315167_cnrexa",
+  "type": "documentation_result",
+  "providerId": "context7",
+  "capability": "documentation_lookup",
+  "library": "@supabase/supabase-js",
+  "requestedVersion": "^2.45.4",
+  "resolvedLibraryId": "@supabase/supabase-js",
+  "resolvedVersion": "^2.45.4",
+  "query": "What is the current official pattern for creating a Supabase JS client for the installed major version?",
+  "content": "Input validation error: Invalid arguments for tool query-docs: query: Invalid input: expected string, received undefined",
+  "snippets": [
+    {
+      "id": "context7_snippet_1",
+      "text": "Input validation error: Invalid arguments for tool query-docs: query: Invalid input: expected string, received undefined",
+      "relevance": 1
+    }
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "context7_content_1",
+      "title": null,
+      "provider": "context7"
+    }
+  ],
+  "retrievedAt": "2026-08-17T23:11:55.167Z",
+  "projectId": "phase20l_context7_project",
+  "taskId": "phase20l_context7_task",
+  "traceId": "phase20l_context7_trace",
+  "readOnly": true,
+  "provenance": {
+    "providerId": "context7",
+    "endpoint": "https://mcp.context7.com/mcp",
+    "mcpTools": [
+      "resolve-library-id",
+      "query-docs"
+    ],
+    "providerCallMade": true,
+    "readOnly": true
+  }
+}

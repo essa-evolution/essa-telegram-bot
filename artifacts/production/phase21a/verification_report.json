@@ -1,0 +1,32 @@
+{
+  "artifactId": "phase21a_verification_report",
+  "type": "VerificationReport",
+  "status": "PASS",
+  "checks": {
+    "outputExists": true,
+    "fileSizePositive": true,
+    "videoStreamExists": true,
+    "audioStreamExists": true,
+    "durationApproximatelyPreserved": true,
+    "resolutionPreserved": true,
+    "aspectPreserved": true,
+    "sourceUnchanged": true,
+    "outputDiffersFromSource": true,
+    "outputDecodable": true,
+    "noUnexpectedTruncation": true,
+    "subtitlePolicyFollowed": true,
+    "externalProviderArtifactsAbsent": true,
+    "representativeFramesExtracted": true,
+    "noFakeCompletionClaim": true
+  },
+  "sourceHashBefore": "2df0dcd4ac4c4ef4020fb53d4f840f48edff4d3da3e3ab36f4a792143ece8363",
+  "sourceHashAfter": "2df0dcd4ac4c4ef4020fb53d4f840f48edff4d3da3e3ab36f4a792143ece8363",
+  "outputHash": "95d31bad2f31f172bd3c9b9ceda592b9f4faf24dd45e7657af2cd832f8c19352",
+  "sourcePath": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\media\\input\\future_lisa_11s_source.mp4.mp4",
+  "outputPath": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\production\\phase21a\\lisa_local_v1.mp4",
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "paidCalls": 0,
+  "publishCalls": 0,
+  "createdAt": "2026-08-18T02:37:01.401Z"
+}

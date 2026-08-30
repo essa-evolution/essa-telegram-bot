@@ -1,25 +1,263 @@
-﻿const CORE_DOCS = [
+const CORE_DOCS = [
   {
-    category: "knowledge_foundation",
-    title: "ESSA Foundation",
-    path: "ESSA_KNOWLEDGE_SYSTEM/00_ESSA_FOUNDATION.md",
-    layer: "knowledge_foundation",
+    category: "essa_core_philosophy",
+    title: "00 ESSA Core Philosophy",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/00_ESSA_CORE_PHILOSOPHY.md",
+    layer: "strategic_foundation",
     priority: "critical",
     sourceOfTruthFor: [
-      "What ESSA is",
-      "What ESSA Evolution is",
-      "Why ESSA was created",
-      "Lisa Molis identity",
-      "ЛИса identity",
-      "ESSA versus ChatGPT",
-      "ESSA ecosystem philosophy",
-      "ESSA foundation principles"
+      "ESSA philosophy",
+      "ESSA strategic foundation",
+      "human-centered ESSA architecture",
+      "ESSA ecosystem principles",
+      "ESSA spaces design principles",
+      "ESSA lifecycle from dream to manifestation"
+    ]
+  },
+  {
+    category: "essa_core_ecosystem",
+    title: "01 ESSA Core Ecosystem",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/01_ESSA_CORE_ECOSYSTEM.md",
+    layer: "strategic_architecture",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA ecosystem architecture",
+      "ESSA world map",
+      "ESSA core entities",
+      "human-centered ecosystem model",
+      "ESSA spaces relationship model",
+      "ESSA project lifecycle"
+    ]
+  },
+  {
+    category: "essa_core_lifecycle",
+    title: "02 ESSA Core Lifecycle",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/02_ESSA_CORE_LIFECYCLE.md",
+    layer: "strategic_process",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA lifecycle",
+      "ESSA manifestation process",
+      "human idea project lifecycle",
+      "ESSA universal development path",
+      "ESSA project growth cycle",
+      "ESSA spaces lifecycle alignment"
+    ]
+  },
+  {
+    category: "essa_core_principles",
+    title: "03 ESSA Core Principles",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/03_ESSA_CORE_PRINCIPLES.md",
+    layer: "strategic_governance",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA principles",
+      "ESSA decision constitution",
+      "ESSA governance principles",
+      "human-centered AI principles",
+      "ESSA authorship and digital identity principles",
+      "ESSA voice identity safety principles"
+    ]
+  },
+  {
+    category: "essa_core_entities",
+    title: "04 ESSA Core Entities",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/04_ESSA_CORE_ENTITIES.md",
+    layer: "strategic_model",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA entities",
+      "ESSA ecosystem model",
+      "ESSA entity relationships",
+      "ESSA human project workspace agent model",
+      "ESSA content asset publication model",
+      "ESSA knowledge and ecosystem entities"
+    ]
+  },
+  {
+    category: "essa_core_relationships",
+    title: "05 ESSA Core Relationships",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/05_ESSA_CORE_RELATIONSHIPS.md",
+    layer: "strategic_connections",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA relationships",
+      "ESSA entity connections",
+      "ESSA ecosystem relationship graph",
+      "ESSA human idea project relationships",
+      "ESSA collaboration relationships",
+      "ESSA strategic connections"
+    ]
+  },
+  {
+    category: "essa_core_behaviors",
+    title: "06 ESSA Core Behaviors",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/06_ESSA_CORE_BEHAVIORS.md",
+    layer: "strategic_dynamics",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA behaviors",
+      "ESSA entity dynamics",
+      "ESSA ecosystem dynamics",
+      "ESSA human intention idea project behaviors",
+      "ESSA agent behavior principles",
+      "ESSA digital identity behavior"
+    ]
+  },
+  {
+    category: "essa_core_agent_architecture",
+    title: "07 ESSA Core Agent Architecture",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/07_ESSA_CORE_AGENT_ARCHITECTURE.md",
+    layer: "strategic_agent_system",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA agent architecture",
+      "ESSA agent roles",
+      "ESSA agent lifecycle",
+      "ESSA multi-agent workflows",
+      "ESSA human approval gate",
+      "ESSA agent tool and knowledge principles"
+    ]
+  },
+  {
+    category: "essa_core_knowledge_architecture",
+    title: "08 ESSA Core Knowledge Architecture",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/08_ESSA_CORE_KNOWLEDGE_ARCHITECTURE.md",
+    layer: "strategic_knowledge_system",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA knowledge architecture",
+      "ESSA knowledge levels",
+      "ESSA knowledge lifecycle",
+      "ESSA knowledge relationships",
+      "ESSA agent knowledge usage",
+      "ESSA knowledge safety and authorship"
+    ]
+  },
+  {
+    category: "essa_core_memory_architecture",
+    title: "09 ESSA Core Memory Architecture",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/09_ESSA_CORE_MEMORY_ARCHITECTURE.md",
+    layer: "strategic_memory_system",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA memory architecture",
+      "ESSA memory levels",
+      "ESSA memory lifecycle",
+      "ESSA personal project workspace agent identity memory",
+      "ESSA memory consent principles",
+      "ESSA memory trust and safety"
+    ]
+  },
+  {
+    category: "essa_core_workspace_architecture",
+    title: "10 ESSA Core Workspace Architecture",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/10_ESSA_CORE_WORKSPACE_ARCHITECTURE.md",
+    layer: "strategic_workspace_system",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA workspace architecture",
+      "ESSA workspace types",
+      "ESSA workspace lifecycle",
+      "ESSA cross-workspace relationships",
+      "ESSA workspace agents memory knowledge assets",
+      "ESSA workspace manifestation principle"
+    ]
+  },
+  {
+    category: "essa_core_project_architecture",
+    title: "11 ESSA Core Project Architecture",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/11_ESSA_CORE_PROJECT_ARCHITECTURE.md",
+    layer: "strategic_project_system",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA project architecture",
+      "ESSA project lifecycle",
+      "ESSA project structure",
+      "ESSA project relationships",
+      "ESSA project as manifestation",
+      "ESSA project ownership and approval"
+    ]
+  },
+  {
+    category: "essa_core_execution_architecture",
+    title: "12 ESSA Core Execution Architecture",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/12_ESSA_CORE_EXECUTION_ARCHITECTURE.md",
+    layer: "strategic_execution_system",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA execution architecture",
+      "ESSA execution plan",
+      "ESSA execution lifecycle",
+      "ESSA execution statuses",
+      "ESSA execution approval gate",
+      "ESSA execution assets and result package"
+    ]
+  },
+  {
+    category: "essa_core_evolution_architecture",
+    title: "13 ESSA Core Evolution Architecture",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/13_ESSA_CORE_EVOLUTION_ARCHITECTURE.md",
+    layer: "strategic_evolution_system",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA evolution architecture",
+      "ESSA evolution cycle",
+      "ESSA strategic improvement principles",
+      "ESSA ecosystem self-development",
+      "ESSA architecture evolution governance",
+      "ESSA continuous development"
+    ]
+  },
+  {
+    category: "essa_core_system_map",
+    title: "14 ESSA Core System Map",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/14_ESSA_CORE_SYSTEM_MAP.md",
+    layer: "strategic_navigation",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA system map",
+      "ESSA strategic documentation map",
+      "ESSA core architecture navigation",
+      "ESSA architecture document order",
+      "ESSA main flow",
+      "ESSA future architecture layers"
+    ]
+  },
+  {
+    category: "essa_core_governance",
+    title: "15 ESSA Core Governance",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/15_ESSA_CORE_GOVERNANCE.md",
+    layer: "strategic_governance_system",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA governance",
+      "ESSA strategic governance",
+      "ESSA architecture decision rules",
+      "ESSA core document governance",
+      "ESSA architecture compatibility review",
+      "ESSA strategic change management"
+    ]
+  },
+  {
+    category: "essa_core_integration_architecture",
+    title: "16 ESSA Core Integration Architecture",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/16_ESSA_CORE_INTEGRATION_ARCHITECTURE.md",
+    layer: "strategic_integration_system",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "ESSA integration architecture",
+      "ESSA external integration principles",
+      "ESSA integration approval gate",
+      "ESSA architectural independence",
+      "ESSA external service relationships",
+      "ESSA integration trace and safety"
     ]
   },
   {
     category: "lisa_identity",
     title: "Lisa Molis Identity",
-    path: "02_AGENTS/07_LISA/00_CORE/LISA_MOLIS_IDENTITY.txt",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/02_AGENTS/07_LISA/00_CORE/LISA_MOLIS_IDENTITY.txt",
     layer: "core_identity",
     priority: "critical",
     sourceOfTruthFor: [
@@ -32,320 +270,72 @@
       "ESSA ecosystem origin"
     ]
   },
-
   {
-    category: "presence_system",
-    title: "Presence Principles",
-    path: "ESSA_PRESENCE_SYSTEM/01_PRESENCE_PRINCIPLES.md",
-    layer: "presence_system"
+    category: "lisa_character_core",
+    title: "Lisa Character Core",
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/02_AGENTS/07_LISA/00_CORE/LISA_CHARACTER_CORE.md",
+    layer: "core_identity",
+    priority: "critical",
+    sourceOfTruthFor: [
+      "Lisa Character Core",
+      "Lisa stable core",
+      "Lisa dynamic expression",
+      "Lisa humor irony profanity boundaries",
+      "Lisa non-generic influencer rule",
+      "Lisa emotional range"
+    ]
   },
-  {
-    category: "presence_system",
-    title: "Emotional Intelligence Layer",
-    path: "ESSA_PRESENCE_SYSTEM/02_EMOTIONAL_INTELLIGENCE_LAYER.md",
-    layer: "presence_system"
-  },
-  {
-    category: "presence_system",
-    title: "Support System",
-    path: "ESSA_PRESENCE_SYSTEM/03_SUPPORT_SYSTEM.md",
-    layer: "presence_system"
-  },
-  {
-    category: "presence_system",
-    title: "Journey Memory",
-    path: "ESSA_PRESENCE_SYSTEM/04_JOURNEY_MEMORY.md",
-    layer: "presence_system"
-  },
-  {
-    category: "presence_system",
-    title: "Companion Mode",
-    path: "ESSA_PRESENCE_SYSTEM/05_COMPANION_MODE.md",
-    layer: "presence_system"
-  },
-  {
-    category: "presence_system",
-    title: "Human Warmth Engine",
-    path: "ESSA_PRESENCE_SYSTEM/06_HUMAN_WARMTH_ENGINE.md",
-    layer: "presence_system"
-  },
-  {
-    category: "presence_system",
-    title: "ESSA Language System",
-    path: "ESSA_PRESENCE_SYSTEM/07_ESSA_LANGUAGE_SYSTEM.md",
-    layer: "presence_system"
-  },
-  {
-    category: "presence_system",
-    title: "Lisa Mode",
-    path: "ESSA_PRESENCE_SYSTEM/08_LISA_MODE.md",
-    layer: "presence_system"
-  },
-  {
-    category: "presence_system",
-    title: "ESSA Response Philosophy",
-    path: "ESSA_PRESENCE_SYSTEM/09_ESSA_RESPONSE_PHILOSOPHY.md",
-    layer: "presence_system",
-    priority: "high"
-  },
-  {
-    category: "presence_system",
-    title: "ESSA Response Examples",
-    path: "ESSA_PRESENCE_SYSTEM/10_ESSA_RESPONSE_EXAMPLES.md",
-    layer: "presence_system",
-    priority: "high"
-  },
-  {
-    category: "presence_system",
-    title: "ESSA Personality Core",
-    path: "ESSA_PRESENCE_SYSTEM/11_ESSA_PERSONALITY_CORE.md",
-    layer: "presence_system",
-    priority: "high"
-  },
-  {
-    category: "presence_system",
-    title: "ESSA Lisa Personality Expression",
-    path: "ESSA_PRESENCE_SYSTEM/12_ESSA_LISA_PERSONALITY_EXPRESSION.md",
-    layer: "presence_system",
-    priority: "high"
-  },
-  {
-    category: "presence_system",
-    title: "Lisa Recognizable Voice",
-    path: "ESSA_PRESENCE_SYSTEM/13_LISA_RECOGNIZABLE_VOICE.md",
-    layer: "presence_system",
-    priority: "high"
-  },
-  {
-    category: "presence_system",
-    title: "Telegram Presence Test Prompts",
-    path: "ESSA_PRESENCE_SYSTEM/TELEGRAM_TEST_PROMPTS.md",
-    layer: "presence_system",
-    priority: "medium"
-  },
-  {
-    category: "presence_system",
-    title: "Presence Engine",
-    path: "ESSA_AGENT_SYSTEM/17_PRESENCE_ENGINE.md",
-    layer: "presence_system",
-    priority: "high"
-  },
-  {
-    category: "presence_system",
-    title: "Response Engine",
-    path: "ESSA_AGENT_SYSTEM/18_RESPONSE_ENGINE.md",
-    layer: "presence_system",
-    priority: "high"
-  },
-
   {
     category: "navigator_prompt",
     title: "Navigator Core System",
-    path: "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt"
+   path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/00_CORE_SYSTEM.txt"
   },
   {
     category: "navigator_prompt",
     title: "Navigator Guidance Mode",
-    path: "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/01_GUIDANCE_MODE.txt"
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/01_GUIDANCE_MODE.txt"
   },
   {
     category: "navigator_prompt",
     title: "Navigator Behavior Rules",
-    path: "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/02_BEHAVIOR_RULES.txt"
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/02_BEHAVIOR_RULES.txt"
   },
   {
     category: "navigator_prompt",
     title: "Navigator Action Logic",
-    path: "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/03_ACTION_LOGIC.txt"
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/03_ACTION_LOGIC.txt"
   },
   {
     category: "navigator_prompt",
     title: "Navigator Memory Rules",
-    path: "02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/04_MEMORY_RULES.txt"
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/02_AGENTS/00_AGENT_CORE/07_NAVIGATOR/04_MEMORY_RULES.txt"
   },
   {
     category: "lisa_identity",
     title: "Lisa Identity",
-    path: "02_AGENTS/07_LISA/00_CORE/LISA_MOLIS_IDENTITY.txt"
+    path: "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/02_AGENTS/07_LISA/00_CORE/LISA_MOLIS_IDENTITY.txt"
   },
   {
-    category: "content_system",
-    title: "Lisa Living Dialogues",
-    path: "ESSA_CONTENT_SYSTEM/LISA_LIVING_DIALOGUES.md",
-    priority: "high"
-  },
+    category: "memory_architecture",
+    title: "ESSA Memory Architecture",
+    path: "C:/Users/Lisa/Downloads/ESA_OS-20260604T102118Z-3-001/ESA_OS/09_INFRASTRUCTURE/04_MEMORY_SYSTEM/ESSA_MEMORY_ARCHITECTURE.docx"
 
-  {
-    category: "memory_system",
-    title: "Adaptive Lexicon Memory",
-    path: "ESSA_MEMORY_SYSTEM/01_ADAPTIVE_LEXICON_MEMORY.md",
-    priority: "high"
-  },
-  {
-    category: "memory_system",
-    title: "ESSA Vocabulary Memory",
-    path: "ESSA_MEMORY_SYSTEM/02_ESSA_VOCABULARY_MEMORY.md",
-    priority: "high"
-  },
-  {
-    category: "memory_system",
-    title: "Living Vocabulary",
-    path: "ESSA_MEMORY_SYSTEM/03_LIVING_VOCABULARY.md",
-    priority: "medium"
-  },
-  {
-    category: "memory_system",
-    title: "Words Of New Era",
-    path: "ESSA_MEMORY_SYSTEM/04_WORDS_OF_NEW_ERA.md",
-    priority: "medium"
-  },
-  {
-    category: "memory_system",
-    title: "User Profile Memory",
-    path: "ESSA_MEMORY_SYSTEM/05_USER_PROFILE_MEMORY.md",
-    priority: "medium"
-  },
-  {
-    category: "memory_system",
-    title: "Session Memory",
-    path: "ESSA_MEMORY_SYSTEM/06_SESSION_MEMORY.md",
-    priority: "medium"
-  },
-  {
-    category: "memory_system",
-    title: "Project Memory",
-    path: "ESSA_MEMORY_SYSTEM/07_PROJECT_MEMORY.md",
-    priority: "medium"
-  },
-  {
-    category: "memory_system",
-    title: "Summary Memory",
-    path: "ESSA_MEMORY_SYSTEM/08_SUMMARY_MEMORY.md",
-    priority: "medium"
-  },
-  {
-    category: "memory_system",
-    title: "Vector User Memory",
-    path: "ESSA_MEMORY_SYSTEM/09_VECTOR_USER_MEMORY.md",
-    priority: "medium"
-  },
 
-  {
-    category: "memory_system",
-    title: "ESSA Presence Signature Memory",
-    path: "ESSA_MEMORY_SYSTEM/10_ESSA_PRESENCE_SIGNATURE_MEMORY.md",
-    priority: "high"
-  },  {
-    category: "memory_system",
-    title: "ESSA Introduction And Personal Connection",
-    path: "ESSA_MEMORY_SYSTEM/11_ESSA_INTRODUCTION_AND_PERSONAL_CONNECTION.md",
-    priority: "high"
-  },  {
-    category: "memory_system",
-    title: "ESSA User Profile Schema",
-    path: "ESSA_MEMORY_SYSTEM/12_ESSA_USER_PROFILE_SCHEMA.md",
-    priority: "high"
   },
   {
-    category: "cognitive_system",
-    title: "ESSA Cognitive Architecture Map",
-    path: "ESSA_COGNITIVE_SYSTEM/00_ESSA_COGNITIVE_ARCHITECTURE_MAP.md",
-    priority: "high"
-  },  {
-    category: "cognitive_system",
-    title: "ESSA Soul Recognition",
-    path: "ESSA_COGNITIVE_SYSTEM/12_ESSA_SOUL_RECOGNITION.md",
-    priority: "high"
+    category: "voice_architecture",
+    title: "ESSA Voice Architecture",
+    path: "C:/Users/Lisa/Downloads/ESA_OS-20260604T102118Z-3-001/ESA_OS/09_INFRASTRUCTURE/03_VOICE_SYSTEM/ESSA_VOICE_ARCHITECTURE.docx"
   },
   {
-    category: "cognitive_system",
-    title: "ESSA Cognitive Navigation",
-    path: "ESSA_COGNITIVE_SYSTEM/13_ESSA_COGNITIVE_NAVIGATION.md",
-    priority: "high"
+    category: "content_factory",
+title: "Content Factory Pipeline",
+path: "C:/Users/Lisa/Downloads/ESA_OS-20260604T102118Z-3-001/ESA_OS/09_INFRASTRUCTURE/15_AI_KNOWLEDGE_SYSTEMS/48_CONTENT_FACTORY_PIPELINE/00_OVERVIEW.docx"
   },
   {
-    category: "cognitive_system",
-    title: "ESSA Cognitive Reasoning Layer",
-    path: "ESSA_COGNITIVE_SYSTEM/16_ESSA_COGNITIVE_REASONING_LAYER.md",
-    priority: "high"
-  },
-  {
-    category: "cognitive_system",
-    title: "ESSA Conversational Reflex Layer",
-    path: "ESSA_COGNITIVE_SYSTEM/17_ESSA_CONVERSATIONAL_REFLEX_LAYER.md",
-    priority: "high"
-  },
-  {
-    category: "cognitive_system",
-    title: "ESSA Natural Conversation Engine",
-    path: "ESSA_COGNITIVE_SYSTEM/18_ESSA_NATURAL_CONVERSATION_ENGINE.md",
-    priority: "high"
-  },
-  {
-    category: "cognitive_system",
-    title: "ESSA Response Identity Style",
-    path: "ESSA_COGNITIVE_SYSTEM/19_ESSA_RESPONSE_IDENTITY_STYLE.md",
-    priority: "high"
-  },
-  {
-    category: "cognitive_system",
-    title: "ESSA Awakening Depth System",
-    path: "ESSA_COGNITIVE_SYSTEM/20_ESSA_AWAKENING_DEPTH_SYSTEM.md",
-    priority: "high"
-  },
-  {
-    category: "cognitive_system",
-    title: "Reflection System",
-    path: "ESSA_COGNITIVE_SYSTEM/14_REFLECTION_SYSTEM.md",
-    priority: "medium"
-  },
-  {
-    category: "cognitive_system",
-    title: "State Recognition",
-    path: "ESSA_COGNITIVE_SYSTEM/15_STATE_RECOGNITION.md",
-    priority: "medium"
-  },
-
-  {
-    category: "voice_system",
-    title: "ESSA Voice Conversation Layer",
-    path: "ESSA_VOICE_SYSTEM/01_ESSA_VOICE_CONVERSATION_LAYER.md",
-    priority: "high"
-  },
-  {
-    category: "voice_system",
-    title: "Lisa Molis Voice Identity",
-    path: "ESSA_VOICE_SYSTEM/02_LISA_MOLIS_VOICE_IDENTITY.md",
-    priority: "high"
-  },  {
-    category: "voice_system",
-    title: "ESSA Pronunciation Engine",
-    path: "ESSA_VOICE_SYSTEM/03_ESSA_PRONUNCIATION_ENGINE.md",
-    priority: "high"
-  },
-  {
-    category: "voice_system",
-    title: "ESSA Voice Provider Interface",
-    path: "ESSA_VOICE_SYSTEM/04_ESSA_VOICE_PROVIDER_INTERFACE.md",
-    priority: "high"
-  },
-  {
-    category: "agent_system",
-    title: "Personal Agent Layer",
-    path: "ESSA_AGENT_SYSTEM/16_PERSONAL_AGENT_LAYER.md",
-    priority: "medium"
-  },
-  {
-    category: "agent_system",
-    title: "ESSA Navigator Identity",
-    path: "ESSA_AGENT_SYSTEM/19_ESSA_NAVIGATOR_IDENTITY.md",
-    priority: "high"
-  },
-  {
-    category: "agent_system",
-    title: "ESSA Response Output Layer",
-    path: "ESSA_AGENT_SYSTEM/20_ESSA_RESPONSE_OUTPUT_LAYER.md",
-    priority: "high"
+    category: "central_control",
+    title: "Central Control Layer",
+    path: "09_INFRASTRUCTURE/15_AI_KNOWLEDGE_SYSTEMS/44_CENTRAL_CONTROL_LAYER/00_OVERVIEW.docx"
   }
 ];
 
@@ -353,31 +343,4 @@ const PRIORITY_IDENTITY_DOCS = CORE_DOCS.filter(
   (doc) => doc.category === "lisa_identity" && doc.priority === "critical"
 );
 
-const PRIORITY_FOUNDATION_DOCS = CORE_DOCS.filter(
-  (doc) => doc.category === "knowledge_foundation" && doc.priority === "critical"
-);
-
-const PRIORITY_AWAKENING_DOCS = CORE_DOCS.filter(
-  (doc) => doc.path === "ESSA_COGNITIVE_SYSTEM/20_ESSA_AWAKENING_DEPTH_SYSTEM.md"
-);
-
-module.exports = {
-  CORE_DOCS,
-  PRIORITY_IDENTITY_DOCS,
-  PRIORITY_FOUNDATION_DOCS,
-  PRIORITY_AWAKENING_DOCS
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+module.exports = { CORE_DOCS, PRIORITY_IDENTITY_DOCS };

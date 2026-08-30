@@ -1,0 +1,132 @@
+{
+  "target": "http://localhost:3000/workspace/#navigator",
+  "requestDecision": {
+    "requestId": "phase20o_browser_readonly_request",
+    "toolId": "browser.playwright.mock",
+    "decision": "REQUIRE_CONFIRMATION",
+    "reason": "registry_read_confirmation_required",
+    "registryStatus": "REGISTERED_NON_EXECUTABLE",
+    "permissionCheck": {
+      "ok": true,
+      "registryPermissionLevel": [
+        "READ_ONLY"
+      ],
+      "providerPermissionIgnored": true,
+      "approvalRequired": false,
+      "reasons": []
+    },
+    "scopeCheck": {
+      "ok": true,
+      "requestedScope": "local_dev_server",
+      "registryScope": [
+        "local_dev_server",
+        "dom_state",
+        "screenshots"
+      ],
+      "reasons": []
+    },
+    "costCheck": {
+      "ok": true,
+      "registryCost": "LOCAL_COMPUTE",
+      "requestedCost": "LOCAL_COMPUTE",
+      "approvalRequired": false,
+      "reasons": []
+    },
+    "environmentCheck": {
+      "ok": true,
+      "environment": "local",
+      "registryDefaultEnvironment": "development",
+      "reasons": []
+    },
+    "approvalRequired": true,
+    "normalizedInput": {
+      "scope": "local_dev_server",
+      "url": "http://localhost:3000/workspace/#navigator",
+      "operation": "browser_observe"
+    },
+    "blockedFields": [],
+    "traceId": "phase20o_browser_trace"
+  },
+  "executionIntent": {
+    "executionIntentId": "phase20o_browser_intent",
+    "status": "READY_FOR_EXECUTION",
+    "approvalRequired": true,
+    "approvalStatus": "APPROVED_OR_NOT_REQUIRED",
+    "traceId": "phase20o_browser_trace"
+  },
+  "gateResult": {
+    "executionIntentId": "phase20o_browser_intent",
+    "toolId": "browser.playwright.mock",
+    "decision": "READY",
+    "reason": "not_executed_phase_stub",
+    "policyVersion": "agent-tool-policy-v1",
+    "registryVersion": "agent-tool-registry-v1",
+    "approvalValid": true,
+    "scopeValid": true,
+    "environmentValid": true,
+    "costValid": true,
+    "idempotencyValid": true,
+    "resolvedExecutionProvider": {
+      "providerId": "future_playwright_execution_provider",
+      "toolIds": [
+        "browser.playwright.mock"
+      ],
+      "capabilities": [
+        "open",
+        "inspect",
+        "interact",
+        "screenshot",
+        "verification"
+      ],
+      "status": "non_executable",
+      "health": "stub_only",
+      "executable": false
+    },
+    "safeInput": {
+      "scope": "local_dev_server",
+      "url": "http://localhost:3000/workspace/#navigator",
+      "operation": "browser_observe"
+    },
+    "traceId": "phase20o_browser_trace",
+    "executed": false,
+    "trace": {
+      "event": "execution_gateway_preflight",
+      "decision": "READY",
+      "reason": "not_executed_phase_stub",
+      "traceId": "phase20o_browser_trace",
+      "at": "2026-08-18T00:09:38.047Z"
+    }
+  },
+  "provider": {
+    "providerId": "playwright_browser_verification",
+    "readOnly": true,
+    "localOnly": true,
+    "networkPolicy": "localhost_only"
+  },
+  "observationStatus": "PASS",
+  "verification": {
+    "status": "PASS",
+    "checks": {
+      "pageLoaded": true,
+      "remainedOnLocalhost": true,
+      "workspaceRootExists": true,
+      "navigatorSurfaceExists": true,
+      "mainUiNotBlank": true,
+      "noFatalPageError": true,
+      "screenshotExists": true,
+      "noInteraction": true,
+      "noMutation": true
+    },
+    "warnings": [],
+    "visualReview": "VISUAL_REVIEW_REQUIRED"
+  },
+  "paths": {
+    "screenshotPath": "artifacts\\agentToolLayer\\browser\\phase20n\\workspace_navigator_readonly.png",
+    "artifactPath": "artifacts\\agentToolLayer\\browser\\phase20n\\browser_observation_artifact.json",
+    "contextPath": "artifacts\\agentToolLayer\\browser\\phase20n\\browser_observation_context.json",
+    "reportPath": "artifacts\\agentToolLayer\\browser\\phase20n\\browser_observation_report.json"
+  },
+  "providerCallMade": true,
+  "interactionCount": 0,
+  "mutationCount": 0
+}

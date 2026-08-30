@@ -1,0 +1,440 @@
+{
+  "status": "PHASE_22K_PROPERTY_REVIEW_CASE_PACKAGE_PROOF_PASS",
+  "route": "http://localhost:3180/workspace/#property-ingestion-review",
+  "exportChecks": {
+    "jsonExportExists": true,
+    "markdownExportExists": true,
+    "sanitized": true
+  },
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "mergeActions": 0,
+  "publishActions": 0,
+  "quarantineMutations": 0,
+  "results": [
+    {
+      "id": "build-package",
+      "label": "Scenario A - Open review item and build package preview",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\01_build_case_package.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "summary",
+      "label": "Scenario B - Full case summary",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\02_case_summary.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "conflict",
+      "label": "Scenario C - Conflict package",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\03_conflict_package.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501_price_130000",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501_price_130000",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "quarantine",
+      "label": "Scenario D - Quarantine package",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\04_quarantine_package.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_invalid_negative_area",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_invalid_negative_area",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "history",
+      "label": "Scenario E - Decision history and supersession",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\05_decision_history_package.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_owner_sub_batumi_0707",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_owner_sub_batumi_0707",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "professional-review",
+      "label": "Scenario F - Professional review requirements",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\06_professional_review.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_manual_gap_record_city_missing",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_manual_gap_record_city_missing",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "version-integrity",
+      "label": "Scenario G - Package version and integrity",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\07_version_integrity.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "exports",
+      "label": "Scenario H - Local JSON and human-readable export",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\08_local_exports.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "lisa",
+      "label": "Scenario I - Lisa explains package",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\09_lisa_package.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501_price_130000",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501_price_130000",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "mobile",
+      "label": "Scenario J - Mobile/narrow package view",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22k\\10_mobile_case_package.png"
+      ],
+      "finalUrl": "http://localhost:3180/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "packageExecutionReadiness": "EXECUTION_NOT_ENABLED",
+        "buildButtonDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "scrollHeight": 22153,
+          "clientHeight": 844
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

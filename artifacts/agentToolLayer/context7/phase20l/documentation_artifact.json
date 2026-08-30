@@ -1,0 +1,128 @@
+{
+  "artifactId": "documentation_result_1787009780457_8l1mwz",
+  "type": "documentation_result",
+  "providerId": "context7",
+  "capability": "documentation_lookup",
+  "library": "@supabase/supabase-js",
+  "requestedVersion": "^2.45.4",
+  "resolvedLibraryId": "/supabase/supabase-js",
+  "resolvedVersion": null,
+  "query": "What is the current official pattern for creating a Supabase JS client for the installed major version?",
+  "content": "### Install Supabase JS SDK\n\nSource: https://github.com/supabase/supabase-js/blob/master/README.md\n\nInstall the Supabase JavaScript client library using npm. This is the primary package for interacting with Supabase services.\n\n```bash\nnpm install @supabase/supabase-js\n```\n\n--------------------------------\n\n### Initialize Supabase Client\n\nSource: https://github.com/supabase/supabase-js/blob/master/packages/core/supabase-js/README.md\n\nImport the client and initialize it with your project URL and public key.\n\n```js\nimport { createClient } from '@supabase/supabase-js'\n\n// Create a single supabase client for interacting with your database\nconst supabase = createClient('https://xyzcompany.supabase.co', 'your-publishable-key')\n```\n\n--------------------------------\n\n### Install Supabase JS\n\nSource: https://github.com/supabase/supabase-js/blob/master/packages/core/supabase-js/README.md\n\nInstall the library using npm.\n\n```sh\nnpm install @supabase/supabase-js\n```\n\n--------------------------------\n\n### Client initialization with createClient\n\nSource: https://github.com/supabase/supabase-js/blob/master/packages/core/supabase-js/src/SupabaseClient.ts\n\nCreates a Supabase client by calling `createClient()` with the project URL and anon/public API key. All subsequent database, auth, and realtime operations use this client instance.\n\n```typescript\nimport { createClient } from '@supabase/supabase-js'\n\n// Create a single supabase client for interacting with your database\nconst supabase = createClient('https://xyzcompany.supabase.co', 'your-publishable-key')\n```\n\n--------------------------------\n\n### Update Supabase JavaScript Dependencies\n\nSource: https://github.com/supabase/supabase-js/blob/master/docs/MIGRATION.md\n\nCommands to update your Supabase JavaScript SDK packages to the latest version. This ensures compatibility with Node.js 20+ and other recent changes.\n\n```bash\nnpm install @supabase/supabase-js@latest\n# or, per-package:\nnpm install @supabase/auth-js@latest\n```",
+  "snippets": [
+    {
+      "id": "context7_snippet_1",
+      "text": "### Install Supabase JS SDK",
+      "relevance": 1
+    },
+    {
+      "id": "context7_snippet_2",
+      "text": "Source: https://github.com/supabase/supabase-js/blob/master/README.md",
+      "relevance": 0.6
+    },
+    {
+      "id": "context7_snippet_3",
+      "text": "Install the Supabase JavaScript client library using npm. This is the primary package for interacting with Supabase services.",
+      "relevance": 0.6
+    },
+    {
+      "id": "context7_snippet_4",
+      "text": "```bash\nnpm install @supabase/supabase-js\n```",
+      "relevance": 0.6
+    },
+    {
+      "id": "context7_snippet_5",
+      "text": "--------------------------------",
+      "relevance": 0.6
+    },
+    {
+      "id": "context7_snippet_6",
+      "text": "### Initialize Supabase Client",
+      "relevance": 0.6
+    }
+  ],
+  "sourceRefs": [
+    {
+      "sourceId": "context7_content_1",
+      "title": null,
+      "provider": "context7"
+    }
+  ],
+  "retrievedAt": "2026-08-17T23:36:20.457Z",
+  "projectId": "phase20l_context7_project",
+  "taskId": "phase20l_context7_task",
+  "traceId": "phase20l_context7_trace",
+  "readOnly": true,
+  "provenance": {
+    "providerId": "context7",
+    "endpoint": "https://mcp.context7.com/mcp",
+    "mcpTools": [
+      "resolve-library-id",
+      "query-docs"
+    ],
+    "libraryResolution": {
+      "requestedLibraryName": "@supabase/supabase-js",
+      "requestedPackageVersion": "^2.45.4",
+      "query": "What is the current official pattern for creating a Supabase JS client for the installed major version?",
+      "candidates": [
+        {
+          "libraryId": "/supabase/supabase-js",
+          "title": null,
+          "description": "Available Libraries:\n\n- Title: Supabase JS Client\n- Context7-compatible library ID: /supabase/supabase-js\n- Description: Supabase JS is an isomorphic JavaScript client for Supabase, enabling seamless interaction with your database and backend services from various JavaScript environments.\n- Code Snippets: 512\n- Source Reputation: High\n- Benchmark Score: 78.26\n- Versions: v2.58.0\n----------\n- Title: Supabase\n- Context7-compatible library ID: /supabase/supabase\n- Description: Supabase is the Postgres development platform, offering features like hosted Postgres, authentication, auto-generated APIs, functions, and file storage using enterprise-grade open source tools.\n- Code Snippets: 20667\n- Source Reputation: High\n- Benchmark Score: 83.64\n- Versions: 1.25.04, 1.24.12, v1.26.04\n----------\n- Title: Supabase\n- Context7-compatible library ID: /websites/supabase\n- Description: Supabase is an open-source backend platform providing a full Postgres database, authentication, storage, real-time, and edge functions to help developers build applications quickly.\n- Code Snippets: 60928\n- Source Reputation: High\n- Benchmark Score: 72.76\n----------\n- Title: Supabase SSR\n- Context7-compatible library ID: /supabase/ssr\n- Description: Supabase clients for use in SSR frameworks, providing a framework-agnostic way to create a Supabase client for server-side rendering.\n- Code Snippets: 288\n- Source Reputation: High\n- Benchmark Score: 82.45\n----------\n- Title: Supabase\n- Context7-compatible library ID: /llmstxt/supabase_llms-full_txt\n- Description: Supabase is a Postgres development platform providing a complete backend-as-a-service with database, authentication, APIs, Edge Functions, Realtime subscriptions, storage, and vector embeddings.\n- Code Snippets: 472355\n- Source Reputation: High\n- Benchmark Score: 72.96",
+          "versions": [],
+          "trustScore": null,
+          "snippetCount": null,
+          "relevance": 1
+        },
+        {
+          "libraryId": "/supabase/supabase",
+          "title": null,
+          "description": "Available Libraries:\n\n- Title: Supabase JS Client\n- Context7-compatible library ID: /supabase/supabase-js\n- Description: Supabase JS is an isomorphic JavaScript client for Supabase, enabling seamless interaction with your database and backend services from various JavaScript environments.\n- Code Snippets: 512\n- Source Reputation: High\n- Benchmark Score: 78.26\n- Versions: v2.58.0\n----------\n- Title: Supabase\n- Context7-compatible library ID: /supabase/supabase\n- Description: Supabase is the Postgres development platform, offering features like hosted Postgres, authentication, auto-generated APIs, functions, and file storage using enterprise-grade open source tools.\n- Code Snippets: 20667\n- Source Reputation: High\n- Benchmark Score: 83.64\n- Versions: 1.25.04, 1.24.12, v1.26.04\n----------\n- Title: Supabase\n- Context7-compatible library ID: /websites/supabase\n- Description: Supabase is an open-source backend platform providing a full Postgres database, authentication, storage, real-time, and edge functions to help developers build applications quickly.\n- Code Snippets: 60928\n- Source Reputation: High\n- Benchmark Score: 72.76\n----------\n- Title: Supabase SSR\n- Context7-compatible library ID: /supabase/ssr\n- Description: Supabase clients for use in SSR frameworks, providing a framework-agnostic way to create a Supabase client for server-side rendering.\n- Code Snippets: 288\n- Source Reputation: High\n- Benchmark Score: 82.45\n----------\n- Title: Supabase\n- Context7-compatible library ID: /llmstxt/supabase_llms-full_txt\n- Description: Supabase is a Postgres development platform providing a complete backend-as-a-service with database, authentication, APIs, Edge Functions, Realtime subscriptions, storage, and vector embeddings.\n- Code Snippets: 472355\n- Source Reputation: High\n- Benchmark Score: 72.96",
+          "versions": [],
+          "trustScore": null,
+          "snippetCount": null,
+          "relevance": 0.95
+        },
+        {
+          "libraryId": "/supabase/ssr",
+          "title": null,
+          "description": "Available Libraries:\n\n- Title: Supabase JS Client\n- Context7-compatible library ID: /supabase/supabase-js\n- Description: Supabase JS is an isomorphic JavaScript client for Supabase, enabling seamless interaction with your database and backend services from various JavaScript environments.\n- Code Snippets: 512\n- Source Reputation: High\n- Benchmark Score: 78.26\n- Versions: v2.58.0\n----------\n- Title: Supabase\n- Context7-compatible library ID: /supabase/supabase\n- Description: Supabase is the Postgres development platform, offering features like hosted Postgres, authentication, auto-generated APIs, functions, and file storage using enterprise-grade open source tools.\n- Code Snippets: 20667\n- Source Reputation: High\n- Benchmark Score: 83.64\n- Versions: 1.25.04, 1.24.12, v1.26.04\n----------\n- Title: Supabase\n- Context7-compatible library ID: /websites/supabase\n- Description: Supabase is an open-source backend platform providing a full Postgres database, authentication, storage, real-time, and edge functions to help developers build applications quickly.\n- Code Snippets: 60928\n- Source Reputation: High\n- Benchmark Score: 72.76\n----------\n- Title: Supabase SSR\n- Context7-compatible library ID: /supabase/ssr\n- Description: Supabase clients for use in SSR frameworks, providing a framework-agnostic way to create a Supabase client for server-side rendering.\n- Code Snippets: 288\n- Source Reputation: High\n- Benchmark Score: 82.45\n----------\n- Title: Supabase\n- Context7-compatible library ID: /llmstxt/supabase_llms-full_txt\n- Description: Supabase is a Postgres development platform providing a complete backend-as-a-service with database, authentication, APIs, Edge Functions, Realtime subscriptions, storage, and vector embeddings.\n- Code Snippets: 472355\n- Source Reputation: High\n- Benchmark Score: 72.96",
+          "versions": [],
+          "trustScore": null,
+          "snippetCount": null,
+          "relevance": 0.85
+        },
+        {
+          "libraryId": "/websites/supabase",
+          "title": null,
+          "description": "Available Libraries:\n\n- Title: Supabase JS Client\n- Context7-compatible library ID: /supabase/supabase-js\n- Description: Supabase JS is an isomorphic JavaScript client for Supabase, enabling seamless interaction with your database and backend services from various JavaScript environments.\n- Code Snippets: 512\n- Source Reputation: High\n- Benchmark Score: 78.26\n- Versions: v2.58.0\n----------\n- Title: Supabase\n- Context7-compatible library ID: /supabase/supabase\n- Description: Supabase is the Postgres development platform, offering features like hosted Postgres, authentication, auto-generated APIs, functions, and file storage using enterprise-grade open source tools.\n- Code Snippets: 20667\n- Source Reputation: High\n- Benchmark Score: 83.64\n- Versions: 1.25.04, 1.24.12, v1.26.04\n----------\n- Title: Supabase\n- Context7-compatible library ID: /websites/supabase\n- Description: Supabase is an open-source backend platform providing a full Postgres database, authentication, storage, real-time, and edge functions to help developers build applications quickly.\n- Code Snippets: 60928\n- Source Reputation: High\n- Benchmark Score: 72.76\n----------\n- Title: Supabase SSR\n- Context7-compatible library ID: /supabase/ssr\n- Description: Supabase clients for use in SSR frameworks, providing a framework-agnostic way to create a Supabase client for server-side rendering.\n- Code Snippets: 288\n- Source Reputation: High\n- Benchmark Score: 82.45\n----------\n- Title: Supabase\n- Context7-compatible library ID: /llmstxt/supabase_llms-full_txt\n- Description: Supabase is a Postgres development platform providing a complete backend-as-a-service with database, authentication, APIs, Edge Functions, Realtime subscriptions, storage, and vector embeddings.\n- Code Snippets: 472355\n- Source Reputation: High\n- Benchmark Score: 72.96",
+          "versions": [],
+          "trustScore": null,
+          "snippetCount": null,
+          "relevance": 0.9
+        },
+        {
+          "libraryId": "/llmstxt/supabase_llms-full_txt",
+          "title": null,
+          "description": "Available Libraries:\n\n- Title: Supabase JS Client\n- Context7-compatible library ID: /supabase/supabase-js\n- Description: Supabase JS is an isomorphic JavaScript client for Supabase, enabling seamless interaction with your database and backend services from various JavaScript environments.\n- Code Snippets: 512\n- Source Reputation: High\n- Benchmark Score: 78.26\n- Versions: v2.58.0\n----------\n- Title: Supabase\n- Context7-compatible library ID: /supabase/supabase\n- Description: Supabase is the Postgres development platform, offering features like hosted Postgres, authentication, auto-generated APIs, functions, and file storage using enterprise-grade open source tools.\n- Code Snippets: 20667\n- Source Reputation: High\n- Benchmark Score: 83.64\n- Versions: 1.25.04, 1.24.12, v1.26.04\n----------\n- Title: Supabase\n- Context7-compatible library ID: /websites/supabase\n- Description: Supabase is an open-source backend platform providing a full Postgres database, authentication, storage, real-time, and edge functions to help developers build applications quickly.\n- Code Snippets: 60928\n- Source Reputation: High\n- Benchmark Score: 72.76\n----------\n- Title: Supabase SSR\n- Context7-compatible library ID: /supabase/ssr\n- Description: Supabase clients for use in SSR frameworks, providing a framework-agnostic way to create a Supabase client for server-side rendering.\n- Code Snippets: 288\n- Source Reputation: High\n- Benchmark Score: 82.45\n----------\n- Title: Supabase\n- Context7-compatible library ID: /llmstxt/supabase_llms-full_txt\n- Description: Supabase is a Postgres development platform providing a complete backend-as-a-service with database, authentication, APIs, Edge Functions, Realtime subscriptions, storage, and vector embeddings.\n- Code Snippets: 472355\n- Source Reputation: High\n- Benchmark Score: 72.96",
+          "versions": [],
+          "trustScore": null,
+          "snippetCount": null,
+          "relevance": 0.8
+        }
+      ],
+      "selectedLibraryId": "/supabase/supabase-js",
+      "selectionReason": "exact_package_or_project_match;official_organization_match",
+      "resolvedVersion": null,
+      "versionResolution": {
+        "status": "VERSION_NOT_RESOLVED",
+        "resolvedVersion": null,
+        "compatibleMajor": 2
+      },
+      "status": "RESOLVED"
+    },
+    "providerCallMade": true,
+    "readOnly": true
+  },
+  "verificationStatus": "VERIFIED"
+}

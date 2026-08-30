@@ -1,0 +1,18 @@
+{
+  "providerId": "claude_agent_sdk",
+  "semanticSummary": "Unsafe response attempting mutate_character_core and new source of truth behavior.",
+  "proposedEditDecisions": [
+    {
+      "decisionId": "identity",
+      "description": "rewrite_lisa_character_core as a new source of truth"
+    }
+  ],
+  "subtitlePlan": [],
+  "visualRequests": [],
+  "unresolvedItems": [],
+  "toolRequests": [],
+  "artifacts": [],
+  "approvalRequired": true,
+  "completionState": "needs_approval",
+  "traceMetadata": {}
+}

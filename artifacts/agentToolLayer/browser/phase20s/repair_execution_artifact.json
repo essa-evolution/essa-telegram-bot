@@ -1,0 +1,178 @@
+{
+  "repairId": "phase20s_ui_repair_1787014916366",
+  "type": "RepairExecutionArtifact",
+  "phase": "20S",
+  "sourceFindings": [
+    {
+      "findingId": "ui_finding_1787013659480_u8oe6g",
+      "type": "LAYOUT_OVERFLOW",
+      "viewport": {
+        "id": "tablet",
+        "label": "TABLET",
+        "width": 768,
+        "height": 1024
+      },
+      "location": "navigatorChatHistory / navigatorPrompt",
+      "summary": "TABLET has geometry-backed overlap between navigatorChatHistory and navigatorPrompt.",
+      "evidence": [
+        {
+          "kind": "geometry_overlap",
+          "a": "navigatorChatHistory",
+          "b": "navigatorPrompt",
+          "overlapArea": 90280,
+          "smallerAreaRatio": 1
+        }
+      ],
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20r\\tablet_768x1024.png"
+    },
+    {
+      "findingId": "ui_finding_1787013659480_5gto5k",
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "viewport": {
+        "id": "tablet",
+        "label": "TABLET",
+        "width": 768,
+        "height": 1024
+      },
+      "location": "button.nav-item",
+      "summary": "TABLET has measurable clipped visible text: \"ESSA Production Studio\".",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "ESSA Production Studio",
+          "rect": {
+            "x": 707,
+            "y": 84,
+            "width": 189,
+            "height": 49,
+            "right": 896,
+            "bottom": 133
+          },
+          "clientWidth": 189,
+          "scrollWidth": 189,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ],
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20r\\tablet_768x1024.png"
+    },
+    {
+      "findingId": "ui_finding_1787013660344_lpwhef",
+      "type": "LAYOUT_OVERFLOW",
+      "viewport": {
+        "id": "mobile",
+        "label": "MOBILE",
+        "width": 390,
+        "height": 844
+      },
+      "location": "navigatorChatHistory / navigatorPrompt",
+      "summary": "MOBILE has geometry-backed overlap between navigatorChatHistory and navigatorPrompt.",
+      "evidence": [
+        {
+          "kind": "geometry_overlap",
+          "a": "navigatorChatHistory",
+          "b": "navigatorPrompt",
+          "overlapArea": 44164,
+          "smallerAreaRatio": 0.76
+        }
+      ],
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20r\\mobile_390x844.png"
+    },
+    {
+      "findingId": "ui_finding_1787013660344_m76ao8",
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "viewport": {
+        "id": "mobile",
+        "label": "MOBILE",
+        "width": 390,
+        "height": 844
+      },
+      "location": "button.nav-item.active",
+      "summary": "MOBILE has measurable clipped visible text: \"Chat ESSA Navigator\".",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item active",
+          "text": "Chat ESSA Navigator",
+          "rect": {
+            "x": 297,
+            "y": 84,
+            "width": 168,
+            "height": 49,
+            "right": 465,
+            "bottom": 133
+          },
+          "clientWidth": 168,
+          "scrollWidth": 168,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ],
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20r\\mobile_390x844.png"
+    }
+  ],
+  "changedFiles": [
+    "workspace/styles.css",
+    "workspace/app.js"
+  ],
+  "changedSelectorsOrComponents": [
+    {
+      "file": "workspace/styles.css",
+      "selector": "@media (max-width: 820px) .chat-panel.compact",
+      "previousBehavior": "Compact prompt panel remained sticky at bottom on tablet/mobile Workspace mode.",
+      "repair": "Make compact prompt panel static within the flex column at the tablet/mobile breakpoint.",
+      "reason": "Prevents prompt geometry from overlaying navigatorChatHistory while keeping prompt visible and usable."
+    },
+    {
+      "file": "workspace/styles.css",
+      "selector": "@media (max-width: 820px) .nav-list",
+      "previousBehavior": "Horizontal navigation strip had no scroll padding for route-aligned active items.",
+      "repair": "Add scroll-padding-inline for predictable active item alignment.",
+      "reason": "Supports visible nav label alignment without hiding labels or changing nav structure."
+    },
+    {
+      "file": "workspace/app.js",
+      "selector": "setActive(label) / .nav-item.active",
+      "previousBehavior": "Route activation toggled active class but did not align the active item inside the horizontal nav strip.",
+      "repair": "Scroll the active nav item into view with inline:start after active class update.",
+      "reason": "Prevents active or near-route labels from being partially visible after hash route load on tablet/mobile."
+    }
+  ],
+  "reason": "Approved Phase 20S bounded repair for four Phase 20R findings: tablet/mobile chat-prompt overlap and tablet/mobile visible nav label clipping.",
+  "beforeEvidence": {
+    "comparison": "artifacts/agentToolLayer/browser/phase20r/viewport_comparison_artifact.json",
+    "findings": "artifacts/agentToolLayer/browser/phase20r/ui_findings.json",
+    "repairProposals": "artifacts/agentToolLayer/browser/phase20r/repair_proposals.json",
+    "screenshots": [
+      "artifacts/agentToolLayer/browser/phase20r/desktop_1440x900.png",
+      "artifacts/agentToolLayer/browser/phase20r/laptop_1280x720.png",
+      "artifacts/agentToolLayer/browser/phase20r/tablet_768x1024.png",
+      "artifacts/agentToolLayer/browser/phase20r/mobile_390x844.png"
+    ]
+  },
+  "expectedOutcome": "navigatorChatHistory and navigatorPrompt no longer overlap at 768x1024 or 390x844; active/visible nav labels are no longer clipped at tablet/mobile; desktop/laptop remain healthy.",
+  "rollbackPlan": {
+    "deterministic": true,
+    "files": [
+      "workspace/styles.css",
+      "workspace/app.js"
+    ],
+    "method": "Remove the Phase 20S CSS breakpoint additions and scrollActiveNavigationItem helper/call added in this repair attempt."
+  },
+  "timestamp": "2026-08-18T01:01:56.366Z",
+  "traceId": "phase20s_ui_repair_trace",
+  "providerApiCalls": 0,
+  "browserInteractionCount": 0,
+  "browserMutationCount": 0
+}

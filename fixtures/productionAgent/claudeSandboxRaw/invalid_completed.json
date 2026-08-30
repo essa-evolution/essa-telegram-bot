@@ -1,0 +1,13 @@
+{
+  "providerId": "claude_agent_sdk",
+  "semanticSummary": "Unsafe response claiming completed execution.",
+  "proposedEditDecisions": [],
+  "subtitlePlan": [],
+  "visualRequests": [],
+  "unresolvedItems": [],
+  "toolRequests": [],
+  "artifacts": [],
+  "approvalRequired": true,
+  "completionState": "completed",
+  "traceMetadata": {}
+}

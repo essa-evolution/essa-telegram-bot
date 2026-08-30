@@ -1,0 +1,432 @@
+{
+  "status": "PHASE_22G_PROPERTY_DISCOVERY_PROOF_PASS",
+  "route": "http://localhost:3150/workspace/#property?mode=discover",
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "results": [
+    {
+      "id": "batumi-apartment",
+      "label": "Scenario A - Apartment in Batumi returns results",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\01_discovery_batumi_results.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+      "checks": {
+        "hash": "#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+        "currentMode": "discover",
+        "discoveryStatus": "FOUND",
+        "discoveryMatchedCount": "3",
+        "resultCards": 3,
+        "comparisonCards": 0,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "budget-filter",
+      "label": "Scenario B - Batumi apartment under 130000 USD filters results",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\02_discovery_budget_filter.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8%20%D0%B4%D0%BE%20130000%20USD",
+      "checks": {
+        "hash": "#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8%20%D0%B4%D0%BE%20130000%20USD",
+        "currentMode": "discover",
+        "discoveryStatus": "FOUND",
+        "discoveryMatchedCount": "1",
+        "resultCards": 1,
+        "comparisonCards": 0,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "empty",
+      "label": "Scenario C - No matches returns safe empty state",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\03_discovery_empty_state.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?mode=discover&q=%D0%92%D0%B8%D0%BB%D0%BB%D0%B0%20%D0%B2%20%D0%A2%D0%B1%D0%B8%D0%BB%D0%B8%D1%81%D0%B8%20%D0%B4%D0%BE%201%20USD",
+      "checks": {
+        "hash": "#property?mode=discover&q=%D0%92%D0%B8%D0%BB%D0%BB%D0%B0%20%D0%B2%20%D0%A2%D0%B1%D0%B8%D0%BB%D0%B8%D1%81%D0%B8%20%D0%B4%D0%BE%201%20USD",
+        "currentMode": "discover",
+        "discoveryStatus": "NO_MATCHES_IN_CURRENT_PROPERTY_DATA",
+        "discoveryMatchedCount": "0",
+        "resultCards": 0,
+        "comparisonCards": 0,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "stale",
+      "label": "Scenario D - Stale result shows stale warning",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\04_discovery_stale_warning.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+      "checks": {
+        "hash": "#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+        "currentMode": "discover",
+        "discoveryStatus": "FOUND",
+        "discoveryMatchedCount": "3",
+        "resultCards": 3,
+        "comparisonCards": 0,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "incomplete",
+      "label": "Scenario E - Incomplete result shows missing evidence warning",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\05_discovery_incomplete_evidence.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+      "checks": {
+        "hash": "#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+        "currentMode": "discover",
+        "discoveryStatus": "FOUND",
+        "discoveryMatchedCount": "3",
+        "resultCards": 3,
+        "comparisonCards": 0,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "passport",
+      "label": "Scenario F - Discovery result opens Property Passport",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\06_discovery_to_passport.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?section=passport",
+      "checks": {
+        "hash": "#property?section=passport",
+        "currentMode": "passport",
+        "discoveryStatus": "FOUND",
+        "discoveryMatchedCount": "3",
+        "resultCards": 0,
+        "comparisonCards": 0,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "compare",
+      "label": "Scenario G - Discovery results open Compare",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\07_discovery_to_compare.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?mode=compare&items=normal%2Cstale%2Cincomplete",
+      "checks": {
+        "hash": "#property?mode=compare&items=normal%2Cstale%2Cincomplete",
+        "currentMode": "compare",
+        "discoveryStatus": "FOUND",
+        "discoveryMatchedCount": "3",
+        "resultCards": 0,
+        "comparisonCards": 3,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 920,
+          "clientHeight": 920
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "lisa",
+      "label": "Scenario H - Ask Lisa about current results",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\08_discovery_lisa_answer.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+      "checks": {
+        "hash": "#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+        "currentMode": "discover",
+        "discoveryStatus": "FOUND",
+        "discoveryMatchedCount": "3",
+        "resultCards": 3,
+        "comparisonCards": 0,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "guide",
+      "label": "Scenario I - Guide Me discovery flow",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\09_discovery_guide.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8&discoveryGuide=1&discoveryGuideStep=2",
+      "checks": {
+        "hash": "#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8&discoveryGuide=1&discoveryGuideStep=2",
+        "currentMode": "discover",
+        "discoveryStatus": "FOUND",
+        "discoveryMatchedCount": "3",
+        "resultCards": 3,
+        "comparisonCards": 0,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "mobile",
+      "label": "Scenario J - Mobile/narrow viewport",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22g\\10_discovery_mobile.png"
+      ],
+      "finalUrl": "http://localhost:3150/workspace/#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+      "checks": {
+        "hash": "#property?mode=discover&q=%D0%9A%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0%20%D0%B2%20%D0%91%D0%B0%D1%82%D1%83%D0%BC%D0%B8",
+        "currentMode": "discover",
+        "discoveryStatus": "FOUND",
+        "discoveryMatchedCount": "3",
+        "resultCards": 3,
+        "comparisonCards": 0,
+        "passportVisible": true,
+        "lisaVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "noForbiddenActions": true,
+        "disabledExecutions": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "scrollHeight": 4979,
+          "clientHeight": 844
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

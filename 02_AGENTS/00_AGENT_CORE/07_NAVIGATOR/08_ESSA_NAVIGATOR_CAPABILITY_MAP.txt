@@ -1,0 +1,590 @@
+ESSA NAVIGATOR — CAPABILITY MAP
+
+Purpose
+
+This document defines the full capability map of ESSA Navigator as the central intelligence of ESSA Workspace.
+
+Navigator remains one intelligence.
+
+Factories, Studios, Property, Marketing, Legal, Education, Psychology, Digital Economy, Impact Foundation and other ESSA areas are not separate competing minds.
+They are capability domains of the same Navigator.
+
+Main principle:
+ESSA does not copy ChatGPT.
+ESSA keeps its own philosophy, memory, presence and style, while gaining the practical capabilities of a modern AI Workspace.
+
+Navigator must become:
+— conversational;
+— reasoning-capable;
+— creative;
+— project-aware;
+— workflow-aware;
+— tool-aware;
+— file-aware;
+— image-aware;
+— multilingual;
+— approval-safe;
+— ready for Telegram, Web Workspace and future mobile interfaces.
+
+
+STATUS LEGEND
+
+implemented — works in current runtime or prompt system.
+partial — exists, but needs stronger runtime, routing or memory.
+architecture — described, but not active in runtime.
+missing — not implemented yet.
+quick_add — can be added with small code or prompt modules.
+platform_needed — better connected through mature external platforms instead of being built manually.
+
+
+1. CONVERSATION
+
+Status: partial / implemented in core prompt.
+
+Navigator can:
+— hold natural conversation;
+— explain complex things simply;
+— support the user without pressure;
+— ask clarifying questions;
+— preserve ESSA tone;
+— move from chaos to structure.
+
+Current sources:
+— CORE SYSTEM;
+— GUIDANCE MODE;
+— BEHAVIOR RULES;
+— ACTION LOGIC;
+— RESPONSE MODES;
+— LANGUAGE ADAPTATION.
+
+Still needed:
+— better long-dialogue continuation;
+— explicit topic switching rules;
+— multi-topic conversation handling;
+— conversation summary mode;
+— Web Workspace conversation state.
+
+Recommended path:
+Implement simple conversation state and summary logic inside ESSA first.
+Use external platforms only for large-scale thread orchestration later.
+
+
+2. REASONING
+
+Status: partial.
+
+Navigator can:
+— break big tasks into steps;
+— compare options;
+— show risks;
+— build basic plans;
+— recommend next actions.
+
+Still needed:
+— dedicated deep reasoning mode;
+— structured option comparison;
+— decision matrix output;
+— roadmap builder;
+— strategic recommendation templates;
+— ability to reason across files, memory and projects.
+
+Recommended path:
+Implement ESSA-native reasoning prompts first.
+For complex workflows and branching logic, connect Flowise or Dify later.
+
+
+3. CREATION
+
+Status: partial.
+
+Navigator can create:
+— texts;
+— plans;
+— instructions;
+— scripts;
+— prompts;
+— letters;
+— posts;
+— basic structures.
+
+Still needed:
+— document package builder;
+— website copy builder;
+— presentation outline builder;
+— book/course builder;
+— technical specification builder;
+— export-ready document formatting.
+
+Recommended path:
+Implement prompt packages inside ESSA first.
+Use document/PDF generation tools later instead of hand-building every exporter.
+
+
+4. WORKSPACE
+
+Status: architecture / partial UI.
+
+Navigator must work not only as Telegram bot, but as one workspace brain.
+
+Workspace capabilities:
+— create projects;
+— remember projects;
+— return to projects;
+— continue unfinished work;
+— show active tasks;
+— show artifacts;
+— show approvals;
+— route requests into modules.
+
+Current state:
+— static ESSA Workspace shell exists;
+— Telegram remains primary runtime;
+— project memory exists only in basic profile/message memory form.
+
+Still needed:
+— Workspace API;
+— project state;
+— project list;
+— task dashboard;
+— artifact library;
+— approval center;
+— auth/user accounts.
+
+Recommended path:
+Build a minimal ESSA Workspace API first.
+Do not replace Telegram; use the same Navigator core for both interfaces.
+
+
+5. PROJECT INTELLIGENCE
+
+Status: partial.
+
+Navigator should understand projects of many types:
+— website;
+— real estate;
+— business;
+— marketing;
+— book;
+— course;
+— video;
+— construction;
+— travel;
+— legal question;
+— content campaign.
+
+Current state:
+— Project Factory text package exists for house/project packages;
+— general Action Logic supports big tasks;
+— no universal project type router yet.
+
+Still needed:
+— detectProjectType;
+— project intake templates;
+— project package schemas;
+— handoff package templates;
+— project memory state.
+
+Recommended path:
+Implement project routing inside ESSA.
+Use external workflow engines later when project workflows become multi-step and tool-heavy.
+
+
+6. FACTORY INTELLIGENCE
+
+Status: partial.
+
+Navigator should detect when the user wants to create:
+— video;
+— post;
+— website;
+— document;
+— advertisement;
+— strategy;
+— project package;
+— business package;
+— legal preparation package.
+
+Current state:
+— content_factory intent exists;
+— project_factory intent exists;
+— both produce text-only Task Packages.
+
+Still needed:
+— website_factory;
+— marketing_factory;
+— document_factory;
+— business_strategy_factory;
+— legal_preparation_factory;
+— education_factory;
+— travel_factory.
+
+Recommended path:
+Implement ESSA-native text package prompts first.
+Connect n8n or Flowise later for multi-step automated chains.
+
+
+7. TOOL INTELLIGENCE
+
+Status: architecture / partial prompt.
+
+Navigator should know which tool is appropriate for a task.
+
+Current state:
+— TOOL LAYERS document describes visual/design and external tools conceptually;
+— no real tool registry;
+— no tool adapters;
+— no tool permissions.
+
+Still needed:
+— tool registry;
+— tool recommendation map;
+— tool permission levels;
+— tool execution contract;
+— fallback when tools are unavailable;
+— human approval before tool launch.
+
+Recommended path:
+Start with tool recommendations only.
+Use n8n for tool execution orchestration.
+Use Dify or Flowise for LLM tool-flow prototypes.
+
+
+8. FILE INTELLIGENCE
+
+Status: missing / architecture needed.
+
+Navigator should support:
+— PDF analysis;
+— Word analysis;
+— Excel analysis;
+— presentation analysis;
+— text file analysis;
+— document summarization;
+— document restructuring;
+— document-to-task conversion.
+
+Current state:
+— internal knowledge ingestion can read docx for CORE_DOCS;
+— user-facing file upload and file analysis are not implemented.
+
+Still needed:
+— file upload route;
+— file type detection;
+— safe parser layer;
+— file summary;
+— file question answering;
+— artifact extraction;
+— storage policy;
+— privacy and deletion rules.
+
+Recommended path:
+Do not build a full file platform manually at first.
+Implement minimal upload/read/summarize for text, PDF and DOCX.
+Use mature libraries and external platforms for large document workspaces later.
+
+
+9. IMAGE INTELLIGENCE
+
+Status: partial / missing vision runtime.
+
+Navigator should:
+— understand images;
+— explain images;
+— analyze visual style;
+— prepare image generation prompts;
+— prepare image editing briefs;
+— help with visual tasks and design direction.
+
+Current state:
+— IMAGE mode creates image prompts from text;
+— TOOL LAYERS describes visual/design tool layer;
+— no image upload;
+— no vision model call;
+— no image artifact state.
+
+Still needed:
+— image upload;
+— vision analysis prompt;
+— visual brief builder;
+— image generation prompt builder;
+— image editing task package;
+— approval before external image tools.
+
+Recommended path:
+Use existing multimodal model APIs for vision.
+Do not build image understanding manually.
+
+
+10. WEB WORKSPACE INTELLIGENCE
+
+Status: partial UI / missing runtime connection.
+
+Navigator should work through:
+— Telegram;
+— Web Workspace;
+— future mobile app.
+
+One Navigator core must serve all interfaces.
+
+Current state:
+— Telegram runtime exists;
+— static Web Workspace shell exists;
+— no Web chat API;
+— no shared workspace session state.
+
+Still needed:
+— shared Navigator service;
+— Web chat endpoint;
+— project/task endpoints;
+— artifact endpoints;
+— approval endpoints;
+— mobile-ready API.
+
+Recommended path:
+Create a small Navigator API layer.
+Keep Telegram webhook as one entry point, not the whole system.
+
+
+11. MEMORY
+
+Status: partial.
+
+Current memory:
+— session memory;
+— user profile memory;
+— vocabulary memory;
+— message history;
+— knowledge retrieval logs.
+
+Still needed:
+— project memory;
+— summary memory;
+— vector memory for user/project context;
+— artifact memory;
+— task memory;
+— cross-interface continuity.
+
+Recommended path:
+Extend memory gradually.
+Do not change database schema without a separate migration plan.
+
+
+12. KNOWLEDGE / RAG
+
+Status: implemented / partial.
+
+Current capabilities:
+— CORE_DOCS registry;
+— doc ingestion;
+— embeddings;
+— Supabase retrieval;
+— source-of-truth priority for identity;
+— knowledge context injection.
+
+Still needed:
+— more complete ESSA architecture coverage;
+— freshness checks;
+— document health checks;
+— capability documents in knowledge;
+— retrieval tuning per intent.
+
+Recommended path:
+Keep ESSA RAG native.
+Use external RAG platforms only if document volume or UI requirements exceed current system.
+
+
+13. APPROVALS
+
+Status: partial.
+
+Current state:
+— text-only APPROVAL REQUIRED block exists in Factory MVP.
+
+Still needed:
+— approval state;
+— approval buttons;
+— approval history;
+— dashboard approval center;
+— tool permission gating;
+— audit log.
+
+Recommended path:
+Implement Telegram inline buttons for simple approval.
+Implement Web Approval Center later.
+
+
+14. MULTILINGUAL
+
+Status: partial.
+
+Current state:
+— LANGUAGE ADAPTATION prompt exists;
+— OpenAI can respond in multiple languages.
+
+Still needed:
+— explicit language preference memory;
+— per-user language setting;
+— translation mode;
+— multilingual content package routing;
+— Georgian/English/Russian consistency rules.
+
+Recommended path:
+Implement language preference inside ESSA memory later.
+
+
+15. VOICE
+
+Status: implemented / partial.
+
+Current state:
+— Telegram voice input through Whisper;
+— ElevenLabs voice output;
+— text response remains source.
+
+Still needed:
+— provider interface maturity;
+— streaming voice;
+— local TTS;
+— voice interruption;
+— voice workspace support;
+— voice artifact packages.
+
+Recommended path:
+Use existing voice providers first.
+Do not build a custom TTS stack before product flow is stable.
+
+
+16. EXTERNAL PLATFORM BRIDGE
+
+Status: missing.
+
+Future platform integrations:
+— Dify for app-like LLM workflows;
+— Flowise for visual LLM chains;
+— n8n for automation and external tool orchestration;
+— Open WebUI for local/open-model workspace;
+— external file/document tools;
+— image/video generation tools.
+
+Recommended rule:
+Do not manually recreate mature workflow engines.
+Navigator should remain the brain and router.
+External platforms can become execution surfaces.
+
+
+17. CAPABILITY ROUTING
+
+Status: partial.
+
+Current state:
+— detectMode supports NAVIGATOR / EXECUTION / IMAGE;
+— detectFactoryIntent supports content_factory / project_factory.
+
+Still needed:
+— detectWorkspaceIntent;
+— unified capability router;
+— route priorities;
+— conflict handling;
+— fallback rules;
+— capability-specific prompt packages.
+
+Recommended path:
+Create a single capability router that coordinates existing mode detection and factory detection.
+
+
+18. ESSA WORKSPACE MODULE MAP
+
+Status: partial UI / missing runtime.
+
+Workspace modules:
+— Chat ESSA Navigator;
+— Path ESSA;
+— ESSA Property;
+— Content Factory;
+— Website Studio;
+— Marketing and Advertising;
+— AI Agents;
+— Education;
+— Psychology;
+— Legal Help;
+— Digital Economy;
+— Impact Foundation;
+— Travel;
+— Community;
+— My Projects;
+— ESSA Creations;
+— Settings.
+
+Still needed:
+— each module needs a capability prompt;
+— each module needs workflow intent;
+— each module needs output package shape;
+— each module needs approval rules where relevant.
+
+
+QUICK ADD CAPABILITIES
+
+Can be added quickly:
+— Website Studio task package;
+— Marketing Factory task package;
+— Document Factory task package;
+— Business Strategy task package;
+— Travel Planner task package;
+— Legal Preparation task package with safety disclaimer;
+— Education/Course Builder task package;
+— unified detectWorkspaceIntent;
+— Navigator Capability Summary in system prompt;
+— Web chat endpoint for static Workspace.
+
+
+PLATFORM-NEEDED CAPABILITIES
+
+Better connected through mature platforms:
+— multi-step workflow automation: n8n;
+— LLM workflow prototyping: Flowise or Dify;
+— local/open model workspace: Open WebUI;
+— advanced file workspace: dedicated document processing pipeline;
+— image/video generation: external generation providers;
+— publishing automation: platform APIs through approval-gated n8n workflows;
+— dashboard orchestration: custom Web Workspace plus workflow backend.
+
+
+WHAT ESSA SHOULD NOT DO MANUALLY FIRST
+
+Do not manually build from scratch at the beginning:
+— full workflow engine;
+— full file management platform;
+— full video generation stack;
+— full publishing scheduler;
+— full visual node editor;
+— full multi-agent orchestration platform;
+— full local model UI.
+
+Navigator should coordinate and route.
+Mature external systems can execute specialized workflows.
+
+
+NEXT CAPABILITY UPGRADE STEPS
+
+1. Add this Capability Map to Navigator knowledge/runtime after review.
+2. Create detectWorkspaceIntent.
+3. Add Website Studio package prompt.
+4. Add Marketing Factory package prompt.
+5. Add Document Factory package prompt.
+6. Add Business Strategy package prompt.
+7. Add Legal Preparation package prompt.
+8. Add Travel Planner package prompt.
+9. Create Web Workspace chat endpoint.
+10. Add approval state only after explicit confirmation.
+
+
+FINAL PRINCIPLE
+
+ESSA Navigator is the central intelligence.
+
+It should not become a generic assistant.
+It should become the living operational brain of ESSA:
+able to converse, reason, create, plan, route, remember, prepare, approve and coordinate.
+
+Factories and Studios are not separate minds.
+They are ESSA Navigator capabilities.

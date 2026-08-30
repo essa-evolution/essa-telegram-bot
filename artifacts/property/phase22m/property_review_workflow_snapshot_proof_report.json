@@ -1,0 +1,447 @@
+{
+  "status": "PHASE_22M_PROPERTY_REVIEW_WORKFLOW_SNAPSHOT_PROOF_PASS",
+  "route": "http://localhost:3200/workspace/#property-review-queue",
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "mergeActions": 0,
+  "publishActions": 0,
+  "quarantineMutations": 0,
+  "canonicalPropertyMutation": 0,
+  "listingMutation": 0,
+  "results": [
+    {
+      "id": "create-snapshot",
+      "label": "Scenario A - Create workflow snapshot",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\01_create_snapshot.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "history",
+      "label": "Scenario B - Snapshot history is visible",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\02_snapshot_history.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "compare",
+      "label": "Scenario C - Compare snapshots",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\03_compare_snapshots.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "verify",
+      "label": "Scenario D - Verify snapshot integrity",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\04_verify_snapshot.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "restore",
+      "label": "Scenario E - Restore local review state",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\05_restore_local_review_state.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "rollback",
+      "label": "Scenario F - Roll back local review state",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\06_rollback_local_review_state.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "rollback-audit",
+      "label": "Scenario G - Rollback audit events are visible",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\07_rollback_audit.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "tampered",
+      "label": "Scenario H - Tampered snapshot is blocked",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\08_tampered_block.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "immutability",
+      "label": "Scenario I - Property immutability counters stay zero",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\09_property_immutability.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "mobile",
+      "label": "Scenario J - Mobile/narrow snapshot surface",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22m\\10_mobile_workflow_snapshots.png"
+      ],
+      "finalUrl": "http://localhost:3200/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "snapshotSectionVisible": true,
+        "snapshotBannerVisible": true,
+        "noPropertyExecutionVisible": true,
+        "immutableCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "scrollHeight": 14624,
+          "clientHeight": 844
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

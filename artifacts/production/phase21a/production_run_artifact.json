@@ -1,0 +1,39 @@
+{
+  "artifactId": "phase21a_production_run",
+  "type": "ProductionRunArtifact",
+  "status": "READY_FOR_HUMAN_REVIEW",
+  "sourceArtifact": {
+    "path": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\media\\input\\future_lisa_11s_source.mp4.mp4",
+    "requestedPath": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\media\\input\\future_lisa_11s_source.mp4",
+    "warning": "Requested path was missing; using manually placed double-extension file in media/input.",
+    "hash": "2df0dcd4ac4c4ef4020fb53d4f840f48edff4d3da3e3ab36f4a792143ece8363",
+    "originalMustNotBeOverwritten": true,
+    "unchanged": true
+  },
+  "artifacts": {
+    "mediaInspection": "media_inspection.json",
+    "transcriptArtifact": "transcript_artifact.json",
+    "productionIntent": "production_intent.json",
+    "semanticVideoStructure": "semantic_video_structure.json",
+    "editorialDecision": "editorial_decisions.json",
+    "subtitleArtifact": "subtitle_artifact.json",
+    "renderArtifact": "render_artifact.json",
+    "verificationReport": "verification_report.json",
+    "representativeFrames": [
+      "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\production\\phase21a\\frames\\beginning.jpg",
+      "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\production\\phase21a\\frames\\middle.jpg",
+      "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\production\\phase21a\\frames\\end.jpg"
+    ]
+  },
+  "localExecutables": {
+    "ffmpeg": "C:\\Users\\Lisa\\Tools\\ffmpeg\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+    "ffprobe": "C:\\Users\\Lisa\\Tools\\ffmpeg\\ffmpeg-9.0.1-essentials_build\\bin\\ffprobe.exe",
+    "whisperCpp": "C:\\Users\\Lisa\\Tools\\whisper.cpp\\Release\\whisper-cli.exe",
+    "whisperModel": "C:\\Users\\Lisa\\Tools\\whisper.cpp\\models\\ggml-base.bin"
+  },
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "paidCalls": 0,
+  "publishCalls": 0,
+  "createdAt": "2026-08-18T02:37:01.402Z"
+}

@@ -1,0 +1,42 @@
+{
+  "artifactType": "BusinessSprint02UiProof",
+  "baseUrl": "http://localhost:3400",
+  "storePath": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\business\\sprint02-proof-store.json",
+  "results": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "pass": true,
+      "screenshotPath": "artifacts\\business\\phase-sprint02\\desktop_business_flow.png",
+      "failedRequests": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "label": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "pass": true,
+      "screenshotPath": "artifacts\\business\\phase-sprint02\\mobile_business_flow.png",
+      "failedRequests": [],
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "label": "restart_reload",
+      "pass": true,
+      "screenshotPath": "artifacts\\business\\phase-sprint02\\mobile_returning_user_after_restart.png"
+    }
+  ],
+  "pass": true,
+  "providerCalls": 0,
+  "modelCalls": 0,
+  "paymentActions": 0,
+  "externalActions": 0,
+  "createdAt": "2026-08-27T14:46:27.171Z"
+}

@@ -1,0 +1,21 @@
+{
+  "requestId": "phase20i_browser_request",
+  "taskId": "phase20i_task",
+  "requestedByProvider": "future_openai_agent",
+  "requestedByAgent": "workspace_planner",
+  "toolId": "browser.playwright.mock",
+  "capability": "inspect",
+  "action": "inspect_local_page",
+  "input": {
+    "scope": "local_dev_server",
+    "url": "http://localhost:3000/workspace/#navigator"
+  },
+  "intendedOutcome": "Inspect local Navigator page state.",
+  "permissionLevel": "READ_ONLY",
+  "environment": "LOCAL",
+  "estimatedCost": "LOCAL_COMPUTE",
+  "sideEffectClass": "LOCAL_ONLY",
+  "reason": "Verify UI state after local build in a future phase.",
+  "confidence": 0.81,
+  "traceId": "phase20i_browser_trace"
+}

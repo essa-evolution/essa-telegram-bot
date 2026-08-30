@@ -1,0 +1,44 @@
+{
+  "artifactType": "BusinessSupabaseConnectivityDiagnosis",
+  "checkedAt": "2026-08-27T19:12:18.946Z",
+  "failureClass": "LIVE_SUPABASE_REACHABLE",
+  "checks": {
+    "env": {
+      "supabaseUrlPresent": true,
+      "serviceRolePresent": true,
+      "anonKeyPresent": false,
+      "databaseUrlPresent": false,
+      "businessStoreMode": null
+    },
+    "urlFormat": {
+      "ok": true,
+      "protocol": "https:",
+      "hostPresent": true,
+      "formatError": null
+    },
+    "dns": {
+      "ok": true,
+      "status": "DNS_REACHABLE"
+    },
+    "tcp443": {
+      "ok": true,
+      "status": "TCP_443_REACHABLE"
+    },
+    "tls": {
+      "ok": true,
+      "status": "TLS_VALID"
+    },
+    "authEndpoint": {
+      "ok": true,
+      "status": "AUTH_ENDPOINT_RESPONDED",
+      "httpStatus": 401
+    },
+    "restEndpoint": {
+      "ok": true,
+      "status": "REST_ENDPOINT_RESPONDED",
+      "httpStatus": 200
+    }
+  },
+  "secretValuesPrinted": false,
+  "mutationsPerformed": 0
+}

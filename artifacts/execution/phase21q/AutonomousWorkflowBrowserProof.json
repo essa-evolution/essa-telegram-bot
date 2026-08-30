@@ -1,0 +1,163 @@
+{
+  "artifactType": "AutonomousWorkflowBrowserProof",
+  "phase": "21Q",
+  "route": "http://127.0.0.1:3220/workspace/#workflow/LOCAL_MEDIA_REPURPOSE_PROOF",
+  "status": "PHASE_21Q_BROWSER_WORKFLOW_PASS",
+  "results": [
+    {
+      "viewportId": "desktop",
+      "screenshots": [
+        "artifacts\\execution\\phase21q\\screenshots\\desktop_workflow_preview.png",
+        "artifacts\\execution\\phase21q\\screenshots\\desktop_workflow_running.png",
+        "artifacts\\execution\\phase21q\\screenshots\\desktop_workflow_success.png",
+        "artifacts\\execution\\phase21q\\screenshots\\desktop_workflow_failure.png",
+        "artifacts\\execution\\phase21q\\screenshots\\desktop_workflow_rollback.png"
+      ],
+      "checks": {
+        "previewChecks": {
+          "routeOpened": true,
+          "panelVisible": true,
+          "dagVisible": true,
+          "readinessVisible": true,
+          "onePrimaryExecute": true,
+          "noRawSourcePathInRoute": true,
+          "noExternalPromises": true,
+          "noHorizontalOverflow": true,
+          "metrics": {
+            "scrollWidth": 1440,
+            "clientWidth": 1440
+          }
+        },
+        "successChecks": {
+          "succeeded": true,
+          "outputsVisible": true,
+          "allStepsSucceeded": true,
+          "lineageVisible": true,
+          "rollbackVisible": true,
+          "sourcePreservedVisible": true
+        },
+        "failureChecks": {
+          "failureVisible": true,
+          "failedStepVisible": true,
+          "noFalseSuccess": true
+        },
+        "rollbackChecks": {
+          "rolledBack": true,
+          "rollbackLabel": true,
+          "sourceStillVisible": true
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "viewportId": "tablet",
+      "screenshots": [
+        "artifacts\\execution\\phase21q\\screenshots\\tablet_workflow_preview.png",
+        "artifacts\\execution\\phase21q\\screenshots\\tablet_workflow_running.png",
+        "artifacts\\execution\\phase21q\\screenshots\\tablet_workflow_success.png",
+        "artifacts\\execution\\phase21q\\screenshots\\tablet_workflow_failure.png",
+        "artifacts\\execution\\phase21q\\screenshots\\tablet_workflow_rollback.png"
+      ],
+      "checks": {
+        "previewChecks": {
+          "routeOpened": true,
+          "panelVisible": true,
+          "dagVisible": true,
+          "readinessVisible": true,
+          "onePrimaryExecute": true,
+          "noRawSourcePathInRoute": true,
+          "noExternalPromises": true,
+          "noHorizontalOverflow": true,
+          "metrics": {
+            "scrollWidth": 768,
+            "clientWidth": 768
+          }
+        },
+        "successChecks": {
+          "succeeded": true,
+          "outputsVisible": true,
+          "allStepsSucceeded": true,
+          "lineageVisible": true,
+          "rollbackVisible": true,
+          "sourcePreservedVisible": true
+        },
+        "failureChecks": {
+          "failureVisible": true,
+          "failedStepVisible": true,
+          "noFalseSuccess": true
+        },
+        "rollbackChecks": {
+          "rolledBack": true,
+          "rollbackLabel": true,
+          "sourceStillVisible": true
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "viewportId": "mobile",
+      "screenshots": [
+        "artifacts\\execution\\phase21q\\screenshots\\mobile_workflow_preview.png",
+        "artifacts\\execution\\phase21q\\screenshots\\mobile_workflow_running.png",
+        "artifacts\\execution\\phase21q\\screenshots\\mobile_workflow_success.png",
+        "artifacts\\execution\\phase21q\\screenshots\\mobile_workflow_failure.png",
+        "artifacts\\execution\\phase21q\\screenshots\\mobile_workflow_rollback.png"
+      ],
+      "checks": {
+        "previewChecks": {
+          "routeOpened": true,
+          "panelVisible": true,
+          "dagVisible": true,
+          "readinessVisible": true,
+          "onePrimaryExecute": true,
+          "noRawSourcePathInRoute": true,
+          "noExternalPromises": true,
+          "noHorizontalOverflow": true,
+          "metrics": {
+            "scrollWidth": 390,
+            "clientWidth": 390
+          }
+        },
+        "successChecks": {
+          "succeeded": true,
+          "outputsVisible": true,
+          "allStepsSucceeded": true,
+          "lineageVisible": true,
+          "rollbackVisible": true,
+          "sourcePreservedVisible": true
+        },
+        "failureChecks": {
+          "failureVisible": true,
+          "failedStepVisible": true,
+          "noFalseSuccess": true
+        },
+        "rollbackChecks": {
+          "rolledBack": true,
+          "rollbackLabel": true,
+          "sourceStillVisible": true
+        }
+      },
+      "status": "PASS"
+    }
+  ],
+  "browserErrors": {
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failedRequests": []
+  },
+  "externalCounters": {
+    "externalProviderCalls": 0,
+    "externalModelCalls": 0,
+    "paidProviderCalls": 0,
+    "externalCalls": 0,
+    "paymentActions": 0,
+    "publishActions": 0,
+    "deployActions": 0,
+    "adActions": 0,
+    "socialDispatches": 0,
+    "externalAccountMutations": 0,
+    "productionDbMutations": 0,
+    "envKeyBillingChanges": 0
+  },
+  "createdAt": "2026-08-30T00:01:55.195Z"
+}

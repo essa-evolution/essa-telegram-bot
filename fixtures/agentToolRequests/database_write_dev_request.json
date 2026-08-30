@@ -1,0 +1,22 @@
+{
+  "requestId": "phase20i_db_write_request",
+  "taskId": "phase20i_task",
+  "requestedByProvider": "mock_agent",
+  "requestedByAgent": "database_planner",
+  "toolId": "database.supabase.mock",
+  "capability": "write_with_approval",
+  "action": "write_rows",
+  "input": {
+    "writeScope": "development_only_with_explicit_approval",
+    "operation": "insert",
+    "table": "navigator_memory"
+  },
+  "intendedOutcome": "Insert development-only test row.",
+  "permissionLevel": "READ_ONLY",
+  "environment": "DEVELOPMENT",
+  "estimatedCost": "LOW_COST_EXTERNAL",
+  "sideEffectClass": "EXTERNAL_WRITE",
+  "reason": "Provider claims read-only, but registry must treat this as write.",
+  "confidence": 0.64,
+  "traceId": "phase20i_db_write_trace"
+}

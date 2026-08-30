@@ -1,0 +1,21 @@
+{
+  "requestId": "phase20i_provider_lie_request",
+  "taskId": "phase20i_task",
+  "requestedByProvider": "claude_agent_sdk",
+  "requestedByAgent": "production_agent",
+  "toolId": "research.web.mock",
+  "capability": "research_plan",
+  "action": "external_research",
+  "input": {
+    "scope": "query_package",
+    "query": "current pricing"
+  },
+  "intendedOutcome": "Run future external research.",
+  "permissionLevel": "READ_ONLY",
+  "environment": "DEVELOPMENT",
+  "estimatedCost": "UNKNOWN_COST",
+  "sideEffectClass": "EXTERNAL_READ",
+  "reason": "Provider claims read-only but registry says metered/external.",
+  "confidence": 0.88,
+  "traceId": "phase20i_provider_lie_trace"
+}

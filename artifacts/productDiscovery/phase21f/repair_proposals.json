@@ -1,0 +1,350 @@
+[
+  {
+    "proposalId": "repair_proposal_1787193347714_0zh34n",
+    "findingId": "ui_finding_1787193344805_6y0hnu",
+    "proposedAction": "Investigate .chat-panel and adjust the workspace CSS/layout/responsive breakpoint only after explicit repair approval.",
+    "rationale": "navigatorChatHistory has zero-size geometry at DESKTOP.",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace CSS/layout/responsive breakpoint",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.92,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_e6ocih",
+    "findingId": "ui_finding_1787193344805_xzp9kt",
+    "proposedAction": "Investigate .prompt-bar and adjust the workspace CSS/layout/responsive breakpoint only after explicit repair approval.",
+    "rationale": "navigatorPrompt has zero-size geometry at DESKTOP.",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace CSS/layout/responsive breakpoint",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.92,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_4y1gwb",
+    "findingId": "ui_finding_1787193345680_nb1fcl",
+    "proposedAction": "Investigate .chat-panel and adjust the workspace CSS/layout/responsive breakpoint only after explicit repair approval.",
+    "rationale": "navigatorChatHistory has zero-size geometry at LAPTOP.",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace CSS/layout/responsive breakpoint",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.92,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_ye4rr4",
+    "findingId": "ui_finding_1787193345680_jz0306",
+    "proposedAction": "Investigate .prompt-bar and adjust the workspace CSS/layout/responsive breakpoint only after explicit repair approval.",
+    "rationale": "navigatorPrompt has zero-size geometry at LAPTOP.",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace CSS/layout/responsive breakpoint",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.92,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_w6h6ti",
+    "findingId": "ui_finding_1787193346741_7o0ygp",
+    "proposedAction": "Investigate .chat-panel and adjust the workspace CSS/layout/responsive breakpoint only after explicit repair approval.",
+    "rationale": "navigatorChatHistory has zero-size geometry at TABLET.",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace CSS/layout/responsive breakpoint",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.92,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_klq1wf",
+    "findingId": "ui_finding_1787193346741_85yjkh",
+    "proposedAction": "Investigate .prompt-bar and adjust the workspace CSS/layout/responsive breakpoint only after explicit repair approval.",
+    "rationale": "navigatorPrompt has zero-size geometry at TABLET.",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace CSS/layout/responsive breakpoint",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.92,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_gynl81",
+    "findingId": "ui_finding_1787193346741_e2wh19",
+    "proposedAction": "Investigate button.nav-item and adjust the workspace runtime/resource handling only after explicit repair approval.",
+    "rationale": "TABLET has measurable clipped visible text: \"Chat ESSA Navigator\".",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace runtime/resource handling",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.86,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_7nw6gc",
+    "findingId": "ui_finding_1787193346742_tme3a8",
+    "proposedAction": "Investigate button.nav-item and adjust the workspace runtime/resource handling only after explicit repair approval.",
+    "rationale": "TABLET has measurable clipped visible text: \"Цифровая личность\".",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace runtime/resource handling",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.86,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_6q7oxc",
+    "findingId": "ui_finding_1787193347713_hm2zqx",
+    "proposedAction": "Investigate .chat-panel and adjust the workspace CSS/layout/responsive breakpoint only after explicit repair approval.",
+    "rationale": "navigatorChatHistory has zero-size geometry at MOBILE.",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace CSS/layout/responsive breakpoint",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.92,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_k53rtn",
+    "findingId": "ui_finding_1787193347714_wmxbrs",
+    "proposedAction": "Investigate .prompt-bar and adjust the workspace CSS/layout/responsive breakpoint only after explicit repair approval.",
+    "rationale": "navigatorPrompt has zero-size geometry at MOBILE.",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace CSS/layout/responsive breakpoint",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.92,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_vk03ks",
+    "findingId": "ui_finding_1787193347714_1tgz0s",
+    "proposedAction": "Investigate button.nav-item and adjust the workspace runtime/resource handling only after explicit repair approval.",
+    "rationale": "MOBILE has measurable clipped visible text: \"Chat ESSA Navigator\".",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace runtime/resource handling",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.86,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787193347714_mrlozx",
+    "findingId": "ui_finding_1787193347714_btaae2",
+    "proposedAction": "Investigate button.nav-item and adjust the workspace runtime/resource handling only after explicit repair approval.",
+    "rationale": "MOBILE has measurable clipped visible text: \"ESSA Property\".",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace runtime/resource handling",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.86,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-20T02:35:47.714Z"
+  }
+]

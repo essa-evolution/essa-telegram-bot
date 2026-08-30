@@ -1,0 +1,44 @@
+{
+  "providerId": "claude_agent_sdk",
+  "endpoint": "https://api.anthropic.com/v1/messages",
+  "method": "POST",
+  "headers": {
+    "x-api-key": "[REDACTED]",
+    "anthropic-version": "2023-06-01",
+    "content-type": "application/json"
+  },
+  "model": "claude-sonnet-5",
+  "maxTokens": 1200,
+  "anthropicVersion": "2023-06-01",
+  "allowedTools": [],
+  "tools": false,
+  "media": false,
+  "publish": false,
+  "externalToolUse": false,
+  "maxTurns": 1,
+  "maxCostUsd": 0.1,
+  "timeoutMs": 45000,
+  "retryCount": 0,
+  "sourceFixtureId": "phase20c_first_lisa_11s_workflow",
+  "sourceTaskId": "phase20g_one_call_test_task",
+  "outputContract": [
+    "providerId",
+    "semanticSummary",
+    "proposedEditDecisions",
+    "subtitlePlan",
+    "visualRequests",
+    "unresolvedItems",
+    "toolRequests",
+    "artifacts",
+    "approvalRequired",
+    "completionState",
+    "traceMetadata"
+  ],
+  "requestSize": {
+    "bodyChars": 7744,
+    "bodyEstimatedTokens": 1936,
+    "promptPackageChars": 6068,
+    "promptPackageEstimatedTokens": 1517
+  },
+  "createdAt": "2026-08-30T06:27:13.458Z"
+}

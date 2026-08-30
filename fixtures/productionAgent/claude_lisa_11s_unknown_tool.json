@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "providerId": "claude_agent_sdk",
+  "plan": {
+    "summary": "Unsafe fixture requesting an unknown tool.",
+    "semanticDecisions": [],
+    "subtitleChunks": [],
+    "visualRequests": []
+  },
+  "toolRequests": [
+    { "toolId": "unrestricted_shell", "input": { "command": "echo unsafe" } }
+  ],
+  "artifacts": [
+    { "artifactId": "unsafe_unknown_tool_verification", "type": "VerificationReport", "passed": true, "verified": true }
+  ],
+  "unresolved": [],
+  "approvalRequired": true,
+  "errors": [],
+  "trace": []
+}

@@ -1,0 +1,225 @@
+{
+  "artifactType": "BusinessSprint04BLiveSchemaChainAudit",
+  "checkedAt": "2026-08-28T03:44:12.4338501+04:00",
+  "mode": "READ_ONLY_AUDIT",
+  "targetProject": {
+    "ref": "ebnkxqzgqpormgkxbevq",
+    "url": "https://ebnkxqzgqpormgkxbevq.supabase.co",
+    "canonical": true
+  },
+  "safety": {
+    "migrationsApplied": false,
+    "liveDataMutated": false,
+    "liveObjectsChanged": false,
+    "rlsChangedLive": false,
+    "renderChanged": false,
+    "envChanged": false,
+    "paymentActivated": false,
+    "externalAiProviderCalls": 0,
+    "sprint05Started": false,
+    "secretsPrinted": false
+  },
+  "repositoryMigrationInventory": [
+    {
+      "file": "supabase/migrations/20260827_business_v1_foundation.sql",
+      "phase": "Sprint 02 foundation",
+      "createsTables": [
+        "business_organizations",
+        "business_organization_memberships",
+        "business_profiles",
+        "business_workspaces",
+        "business_intakes",
+        "business_artifacts",
+        "business_projects",
+        "business_partner_requests",
+        "business_commercial_requests",
+        "business_funnel_events",
+        "business_audit_events"
+      ],
+      "createsIndexes": [
+        "idx_business_profiles_org",
+        "idx_business_memberships_user",
+        "idx_business_artifacts_business",
+        "idx_business_projects_business",
+        "idx_business_audit_business"
+      ],
+      "enablesRls": [
+        "business_organizations",
+        "business_organization_memberships",
+        "business_profiles",
+        "business_workspaces",
+        "business_intakes",
+        "business_artifacts",
+        "business_projects",
+        "business_partner_requests",
+        "business_commercial_requests",
+        "business_funnel_events",
+        "business_audit_events"
+      ],
+      "dependsOn": [
+        "auth.users"
+      ],
+      "destructiveStatementsFound": false
+    },
+    {
+      "file": "supabase/migrations/20260827_business_v1_rls_policies.sql",
+      "phase": "Sprint 03 RLS",
+      "createsFunctions": [
+        "public.essa_business_role_rank",
+        "public.essa_business_has_org_role",
+        "public.essa_business_has_business_role"
+      ],
+      "createsPolicies": [
+        "business_organizations_select_member",
+        "business_organizations_insert_self_owner",
+        "business_organizations_update_admin",
+        "business_memberships_select_member",
+        "business_memberships_insert_owner_admin",
+        "business_memberships_update_owner_admin",
+        "business_profiles_select_member",
+        "business_profiles_insert_owner",
+        "business_profiles_update_editor",
+        "business_workspaces_select_member",
+        "business_workspaces_insert_editor",
+        "business_workspaces_update_editor",
+        "business_intakes_select_member",
+        "business_intakes_insert_editor",
+        "business_intakes_update_editor",
+        "business_artifacts_select_member",
+        "business_artifacts_insert_editor",
+        "business_artifacts_update_editor",
+        "business_projects_select_member",
+        "business_projects_insert_editor",
+        "business_projects_update_editor",
+        "business_partner_requests_select_member",
+        "business_partner_requests_insert_editor",
+        "business_commercial_requests_select_member",
+        "business_commercial_requests_insert_admin",
+        "business_funnel_events_select_admin",
+        "business_funnel_events_insert_member",
+        "business_audit_events_select_admin",
+        "business_audit_events_insert_member"
+      ],
+      "dependsOn": [
+        "Sprint 02 foundation tables"
+      ],
+      "destructiveStatementsFound": false,
+      "duplicatePolicyRisk": true
+    },
+    {
+      "file": "supabase/migrations/20260827_business_sprint04_commercial_activation.sql",
+      "phase": "Sprint 04 commercial activation",
+      "altersTables": [
+        "business_projects"
+      ],
+      "createsTables": [
+        "business_payment_intents",
+        "business_commercial_onboardings",
+        "business_payment_provider_events"
+      ],
+      "createsIndexes": [
+        "idx_business_payment_intents_business",
+        "idx_business_payment_intents_offer",
+        "idx_business_commercial_onboardings_business",
+        "idx_business_payment_provider_events_payment"
+      ],
+      "createsPolicies": [
+        "business_payment_intents_select_member",
+        "business_payment_intents_insert_admin",
+        "business_payment_intents_update_admin",
+        "business_commercial_onboardings_select_member",
+        "business_commercial_onboardings_insert_admin",
+        "business_commercial_onboardings_update_admin",
+        "business_payment_provider_events_select_admin",
+        "business_payment_provider_events_insert_admin"
+      ],
+      "dependsOn": [
+        "business_projects",
+        "business_organizations",
+        "business_profiles",
+        "auth.users",
+        "public.essa_business_has_org_role"
+      ],
+      "destructiveStatementsFound": false,
+      "duplicatePolicyRisk": true
+    }
+  ],
+  "dependencyOrder": [
+    "supabase/migrations/20260827_business_v1_foundation.sql",
+    "supabase/migrations/20260827_business_v1_rls_policies.sql",
+    "supabase/migrations/20260827_business_sprint04_commercial_activation.sql"
+  ],
+  "liveSchemaStrictProbe": {
+    "method": "supabase-js GET select limit 0, not HEAD",
+    "sourceOfTruthForThisAudit": true,
+    "presentObjects": [],
+    "missingObjects": [
+      "business_organizations",
+      "business_organization_memberships",
+      "business_memberships",
+      "business_profiles",
+      "business_workspaces",
+      "business_intakes",
+      "business_diagnoses",
+      "business_growth_plans",
+      "business_offers",
+      "business_artifacts",
+      "business_projects",
+      "business_partner_requests",
+      "business_commercial_requests",
+      "business_funnel_events",
+      "business_analytics",
+      "business_audit_events",
+      "business_payment_intents",
+      "business_commercial_onboardings",
+      "business_payment_provider_events",
+      "public.essa_business_has_org_role"
+    ],
+    "errorCodes": {
+      "tables": "PGRST205",
+      "function": "PGRST202"
+    }
+  },
+  "pgrst205Assessment": {
+    "confirmedCause": "UNKNOWN_WITH_STRONG_EVIDENCE_BUSINESS_OBJECTS_NOT_IN_POSTGREST_PUBLIC_SCHEMA_CACHE",
+    "possibleCauses": [
+      "migration never applied",
+      "objects created outside public schema",
+      "PostgREST schema cache not refreshed",
+      "object exposure/configuration mismatch"
+    ],
+    "permissionOrRlsVisibilityIssueLikely": false,
+    "reason": "Missing tables return PGRST205 schema-cache errors, not permission/RLS denial errors. The RLS helper function also returns PGRST202."
+  },
+  "earliestMissingMigration": "supabase/migrations/20260827_business_v1_foundation.sql",
+  "requiredMigrationSequence": [
+    "20260827_business_v1_foundation.sql",
+    "20260827_business_v1_rls_policies.sql",
+    "20260827_business_sprint04_commercial_activation.sql"
+  ],
+  "readinessCheckerCorrection": {
+    "updatedFile": "src/business/supabaseBusinessRepository.js",
+    "oldBehavior": "HEAD select checks could report table readiness without strict schema proof.",
+    "newBehavior": "verifyConnection uses select('*', { count: 'exact' }).limit(0), so PGRST205 marks tables missing.",
+    "validation": [
+      "node scripts/testBusinessSprint01.js",
+      "node scripts/testBusinessSprint02.js",
+      "node scripts/testBusinessSprint03.js",
+      "node scripts/testBusinessSprint04.js",
+      "node scripts/checkBusinessSupabaseReadiness.js returned MIGRATION_REQUIRED against live schema"
+    ]
+  },
+  "backupRecovery": {
+    "status": "MANUAL_BACKUP_STATUS_CHECK_REQUIRED",
+    "reason": "Backup/PITR status is not available through current read-only local REST inspection.",
+    "requiredBeforeApply": true
+  },
+  "safeToApplyFoundationMigration": false,
+  "safeToApplyFullChain": false,
+  "blockers": [
+    "Backup/recovery status is not verified.",
+    "Need explicit live-apply approval.",
+    "Need direct SQL/catalog confirmation or acceptance that strict REST absence means foundation absent.",
+    "RLS policy duplicate state is not directly inspectable via current read-only REST path."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "requestId": "phase20i_db_read_request",
+  "taskId": "phase20i_task",
+  "requestedByProvider": "mock_agent",
+  "requestedByAgent": "database_planner",
+  "toolId": "database.supabase.mock",
+  "capability": "query",
+  "action": "read_rows",
+  "input": {
+    "scope": "scoped_project",
+    "queryType": "read",
+    "table": "navigator_memory"
+  },
+  "intendedOutcome": "Read development-scoped rows for inspection.",
+  "permissionLevel": "READ_ONLY",
+  "environment": "DEVELOPMENT",
+  "estimatedCost": "LOW_COST_EXTERNAL",
+  "sideEffectClass": "EXTERNAL_READ",
+  "reason": "Inspect development data shape.",
+  "confidence": 0.76,
+  "traceId": "phase20i_db_read_trace"
+}

@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "providerId": "claude_agent_sdk",
+  "plan": {
+    "summary": "Unsafe fixture requesting publishing without approval.",
+    "semanticDecisions": [],
+    "subtitleChunks": [],
+    "visualRequests": []
+  },
+  "toolRequests": [
+    { "toolId": "publish_instagram", "input": { "platform": "Instagram Reels" }, "approvalGranted": false }
+  ],
+  "artifacts": [
+    { "artifactId": "unsafe_publish_verification", "type": "VerificationReport", "passed": true, "verified": true }
+  ],
+  "unresolved": [],
+  "approvalRequired": false,
+  "errors": [],
+  "trace": []
+}

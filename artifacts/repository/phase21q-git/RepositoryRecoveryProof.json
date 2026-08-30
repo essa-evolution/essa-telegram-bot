@@ -1,0 +1,114 @@
+{
+  "artifactType": "RepositoryRecoveryProof",
+  "phase": "21Q-GIT",
+  "projectPath": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main",
+  "initialGitState": {
+    "gitDirectoryExists": true,
+    "headExists": false,
+    "configExists": false,
+    "gitStatusWorked": false,
+    "revParseWorked": false,
+    "diagnosis": "existing .git directory was missing HEAD, config, objects, refs, index and logs"
+  },
+  "gitDirectoryExists": true,
+  "initialHeadExists": false,
+  "initialConfigExists": false,
+  "forensicFindings": {
+    "currentGitWasEmpty": true,
+    "objectsExistedInitially": false,
+    "refsExistedInitially": false,
+    "indexExistedInitially": false,
+    "logsExistedInitially": false,
+    "packedRefsExistedInitially": false,
+    "siblingRepositoryFound": true,
+    "siblingRepositoryPath": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-git",
+    "downloadedZipInspected": true,
+    "downloadedZipContainedGit": false,
+    "remoteEvidence": "https://github.com/essa-evolution/essa-telegram-bot.git",
+    "noRemoteAccessOrMutation": true
+  },
+  "recoveryClass": "C_ORIGINAL_REPOSITORY_FOUND_ELSEWHERE",
+  "sourceSnapshot": {
+    "path": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\repository\\phase21q-git\\snapshots\\essa_source_snapshot_20260830_043417.zip",
+    "timestamp": "20260830_043417",
+    "fileCount": 519,
+    "bytes": 52519815,
+    "sha256": "A0EAE0C65C7B43FF1CF2653FA66A03023CC8FC46940AE51636AC44A18F4C3E8E",
+    "excluded": [
+      ".git",
+      ".env",
+      "node_modules",
+      "generated runtime artifact directories"
+    ]
+  },
+  "brokenMetadataBackup": {
+    "preserved": true,
+    "paths": [
+      "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\.git_broken_backup_20260830_043429",
+      "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\.git_broken_backup_20260830_043516"
+    ]
+  },
+  "recoveryMethod": "Copied healthy sibling repository .git metadata only; current source tree was not replaced, reset, checked out, cleaned or overwritten.",
+  "repositoryRoot": "C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main",
+  "gitDir": ".git",
+  "branch": "main",
+  "head": "f25ff0492945ed3934a9dfa777c6acae5f79f61d",
+  "historyRecovered": true,
+  "newBaselineCreated": false,
+  "remoteConfigured": true,
+  "remote": "https://github.com/essa-evolution/essa-telegram-bot.git",
+  "gitStatusWorks": true,
+  "statusEntryCount": 241,
+  "regressions": {
+    "testAutonomousWorkflowOrchestration": "PASS",
+    "testSafeLocalExecutionWorkspace": "PASS",
+    "testSafeLocalCapabilityExpansion": "PASS",
+    "testSafeLocalExecutionRuntime": "PASS",
+    "testExecutionInputApprovalTokens": "PASS"
+  },
+  "phase21qSourceIntegrity": {
+    "executionWorkflowOrchestration": true,
+    "autonomousWorkflowUi": true,
+    "orchestrationDocs": true,
+    "orchestrationProof": true,
+    "safeLocalExecution": true,
+    "safeLocalExecutionWorkspace": true
+  },
+  "gitignoreStatus": {
+    "strengthened": true,
+    "envIgnored": true,
+    "nodeModulesIgnored": true,
+    "transientArtifactsIgnored": true,
+    "canonicalSourceNotBroadlyIgnored": true
+  },
+  "artifactTrackingRecommendation": {
+    "track": [
+      "source",
+      "docs",
+      "scripts",
+      "workspace modules",
+      "intentional small JSON proof artifacts"
+    ],
+    "doNotTrackByDefault": [
+      ".env",
+      "node_modules",
+      "generated media",
+      "derived execution outputs",
+      "runtime tmp",
+      "screenshots unless intentionally archived",
+      "benchmark output"
+    ]
+  },
+  "securityChecks": {
+    "secretsPrinted": false,
+    "envValuesReported": false,
+    "sourceOverwritten": false,
+    "remoteMutated": false,
+    "pushPerformed": false,
+    "resetCheckoutRestoreCleanUsed": false,
+    "providersEnabled": false,
+    "externalExecutionEnabled": false
+  },
+  "finalStatus": "ORIGINAL_HISTORY_RESTORED_WITH_CURRENT_WORKTREE_PRESERVED",
+  "createdAt": "2026-08-30T00:38:32.2545798Z"
+}

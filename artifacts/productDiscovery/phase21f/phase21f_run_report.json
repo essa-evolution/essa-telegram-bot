@@ -1,0 +1,54 @@
+{
+  "phase": "21F",
+  "target": "http://localhost:3000/workspace/#product-discovery",
+  "providerId": "playwright_browser_verification",
+  "externalCalls": {
+    "playwrightLocalhostObservations": 4,
+    "providerApiCalls": 0,
+    "modelCalls": 0,
+    "databaseCalls": 0,
+    "deploys": 0
+  },
+  "viewports": [
+    {
+      "id": "desktop",
+      "label": "DESKTOP",
+      "width": 1440,
+      "height": 900,
+      "screenshotPath": "artifacts\\productDiscovery\\phase21f\\desktop_1440x900_product_discovery.png"
+    },
+    {
+      "id": "laptop",
+      "label": "LAPTOP",
+      "width": 1280,
+      "height": 720,
+      "screenshotPath": "artifacts\\productDiscovery\\phase21f\\laptop_1280x720_product_discovery.png"
+    },
+    {
+      "id": "tablet",
+      "label": "TABLET",
+      "width": 768,
+      "height": 1024,
+      "screenshotPath": "artifacts\\productDiscovery\\phase21f\\tablet_768x1024_product_discovery.png"
+    },
+    {
+      "id": "mobile",
+      "label": "MOBILE",
+      "width": 390,
+      "height": 844,
+      "screenshotPath": "artifacts\\productDiscovery\\phase21f\\mobile_390x844_product_discovery.png"
+    }
+  ],
+  "overallStatus": "VISUAL_REVIEW_REQUIRED",
+  "responsiveClassification": "RESPONSIVE",
+  "findingCount": 12,
+  "repairProposalCount": 12,
+  "interactionCount": 0,
+  "mutationCount": 0,
+  "paths": {
+    "comparisonPath": "artifacts\\productDiscovery\\phase21f\\viewport_comparison_artifact.json",
+    "contextPath": "artifacts\\productDiscovery\\phase21f\\multi_viewport_observation_context.json",
+    "findingsPath": "artifacts\\productDiscovery\\phase21f\\ui_findings.json",
+    "repairProposalsPath": "artifacts\\productDiscovery\\phase21f\\repair_proposals.json"
+  }
+}

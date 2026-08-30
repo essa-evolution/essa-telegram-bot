@@ -1,0 +1,80 @@
+{
+  "ok": true,
+  "providerId": "claude_agent_sdk",
+  "plan": {
+    "planId": "claude_like_lisa_11s_semantic_edit_plan",
+    "status": "ready_for_human_approval",
+    "summary": "Keep Lisa as the primary visual anchor, preserve the smile/laugh near the ending, use readable semantic subtitles, and avoid forced B-roll.",
+    "semanticInterpretation": {
+      "coreIdea": "Purpose is not something found outside; it may be something a person assigns to themselves.",
+      "emotionalArc": "searching -> destabilizing question -> self-authored meaning",
+      "performancePriority": "Lisa face and final smile/laugh carry the ending."
+    },
+    "semanticDecisions": [
+      {
+        "timing": { "start": 0, "end": 2.2 },
+        "decision": "KEEP_PRIMARY_VIDEO",
+        "reason": "The opening line needs direct presence, not visual distraction."
+      },
+      {
+        "timing": { "start": 2.2, "end": 5.8 },
+        "decision": "TEXT_EMPHASIS",
+        "emphasis": ["предназначение", "не существует"],
+        "reason": "This is the central reversal."
+      },
+      {
+        "timing": { "start": 5.8, "end": 8.4 },
+        "decision": "KEEP_PRIMARY_VIDEO",
+        "reason": "The thought should stay intimate and focused."
+      },
+      {
+        "timing": { "start": 8.4, "end": 11 },
+        "decision": "KEEP_PRIMARY_VIDEO",
+        "emphasis": ["сам"],
+        "reason": "Preserve the ending smile/laugh as semantic release."
+      }
+    ],
+    "subtitleChunks": [
+      { "start": 0, "end": 2.2, "text": "Ты всё время ищешь предназначение." },
+      { "start": 2.2, "end": 5.8, "text": "А что, если предназначение вообще не существует?" },
+      { "start": 5.8, "end": 8.4, "text": "Что, если предназначение - это то," },
+      { "start": 8.4, "end": 11, "text": "что ты сам предназначаешь себе?" }
+    ],
+    "visualRequests": [],
+    "renderIntent": {
+      "targetPlatform": "Instagram Reels",
+      "preservePrimarySubject": true,
+      "subtitlePreset": "lisa_readable_reels_mvp"
+    },
+    "verificationIntent": {
+      "mustHaveAudio": true,
+      "mustHaveReadableSubtitles": true,
+      "mustPreserveSmileLaughEnding": true
+    }
+  },
+  "toolRequests": [
+    { "toolId": "inspect_media", "input": { "sourcePath": "media/input/future_lisa_11s_source.mp4" } },
+    { "toolId": "transcribe_media", "input": { "sourcePath": "media/input/future_lisa_11s_source.mp4", "language": "ru" } },
+    { "toolId": "semantic_edit", "input": { "transcriptRef": "TranscriptArtifact", "productionIntentRef": "ProductionIntent" } },
+    { "toolId": "create_edit_plan", "input": { "semanticEditPlanRef": "SemanticEditPlan" } },
+    { "toolId": "subtitle_render", "input": { "subtitlePlanRef": "SubtitlePlan", "preset": "lisa_readable_reels_mvp" } },
+    { "toolId": "ffmpeg_render", "input": { "editPlanRef": "EditDecisionList", "outputPath": "media/output/phase20e/fixture/reels.mp4" } },
+    { "toolId": "verify_render", "input": { "renderPath": "media/output/phase20e/fixture/reels.mp4", "expectedSpec": { "platform": "Instagram Reels" } } }
+  ],
+  "artifacts": [
+    { "artifactId": "fixture_semantic_edit_plan", "type": "SemanticEditPlan", "source": "claude_like_fixture" },
+    { "artifactId": "fixture_edit_decision_list", "type": "EditDecisionList", "source": "claude_like_fixture" },
+    { "artifactId": "fixture_subtitle_plan", "type": "SubtitlePlan", "source": "claude_like_fixture" },
+    { "artifactId": "fixture_verification_report", "type": "VerificationReport", "passed": true, "verified": true }
+  ],
+  "unresolved": [],
+  "approvalRequired": true,
+  "errors": [],
+  "trace": [
+    {
+      "step": "fixture_loaded_from_disk",
+      "providerId": "claude_agent_sdk",
+      "providerCallMade": false
+    }
+  ]
+}

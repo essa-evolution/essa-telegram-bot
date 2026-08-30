@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESSA Workspace</title>
+    <script>
+      (function () {
+        function formatRuntimeError(details) {
+          return [
+            "JS ERROR",
+            "",
+            "message:",
+            details.message || "Unknown error",
+            "",
+            "source:",
+            details.source || "unknown",
+            "",
+            "line:",
+            details.line ? `${details.line}${details.column ? `:${details.column}` : ""}` : "unknown",
+            "",
+            "stack:",
+            details.stack || "no stack"
+          ].join("\n");
+        }
+
+        function showRuntimeError(details) {
+          const render = function () {
+            let overlay = document.querySelector("#runtime-error-overlay");
+
+            if (!overlay) {
+              overlay = document.createElement("pre");
+              overlay.id = "runtime-error-overlay";
+              document.body.append(overlay);
+            }
+
+            overlay.textContent = formatRuntimeError(details);
+          };
+
+          if (document.body) {
+            render();
+            return;
+          }
+
+          window.addEventListener("DOMContentLoaded", render, { once: true });
+        }
+
+        window.onerror = function (message, source, line, column, error) {
+          console.error("[GLOBAL ERROR]", message, error);
+          showRuntimeError({
+            message,
+            source,
+            line,
+            column,
+            stack: error?.stack
+          });
+        };
+
+        window.addEventListener("error", function (event) {
+          console.error("[WINDOW ERROR]", event.error || event.message);
+          showRuntimeError({
+            message: event.message,
+            source: event.filename,
+            line: event.lineno,
+            column: event.colno,
+            stack: event.error?.stack
+          });
+        });
+
+        window.addEventListener("unhandledrejection", function (event) {
+          console.error("[PROMISE ERROR]", event.reason);
+          showRuntimeError({
+            message: event.reason?.message || String(event.reason),
+            source: "unhandledrejection",
+            line: "",
+            column: "",
+            stack: event.reason?.stack
+          });
+        });
+      })();
+    </script>
+    <link rel="stylesheet" href="./styles.css?v=workspace-hash-nav-01" />
+  </head>
+  <body>
+    <div id="html-build-stamp">HTML build: rescue-nav-01</div>
+    <div class="workspace-shell">
+      <aside class="sidebar" aria-label="Разделы ESSA">
+        <div class="brand">
+          <img src="./assets/essa-network.svg" alt="ESSA" class="brand-mark" />
+          <div>
+            <div class="brand-name">ESSA</div>
+            <div class="brand-subtitle">Единая Сеть Сознания Атмана</div>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <button class="nav-item active" type="button" data-space="Главная" data-hash="#home">Главная</button>
+          <button class="nav-item new-space-action" type="button" data-space="Chat ESSA Navigator" data-hash="#navigator">Новое пространство</button>
+          <button class="nav-item" type="button" data-space="Chat ESSA Navigator" data-hash="#navigator">Chat ESSA Navigator</button>
+          <button class="nav-item" type="button" data-space="Product Discovery" data-hash="#product-discovery">Product Discovery</button>
+          <button class="nav-item" type="button" data-space="Execution Workspace" data-hash="#execution/VIDEO_TRIM">Execution Workspace</button>
+          <button class="nav-item" type="button" data-space="Workflow Orchestration" data-hash="#workflow/LOCAL_MEDIA_REPURPOSE_PROOF">Workflow Orchestration</button>
+          <button class="nav-item" type="button" data-space="ESSA Business" data-hash="#business">ESSA Business</button>
+          <button class="nav-item" type="button" data-space="Путь ESSA" data-hash="#path">Путь ESSA</button>
+          <button class="nav-item" type="button" data-space="ESSA Property" data-hash="#property">ESSA Property</button>
+          <button class="nav-item" type="button" data-space="Add Property to ESSA" data-hash="#add-property">Add Property</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Mandate" data-hash="#property-mandate">Property Mandate</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Mandate Review" data-hash="#property-mandate-review">Mandate Review</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Authority Activation" data-hash="#property-authority-activation">Authority Activation</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Creation Proof" data-hash="#property-creation-proof">Property Creation</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Sale Listing Proof" data-hash="#property-sale-listing-proof">Sale Listing</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Publication Readiness" data-hash="#property-sale-publication-readiness">Publication Readiness</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Marketplace Publication Proof" data-hash="#property-publication-proof">Marketplace</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Leads" data-hash="#property-leads">Property Leads</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Conversations" data-hash="#property-conversations">Property Conversations</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Viewings" data-hash="#property-viewings">Property Viewings</button>
+          <button class="nav-item" type="button" data-space="ESSA Property Review Queue" data-hash="#property-review-queue">Property Review Queue</button>
+          <button class="nav-item" type="button" data-space="ESSA Production Studio" data-hash="#production">ESSA Production Studio</button>
+          <button class="nav-item" type="button" data-space="Цифровая личность" data-hash="#identity">Цифровая личность</button>
+          <button class="nav-item" type="button" data-space="Website Studio" data-hash="#website">Website Studio</button>
+          <button class="nav-item" type="button" data-space="Маркетинг и Реклама" data-hash="#marketing">Маркетинг и Реклама</button>
+          <button class="nav-item" type="button" data-space="AI Агенты" data-hash="#agents">AI Агенты</button>
+          <button class="nav-item" type="button" data-space="Образование" data-hash="#education">Образование</button>
+          <button class="nav-item" type="button" data-space="Психология" data-hash="#psychology">Психология</button>
+          <button class="nav-item" type="button" data-space="Юридическая помощь" data-hash="#legal">Юридическая помощь</button>
+          <button class="nav-item" type="button" data-space="Цифровая экономика" data-hash="#economy">Цифровая экономика</button>
+          <button class="nav-item" type="button" data-space="Impact Foundation" data-hash="#impact">Impact Foundation</button>
+          <button class="nav-item" type="button" data-space="Путешествия" data-hash="#travel">Путешествия</button>
+          <button class="nav-item" type="button" data-space="Сообщество" data-hash="#community">Сообщество</button>
+          <button class="nav-item" type="button" data-space="История ESSA" data-hash="#history">История ESSA</button>
+          <button class="nav-item" type="button" data-space="Мои проекты" data-hash="#projects">Мои проекты</button>
+          <button class="nav-item" type="button" data-space="ESSA Creations" data-hash="#creations">ESSA Creations</button>
+          <button class="nav-item" type="button" data-space="Профиль" data-hash="#profile">Профиль</button>
+          <button class="nav-item" type="button" data-space="Настройки" data-hash="#settings">Настройки</button>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="workspace-header" aria-label="Активное пространство">
+          <div>
+            <h2 id="workspace-title">Chat ESSA Navigator</h2>
+            <p id="workspace-description">Живой диалог с ESSA: вопросы, ответы, проекты и следующие шаги.</p>
+          </div>
+        </header>
+
+        <header class="hero">
+          <div class="hero-logo">
+            <img src="./assets/essa-network.svg" alt="" />
+            <span>ESSA Workspace</span>
+          </div>
+          <h1>ESSA Evolution</h1>
+          <div class="hero-lines" aria-label="ESSA Evolution">
+            <p class="hero-subtitle reveal-line line-1">Единая Сеть Сознания Атмана</p>
+            <p class="hero-slogan reveal-line line-2">Эволюция сознания. Творение реальности вместе.</p>
+            <p class="hero-accent reveal-line line-3">Каждый приходит со своим вопросом.</p>
+            <p class="hero-accent reveal-line line-4">Каждый создаёт свой путь.</p>
+            <p class="hero-accent strong reveal-line line-5">Вместе мы создаём будущее.</p>
+          </div>
+
+          <details class="about-essa">
+            <summary>Что такое ESSA?</summary>
+            <div>
+              <p>ESSA Evolution — глобальная интеллектуальная экосистема, объединяющая людей, знания, инструменты и проекты в едином пространстве.</p>
+              <p>Здесь можно общаться, создавать проекты, запускать бизнес, получать поддержку, учиться, строить сайты, создавать контент, развивать идеи и находить решения.</p>
+              <p>Каждый человек входит в ESSA через своё окно. Вместе эти окна образуют единую экосистему, где каждый сохраняет свою уникальность и становится частью общего пути.</p>
+            </div>
+          </details>
+        </header>
+
+        <section class="module-grid" aria-label="Модули ESSA">
+          <button class="module-card navigator" type="button" data-space="Chat ESSA Navigator" data-hash="#navigator">
+            <img src="./assets/navigator-compass.svg" alt="" class="module-icon" />
+            <span>Chat ESSA Navigator</span>
+          </button>
+          <button class="module-card product-discovery-entry" type="button" data-space="Product Discovery" data-hash="#product-discovery">
+            <span>Product Discovery</span>
+            <small>Что ESSA умеет, что уже доступно и что требует активации.</small>
+          </button>
+          <button class="module-card business" type="button" data-space="ESSA Business" data-hash="#business">
+            <span>ESSA Business</span>
+            <small>Диагностика, Growth Plan и безопасное предложение следующего действия.</small>
+          </button>
+          <button class="module-card path" type="button" data-space="Путь ESSA" data-hash="#path">
+            <span>Путь ESSA</span>
+          </button>
+          <button class="module-card content production-studio-entry" type="button" data-space="ESSA Production Studio" data-hash="#production">
+            <span>ESSA Production Studio</span>
+            <small>Книги • Видео • Музыка • Подкасты • Изображения • Реклама • Продукты</small>
+          </button>
+          <button class="module-card identity" type="button" data-space="Цифровая личность" data-hash="#identity">
+            <span>Цифровая личность</span>
+            <small>Образ, голос, стиль, память, видео и присутствие цифровой личности.</small>
+          </button>
+          <button class="module-card property" type="button" data-space="ESSA Property" data-hash="#property">
+            <span>ESSA Property</span>
+          </button>
+          <button class="module-card web" type="button" data-space="Website Studio" data-hash="#website">
+            <span>Website Studio</span>
+          </button>
+          <button class="module-card marketing" type="button" data-space="Маркетинг и Реклама" data-hash="#marketing">
+            <span>Маркетинг и Реклама</span>
+          </button>
+          <button class="module-card agents" type="button" data-space="AI Агенты" data-hash="#agents">
+            <span>AI Агенты</span>
+          </button>
+          <button class="module-card education" type="button" data-space="Образование" data-hash="#education">
+            <span>Образование</span>
+          </button>
+          <button class="module-card psychology" type="button" data-space="Психология" data-hash="#psychology">
+            <span>Психология</span>
+          </button>
+          <button class="module-card legal" type="button" data-space="Юридическая помощь" data-hash="#legal">
+            <span>Юридическая помощь</span>
+          </button>
+          <button class="module-card travel" type="button" data-space="Путешествия" data-hash="#travel">
+            <span>Путешествия</span>
+          </button>
+          <button class="module-card creations" type="button" data-space="ESSA Creations" data-hash="#creations">
+            <span>ESSA Products</span>
+          </button>
+          <button class="module-card economy" type="button" data-space="Цифровая экономика" data-hash="#economy">
+            <span>Digital Economy</span>
+          </button>
+          <button class="module-card impact" type="button" data-space="Impact Foundation" data-hash="#impact">
+            <span>Impact Foundation</span>
+          </button>
+          <button class="module-card projects" type="button" data-space="Мои проекты" data-hash="#projects">
+            <span>Мои проекты</span>
+          </button>
+          <button class="module-card community" type="button" data-space="Сообщество" data-hash="#community">
+            <span>Сообщество</span>
+          </button>
+        </section>
+
+        <section class="production-studio-panel" id="production-studio-panel" aria-label="ESSA Production Studio" hidden>
+          <div class="active-identity-card" id="production-active-identity">
+            <div>
+              <span>Активная цифровая личность</span>
+              <strong>🟢 Lisa Molis</strong>
+              <p>Цифровая личность ESSA</p>
+            </div>
+            <div class="active-identity-actions">
+              <button type="button" id="open-active-identity">Открыть паспорт</button>
+              <button type="button" id="change-active-identity">Сменить</button>
+            </div>
+          </div>
+          <div class="module-section-header">
+            <span>ESSA Production Studio</span>
+            <p>Книги • Видео • Музыка • Подкасты • Изображения • Реклама • Продукты</p>
+          </div>
+          <div class="production-card-grid">
+            <button class="production-card" type="button" data-production-action="Создать ролик" data-production-route="video" data-production-workflow="production_video">Создать ролик</button>
+            <button class="production-card" type="button" data-production-action="Создать Shorts / Reels / TikTok" data-production-route="short" data-production-workflow="production_video">Создать Shorts / Reels / TikTok</button>
+            <button class="production-card" type="button" data-production-action="Написать книгу" data-production-route="book" data-production-workflow="production_book">Написать книгу</button>
+            <button class="production-card" type="button" data-production-action="Создать главу" data-production-route="chapter" data-production-workflow="production_book">Создать главу</button>
+            <button class="production-card" type="button" data-production-action="Создать песню" data-production-route="song" data-production-workflow="production_song">Создать песню</button>
+            <button class="production-card" type="button" data-production-action="Создать подкаст" data-production-route="podcast" data-production-workflow="production_video">Создать подкаст</button>
+            <button class="production-card" type="button" data-production-action="Создать изображение" data-production-route="image" data-production-workflow="production_video">Создать изображение</button>
+            <button class="production-card" type="button" data-production-action="Создать рекламу" data-production-route="ad" data-production-workflow="production_ad">Создать рекламу</button>
+            <button class="production-card" type="button" data-production-action="Создать продукт ESSA" data-production-route="product" data-production-workflow="product_essa">Создать продукт ESSA</button>
+            <button class="production-card" type="button" data-production-action="Подготовить публикацию" data-production-route="publication" data-production-workflow="production_ad">Подготовить публикацию</button>
+            <button class="production-card" type="button" data-production-action="Размножить контент" data-production-route="content_multiplication" data-production-workflow="content_multiplication_package">Размножить контент<br><small>Одна идея → подкаст, shorts, reels, визуалы, переводы и публикации.</small></button>
+            <button class="production-card" type="button" data-production-action="Создать мультфильм" data-production-route="cartoon" data-production-workflow="production_cartoon">Создать мультфильм</button>
+            <button class="production-card" type="button" data-production-action="Создать мини-фильм" data-production-route="short_film" data-production-workflow="production_film">Создать мини-фильм</button>
+            <button class="production-card" type="button" data-production-action="Создать документальный фильм" data-production-route="documentary" data-production-workflow="production_documentary">Создать документальный фильм</button>
+            <button class="production-card" type="button" data-production-action="Создать музыкальный клип" data-production-route="music_video" data-production-workflow="production_music_video">Создать музыкальный клип</button>
+            <button class="production-card" type="button" data-production-action="Создать YouTube-серию" data-production-route="youtube_series" data-production-workflow="production_animated_story">Создать YouTube-серию</button>
+            <button class="production-card" type="button" data-production-action="Создать детскую сказку" data-production-route="fairytale" data-production-workflow="production_cartoon">Создать детскую сказку</button>
+            <button class="production-card" type="button" data-production-action="Создать образовательную анимацию" data-production-route="educational_animation" data-production-workflow="production_animated_story">Создать образовательную анимацию</button>
+          </div>
+          <section class="production-intake-panel" id="production-intake-panel" aria-label="Production intake" hidden></section>
+        </section>
+
+        <section class="identity-panel" id="identity-panel" aria-label="ESSA Digital Identity" hidden>
+          <div class="module-section-header">
+            <span>Lisa Digital Identity</span>
+            <p>Образ, голос, стиль, память, видео и присутствие цифровой личности.</p>
+          </div>
+          <div class="identity-passport" id="identity-passport"></div>
+        </section>
+
+        <section class="projects-panel" id="projects-panel" aria-label="Мои проекты" hidden>
+          <div class="module-section-header">
+            <span>Мои проекты</span>
+            <p>Локальные проекты, сохранённые в этом браузере.</p>
+          </div>
+          <div class="projects-list" id="projects-list"></div>
+        </section>
+
+        <section class="history-panel" id="history-panel" aria-label="История ESSA" hidden>
+          <div class="module-section-header">
+            <span>История ESSA</span>
+            <p>Последние запросы и проекты, сохранённые в этом браузере.</p>
+          </div>
+          <div class="history-list" id="history-list"></div>
+        </section>
+
+        <section class="project-workspace-panel" id="project-workspace-panel" aria-label="Project Workspace" hidden></section>
+
+        <section class="product-discovery-panel" id="product-discovery-panel" aria-label="ESSA Product Discovery" hidden></section>
+        <section class="safe-local-execution-panel" id="safe-local-execution-panel" aria-label="Safe Local Execution Workspace" hidden></section>
+        <section class="autonomous-workflow-panel" id="autonomous-workflow-panel" aria-label="Autonomous Workflow Orchestration" hidden></section>
+        <section class="business-panel" id="business-panel" aria-label="ESSA Business" hidden></section>
+
+        <section class="property-passport-panel" id="property-panel" aria-label="ESSA Property Passport" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="add-property-panel" aria-label="Add Property to ESSA" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-mandate-panel" aria-label="ESSA Property Mandate" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-mandate-review-panel" aria-label="ESSA Property Mandate Review" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-authority-activation-panel" aria-label="ESSA Property Authority Activation" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-creation-proof-panel" aria-label="ESSA Property Creation Proof" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-sale-listing-proof-panel" aria-label="ESSA Property Sale Listing Proof" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-sale-publication-readiness-panel" aria-label="ESSA Property Publication Readiness" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-publication-proof-panel" aria-label="ESSA Property Marketplace Publication Proof" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-leads-panel" aria-label="ESSA Property Leads" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-conversations-panel" aria-label="ESSA Property Conversations" hidden></section>
+
+        <section class="property-passport-panel add-property-panel" id="property-viewings-panel" aria-label="ESSA Property Viewings" hidden></section>
+
+        <section class="property-ingestion-review-panel" id="property-ingestion-review-panel" aria-label="ESSA Property Ingestion Review" hidden></section>
+
+        <section class="property-ingestion-review-panel" id="property-review-queue-panel" aria-label="ESSA Property Review Queue" hidden></section>
+
+        <section class="property-ingestion-review-panel" id="property-execution-proof-panel" aria-label="ESSA Property Execution Proof" hidden></section>
+
+        <section class="chat-panel" aria-label="История диалога с ESSA Navigator">
+          <div class="chat-messages" id="chat-messages">
+            <article class="chat-message navigator">
+              <span>ESSA Navigator</span>
+              <p>Я рядом. Выберите модуль или напишите, что хотите создать, исследовать или изменить.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="chat-panel compact" aria-label="Диалог с ESSA Navigator">
+          <form class="prompt-bar" id="workspace-chat-form">
+            <textarea
+              rows="1"
+              aria-label="Запрос к ESSA Navigator"
+              placeholder="Что вы хотите создать, исследовать или изменить сегодня?"
+            ></textarea>
+            <button type="submit">Начать</button>
+          </form>
+        </section>
+      </main>
+
+      <aside class="metrics-panel" aria-label="Метрики ESSA">
+        <div class="home-metrics home-pulse">
+          <div class="panel-title">ESSA Pulse</div>
+          <div class="metric">
+            <span>Пользователей ESSA</span>
+            <strong>—</strong>
+          </div>
+          <div class="metric">
+            <span>Активных проектов</span>
+            <strong>—</strong>
+          </div>
+          <div class="metric">
+            <span>Создано сегодня</span>
+            <strong>—</strong>
+          </div>
+          <div class="metric">
+            <span>Контента подготовлено</span>
+            <strong>—</strong>
+          </div>
+          <div class="metric">
+            <span>Стран в сети</span>
+            <strong>—</strong>
+          </div>
+          <div class="metric">
+            <span>Языков системы</span>
+            <strong>—</strong>
+          </div>
+        </div>
+
+        <div class="focus-box">
+          <span id="active-module">Главная</span>
+        </div>
+
+        <div class="workspace-right-panel" aria-label="Панель рабочего пространства">
+          <section class="workspace-tools">
+            <div class="panel-title">Жизненный цикл</div>
+            <button type="button">📁 Проект</button>
+            <button type="button">📦 Активы</button>
+            <button type="button">📄 Blueprint</button>
+            <button type="button">🚀 Выполнение</button>
+            <button type="button">📤 Экспорт</button>
+          </section>
+
+          <section class="workspace-recent">
+            <div class="panel-title">История пространств</div>
+            <input id="workspace-history-search" type="search" placeholder="Поиск" aria-label="Поиск по проектам и чатам" />
+            <div class="workspace-recent-list" id="workspace-recent-list"></div>
+          </section>
+        </div>
+      </aside>
+    </div>
+
+    <script>
+      (function () {
+        const SPACE_BY_HASH = {
+          "#home": "Главная",
+          "#navigator": "Chat ESSA Navigator",
+          "#product-discovery": "Product Discovery",
+          "#execution": "Execution Workspace",
+          "#workflow": "Workflow Orchestration",
+          "#property": "ESSA Property",
+          "#property-ingestion-review": "ESSA Property Ingestion Review",
+          "#property-review-queue": "ESSA Property Review Queue",
+          "#property-authority-activation": "ESSA Property Authority Activation",
+          "#property-creation-proof": "ESSA Property Creation Proof",
+          "#property-sale-listing-proof": "ESSA Property Sale Listing Proof",
+          "#property-sale-publication-readiness": "ESSA Property Publication Readiness",
+          "#property-publication-proof": "ESSA Property Marketplace Publication Proof",
+          "#property-marketplace": "ESSA Property Marketplace Publication Proof",
+          "#property-listing": "ESSA Property Marketplace Publication Proof",
+          "#property-leads": "ESSA Property Leads",
+          "#property-conversations": "ESSA Property Conversations",
+          "#property-viewings": "ESSA Property Viewings",
+          "#production": "ESSA Production Studio",
+          "#identity": "Цифровая личность",
+          "#website": "Website Studio",
+          "#projects": "Мои проекты",
+          "#history": "История ESSA"
+        };
+
+        const HASH_BY_SPACE = {
+          "Главная": "#home",
+          "Chat ESSA Navigator": "#navigator",
+          "Product Discovery": "#product-discovery",
+          "Execution Workspace": "#execution/VIDEO_TRIM",
+          "Workflow Orchestration": "#workflow/LOCAL_MEDIA_REPURPOSE_PROOF",
+          "ESSA Property": "#property",
+          "ESSA Property Ingestion Review": "#property-ingestion-review",
+          "ESSA Property Review Queue": "#property-review-queue",
+          "ESSA Property Authority Activation": "#property-authority-activation",
+          "ESSA Property Creation Proof": "#property-creation-proof",
+          "ESSA Property Sale Listing Proof": "#property-sale-listing-proof",
+          "ESSA Property Publication Readiness": "#property-sale-publication-readiness",
+          "ESSA Property Marketplace Publication Proof": "#property-publication-proof",
+          "ESSA Property Leads": "#property-leads",
+          "ESSA Property Conversations": "#property-conversations",
+          "ESSA Property Viewings": "#property-viewings",
+          "ESSA Production Studio": "#production",
+          "Цифровая личность": "#identity",
+          "Website Studio": "#website",
+          "Мои проекты": "#projects",
+          "История ESSA": "#history"
+        };
+
+        function rescueSetActive(label) {
+          console.log("[RESCUE_NAV]", label);
+
+          document.body.classList.toggle("workspace-mode", label !== "Главная");
+
+          const shell = document.querySelector(".workspace-shell");
+          if (shell) shell.classList.toggle("workspace-mode", label !== "Главная");
+
+          const hero = document.querySelector(".hero");
+          const grid = document.querySelector(".module-grid");
+          const pulse = document.querySelector(".home-pulse");
+
+          if (hero) hero.hidden = label !== "Главная";
+          if (grid) grid.hidden = label !== "Главная";
+          if (pulse) pulse.hidden = label !== "Главная";
+
+          const production = document.querySelector("#production-studio-panel");
+          const identity = document.querySelector("#identity-panel");
+          const projects = document.querySelector("#projects-panel");
+          const history = document.querySelector("#history-panel");
+          const projectWorkspace = document.querySelector("#project-workspace-panel");
+          const productDiscovery = document.querySelector("#product-discovery-panel");
+          const executionWorkspace = document.querySelector("#safe-local-execution-panel");
+          const autonomousWorkflow = document.querySelector("#autonomous-workflow-panel");
+          const property = document.querySelector("#property-panel");
+          const addProperty = document.querySelector("#add-property-panel");
+          const propertyMandate = document.querySelector("#property-mandate-panel");
+          const propertyMandateReview = document.querySelector("#property-mandate-review-panel");
+          const propertyAuthorityActivation = document.querySelector("#property-authority-activation-panel");
+          const propertyCreationProof = document.querySelector("#property-creation-proof-panel");
+          const propertySaleListingProof = document.querySelector("#property-sale-listing-proof-panel");
+          const propertyPublicationReadiness = document.querySelector("#property-sale-publication-readiness-panel");
+          const propertyMarketplacePublication = document.querySelector("#property-publication-proof-panel");
+          const propertyBuyerLead = document.querySelector("#property-leads-panel");
+          const propertyConversation = document.querySelector("#property-conversations-panel");
+          const propertyViewing = document.querySelector("#property-viewings-panel");
+          const propertyIngestionReview = document.querySelector("#property-ingestion-review-panel");
+          const propertyReviewQueue = document.querySelector("#property-review-queue-panel");
+
+          if (production) production.hidden = label !== "ESSA Production Studio";
+          if (identity) identity.hidden = label !== "Цифровая личность";
+          if (projects) projects.hidden = label !== "Мои проекты";
+          if (history) history.hidden = label !== "История ESSA";
+          if (projectWorkspace) projectWorkspace.hidden = true;
+          if (productDiscovery) productDiscovery.hidden = label !== "Product Discovery";
+          if (executionWorkspace) executionWorkspace.hidden = label !== "Execution Workspace";
+          if (autonomousWorkflow) autonomousWorkflow.hidden = label !== "Workflow Orchestration";
+          if (property) property.hidden = label !== "ESSA Property";
+          if (addProperty) addProperty.hidden = label !== "Add Property to ESSA";
+          if (propertyMandate) propertyMandate.hidden = label !== "ESSA Property Mandate";
+          if (propertyMandateReview) propertyMandateReview.hidden = label !== "ESSA Property Mandate Review";
+          if (propertyAuthorityActivation) propertyAuthorityActivation.hidden = label !== "ESSA Property Authority Activation";
+          if (propertyCreationProof) propertyCreationProof.hidden = label !== "ESSA Property Creation Proof";
+          if (propertySaleListingProof) propertySaleListingProof.hidden = label !== "ESSA Property Sale Listing Proof";
+          if (propertyPublicationReadiness) propertyPublicationReadiness.hidden = label !== "ESSA Property Publication Readiness";
+          if (propertyMarketplacePublication) propertyMarketplacePublication.hidden = label !== "ESSA Property Marketplace Publication Proof";
+          if (propertyBuyerLead) propertyBuyerLead.hidden = label !== "ESSA Property Leads";
+          if (propertyConversation) propertyConversation.hidden = label !== "ESSA Property Conversations";
+          if (propertyViewing) propertyViewing.hidden = label !== "ESSA Property Viewings";
+          if (propertyIngestionReview) propertyIngestionReview.hidden = label !== "ESSA Property Ingestion Review";
+          if (propertyReviewQueue) propertyReviewQueue.hidden = label !== "ESSA Property Review Queue";
+
+          const active = document.querySelector("#active-module");
+          if (active) active.textContent = label;
+
+          const title = document.querySelector("#workspace-title");
+          if (title) title.textContent = label;
+        }
+
+        function applyRescueHash() {
+          const label = window.location.hash.startsWith("#product-discovery")
+            ? "Product Discovery"
+            : window.location.hash.startsWith("#execution")
+              ? "Execution Workspace"
+            : window.location.hash.startsWith("#workflow")
+              ? "Workflow Orchestration"
+            : window.location.hash.startsWith("#add-property")
+              ? "Add Property to ESSA"
+            : window.location.hash.startsWith("#property-authority-activation")
+              ? "ESSA Property Authority Activation"
+            : window.location.hash.startsWith("#property-creation-proof")
+              ? "ESSA Property Creation Proof"
+            : window.location.hash.startsWith("#property-sale-publication-readiness")
+              ? "ESSA Property Publication Readiness"
+            : window.location.hash.startsWith("#property-publication-proof") || window.location.hash.startsWith("#property-marketplace") || window.location.hash.startsWith("#property-listing")
+              ? "ESSA Property Marketplace Publication Proof"
+            : window.location.hash.startsWith("#property-leads")
+              ? "ESSA Property Leads"
+            : window.location.hash.startsWith("#property-conversations")
+              ? "ESSA Property Conversations"
+            : window.location.hash.startsWith("#property-viewings")
+              ? "ESSA Property Viewings"
+            : window.location.hash.startsWith("#property-sale-listing-proof")
+              ? "ESSA Property Sale Listing Proof"
+            : window.location.hash.startsWith("#property-mandate")
+              ? window.location.hash.startsWith("#property-mandate-review")
+                ? "ESSA Property Mandate Review"
+                : "ESSA Property Mandate"
+            : window.location.hash.startsWith("#property-review-queue")
+              ? "ESSA Property Review Queue"
+            : window.location.hash.startsWith("#property-ingestion-review")
+              ? "ESSA Property Ingestion Review"
+              : window.location.hash.startsWith("#property")
+                ? "ESSA Property"
+            : SPACE_BY_HASH[window.location.hash] || "Главная";
+          rescueSetActive(label);
+        }
+
+        document.addEventListener("click", function (event) {
+          const target = event.target.closest("[data-space]");
+          if (!target) return;
+
+          const hash = target.dataset.hash || HASH_BY_SPACE[target.dataset.space];
+          if (hash) {
+            event.preventDefault();
+            window.location.hash = hash;
+            applyRescueHash();
+          }
+        }, true);
+
+        window.addEventListener("hashchange", applyRescueHash);
+        applyRescueHash();
+      })();
+    </script>
+    <script type="module" src="./app.js?v=workspace-hash-nav-01"></script>
+  </body>
+</html>

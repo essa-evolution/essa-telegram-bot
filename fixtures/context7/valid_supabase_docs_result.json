@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "For Supabase JavaScript client v2, import createClient from @supabase/supabase-js and create the client by passing the project URL and anon key. Keep service role keys on the server only."
+    }
+  ]
+}

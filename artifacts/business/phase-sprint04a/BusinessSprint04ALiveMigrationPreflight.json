@@ -1,0 +1,177 @@
+{
+  "artifactType": "BusinessSprint04ALiveMigrationPreflight",
+  "checkedAt": "2026-08-28T03:35:00+04:00",
+  "mode": "PREFLIGHT_ONLY_NO_MIGRATION_APPLIED",
+  "targetProject": {
+    "name": "essa-navigator-memory",
+    "ref": "ebnkxqzgqpormgkxbevq",
+    "url": "https://ebnkxqzgqpormgkxbevq.supabase.co",
+    "confirmedFromLocalConfig": true
+  },
+  "safety": {
+    "migrationApplied": false,
+    "liveDataMutated": false,
+    "liveObjectsChanged": false,
+    "rlsChangedLive": false,
+    "renderChanged": false,
+    "environmentVariablesChanged": false,
+    "secretsPrinted": false,
+    "paymentProviderActivated": false,
+    "transactionsCreated": false,
+    "sprint05Started": false
+  },
+  "inspectionMethods": [
+    {
+      "method": "local migration inspection",
+      "status": "completed"
+    },
+    {
+      "method": "configured project confirmation from SUPABASE_URL",
+      "status": "completed"
+    },
+    {
+      "method": "live Supabase PostgREST/OpenAPI root",
+      "status": "completed",
+      "httpStatus": 200,
+      "businessDefinitionsVisible": 0
+    },
+    {
+      "method": "live Supabase JS GET select limit 0 table probes",
+      "status": "completed",
+      "result": "all Business V1 and Sprint 04 table probes returned PGRST205"
+    }
+  ],
+  "liveSchemaFindings": {
+    "businessTablesVisibleThroughReadOnlyRest": false,
+    "sprint01To03DependenciesVisible": false,
+    "sprint04ObjectsVisible": false,
+    "tableProbeErrorCode": "PGRST205",
+    "tablesMissingOrNotExposed": [
+      "business_organizations",
+      "business_organization_memberships",
+      "business_profiles",
+      "business_workspaces",
+      "business_intakes",
+      "business_artifacts",
+      "business_projects",
+      "business_partner_requests",
+      "business_commercial_requests",
+      "business_funnel_events",
+      "business_audit_events",
+      "business_payment_intents",
+      "business_commercial_onboardings",
+      "business_payment_provider_events"
+    ],
+    "importantConflict": "The previous readiness script uses HEAD-style checks that reported SUPABASE_READY, but stricter GET select limit 0 probes show PGRST205 for the same Business tables. Treat the stricter live preflight result as blocking until direct SQL/catalog inspection confirms the schema."
+  },
+  "migrationSummary": {
+    "file": "supabase/migrations/20260827_business_sprint04_commercial_activation.sql",
+    "destructiveStatementsFound": false,
+    "dropStatementsFound": false,
+    "truncateStatementsFound": false,
+    "deleteStatementsFound": false,
+    "tableRewritesFound": false,
+    "incompatibleTypeChangesFound": false,
+    "notNullAdditionsWithoutSafeDefaultFound": false,
+    "additiveInIsolation": true
+  },
+  "objectsToBeCreated": {
+    "tables": [
+      "business_payment_intents",
+      "business_commercial_onboardings",
+      "business_payment_provider_events"
+    ],
+    "indexes": [
+      "idx_business_payment_intents_business",
+      "idx_business_payment_intents_offer",
+      "idx_business_commercial_onboardings_business",
+      "idx_business_payment_provider_events_payment"
+    ],
+    "policies": [
+      "business_payment_intents_select_member",
+      "business_payment_intents_insert_admin",
+      "business_payment_intents_update_admin",
+      "business_commercial_onboardings_select_member",
+      "business_commercial_onboardings_insert_admin",
+      "business_commercial_onboardings_update_admin",
+      "business_payment_provider_events_select_admin",
+      "business_payment_provider_events_insert_admin"
+    ]
+  },
+  "objectsToBeAltered": {
+    "tables": [
+      {
+        "table": "business_projects",
+        "columns": [
+          "linked_payment_intent_id",
+          "linked_onboarding_id",
+          "commercial_status",
+          "onboarding_status",
+          "activation_timestamp",
+          "owner_team",
+          "next_action"
+        ],
+        "safeDefaultAssessment": "owner_team is jsonb not null with default []::jsonb; other added columns are nullable"
+      }
+    ]
+  },
+  "foreignKeyDependencyCheck": {
+    "status": "BLOCKED",
+    "missingOrUnverifiedDependencies": [
+      "business_projects",
+      "business_organizations",
+      "business_profiles",
+      "auth.users",
+      "public.essa_business_has_org_role"
+    ],
+    "reason": "Read-only live probes did not expose Sprint 01-03 Business tables required by this migration."
+  },
+  "rlsAssessment": {
+    "newTablesEnableRls": true,
+    "tenantReadPoliciesPresentInMigration": true,
+    "adminWritePoliciesPresentInMigration": true,
+    "crossTenantExposureRisk": "LOW_IF_PRIOR_RLS_FUNCTIONS_EXIST_AND_POLICIES_APPLY",
+    "currentLiveVerificationStatus": "NOT_VERIFIED_BECAUSE_EXISTING_TABLES_AND_RLS_FUNCTIONS_ARE_NOT_VISIBLE_THROUGH_AVAILABLE_READ_ONLY_METHOD"
+  },
+  "conflictDuplicateScan": {
+    "indexesUseIfNotExists": true,
+    "tablesUseIfNotExists": true,
+    "projectColumnAddsUseIfNotExists": true,
+    "policiesUseIfNotExists": false,
+    "duplicatePolicyRisk": "If this migration or equivalent policies were already applied, re-running would fail on duplicate policy names."
+  },
+  "backupRecovery": {
+    "backupAvailabilityVerified": false,
+    "recoveryPointRequiredBeforeApply": true,
+    "recommendedAction": "Confirm a recent Supabase backup/PITR recovery point in the dashboard or project backup settings before applying any Business migration."
+  },
+  "postMigrationVerificationPlan": [
+    "Refresh PostgREST schema cache if needed.",
+    "Run GET select limit 0 probes for all Sprint 01-04 Business tables.",
+    "Run scripts/checkBusinessSupabaseReadiness.js only after fixing/augmenting HEAD false-positive coverage.",
+    "Verify business_payment_intents, business_commercial_onboardings, and business_payment_provider_events are visible.",
+    "Verify business_projects has the new commercial columns.",
+    "Run node scripts/testBusinessSprint04.js.",
+    "Run Business Sprint 01-03 regression tests.",
+    "Verify no secrets appear in artifacts/logs."
+  ],
+  "recommendedMechanism": {
+    "status": "DO_NOT_APPLY_SPRINT04_ALONE",
+    "sequence": [
+      "Confirm backup/recovery point.",
+      "Confirm the target project ref is ebnkxqzgqpormgkxbevq.",
+      "Directly inspect live SQL catalog in Supabase SQL Editor or a trusted Supabase CLI connection.",
+      "If Sprint 01-03 Business migrations are absent, apply 20260827_business_v1_foundation.sql first.",
+      "Then apply 20260827_business_v1_rls_policies.sql.",
+      "Only then apply 20260827_business_sprint04_commercial_activation.sql."
+    ],
+    "sprint04CommandIfDependenciesAreConfirmed": "Run the SQL contents of supabase/migrations/20260827_business_sprint04_commercial_activation.sql against project ebnkxqzgqpormgkxbevq via Supabase SQL Editor or a linked Supabase CLI migration workflow."
+  },
+  "safeToApplyLive": false,
+  "blockers": [
+    "Read-only live probes do not find required Sprint 01-03 Business tables in public schema cache.",
+    "Sprint 04 migration depends on business_projects, business_organizations, business_profiles, auth.users, and essa_business_has_org_role.",
+    "Backup/recovery status is not verified.",
+    "Duplicate policy status cannot be verified through available read-only REST inspection."
+  ]
+}

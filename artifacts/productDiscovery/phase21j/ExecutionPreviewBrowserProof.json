@@ -1,0 +1,897 @@
+{
+  "status": "PHASE_21J_EXECUTION_PREVIEW_PROOF_PASS",
+  "target": "http://localhost:3000/workspace/#product-discovery",
+  "runtime": {
+    "playwrightAvailable": true,
+    "browserName": "chromium",
+    "executablePath": "C:\\Users\\Lisa\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe",
+    "executableExists": true,
+    "reinstallNeeded": false
+  },
+  "providerCalls": 0,
+  "externalModelCalls": 0,
+  "capabilityExecutionCount": 0,
+  "publishSocialAdCreatorDispatchCount": 0,
+  "paymentActivationCount": 0,
+  "executionPerformed": false,
+  "interactionCount": 8,
+  "mutationCount": 0,
+  "results": [
+    {
+      "viewport": {
+        "id": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "target": "http://localhost:3000/workspace/#product-discovery",
+      "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VOCAL_REPLACE",
+      "screenshots": [
+        "artifacts\\productDiscovery\\phase21j\\desktop_1440x900_book_cover_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\desktop_1440x900_website_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\desktop_1440x900_video_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\desktop_1440x900_vocal_replace_execution_preview.png"
+      ],
+      "backNavigationWorks": true,
+      "capabilityResults": [
+        {
+          "capabilityId": "BOOK_COVER",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/BOOK_COVER",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1440,
+              "clientWidth": 1440,
+              "scrollHeight": 900,
+              "clientHeight": 900
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "WEBSITE_GENERATE",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/WEBSITE_GENERATE",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1440,
+              "clientWidth": 1440,
+              "scrollHeight": 900,
+              "clientHeight": 900
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VIDEO_EDIT",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VIDEO_EDIT",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1440,
+              "clientWidth": 1440,
+              "scrollHeight": 900,
+              "clientHeight": 900
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VOCAL_REPLACE",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VOCAL_REPLACE",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1440,
+              "clientWidth": 1440,
+              "scrollHeight": 900,
+              "clientHeight": 900
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VIDEO_TRIM",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VIDEO_TRIM",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1440,
+              "clientWidth": 1440,
+              "scrollHeight": 900,
+              "clientHeight": 900
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "interactionCount": 2,
+      "mutationCount": 0
+    },
+    {
+      "viewport": {
+        "id": "laptop",
+        "width": 1280,
+        "height": 720
+      },
+      "target": "http://localhost:3000/workspace/#product-discovery",
+      "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VOCAL_REPLACE",
+      "screenshots": [
+        "artifacts\\productDiscovery\\phase21j\\laptop_1280x720_book_cover_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\laptop_1280x720_website_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\laptop_1280x720_video_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\laptop_1280x720_vocal_replace_execution_preview.png"
+      ],
+      "backNavigationWorks": true,
+      "capabilityResults": [
+        {
+          "capabilityId": "BOOK_COVER",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/BOOK_COVER",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1280,
+              "clientWidth": 1280,
+              "scrollHeight": 720,
+              "clientHeight": 720
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "WEBSITE_GENERATE",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/WEBSITE_GENERATE",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1280,
+              "clientWidth": 1280,
+              "scrollHeight": 720,
+              "clientHeight": 720
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VIDEO_EDIT",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VIDEO_EDIT",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1280,
+              "clientWidth": 1280,
+              "scrollHeight": 720,
+              "clientHeight": 720
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VOCAL_REPLACE",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VOCAL_REPLACE",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1280,
+              "clientWidth": 1280,
+              "scrollHeight": 720,
+              "clientHeight": 720
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VIDEO_TRIM",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VIDEO_TRIM",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 1280,
+              "clientWidth": 1280,
+              "scrollHeight": 720,
+              "clientHeight": 720
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "interactionCount": 2,
+      "mutationCount": 0
+    },
+    {
+      "viewport": {
+        "id": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "target": "http://localhost:3000/workspace/#product-discovery",
+      "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VOCAL_REPLACE",
+      "screenshots": [
+        "artifacts\\productDiscovery\\phase21j\\tablet_768x1024_book_cover_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\tablet_768x1024_website_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\tablet_768x1024_video_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\tablet_768x1024_vocal_replace_execution_preview.png"
+      ],
+      "backNavigationWorks": true,
+      "capabilityResults": [
+        {
+          "capabilityId": "BOOK_COVER",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/BOOK_COVER",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 768,
+              "clientWidth": 768,
+              "scrollHeight": 3130,
+              "clientHeight": 1024
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "WEBSITE_GENERATE",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/WEBSITE_GENERATE",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 768,
+              "clientWidth": 768,
+              "scrollHeight": 3193,
+              "clientHeight": 1024
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VIDEO_EDIT",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VIDEO_EDIT",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 768,
+              "clientWidth": 768,
+              "scrollHeight": 2919,
+              "clientHeight": 1024
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VOCAL_REPLACE",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VOCAL_REPLACE",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 768,
+              "clientWidth": 768,
+              "scrollHeight": 3241,
+              "clientHeight": 1024
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VIDEO_TRIM",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VIDEO_TRIM",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 768,
+              "clientWidth": 768,
+              "scrollHeight": 2863,
+              "clientHeight": 1024
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "interactionCount": 2,
+      "mutationCount": 0
+    },
+    {
+      "viewport": {
+        "id": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "target": "http://localhost:3000/workspace/#product-discovery",
+      "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VOCAL_REPLACE",
+      "screenshots": [
+        "artifacts\\productDiscovery\\phase21j\\mobile_390x844_book_cover_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\mobile_390x844_website_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\mobile_390x844_video_execution_preview.png",
+        "artifacts\\productDiscovery\\phase21j\\mobile_390x844_vocal_replace_execution_preview.png"
+      ],
+      "backNavigationWorks": true,
+      "capabilityResults": [
+        {
+          "capabilityId": "BOOK_COVER",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/BOOK_COVER",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 390,
+              "clientWidth": 390,
+              "scrollHeight": 3740,
+              "clientHeight": 844
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "WEBSITE_GENERATE",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/WEBSITE_GENERATE",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 390,
+              "clientWidth": 390,
+              "scrollHeight": 3834,
+              "clientHeight": 844
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VIDEO_EDIT",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VIDEO_EDIT",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 390,
+              "clientWidth": 390,
+              "scrollHeight": 3420,
+              "clientHeight": 844
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VOCAL_REPLACE",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VOCAL_REPLACE",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 390,
+              "clientWidth": 390,
+              "scrollHeight": 3778,
+              "clientHeight": 844
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        },
+        {
+          "capabilityId": "VIDEO_TRIM",
+          "finalUrl": "http://localhost:3000/workspace/#product-discovery/execute/VIDEO_TRIM",
+          "checks": {
+            "productDiscoveryVisible": true,
+            "previewVisible": true,
+            "breadcrumbVisible": true,
+            "disabledButtonVisible": true,
+            "boundaryMessageVisible": true,
+            "inputSectionVisible": true,
+            "localSectionVisible": true,
+            "providerSectionVisible": true,
+            "approvalSectionVisible": true,
+            "artifactSectionVisible": true,
+            "verificationSectionVisible": true,
+            "activationSectionVisible": true,
+            "executionEnabledFalse": true,
+            "providerExecutionEnabledFalse": true,
+            "toolExecutionEnabledFalse": true,
+            "paymentEnabledFalse": true,
+            "publishEnabledFalse": true,
+            "deployEnabledFalse": true,
+            "noProviderCalls": true,
+            "noHorizontalOverflow": true,
+            "documentMetrics": {
+              "scrollWidth": 390,
+              "clientWidth": 390,
+              "scrollHeight": 3288,
+              "clientHeight": 844
+            }
+          },
+          "textChecks": {
+            "expectedTextVisible": true,
+            "blockedOrReadyStateVisible": true,
+            "paymentPreviewVisible": true,
+            "localReadyVisible": true
+          },
+          "status": "PASS"
+        }
+      ],
+      "status": "PASS",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "interactionCount": 2,
+      "mutationCount": 0
+    }
+  ]
+}

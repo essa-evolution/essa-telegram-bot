@@ -1,0 +1,56 @@
+{
+  "providerId": "claude_agent_sdk",
+  "semanticSummary": "Lisa reframes purpose as an assigned inner act rather than something externally discovered. The edit should preserve her calm challenge and the soft smile/laugh at the end.",
+  "proposedEditDecisions": [
+    {
+      "decisionId": "hook",
+      "type": "hook",
+      "description": "Open directly on the question about searching for purpose.",
+      "preservePerformance": true
+    },
+    {
+      "decisionId": "meaning_turn",
+      "type": "semantic_turn",
+      "description": "Let the pause before the self-assignment idea breathe instead of cutting aggressively."
+    },
+    {
+      "decisionId": "ending",
+      "type": "performance_preservation",
+      "description": "Preserve the final smile or laugh if present because it softens the existential statement."
+    }
+  ],
+  "subtitlePlan": [
+    {
+      "startSec": 0,
+      "endSec": 3.4,
+      "text": "Ты всё ищешь предназначение?"
+    },
+    {
+      "startSec": 3.4,
+      "endSec": 7.2,
+      "text": "А если его не существует?"
+    },
+    {
+      "startSec": 7.2,
+      "endSec": 11,
+      "text": "Если предназначение - это то, что ты сама себе назначаешь?"
+    }
+  ],
+  "visualRequests": [],
+  "unresolvedItems": [
+    {
+      "itemId": "timing_requires_real_transcript",
+      "reason": "Exact subtitle timing must remain unresolved until ESSA supplies verified local transcript segments."
+    }
+  ],
+  "toolRequests": [],
+  "artifacts": [],
+  "approvalRequired": true,
+  "completionState": "needs_approval",
+  "traceMetadata": {
+    "mode": "future_claude_sandbox_fixture",
+    "toolsAllowed": false,
+    "providerCallMade": false,
+    "publishRequested": false
+  }
+}

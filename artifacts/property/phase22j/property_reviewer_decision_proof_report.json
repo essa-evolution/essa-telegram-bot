@@ -1,0 +1,435 @@
+{
+  "status": "PHASE_22J_PROPERTY_REVIEWER_DECISION_PROOF_PASS",
+  "route": "http://localhost:3170/workspace/#property-ingestion-review",
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "mergeActions": 0,
+  "publishActions": 0,
+  "quarantineMutations": 0,
+  "results": [
+    {
+      "id": "exact-options",
+      "label": "Scenario A - Exact match review available decisions",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\01_exact_match_decisions.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 3,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "draft",
+      "label": "Scenario B - Local decision draft",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\02_decision_draft.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 3,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "validate",
+      "label": "Scenario C - Validate decision",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\03_decision_validation.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_duplicate_partner_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_duplicate_partner_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 3,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "approved-no-execution",
+      "label": "Scenario D - Approved-as-decision without execution",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\04_approved_as_decision_no_execution.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 3,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "conflict",
+      "label": "Scenario E - Conflict decision",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\05_conflict_decision.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501_price_130000",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501_price_130000",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 3,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "quarantine",
+      "label": "Scenario F - Quarantine decision",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\06_quarantine_decision.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_invalid_negative_area",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_invalid_negative_area",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 3,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "more-evidence",
+      "label": "Scenario G - Request more evidence",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\07_request_more_evidence.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_manual_gap_record_city_missing",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_manual_gap_record_city_missing",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 3,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "superseded",
+      "label": "Scenario H - Superseded decision history",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\08_superseded_history.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_owner_sub_batumi_0707",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_owner_sub_batumi_0707",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 2,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "invalid",
+      "label": "Scenario I - Invalid decision blocked",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\09_invalid_decision_blocked.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_invalid_negative_area&decisionType=CONFIRM_EXACT_MATCH",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_invalid_negative_area&decisionType=CONFIRM_EXACT_MATCH",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 3,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "mobile",
+      "label": "Scenario J - Mobile/narrow reviewer surface",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22j\\10_mobile_reviewer_decision.png"
+      ],
+      "finalUrl": "http://localhost:3170/workspace/#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-ingestion-review?item=ingest_agency_listing_tower_b_0501",
+        "currentMode": "ingestion-review",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "optionCount": 3,
+        "futureActionsDisabled": true,
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "noExecutionStatus": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "scrollHeight": 22153,
+          "clientHeight": 844
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "artifactType": "BusinessSprint03BConfigDiagnosis",
+  "checkedAt": "2026-08-27T23:13:05.2584250+04:00",
+  "mode": "READ_ONLY_POST_RESTORE_DIAGNOSTIC",
+  "mutationsPerformed": 0,
+  "externalAiProviderCallsPerformed": 0,
+  "supabaseDataMutationsPerformed": 0,
+  "migrationsPerformed": 0,
+  "schemaChangesPerformed": 0,
+  "secretsPrintedByArtifact": false,
+  "configSource": {
+    "primarySource": ".env/process.env",
+    "configuredUrlStillMatchesExpected": true,
+    "deploymentConfigFoundInRepo": false,
+    "deploymentConfigFilesFound": []
+  },
+  "configuredSupabase": {
+    "dashboardConfirmedProjectName": "essa-navigator-memory",
+    "url": "https://ebnkxqzgqpormgkxbevq.supabase.co",
+    "hostname": "ebnkxqzgqpormgkxbevq.supabase.co",
+    "projectRef": "ebnkxqzgqpormgkxbevq",
+    "urlFormatOk": true,
+    "protocol": "https"
+  },
+  "environmentVariables": {
+    "SUPABASE_URL": "present",
+    "SUPABASE_SERVICE_ROLE_KEY": "present",
+    "SUPABASE_ANON_KEY": "absent",
+    "VITE_SUPABASE_URL": "absent",
+    "VITE_SUPABASE_ANON_KEY": "absent",
+    "DATABASE_URL": "absent",
+    "ESSA_BUSINESS_STORE": "absent",
+    "selectedStoreMode": "local"
+  },
+  "dns": {
+    "configuredHost": {
+      "host": "ebnkxqzgqpormgkxbevq.supabase.co",
+      "result": "OK",
+      "addressesObserved": [
+        {
+          "family": 4,
+          "address": "104.18.38.10"
+        },
+        {
+          "family": 4,
+          "address": "172.64.149.246"
+        }
+      ]
+    },
+    "previousBlocker": {
+      "previousCode": "ENOTFOUND",
+      "currentStatus": "RESOLVED"
+    }
+  },
+  "httpsNetwork": {
+    "diagnosticScript": "scripts/diagnoseBusinessSupabaseConnectivity.js",
+    "sandboxedRun": {
+      "failureClass": "HTTPS_BLOCKED",
+      "dns": "DNS_REACHABLE",
+      "tcp443": "EACCES",
+      "tls": "EACCES",
+      "authEndpoint": "EACCES",
+      "restEndpoint": "EACCES",
+      "interpretation": "Local sandbox policy blocked outbound HTTPS; this was not a Supabase project failure."
+    },
+    "networkPermittedRun": {
+      "failureClass": "LIVE_SUPABASE_REACHABLE",
+      "dns": "DNS_REACHABLE",
+      "tcp443": "TCP_443_REACHABLE",
+      "tls": "TLS_VALID",
+      "authEndpoint": {
+        "status": "AUTH_ENDPOINT_RESPONDED",
+        "httpStatus": 401,
+        "ok": true,
+        "interpretation": "Endpoint responded; unauthenticated health route did not expose privileged access."
+      },
+      "restEndpoint": {
+        "status": "REST_ENDPOINT_RESPONDED",
+        "httpStatus": 200,
+        "ok": true
+      }
+    }
+  },
+  "applicationConnectivity": {
+    "readinessScript": "scripts/checkBusinessSupabaseReadiness.js",
+    "usesExistingConfiguredCredentials": true,
+    "operationType": "read_only_head_select_checks",
+    "result": {
+      "ok": true,
+      "status": "SUPABASE_READY",
+      "missingTables": [],
+      "requiredTablesReachable": [
+        "business_organizations",
+        "business_organization_memberships",
+        "business_profiles",
+        "business_workspaces",
+        "business_intakes",
+        "business_artifacts",
+        "business_projects",
+        "business_partner_requests",
+        "business_commercial_requests",
+        "business_funnel_events",
+        "business_audit_events"
+      ]
+    }
+  },
+  "blockers": {
+    "previousEnotfoundBlockerResolved": true,
+    "newConnectivityBlockers": [],
+    "newSchemaReadinessBlockers": [],
+    "notes": [
+      "ESSA_BUSINESS_STORE is absent, so the current non-production selected store mode remains local.",
+      "This is not a Supabase connectivity blocker, but production activation should deliberately set or confirm the intended store mode in a later authorized step."
+    ]
+  },
+  "safety": {
+    "safeToProceedWithSprint04": true,
+    "safeToProceedWithLiveMutation": false,
+    "reason": "Sprint 03B connectivity and read-only application readiness checks now pass. This sprint did not authorize live mutations or Sprint 04 execution."
+  }
+}

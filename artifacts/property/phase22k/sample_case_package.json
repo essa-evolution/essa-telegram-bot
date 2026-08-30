@@ -1,0 +1,642 @@
+{
+  "modelType": "PropertyReviewCasePackage",
+  "packageId": "pkg_ingest_agency_listing_tower_b_0501_1_0_0",
+  "packageVersion": "1.0.0",
+  "generatedAt": "2026-08-20T00:00:00.000Z",
+  "caseStatus": "REVIEWED_DECISION_RECORDED",
+  "ingestionId": "ingest_agency_listing_tower_b_0501",
+  "sourceRecordId": "agency_listing_tower_b_0501",
+  "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+  "listingSnapshotIds": [
+    "listing_ag_b_0501_agency_listing_tower_b_0501"
+  ],
+  "reviewerDecisionId": "decision_exact_confirm_agency_0501",
+  "currentDecisionStatus": "APPROVED_AS_DECISION",
+  "executionStatus": "NOT_EXECUTED",
+  "executionReadiness": "EXECUTION_NOT_ENABLED",
+  "summary": "AGENCY_FEED source record agency_listing_tower_b_0501 has validation ACCEPTED and identity resolution EXACT_MATCH. Canonical property: prop_georgia_batumi_batumi_ingested_residence_tower_b_0501. No conflict is selected. No evidence gaps are listed. Reviewer recorded CONFIRM_EXACT_MATCH as APPROVED_AS_DECISION. No merge or repository mutation has been executed.",
+  "sourceSummary": {
+    "sourceType": "AGENCY_FEED",
+    "sourceName": "local_agency_listing_fixture",
+    "sourceRecordId": "agency_listing_tower_b_0501",
+    "sourceUrl": null,
+    "observedAt": "2026-08-20T00:00:00.000Z",
+    "fetchedAt": "2026-08-20T00:00:00.000Z"
+  },
+  "validationSummary": {
+    "status": "ACCEPTED",
+    "passedChecks": [
+      "source_identity",
+      "source_record_id",
+      "observed_at",
+      "location_shape",
+      "price_shape",
+      "currency_shape"
+    ],
+    "warnings": [],
+    "gaps": [],
+    "errors": [],
+    "blockedStage": null
+  },
+  "normalizationSummary": {
+    "status": "NORMALIZED",
+    "fields": [
+      {
+        "field": "country",
+        "rawValue": "Georgia",
+        "normalizedValue": "Georgia",
+        "invented": false
+      },
+      {
+        "field": "region",
+        "rawValue": "Adjara",
+        "normalizedValue": "Adjara",
+        "invented": false
+      },
+      {
+        "field": "city",
+        "rawValue": "Batumi",
+        "normalizedValue": "Batumi",
+        "invented": false
+      },
+      {
+        "field": "address",
+        "rawValue": "Developer Tower B, Batumi",
+        "normalizedValue": "Developer Tower B, Batumi",
+        "invented": false
+      },
+      {
+        "field": "propertyType",
+        "rawValue": "APARTMENT_UNIT",
+        "normalizedValue": "APARTMENT_UNIT",
+        "invented": false
+      },
+      {
+        "field": "listingType",
+        "rawValue": "SALE",
+        "normalizedValue": "SALE",
+        "invented": false
+      },
+      {
+        "field": "listingStatus",
+        "rawValue": "ACTIVE",
+        "normalizedValue": "ACTIVE",
+        "invented": false
+      },
+      {
+        "field": "price",
+        "rawValue": "125000",
+        "normalizedValue": "125000",
+        "invented": false
+      },
+      {
+        "field": "currency",
+        "rawValue": "USD",
+        "normalizedValue": "USD",
+        "invented": false
+      },
+      {
+        "field": "areaSqm",
+        "rawValue": "MISSING",
+        "normalizedValue": "MISSING",
+        "invented": false
+      },
+      {
+        "field": "bedrooms",
+        "rawValue": "MISSING",
+        "normalizedValue": "MISSING",
+        "invented": false
+      },
+      {
+        "field": "project",
+        "rawValue": "Batumi Ingested Residence",
+        "normalizedValue": "Batumi Ingested Residence",
+        "invented": false
+      },
+      {
+        "field": "building",
+        "rawValue": "Tower B",
+        "normalizedValue": "Tower B",
+        "invented": false
+      },
+      {
+        "field": "unit",
+        "rawValue": "0501",
+        "normalizedValue": "0501",
+        "invented": false
+      }
+    ]
+  },
+  "identityResolutionSummary": {
+    "candidateIdentityHints": [
+      "hierarchy:batumi_ingested_residence:tower_b:0501"
+    ],
+    "matchedPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+    "matchOutcome": "EXACT_MATCH",
+    "deterministicRuleUsed": "canonical_property_id",
+    "confidence": "MEDIUM",
+    "manualReviewRequired": false
+  },
+  "evidenceSummary": {
+    "evidenceRefs": [
+      {
+        "refType": "PropertyIngestionAudit",
+        "refId": "ingest_agency_listing_tower_b_0501",
+        "sourceBacked": true
+      },
+      {
+        "refType": "PropertySourceRecord",
+        "refId": "agency_listing_tower_b_0501",
+        "sourceBacked": true
+      },
+      {
+        "refType": "NormalizedPropertyCandidate",
+        "refId": "candidate:agency_listing_tower_b_0501",
+        "sourceBacked": true
+      },
+      {
+        "refType": "MatchOutcome",
+        "refId": "EXACT_MATCH",
+        "sourceBacked": true
+      },
+      {
+        "refType": "CanonicalProperty",
+        "refId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "sourceBacked": true
+      },
+      {
+        "refType": "ListingSnapshot",
+        "refId": "listing_ag_b_0501_agency_listing_tower_b_0501",
+        "sourceBacked": true
+      }
+    ],
+    "sourceLineage": [
+      {
+        "trace": "SourceRecord -> SourceRef -> PropertyFact -> Canonical Property -> Property Passport",
+        "sourceRecordId": "agency_listing_tower_b_0501",
+        "sourceRefId": "agency_listing_tower_b_0501",
+        "artifactType": "PropertyFact",
+        "artifactId": "LOCATION",
+        "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "observedAt": "2026-08-20T00:00:00.000Z"
+      },
+      {
+        "trace": "SourceRecord -> SourceRef -> ListingSnapshot -> Canonical Property -> Property Passport",
+        "sourceRecordId": "agency_listing_tower_b_0501",
+        "sourceRefId": "agency_listing_tower_b_0501",
+        "artifactType": "ListingSnapshot",
+        "artifactId": "listing_ag_b_0501_agency_listing_tower_b_0501",
+        "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "observedAt": "2026-08-20T00:00:00.000Z"
+      }
+    ],
+    "listingSnapshots": [],
+    "freshness": [],
+    "verificationStates": [
+      "PropertyFact",
+      "ListingSnapshot"
+    ]
+  },
+  "conflictSummary": {
+    "hasConflict": false,
+    "conflicts": [],
+    "observations": []
+  },
+  "gapSummary": {
+    "gaps": [],
+    "missingEvidenceCount": 0
+  },
+  "riskSummary": {
+    "validationBlocked": false,
+    "conflictPresent": false,
+    "missingEvidencePresent": false,
+    "executionRisk": "EXECUTION_DISABLED_PHASE_22K"
+  },
+  "reviewerDecisionSummary": {
+    "decisionId": "decision_exact_confirm_agency_0501",
+    "decisionType": "CONFIRM_EXACT_MATCH",
+    "decisionStatus": "APPROVED_AS_DECISION",
+    "reviewerRole": "PROPERTY_REVIEWER",
+    "reviewerId": "local_property_reviewer_lisa_placeholder",
+    "reasonCode": "PROJECT_BUILDING_UNIT_MATCH",
+    "rationale": "Project, building and unit identifiers match the existing canonical property candidate.",
+    "evidenceRefs": [
+      {
+        "refType": "PropertyIngestionAudit",
+        "refId": "ingest_agency_listing_tower_b_0501",
+        "sourceBacked": true
+      },
+      {
+        "refType": "PropertySourceRecord",
+        "refId": "agency_listing_tower_b_0501",
+        "sourceBacked": true
+      },
+      {
+        "refType": "CanonicalProperty",
+        "refId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "sourceBacked": true
+      },
+      {
+        "refType": "MatchOutcome",
+        "refId": "EXACT_MATCH",
+        "sourceBacked": true
+      }
+    ],
+    "warningsAcknowledged": [],
+    "createdAt": "2026-08-20T00:00:00.000Z",
+    "supersedesDecisionId": null,
+    "executionStatus": "NOT_EXECUTED"
+  },
+  "auditSummary": {
+    "ingestionTimeline": [
+      {
+        "stage": "Received",
+        "status": "COMPLETE",
+        "timestamp": "2026-08-20T00:00:00.000Z"
+      },
+      {
+        "stage": "Validated",
+        "status": "COMPLETE",
+        "timestamp": "2026-08-20T00:00:00.000Z"
+      },
+      {
+        "stage": "Normalized",
+        "status": "COMPLETE",
+        "timestamp": "2026-08-20T00:00:00.000Z"
+      },
+      {
+        "stage": "Identity Resolved",
+        "status": "COMPLETE",
+        "timestamp": "2026-08-20T00:00:00.000Z"
+      },
+      {
+        "stage": "Listing Snapshot Created",
+        "status": "COMPLETE",
+        "timestamp": "2026-08-20T00:00:00.000Z"
+      },
+      {
+        "stage": "Canonical Property Linked / Candidate Created",
+        "status": "COMPLETE",
+        "timestamp": "2026-08-20T00:00:00.000Z"
+      },
+      {
+        "stage": "Repository Read Ready",
+        "status": "COMPLETE",
+        "timestamp": "2026-08-20T00:00:00.000Z"
+      }
+    ],
+    "decisionHistory": [
+      {
+        "modelType": "PropertyReviewerDecision",
+        "decisionId": "decision_exact_confirm_agency_0501",
+        "ingestionId": "ingest_agency_listing_tower_b_0501",
+        "sourceRecordId": "agency_listing_tower_b_0501",
+        "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "decisionType": "CONFIRM_EXACT_MATCH",
+        "reviewerRole": "PROPERTY_REVIEWER",
+        "reviewerId": "local_property_reviewer_lisa_placeholder",
+        "reasonCode": "PROJECT_BUILDING_UNIT_MATCH",
+        "rationale": "Project, building and unit identifiers match the existing canonical property candidate.",
+        "evidenceRefs": [
+          {
+            "refType": "PropertyIngestionAudit",
+            "refId": "ingest_agency_listing_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "PropertySourceRecord",
+            "refId": "agency_listing_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "CanonicalProperty",
+            "refId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "MatchOutcome",
+            "refId": "EXACT_MATCH",
+            "sourceBacked": true
+          }
+        ],
+        "warningsAcknowledged": [],
+        "createdAt": "2026-08-20T00:00:00.000Z",
+        "decisionStatus": "APPROVED_AS_DECISION",
+        "executionStatus": "NOT_EXECUTED",
+        "supersedesDecisionId": null,
+        "auditMetadata": {
+          "actorType": "LOCAL_HUMAN_REVIEWER_PLACEHOLDER",
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "dbMutations": 0,
+          "payments": 0,
+          "bookingActions": 0,
+          "transactionActions": 0,
+          "mergeActions": 0,
+          "publishActions": 0,
+          "quarantineMutations": 0
+        },
+        "validation": {
+          "ok": true,
+          "status": "VALID_DECISION_CONTRACT",
+          "allowedDecisionTypes": [
+            "CONFIRM_EXACT_MATCH",
+            "REJECT_MATCH",
+            "REQUEST_MORE_EVIDENCE"
+          ],
+          "errors": [],
+          "warnings": [
+            "approved_as_decision_only_no_execution"
+          ],
+          "executionStatus": "NOT_EXECUTED",
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "dbMutations": 0,
+          "payments": 0,
+          "bookingActions": 0,
+          "transactionActions": 0
+        },
+        "executionGuard": {
+          "ok": false,
+          "status": "EXECUTION_LAYER_NOT_ACTIVE_PHASE_22J",
+          "decisionId": "decision_exact_confirm_agency_0501",
+          "executionStatus": "NOT_EXECUTED",
+          "message": "Phase 22J records review decisions only. No merge, write, publish, provider, payment, booking, transaction or quarantine mutation is executed.",
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "dbMutations": 0,
+          "payments": 0,
+          "bookingActions": 0,
+          "transactionActions": 0,
+          "mergeActions": 0,
+          "publishActions": 0,
+          "quarantineMutations": 0
+        }
+      }
+    ],
+    "decisionAuditTrail": [
+      {
+        "modelType": "PropertyReviewerDecisionAudit",
+        "auditRecordId": "audit_decision_exact_confirm_agency_0501_created",
+        "eventType": "DECISION_CREATED",
+        "decisionId": "decision_exact_confirm_agency_0501",
+        "ingestionId": "ingest_agency_listing_tower_b_0501",
+        "sourceRecordId": "agency_listing_tower_b_0501",
+        "previousDecisionStatus": null,
+        "nextDecisionStatus": "APPROVED_AS_DECISION",
+        "reviewerRole": "PROPERTY_REVIEWER",
+        "reviewerId": "local_property_reviewer_lisa_placeholder",
+        "reasonCode": "PROJECT_BUILDING_UNIT_MATCH",
+        "evidenceRefs": [
+          {
+            "refType": "PropertyIngestionAudit",
+            "refId": "ingest_agency_listing_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "PropertySourceRecord",
+            "refId": "agency_listing_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "CanonicalProperty",
+            "refId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "MatchOutcome",
+            "refId": "EXACT_MATCH",
+            "sourceBacked": true
+          }
+        ],
+        "timestamp": "2026-08-20T00:00:00.000Z",
+        "appendOnly": true,
+        "executionStatus": "NOT_EXECUTED",
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0,
+        "bookingActions": 0,
+        "transactionActions": 0,
+        "mergeActions": 0,
+        "publishActions": 0,
+        "quarantineMutations": 0
+      },
+      {
+        "modelType": "PropertyReviewerDecisionAudit",
+        "auditRecordId": "audit_decision_exact_confirm_agency_0501_validated",
+        "eventType": "DECISION_VALIDATED",
+        "decisionId": "decision_exact_confirm_agency_0501",
+        "ingestionId": "ingest_agency_listing_tower_b_0501",
+        "sourceRecordId": "agency_listing_tower_b_0501",
+        "previousDecisionStatus": null,
+        "nextDecisionStatus": "APPROVED_AS_DECISION",
+        "reviewerRole": "PROPERTY_REVIEWER",
+        "reviewerId": "local_property_reviewer_lisa_placeholder",
+        "reasonCode": "PROJECT_BUILDING_UNIT_MATCH",
+        "evidenceRefs": [
+          {
+            "refType": "PropertyIngestionAudit",
+            "refId": "ingest_agency_listing_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "PropertySourceRecord",
+            "refId": "agency_listing_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "CanonicalProperty",
+            "refId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "MatchOutcome",
+            "refId": "EXACT_MATCH",
+            "sourceBacked": true
+          }
+        ],
+        "timestamp": "2026-08-20T00:00:00.000Z",
+        "appendOnly": true,
+        "executionStatus": "NOT_EXECUTED",
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0,
+        "bookingActions": 0,
+        "transactionActions": 0,
+        "mergeActions": 0,
+        "publishActions": 0,
+        "quarantineMutations": 0
+      },
+      {
+        "modelType": "PropertyReviewerDecisionAudit",
+        "auditRecordId": "audit_decision_exact_confirm_agency_0501_approved",
+        "eventType": "DECISION_APPROVED_AS_DECISION",
+        "decisionId": "decision_exact_confirm_agency_0501",
+        "ingestionId": "ingest_agency_listing_tower_b_0501",
+        "sourceRecordId": "agency_listing_tower_b_0501",
+        "previousDecisionStatus": null,
+        "nextDecisionStatus": "APPROVED_AS_DECISION",
+        "reviewerRole": "PROPERTY_REVIEWER",
+        "reviewerId": "local_property_reviewer_lisa_placeholder",
+        "reasonCode": "PROJECT_BUILDING_UNIT_MATCH",
+        "evidenceRefs": [
+          {
+            "refType": "PropertyIngestionAudit",
+            "refId": "ingest_agency_listing_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "PropertySourceRecord",
+            "refId": "agency_listing_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "CanonicalProperty",
+            "refId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+            "sourceBacked": true
+          },
+          {
+            "refType": "MatchOutcome",
+            "refId": "EXACT_MATCH",
+            "sourceBacked": true
+          }
+        ],
+        "timestamp": "2026-08-20T00:00:00.000Z",
+        "appendOnly": true,
+        "executionStatus": "NOT_EXECUTED",
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0,
+        "bookingActions": 0,
+        "transactionActions": 0,
+        "mergeActions": 0,
+        "publishActions": 0,
+        "quarantineMutations": 0
+      }
+    ],
+    "appendOnly": true
+  },
+  "professionalReviewRequirements": [
+    "NONE_IDENTIFIED"
+  ],
+  "limitations": [
+    "Review Case Package is not an execution command.",
+    "Human handoff does not mutate Property state.",
+    "Approved decision does not mean applied change.",
+    "No legal, ownership, KYC/KYB, payment, booking or transaction verification is performed in Phase 22K."
+  ],
+  "provenance": [
+    {
+      "statementId": "case_summary",
+      "evidenceRefs": [
+        {
+          "refType": "PropertyIngestionAudit",
+          "refId": "ingest_agency_listing_tower_b_0501",
+          "sourceBacked": true
+        },
+        {
+          "refType": "PropertySourceRecord",
+          "refId": "agency_listing_tower_b_0501",
+          "sourceBacked": true
+        },
+        {
+          "refType": "NormalizedPropertyCandidate",
+          "refId": "candidate:agency_listing_tower_b_0501",
+          "sourceBacked": true
+        },
+        {
+          "refType": "MatchOutcome",
+          "refId": "EXACT_MATCH",
+          "sourceBacked": true
+        },
+        {
+          "refType": "CanonicalProperty",
+          "refId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+          "sourceBacked": true
+        },
+        {
+          "refType": "ListingSnapshot",
+          "refId": "listing_ag_b_0501_agency_listing_tower_b_0501",
+          "sourceBacked": true
+        }
+      ],
+      "trace": "Package Statement -> Evidence -> PropertyFact / ListingSnapshot -> SourceRef -> SourceRecord -> Ingestion Audit"
+    },
+    {
+      "statementId": "source_summary",
+      "evidenceRefs": [
+        {
+          "refType": "PropertySourceRecord",
+          "refId": "agency_listing_tower_b_0501"
+        }
+      ],
+      "trace": "Package Statement -> Evidence -> PropertyFact / ListingSnapshot -> SourceRef -> SourceRecord -> Ingestion Audit"
+    },
+    {
+      "statementId": "validation_summary",
+      "evidenceRefs": [
+        {
+          "refType": "PropertyIngestionAudit",
+          "refId": "ingest_agency_listing_tower_b_0501"
+        }
+      ],
+      "trace": "Package Statement -> Evidence -> PropertyFact / ListingSnapshot -> SourceRef -> SourceRecord -> Ingestion Audit"
+    },
+    {
+      "statementId": "identity_resolution_summary",
+      "evidenceRefs": [
+        {
+          "refType": "MatchOutcome",
+          "refId": "EXACT_MATCH"
+        }
+      ],
+      "trace": "Package Statement -> Evidence -> PropertyFact / ListingSnapshot -> SourceRef -> SourceRecord -> Ingestion Audit"
+    },
+    {
+      "statementId": "reviewer_decision_summary",
+      "evidenceRefs": [
+        {
+          "refType": "PropertyIngestionAudit",
+          "refId": "ingest_agency_listing_tower_b_0501",
+          "sourceBacked": true
+        },
+        {
+          "refType": "PropertySourceRecord",
+          "refId": "agency_listing_tower_b_0501",
+          "sourceBacked": true
+        },
+        {
+          "refType": "CanonicalProperty",
+          "refId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+          "sourceBacked": true
+        },
+        {
+          "refType": "MatchOutcome",
+          "refId": "EXACT_MATCH",
+          "sourceBacked": true
+        }
+      ],
+      "trace": "Package Statement -> Evidence -> PropertyFact / ListingSnapshot -> SourceRef -> SourceRecord -> Ingestion Audit"
+    }
+  ],
+  "integrity": {
+    "algorithm": "local-fnv1a-32",
+    "fingerprint": "6b496b25",
+    "canonicalLength": 14876,
+    "deterministic": true
+  },
+  "previousPackage": null,
+  "reasonForNewVersion": null,
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "payments": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "mergeActions": 0,
+  "publishActions": 0,
+  "quarantineMutations": 0
+}

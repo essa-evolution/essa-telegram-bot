@@ -1,0 +1,53 @@
+{
+  "artifactType": "BusinessSprint03AReadinessArtifact",
+  "createdAt": "2026-08-27T15:29:46.015Z",
+  "overallStatus": "CODE_COMPLETE_LIVE_ACTIVATION_BLOCKED",
+  "failureClass": "DNS_BLOCKED",
+  "secretValuesPrinted": false,
+  "mutationsPerformed": 0,
+  "liveProofs": {
+    "LIVE_SUPABASE_REACHABLE": {
+      "status": "BLOCKED",
+      "evidence": "DNS lookup failed with ENOTFOUND in normal and escalated diagnostic runs."
+    },
+    "AUTH_VERIFIED": {
+      "status": "BLOCKED",
+      "evidence": "Auth endpoint could not be reached because Supabase host did not resolve."
+    },
+    "MIGRATIONS_APPLIED": {
+      "status": "BLOCKED",
+      "evidence": "Migrations were not applied because live connection proof failed before schema operations."
+    },
+    "RLS_VERIFIED": {
+      "status": "BLOCKED",
+      "evidence": "Live policies could not be inspected because REST/database endpoint could not be reached."
+    },
+    "TENANT_READ_ISOLATION_VERIFIED": {
+      "status": "BLOCKED",
+      "evidence": "Live A/B users and records could not be created/read due DNS failure."
+    },
+    "TENANT_WRITE_ISOLATION_VERIFIED": {
+      "status": "BLOCKED",
+      "evidence": "Live write-denial tests require reachable Supabase Auth/DB."
+    },
+    "RETURNING_USER_VERIFIED": {
+      "status": "BLOCKED",
+      "evidence": "Live persistence/returning-user flow requires reachable Supabase Auth/DB."
+    },
+    "PRIVATE_DATA_BOUNDARY_VERIFIED": {
+      "status": "LOCAL_VERIFIED_ONLY",
+      "evidence": "Sprint 01/02/03 local tests verify private metrics do not enter public projection or analytics; live cross-tenant proof is blocked."
+    },
+    "LOCAL_MODE_STILL_WORKS": {
+      "status": "VERIFIED",
+      "evidence": "Sprint 02/03 tests verify durable local mode and fail-closed production guard."
+    },
+    "PRODUCTION_FAIL_CLOSED": {
+      "status": "VERIFIED",
+      "evidence": "Sprint 03 runtime tests deny production/supabase mode when local JSON is active or Supabase repository is not active."
+    }
+  },
+  "diagnosticArtifact": "artifacts/business/phase-sprint03a/BusinessSupabaseConnectivityDiagnosis.json",
+  "readinessArtifactPrevious": "artifacts/business/phase-sprint03/BusinessSupabaseReadinessCheck.json",
+  "requiredManualAction": "Correct or verify SUPABASE_URL host/project reference and network DNS reachability, then rerun scripts/diagnoseBusinessSupabaseConnectivity.js and scripts/checkBusinessSupabaseReadiness.js."
+}

@@ -1,0 +1,118 @@
+[
+  {
+    "proposalId": "repair_proposal_1787015343114_hcl1rh",
+    "findingId": "ui_finding_1787015342244_espm48",
+    "proposedAction": "Investigate button.nav-item and adjust the workspace runtime/resource handling only after explicit repair approval.",
+    "rationale": "TABLET has measurable clipped visible text: \"Главная\".",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace runtime/resource handling",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.86,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-18T01:09:03.114Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787015343114_qhx4t0",
+    "findingId": "ui_finding_1787015342244_w7fu0m",
+    "proposedAction": "Investigate button.nav-item and adjust the workspace runtime/resource handling only after explicit repair approval.",
+    "rationale": "TABLET has measurable clipped visible text: \"ESSA Production Studio\".",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace runtime/resource handling",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.86,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-18T01:09:03.114Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787015343114_icqqoi",
+    "findingId": "ui_finding_1787015343113_e6au7k",
+    "proposedAction": "Investigate button.nav-item and adjust the workspace runtime/resource handling only after explicit repair approval.",
+    "rationale": "MOBILE has measurable clipped visible text: \"Главная\".",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace runtime/resource handling",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.86,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-18T01:09:03.114Z"
+  },
+  {
+    "proposalId": "repair_proposal_1787015343114_ofyndp",
+    "findingId": "ui_finding_1787015343114_x7r4ws",
+    "proposedAction": "Investigate button.nav-item and adjust the workspace runtime/resource handling only after explicit repair approval.",
+    "rationale": "MOBILE has measurable clipped visible text: \"Путь ESSA\".",
+    "likelyFiles": [
+      "workspace/styles.css",
+      "workspace/index.html",
+      "workspace/app.js"
+    ],
+    "likelyLayer": "workspace runtime/resource handling",
+    "changeClass": "LOCAL_UI_REPAIR_CANDIDATE",
+    "riskLevel": "LOW",
+    "requiresCodeChange": true,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Measured UI defect is resolved without changing Workspace behavior outside the affected layout/resource boundary.",
+    "verificationPlan": [
+      "Apply one approved local patch only.",
+      "Run one localhost read-only multi-viewport reobserve.",
+      "Confirm the specific measured finding no longer appears.",
+      "Confirm interactionCount and mutationCount remain 0."
+    ],
+    "rollbackPlan": "Revert the approved patch and preserve before/after audit artifacts.",
+    "confidence": 0.86,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-18T01:09:03.114Z"
+  }
+]

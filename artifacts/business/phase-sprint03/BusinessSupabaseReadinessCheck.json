@@ -1,0 +1,122 @@
+{
+  "artifactType": "BusinessSupabaseReadinessCheck",
+  "checkedAt": "2026-08-27T23:48:27.433Z",
+  "config": {
+    "configured": true,
+    "urlConfigured": true,
+    "serviceRoleConfigured": true,
+    "anonKeyConfigured": false,
+    "selectedStoreMode": "local",
+    "missing": []
+  },
+  "connection": {
+    "ok": false,
+    "status": "MIGRATION_REQUIRED",
+    "missingTables": [
+      "business_organizations",
+      "business_organization_memberships",
+      "business_profiles",
+      "business_workspaces",
+      "business_intakes",
+      "business_artifacts",
+      "business_payment_intents",
+      "business_commercial_onboardings",
+      "business_payment_provider_events",
+      "business_projects",
+      "business_partner_requests",
+      "business_commercial_requests",
+      "business_funnel_events",
+      "business_audit_events"
+    ],
+    "requiredTables": [
+      "business_organizations",
+      "business_organization_memberships",
+      "business_profiles",
+      "business_workspaces",
+      "business_intakes",
+      "business_artifacts",
+      "business_payment_intents",
+      "business_commercial_onboardings",
+      "business_payment_provider_events",
+      "business_projects",
+      "business_partner_requests",
+      "business_commercial_requests",
+      "business_funnel_events",
+      "business_audit_events"
+    ],
+    "tableChecks": [
+      {
+        "table": "business_organizations",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_organization_memberships",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_profiles",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_workspaces",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_intakes",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_artifacts",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_payment_intents",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_commercial_onboardings",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_payment_provider_events",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_projects",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_partner_requests",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_commercial_requests",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_funnel_events",
+        "exists": false,
+        "errorCode": "PGRST205"
+      },
+      {
+        "table": "business_audit_events",
+        "exists": false,
+        "errorCode": "PGRST205"
+      }
+    ]
+  },
+  "secretValuesPrinted": false,
+  "mutationsPerformed": 0
+}

@@ -1,0 +1,15 @@
+```json
+{
+  "providerId": "claude_agent_sdk",
+  "semanticSummary": "Markdown wrapped response should be rejected.",
+  "proposedEditDecisions": [],
+  "subtitlePlan": [],
+  "visualRequests": [],
+  "unresolvedItems": [],
+  "toolRequests": [],
+  "artifacts": [],
+  "approvalRequired": true,
+  "completionState": "needs_approval",
+  "traceMetadata": {}
+}
+```

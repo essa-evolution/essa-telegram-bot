@@ -1,0 +1,756 @@
+[
+  {
+    "findingId": "ui_finding_1787013659480_u8oe6g",
+    "type": "LAYOUT_OVERFLOW",
+    "severity": "MEDIUM",
+    "confidence": 0.82,
+    "target": "http://localhost:3000/workspace/#navigator",
+    "location": "navigatorChatHistory / navigatorPrompt",
+    "summary": "TABLET has geometry-backed overlap between navigatorChatHistory and navigatorPrompt.",
+    "evidence": [
+      {
+        "kind": "geometry_overlap",
+        "a": "navigatorChatHistory",
+        "b": "navigatorPrompt",
+        "overlapArea": 90280,
+        "smallerAreaRatio": 1
+      }
+    ],
+    "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20r\\tablet_768x1024.png",
+    "domEvidence": [
+      {
+        "key": "workspaceShell",
+        "selector": ".workspace-shell",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 2202,
+          "right": 768,
+          "bottom": 2202
+        }
+      },
+      {
+        "key": "workspaceNavigation",
+        "selector": ".sidebar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 154,
+          "right": 768,
+          "bottom": 154
+        }
+      },
+      {
+        "key": "navigationList",
+        "selector": ".nav-list",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 16,
+          "y": 84,
+          "width": 736,
+          "height": 53,
+          "right": 752,
+          "bottom": 137
+        }
+      },
+      {
+        "key": "mainPanel",
+        "selector": ".main-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 154,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 1178
+        }
+      },
+      {
+        "key": "workspaceTitle",
+        "selector": "#workspace-title",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 29,
+          "y": 179,
+          "width": 710,
+          "height": 23,
+          "right": 739,
+          "bottom": 202
+        }
+      },
+      {
+        "key": "navigatorChatHistory",
+        "selector": ".chat-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 242,
+          "width": 740,
+          "height": 782,
+          "right": 754,
+          "bottom": 1024
+        }
+      },
+      {
+        "key": "navigatorPrompt",
+        "selector": ".prompt-bar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 902,
+          "width": 740,
+          "height": 122,
+          "right": 754,
+          "bottom": 1024
+        }
+      },
+      {
+        "key": "productionStudioPanel",
+        "selector": "#production-studio-panel",
+        "exists": true,
+        "visible": false,
+        "zeroSize": true,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      },
+      {
+        "key": "metricsPanel",
+        "selector": ".metrics-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 0,
+          "y": 1178,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 2202
+        }
+      }
+    ],
+    "consoleEvidence": [],
+    "resourceEvidence": [],
+    "userImpact": "Overlapping critical regions may obscure interaction targets or content.",
+    "verificationMethod": "bounding-box intersection area ratio",
+    "requiresVisualReview": false,
+    "status": "FINDING_CONFIRMED",
+    "projectId": "phase20r_project",
+    "taskId": "phase20r_task",
+    "traceId": "phase20r_tablet_browser_trace",
+    "viewport": {
+      "id": "tablet",
+      "label": "TABLET",
+      "width": 768,
+      "height": 1024
+    },
+    "createdAt": "2026-08-18T00:40:59.480Z"
+  },
+  {
+    "findingId": "ui_finding_1787013659480_5gto5k",
+    "type": "VISUAL_REVIEW_REQUIRED",
+    "severity": "MEDIUM",
+    "confidence": 0.86,
+    "target": "http://localhost:3000/workspace/#navigator",
+    "location": "button.nav-item",
+    "summary": "TABLET has measurable clipped visible text: \"ESSA Production Studio\".",
+    "evidence": [
+      {
+        "kind": "clipped_text_element",
+        "tagName": "button",
+        "className": "nav-item",
+        "text": "ESSA Production Studio",
+        "rect": {
+          "x": 707,
+          "y": 84,
+          "width": 189,
+          "height": 49,
+          "right": 896,
+          "bottom": 133
+        },
+        "clientWidth": 189,
+        "scrollWidth": 189,
+        "clientHeight": 49,
+        "scrollHeight": 49,
+        "display": "block",
+        "visibility": "visible",
+        "horizontallyClipped": true,
+        "verticallyClipped": false
+      }
+    ],
+    "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20r\\tablet_768x1024.png",
+    "domEvidence": [
+      {
+        "key": "workspaceShell",
+        "selector": ".workspace-shell",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 2202,
+          "right": 768,
+          "bottom": 2202
+        }
+      },
+      {
+        "key": "workspaceNavigation",
+        "selector": ".sidebar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 154,
+          "right": 768,
+          "bottom": 154
+        }
+      },
+      {
+        "key": "navigationList",
+        "selector": ".nav-list",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 16,
+          "y": 84,
+          "width": 736,
+          "height": 53,
+          "right": 752,
+          "bottom": 137
+        }
+      },
+      {
+        "key": "mainPanel",
+        "selector": ".main-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 154,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 1178
+        }
+      },
+      {
+        "key": "workspaceTitle",
+        "selector": "#workspace-title",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 29,
+          "y": 179,
+          "width": 710,
+          "height": 23,
+          "right": 739,
+          "bottom": 202
+        }
+      },
+      {
+        "key": "navigatorChatHistory",
+        "selector": ".chat-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 242,
+          "width": 740,
+          "height": 782,
+          "right": 754,
+          "bottom": 1024
+        }
+      },
+      {
+        "key": "navigatorPrompt",
+        "selector": ".prompt-bar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 902,
+          "width": 740,
+          "height": 122,
+          "right": 754,
+          "bottom": 1024
+        }
+      },
+      {
+        "key": "productionStudioPanel",
+        "selector": "#production-studio-panel",
+        "exists": true,
+        "visible": false,
+        "zeroSize": true,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      },
+      {
+        "key": "metricsPanel",
+        "selector": ".metrics-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 0,
+          "y": 1178,
+          "width": 768,
+          "height": 1024,
+          "right": 768,
+          "bottom": 2202
+        }
+      }
+    ],
+    "consoleEvidence": [],
+    "resourceEvidence": [],
+    "userImpact": "A visible navigation or control label may be truncated for users at this viewport.",
+    "verificationMethod": "element scroll/client geometry and viewport bounds",
+    "requiresVisualReview": true,
+    "status": "FINDING_CONFIRMED",
+    "projectId": "phase20r_project",
+    "taskId": "phase20r_task",
+    "traceId": "phase20r_tablet_browser_trace",
+    "viewport": {
+      "id": "tablet",
+      "label": "TABLET",
+      "width": 768,
+      "height": 1024
+    },
+    "createdAt": "2026-08-18T00:40:59.480Z"
+  },
+  {
+    "findingId": "ui_finding_1787013660344_lpwhef",
+    "type": "LAYOUT_OVERFLOW",
+    "severity": "MEDIUM",
+    "confidence": 0.82,
+    "target": "http://localhost:3000/workspace/#navigator",
+    "location": "navigatorChatHistory / navigatorPrompt",
+    "summary": "MOBILE has geometry-backed overlap between navigatorChatHistory and navigatorPrompt.",
+    "evidence": [
+      {
+        "kind": "geometry_overlap",
+        "a": "navigatorChatHistory",
+        "b": "navigatorPrompt",
+        "overlapArea": 44164,
+        "smallerAreaRatio": 0.76
+      }
+    ],
+    "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20r\\mobile_390x844.png",
+    "domEvidence": [
+      {
+        "key": "workspaceShell",
+        "selector": ".workspace-shell",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 1842,
+          "right": 390,
+          "bottom": 1842
+        }
+      },
+      {
+        "key": "workspaceNavigation",
+        "selector": ".sidebar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 154,
+          "right": 390,
+          "bottom": 154
+        }
+      },
+      {
+        "key": "navigationList",
+        "selector": ".nav-list",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 16,
+          "y": 84,
+          "width": 358,
+          "height": 53,
+          "right": 374,
+          "bottom": 137
+        }
+      },
+      {
+        "key": "mainPanel",
+        "selector": ".main-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 154,
+          "width": 390,
+          "height": 844,
+          "right": 390,
+          "bottom": 998
+        }
+      },
+      {
+        "key": "workspaceTitle",
+        "selector": "#workspace-title",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 29,
+          "y": 179,
+          "width": 332,
+          "height": 23,
+          "right": 361,
+          "bottom": 202
+        }
+      },
+      {
+        "key": "navigatorChatHistory",
+        "selector": ".chat-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 259,
+          "width": 362,
+          "height": 546,
+          "right": 376,
+          "bottom": 805
+        }
+      },
+      {
+        "key": "navigatorPrompt",
+        "selector": ".prompt-bar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 683,
+          "width": 362,
+          "height": 161,
+          "right": 376,
+          "bottom": 844
+        }
+      },
+      {
+        "key": "productionStudioPanel",
+        "selector": "#production-studio-panel",
+        "exists": true,
+        "visible": false,
+        "zeroSize": true,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      },
+      {
+        "key": "metricsPanel",
+        "selector": ".metrics-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 0,
+          "y": 998,
+          "width": 390,
+          "height": 844,
+          "right": 390,
+          "bottom": 1842
+        }
+      }
+    ],
+    "consoleEvidence": [],
+    "resourceEvidence": [],
+    "userImpact": "Overlapping critical regions may obscure interaction targets or content.",
+    "verificationMethod": "bounding-box intersection area ratio",
+    "requiresVisualReview": false,
+    "status": "FINDING_CONFIRMED",
+    "projectId": "phase20r_project",
+    "taskId": "phase20r_task",
+    "traceId": "phase20r_mobile_browser_trace",
+    "viewport": {
+      "id": "mobile",
+      "label": "MOBILE",
+      "width": 390,
+      "height": 844
+    },
+    "createdAt": "2026-08-18T00:41:00.344Z"
+  },
+  {
+    "findingId": "ui_finding_1787013660344_m76ao8",
+    "type": "VISUAL_REVIEW_REQUIRED",
+    "severity": "MEDIUM",
+    "confidence": 0.86,
+    "target": "http://localhost:3000/workspace/#navigator",
+    "location": "button.nav-item.active",
+    "summary": "MOBILE has measurable clipped visible text: \"Chat ESSA Navigator\".",
+    "evidence": [
+      {
+        "kind": "clipped_text_element",
+        "tagName": "button",
+        "className": "nav-item active",
+        "text": "Chat ESSA Navigator",
+        "rect": {
+          "x": 297,
+          "y": 84,
+          "width": 168,
+          "height": 49,
+          "right": 465,
+          "bottom": 133
+        },
+        "clientWidth": 168,
+        "scrollWidth": 168,
+        "clientHeight": 49,
+        "scrollHeight": 49,
+        "display": "block",
+        "visibility": "visible",
+        "horizontallyClipped": true,
+        "verticallyClipped": false
+      }
+    ],
+    "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20r\\mobile_390x844.png",
+    "domEvidence": [
+      {
+        "key": "workspaceShell",
+        "selector": ".workspace-shell",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 1842,
+          "right": 390,
+          "bottom": 1842
+        }
+      },
+      {
+        "key": "workspaceNavigation",
+        "selector": ".sidebar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 154,
+          "right": 390,
+          "bottom": 154
+        }
+      },
+      {
+        "key": "navigationList",
+        "selector": ".nav-list",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 16,
+          "y": 84,
+          "width": 358,
+          "height": 53,
+          "right": 374,
+          "bottom": 137
+        }
+      },
+      {
+        "key": "mainPanel",
+        "selector": ".main-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 154,
+          "width": 390,
+          "height": 844,
+          "right": 390,
+          "bottom": 998
+        }
+      },
+      {
+        "key": "workspaceTitle",
+        "selector": "#workspace-title",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 29,
+          "y": 179,
+          "width": 332,
+          "height": 23,
+          "right": 361,
+          "bottom": 202
+        }
+      },
+      {
+        "key": "navigatorChatHistory",
+        "selector": ".chat-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 259,
+          "width": 362,
+          "height": 546,
+          "right": 376,
+          "bottom": 805
+        }
+      },
+      {
+        "key": "navigatorPrompt",
+        "selector": ".prompt-bar",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": false,
+        "rect": {
+          "x": 14,
+          "y": 683,
+          "width": 362,
+          "height": 161,
+          "right": 376,
+          "bottom": 844
+        }
+      },
+      {
+        "key": "productionStudioPanel",
+        "selector": "#production-studio-panel",
+        "exists": true,
+        "visible": false,
+        "zeroSize": true,
+        "outsideViewport": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      },
+      {
+        "key": "metricsPanel",
+        "selector": ".metrics-panel",
+        "exists": true,
+        "visible": true,
+        "zeroSize": false,
+        "outsideViewport": true,
+        "rect": {
+          "x": 0,
+          "y": 998,
+          "width": 390,
+          "height": 844,
+          "right": 390,
+          "bottom": 1842
+        }
+      }
+    ],
+    "consoleEvidence": [],
+    "resourceEvidence": [],
+    "userImpact": "A visible navigation or control label may be truncated for users at this viewport.",
+    "verificationMethod": "element scroll/client geometry and viewport bounds",
+    "requiresVisualReview": true,
+    "status": "FINDING_CONFIRMED",
+    "projectId": "phase20r_project",
+    "taskId": "phase20r_task",
+    "traceId": "phase20r_mobile_browser_trace",
+    "viewport": {
+      "id": "mobile",
+      "label": "MOBILE",
+      "width": 390,
+      "height": 844
+    },
+    "createdAt": "2026-08-18T00:41:00.344Z"
+  }
+]

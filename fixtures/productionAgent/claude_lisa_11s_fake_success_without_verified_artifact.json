@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "providerId": "claude_agent_sdk",
+  "status": "completed",
+  "completion": true,
+  "plan": {
+    "summary": "Unsafe fixture claiming completion without verification.",
+    "semanticDecisions": [],
+    "subtitleChunks": [],
+    "visualRequests": []
+  },
+  "toolRequests": [],
+  "artifacts": [
+    { "artifactId": "unsafe_render_artifact", "type": "RenderArtifact", "path": "media/output/phase20e/unsafe/reels.mp4" }
+  ],
+  "unresolved": [],
+  "approvalRequired": false,
+  "errors": [],
+  "trace": []
+}

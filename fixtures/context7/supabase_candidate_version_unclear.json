@@ -1,0 +1,11 @@
+{
+  "candidates": [
+    {
+      "libraryId": "/supabase/supabase-js",
+      "title": "Supabase JavaScript Client",
+      "description": "Official Supabase JavaScript client documentation.",
+      "trustScore": 9,
+      "snippetCount": 120
+    }
+  ]
+}

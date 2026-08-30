@@ -10,14 +10,17 @@
     "check:knowledge": "node scripts/checkKnowledgeDb.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "form-data": "^4.0.0",
     "fluent-ffmpeg": "^2.1.2",
-    "pg": "^8.11.5",
-    "@supabase/supabase-js": "^2.45.4",
+    "form-data": "^4.0.0",
     "mammoth": "^1.8.0",
-    "openai": "^4.67.3"
+    "openai": "^4.67.3",
+    "pg": "^8.11.5"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
   }
 }

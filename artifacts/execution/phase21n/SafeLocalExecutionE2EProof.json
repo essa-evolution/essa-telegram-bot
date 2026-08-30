@@ -1,0 +1,191 @@
+{
+  "artifactType": "SafeLocalExecutionE2EProof",
+  "fixtureSource": {
+    "sourceAssetId": "phase21n_synthetic_video_source",
+    "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21n\\fixtures\\phase21n_source_8s.mp4",
+    "durationSeconds": 8,
+    "dimensions": {
+      "width": 160,
+      "height": 90
+    },
+    "hasAudio": false,
+    "fingerprint": "73b50c18aef999eb4fb7d398a74c10dba86545e2930ef84b872eb30b6852a572",
+    "generated": true
+  },
+  "sourceDuration": 8,
+  "requestedTrim": {
+    "startSeconds": 2,
+    "endSeconds": 5,
+    "expectedDurationSeconds": 3
+  },
+  "eligibilityResult": {
+    "eligible": true,
+    "blockers": [],
+    "executionClass": "SAFE_LOCAL_EXECUTION",
+    "executionMode": "LOCAL_DERIVED_ARTIFACT",
+    "capabilityId": "VIDEO_TRIM"
+  },
+  "preflightResult": {
+    "blockers": [
+      "EXECUTION_DISABLED_PHASE_21K"
+    ],
+    "usedExistingPreflightEngine": true
+  },
+  "inputReadiness": "COMPLETE",
+  "approvalState": {
+    "required": 0,
+    "noApprovalInvented": true
+  },
+  "executionAuthorization": {
+    "decision": "AUTHORIZED_LOCAL_EXECUTION",
+    "blockers": []
+  },
+  "toolInvocationSummary": {
+    "toolClass": "FFMPEG_FFPROBE",
+    "toolId": "media.local.ffmpeg.video_trim",
+    "exitCode": 0,
+    "shell": false
+  },
+  "derivedArtifact": {
+    "modelType": "DerivedExecutionArtifact",
+    "artifactId": "artifact_phase21n_video_trim_execution",
+    "executionId": "phase21n_video_trim_execution",
+    "capabilityId": "VIDEO_TRIM",
+    "sourceAssetRefs": [
+      "phase21n_synthetic_video_source"
+    ],
+    "lineage": {
+      "sourceAssetId": "phase21n_synthetic_video_source",
+      "executionId": "phase21n_video_trim_execution",
+      "derivedArtifactId": "artifact_phase21n_video_trim_execution",
+      "capabilityId": "VIDEO_TRIM",
+      "operation": "trim",
+      "profile": "VIDEO_MP4_STANDARD",
+      "parameters": {
+        "operation": "trim",
+        "startSeconds": 2,
+        "endSeconds": 5,
+        "durationSeconds": 3,
+        "outputProfileId": "VIDEO_MP4_STANDARD"
+      },
+      "tool": "media.local.ffmpeg.video_trim",
+      "toolAdapterId": "FFMPEG_LOCAL",
+      "timestamp": "2026-08-30T06:28:02.486Z",
+      "verification": "VERIFIED"
+    },
+    "artifactType": "TrimmedVideoArtifact",
+    "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21n\\derived\\phase21n_source_8s_trim_0026.mp4",
+    "createdAt": "2026-08-30T06:28:02.486Z",
+    "toolRef": "media.local.ffmpeg.video_trim",
+    "parametersFingerprint": "faf6ce3f34ea6e820235328b966ccaf8bc57017a05c22ce1959b69839684076f",
+    "verificationState": "VERIFIED",
+    "rollbackState": "AVAILABLE",
+    "artifactFingerprint": "4329a1667b6d41b88c673701c6b0fbfca10eeb8237789f9ba0ebedd3e2c64b37"
+  },
+  "observations": [],
+  "verification": {
+    "modelType": "ExecutionVerificationResult",
+    "executionId": "phase21n_video_trim_execution",
+    "verificationProfileId": "VIDEO_TRIM_DURATION_STREAM_SOURCE",
+    "capabilityId": "VIDEO_TRIM",
+    "verified": true,
+    "checks": [
+      {
+        "code": "OUTPUT_EXISTS",
+        "passed": true
+      },
+      {
+        "code": "OUTPUT_READABLE",
+        "passed": true
+      },
+      {
+        "code": "SOURCE_EXISTS",
+        "passed": true
+      },
+      {
+        "code": "SOURCE_FINGERPRINT_UNCHANGED",
+        "passed": true
+      },
+      {
+        "code": "DURATION_MATCHES_REQUEST",
+        "passed": true,
+        "expected": 3,
+        "observed": 3
+      },
+      {
+        "code": "STREAM_PRESENT",
+        "passed": true
+      }
+    ],
+    "failures": [],
+    "warnings": [],
+    "sourceIntegrity": {
+      "before": "73b50c18aef999eb4fb7d398a74c10dba86545e2930ef84b872eb30b6852a572",
+      "after": "73b50c18aef999eb4fb7d398a74c10dba86545e2930ef84b872eb30b6852a572",
+      "state": "SOURCE_UNCHANGED"
+    },
+    "artifactIntegrity": {
+      "artifactFingerprint": "4329a1667b6d41b88c673701c6b0fbfca10eeb8237789f9ba0ebedd3e2c64b37",
+      "sizeBytes": 8353
+    },
+    "observation": null,
+    "expectedVsObserved": {
+      "requestedDurationSeconds": 3,
+      "observedDurationSeconds": 3,
+      "requestedDimensions": null,
+      "observedDimensions": {
+        "width": 160,
+        "height": 90
+      },
+      "toleranceSeconds": 0.35
+    },
+    "verifiedAt": "2026-08-30T06:28:02.486Z"
+  },
+  "sourceFingerprintBefore": "73b50c18aef999eb4fb7d398a74c10dba86545e2930ef84b872eb30b6852a572",
+  "sourceFingerprintAfter": "73b50c18aef999eb4fb7d398a74c10dba86545e2930ef84b872eb30b6852a572",
+  "artifactFingerprint": "4329a1667b6d41b88c673701c6b0fbfca10eeb8237789f9ba0ebedd3e2c64b37",
+  "lineage": {
+    "sourceAssetId": "phase21n_synthetic_video_source",
+    "executionId": "phase21n_video_trim_execution",
+    "derivedArtifactId": "artifact_phase21n_video_trim_execution",
+    "capabilityId": "VIDEO_TRIM",
+    "operation": "trim",
+    "profile": "VIDEO_MP4_STANDARD",
+    "parameters": {
+      "operation": "trim",
+      "startSeconds": 2,
+      "endSeconds": 5,
+      "durationSeconds": 3,
+      "outputProfileId": "VIDEO_MP4_STANDARD"
+    },
+    "tool": "media.local.ffmpeg.video_trim",
+    "toolAdapterId": "FFMPEG_LOCAL",
+    "timestamp": "2026-08-30T06:28:02.486Z",
+    "verification": "VERIFIED"
+  },
+  "rollbackAvailability": {
+    "modelType": "LocalExecutionRollback",
+    "executionId": "phase21n_video_trim_execution",
+    "available": true,
+    "rollbackType": "DELETE_DERIVED_ARTIFACT_ONLY",
+    "affectedArtifacts": [
+      "artifact_phase21n_video_trim_execution"
+    ],
+    "sourceAffected": false,
+    "status": "AVAILABLE"
+  },
+  "resultStatus": "SUCCEEDED",
+  "userSummary": "Готово. Я локально обрезала видео, исходник не изменён, новый файл создан и проверен.",
+  "externalProviderCalls": 0,
+  "externalModelCalls": 0,
+  "paidProviderCalls": 0,
+  "externalCalls": 0,
+  "paymentActions": 0,
+  "publishActions": 0,
+  "deployActions": 0,
+  "adActions": 0,
+  "externalAccountMutations": 0,
+  "productionDbMutations": 0,
+  "envKeyBillingChanges": 0,
+  "timestamp": "2026-08-30T06:28:02.487Z"
+}

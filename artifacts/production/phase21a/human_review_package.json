@@ -1,0 +1,26 @@
+{
+  "artifactId": "phase21a_human_review_package",
+  "type": "HumanReviewPackage",
+  "state": "READY_FOR_HUMAN_REVIEW",
+  "sourcePath": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\media\\input\\future_lisa_11s_source.mp4.mp4",
+  "actualDuration": 5.066667,
+  "transcriptStatus": "TRANSCRIPTION_UNCERTAIN",
+  "transcript": "[музыка]",
+  "subtitleDecision": "SKIPPED_NO_RELIABLE_TRANSCRIPT",
+  "renderedOutputPath": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\production\\phase21a\\lisa_local_v1.mp4",
+  "representativeFramePaths": [
+    "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\production\\phase21a\\frames\\beginning.jpg",
+    "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\production\\phase21a\\frames\\middle.jpg",
+    "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\production\\phase21a\\frames\\end.jpg"
+  ],
+  "verificationStatus": "PASS",
+  "warnings": [
+    "Source filename has duplicate .mp4 extension; exact requested path was absent.",
+    "No reliable speech transcript was used for subtitles."
+  ],
+  "sourceUnchanged": true,
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "paidCalls": 0,
+  "publishCalls": 0
+}

@@ -1,0 +1,10 @@
+{
+  "artifactId": "phase21a_subtitle_artifact",
+  "type": "SubtitleArtifact",
+  "status": "SKIPPED_NO_RELIABLE_TRANSCRIPT",
+  "path": null,
+  "chunks": [],
+  "provenance": {
+    "sourceTranscript": "transcript_artifact.json"
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "status": "PHASE_22C_PROPERTY_UI_PROOF_PASS",
+  "route": "http://localhost:3100/workspace/#property",
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "results": [
+    {
+      "scenario": {
+        "id": "overview",
+        "label": "Scenario A - Normal Property Passport",
+        "hash": "#property?fixture=normal",
+        "screenshot": "01_property_overview.png",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "target": "http://localhost:3100/workspace/#property?fixture=normal",
+      "finalUrl": "http://localhost:3100/workspace/#property?fixture=normal",
+      "screenshotPath": "artifacts\\property\\phase22c\\01_property_overview.png",
+      "checks": {
+        "routeOpens": true,
+        "propertyIdVisible": true,
+        "locationVisible": true,
+        "priceVisibleWhenNormal": true,
+        "verifiedFactsVisible": true,
+        "riskSectionVisible": true,
+        "lisaExplanationVisible": true,
+        "staleBadgeVisibleWhenNeeded": true,
+        "incompleteMissingVisible": true,
+        "limitationsVisible": true,
+        "futureActionBlocked": true,
+        "sideEffectsStillZero": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        },
+        "sideEffectCounters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "activeFixture": "normal"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "status": "PASS"
+    },
+    {
+      "scenario": {
+        "id": "stale",
+        "label": "Scenario B - Stale Property",
+        "hash": "#property?fixture=stale",
+        "screenshot": "02_property_passport_verification_stale.png",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "target": "http://localhost:3100/workspace/#property?fixture=stale",
+      "finalUrl": "http://localhost:3100/workspace/#property?fixture=stale",
+      "screenshotPath": "artifacts\\property\\phase22c\\02_property_passport_verification_stale.png",
+      "checks": {
+        "routeOpens": true,
+        "propertyIdVisible": true,
+        "locationVisible": true,
+        "priceVisibleWhenNormal": true,
+        "verifiedFactsVisible": true,
+        "riskSectionVisible": true,
+        "lisaExplanationVisible": true,
+        "staleBadgeVisibleWhenNeeded": true,
+        "incompleteMissingVisible": true,
+        "limitationsVisible": true,
+        "futureActionBlocked": true,
+        "sideEffectsStillZero": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        },
+        "sideEffectCounters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "activeFixture": "stale"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "status": "PASS"
+    },
+    {
+      "scenario": {
+        "id": "incomplete",
+        "label": "Scenario C - Incomplete Evidence",
+        "hash": "#property?fixture=incomplete",
+        "screenshot": "03_stale_incomplete_state.png",
+        "viewport": {
+          "width": 1280,
+          "height": 820
+        }
+      },
+      "target": "http://localhost:3100/workspace/#property?fixture=incomplete",
+      "finalUrl": "http://localhost:3100/workspace/#property?fixture=incomplete",
+      "screenshotPath": "artifacts\\property\\phase22c\\03_stale_incomplete_state.png",
+      "checks": {
+        "routeOpens": true,
+        "propertyIdVisible": true,
+        "locationVisible": true,
+        "priceVisibleWhenNormal": true,
+        "verifiedFactsVisible": true,
+        "riskSectionVisible": true,
+        "lisaExplanationVisible": true,
+        "staleBadgeVisibleWhenNeeded": true,
+        "incompleteMissingVisible": true,
+        "limitationsVisible": true,
+        "futureActionBlocked": true,
+        "sideEffectsStillZero": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        },
+        "sideEffectCounters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "activeFixture": "incomplete"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "status": "PASS"
+    },
+    {
+      "scenario": {
+        "id": "lisa",
+        "label": "Lisa Explanation Area",
+        "hash": "#property?fixture=normal",
+        "screenshot": "04_lisa_explanation_area.png",
+        "viewport": {
+          "width": 1280,
+          "height": 820
+        },
+        "clickQuestion": "Что ESSA пока не умеет?"
+      },
+      "target": "http://localhost:3100/workspace/#property?fixture=normal",
+      "finalUrl": "http://localhost:3100/workspace/#property?fixture=normal",
+      "screenshotPath": "artifacts\\property\\phase22c\\04_lisa_explanation_area.png",
+      "checks": {
+        "routeOpens": true,
+        "propertyIdVisible": true,
+        "locationVisible": true,
+        "priceVisibleWhenNormal": true,
+        "verifiedFactsVisible": true,
+        "riskSectionVisible": true,
+        "lisaExplanationVisible": true,
+        "staleBadgeVisibleWhenNeeded": true,
+        "incompleteMissingVisible": true,
+        "limitationsVisible": true,
+        "futureActionBlocked": true,
+        "sideEffectsStillZero": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        },
+        "sideEffectCounters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "activeFixture": "normal"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "status": "PASS"
+    },
+    {
+      "scenario": {
+        "id": "mobile",
+        "label": "Mobile/Narrow Self-check",
+        "hash": "#property?fixture=incomplete",
+        "screenshot": "05_mobile_property_passport.png",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      "target": "http://localhost:3100/workspace/#property?fixture=incomplete",
+      "finalUrl": "http://localhost:3100/workspace/#property?fixture=incomplete",
+      "screenshotPath": "artifacts\\property\\phase22c\\05_mobile_property_passport.png",
+      "checks": {
+        "routeOpens": true,
+        "propertyIdVisible": true,
+        "locationVisible": true,
+        "priceVisibleWhenNormal": true,
+        "verifiedFactsVisible": true,
+        "riskSectionVisible": true,
+        "lisaExplanationVisible": true,
+        "staleBadgeVisibleWhenNeeded": true,
+        "incompleteMissingVisible": true,
+        "limitationsVisible": true,
+        "futureActionBlocked": true,
+        "sideEffectsStillZero": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "documentMetrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "scrollHeight": 7924,
+          "clientHeight": 844
+        },
+        "sideEffectCounters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "activeFixture": "incomplete"
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "status": "PASS"
+    }
+  ]
+}

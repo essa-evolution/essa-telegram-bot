@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "target": "http://localhost:3000/workspace/#navigator",
+  "finalUrl": "http://localhost:3000/workspace/#navigator",
+  "visibleSections": [
+    "ESSA Единая Сеть Сознания Атмана Главная Новое пространство Chat ESSA Navigator Путь ESSA ESSA Property ESSA Production Studio Цифровая личность Website Studio Маркетинг и Реклама AI Агенты Образование Психология Юридическая помощь Цифровая экономика Impact Foundation Путешествия Сообщество История ",
+    "ESSA Единая Сеть Сознания Атмана Главная Новое пространство Chat ESSA Navigator Путь ESSA ESSA Property ESSA Production Studio Цифровая личность Website Studio Маркетинг и Реклама AI Агенты Образование Психология Юридическая помощь Цифровая экономика Impact Foundation Путешествия Сообщество История ",
+    "Главная Новое пространство Chat ESSA Navigator Путь ESSA ESSA Property ESSA Production Studio Цифровая личность Website Studio Маркетинг и Реклама AI Агенты Образование Психология Юридическая помощь Цифровая экономика Impact Foundation Путешествия Сообщество История ESSA Мои проекты ESSA Creations П",
+    "Chat ESSA Navigator Живой диалог с ESSA: вопросы, ответы, проекты и следующие шаги. ESSA Workspace ESSA Evolution Единая Сеть Сознания Атмана Эволюция сознания. Творение реальности вместе. Каждый приходит со своим вопросом. Каждый создаёт свой путь. Вместе мы создаём будущее. Что такое ESSA? ESSA Ev",
+    "Chat ESSA Navigator Живой диалог с ESSA: вопросы, ответы, проекты и следующие шаги.",
+    "ESSA Workspace ESSA Evolution Единая Сеть Сознания Атмана Эволюция сознания. Творение реальности вместе. Каждый приходит со своим вопросом. Каждый создаёт свой путь. Вместе мы создаём будущее. Что такое ESSA? ESSA Evolution — глобальная интеллектуальная экосистема, объединяющая людей, знания, инстру",
+    "Chat ESSA Navigator Путь ESSA ESSA Production Studio Книги • Видео • Музыка • Подкасты • Изображения • Реклама • Продукты Цифровая личность Образ, голос, стиль, память, видео и присутствие цифровой личности. ESSA Property Website Studio Маркетинг и Реклама AI Агенты Образование Психология Юридическа",
+    "Chat ESSA Navigator",
+    "Активная цифровая личность 🟢 Lisa Molis Цифровая личность ESSA • Развивается Открыть паспорт Сменить ESSA Production Studio Книги • Видео • Музыка • Подкасты • Изображения • Реклама • Продукты Создать ролик Создать Shorts / Reels / TikTok Написать книгу Создать главу Создать песню Создать подкаст С",
+    "Lisa Digital Identity Образ, голос, стиль, память, видео и присутствие цифровой личности.",
+    "Мои проекты Локальные проекты, сохранённые в этом браузере.",
+    "История ESSA Последние запросы и проекты, сохранённые в этом браузере."
+  ],
+  "visibleNavigation": [
+    "Главная Новое пространство Chat ESSA Navigator Путь ESSA ESSA Property ESSA Production Studio Цифровая личность Website Studio Маркетинг и Реклама AI Агенты Образование Психология Юридическая помощь Цифровая экономика Impact Foundation Путешествия Сообщество История ESSA Мои проекты ESSA Creations П",
+    "Главная",
+    "Новое пространство",
+    "Chat ESSA Navigator",
+    "Путь ESSA",
+    "ESSA Property",
+    "ESSA Production Studio",
+    "Цифровая личность",
+    "Website Studio",
+    "Маркетинг и Реклама",
+    "AI Агенты",
+    "Образование"
+  ],
+  "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20r\\mobile_390x844.png",
+  "verificationStatus": "PASS",
+  "warnings": [],
+  "uiFindings": [],
+  "interactionCount": 0,
+  "mutationCount": 0,
+  "boundedChars": 1932
+}

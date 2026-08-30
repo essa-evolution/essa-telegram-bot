@@ -1,0 +1,22 @@
+{
+  "requestId": "phase20i_doc_request",
+  "taskId": "phase20i_task",
+  "requestedByProvider": "claude_agent_sdk",
+  "requestedByAgent": "production_agent",
+  "toolId": "documentation.context7.mock",
+  "capability": "versioned_library_docs",
+  "action": "lookup_docs",
+  "input": {
+    "scope": "package_name",
+    "packageName": "express",
+    "version": "4.19.2"
+  },
+  "intendedOutcome": "Resolve versioned Express documentation for coding context.",
+  "permissionLevel": "READ_ONLY",
+  "environment": "DEVELOPMENT",
+  "estimatedCost": "FREE",
+  "sideEffectClass": "NONE",
+  "reason": "Need current API docs before editing code.",
+  "confidence": 0.92,
+  "traceId": "phase20i_doc_trace"
+}

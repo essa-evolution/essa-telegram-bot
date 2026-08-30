@@ -1,0 +1,34 @@
+{
+  "intent": "documentation_lookup",
+  "selected": [
+    {
+      "id": "context7_snippet_1",
+      "text": "### Install Supabase JS SDK",
+      "relevance": 1,
+      "source": "context7"
+    },
+    {
+      "id": "context7_snippet_2",
+      "text": "Source: https://github.com/supabase/supabase-js/blob/master/README.md",
+      "relevance": 0.6,
+      "source": "context7"
+    },
+    {
+      "id": "context7_snippet_3",
+      "text": "Install the Supabase JavaScript client library using npm. This is the primary package for interacting with Supabase services.",
+      "relevance": 0.6,
+      "source": "context7"
+    }
+  ],
+  "omittedCount": 3,
+  "budget": {
+    "maxItems": 3,
+    "maxChars": 1800,
+    "usedChars": 221
+  },
+  "policy": {
+    "neverSendFullMemoryAutomatically": true,
+    "sourceOfTruth": "ESSA Core",
+    "providerMayExpandContext": false
+  }
+}

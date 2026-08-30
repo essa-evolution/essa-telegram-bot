@@ -1,0 +1,377 @@
+{
+  "status": "PHASE_22O_PROPERTY_EXECUTION_HISTORY_PASS",
+  "route": "http://localhost:3220/workspace/#property-execution-history",
+  "newExecutionActionTypes": 0,
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "productionDbMutations": 0,
+  "ownershipMutations": 0,
+  "listingHistoryDeletions": 0,
+  "quarantineMutations": 0,
+  "publishActions": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "commercialTransactionActions": 0,
+  "scenarios": [
+    {
+      "id": "history-list",
+      "label": "Scenario A - History list loads",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\01_history_list.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history",
+      "checks": {
+        "hash": "#property-execution-history",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "verified-detail",
+      "label": "Scenario B - Open verified detail",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\02_verified_detail.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history",
+      "checks": {
+        "hash": "#property-execution-history",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "approval-linkage",
+      "label": "Scenario C - Reviewer decision and approval linkage",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\03_approval_linkage.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history",
+      "checks": {
+        "hash": "#property-execution-history",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "before-after-diff",
+      "label": "Scenario D - Before/after diff",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\04_before_after_diff.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history",
+      "checks": {
+        "hash": "#property-execution-history",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "blocked",
+      "label": "Scenario E - Blocked execution records",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\05_blocked_records.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history?blockedOnly=1",
+      "checks": {
+        "hash": "#property-execution-history?blockedOnly=1",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "idempotency",
+      "label": "Scenario F - Idempotent repeat inspection",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\06_idempotency.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history?selectedExecutionRecordId=prop_exec_A_VERIFIED_REPEAT",
+      "checks": {
+        "hash": "#property-execution-history?selectedExecutionRecordId=prop_exec_A_VERIFIED_REPEAT",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "rollback",
+      "label": "Scenario G - Rollback inspection",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\07_rollback.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history?hasRollback=1",
+      "checks": {
+        "hash": "#property-execution-history?hasRollback=1",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "side-effects",
+      "label": "Scenario H - Side-effect counters stay zero",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\08_side_effects.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history",
+      "checks": {
+        "hash": "#property-execution-history",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "review-queue-handoff",
+      "label": "Scenario I - Review queue handoff",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\09_review_queue_handoff.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history",
+      "checks": {
+        "hash": "#property-execution-history",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "mobile",
+      "label": "Scenario J - Mobile execution history",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22o\\10_mobile_history.png"
+      ],
+      "finalUrl": "http://localhost:3220/workspace/#property-execution-history",
+      "checks": {
+        "hash": "#property-execution-history",
+        "currentMode": "property-execution-history",
+        "accessBoundary": "INTERNAL / ADMIN / COMPLIANCE",
+        "providerCalls": "0",
+        "externalCalls": "0",
+        "productionDbMutations": "0",
+        "newExecutionActionTypes": "0",
+        "historyConsoleVisible": true,
+        "historyListVisible": true,
+        "approvalInspectionVisible": true,
+        "diffVisible": true,
+        "sideEffectCountersVisible": true,
+        "noHorizontalOverflow": true,
+        "noForbiddenExecution": true,
+        "noRawUnsafePayload": true,
+        "metrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "scrollHeight": 9046,
+          "clientHeight": 844
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

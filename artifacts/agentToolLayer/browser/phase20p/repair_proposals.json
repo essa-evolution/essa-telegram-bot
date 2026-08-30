@@ -1,0 +1,30 @@
+[
+  {
+    "proposalId": "repair_proposal_1787012336649_ar5lwa",
+    "findingId": "ui_finding_1787012336648_p2ijie",
+    "proposedAction": "Do not change Workspace UI. Keep browser artifact writes as UTF-8 and make future report consumers read/render JSON as UTF-8 before displaying excerpts.",
+    "rationale": "Evidence points to display/capture rendering rather than corrupt source files or corrupt persisted JSON.",
+    "likelyFiles": [
+      "src/agentToolLayer/browserVerificationProvider.js",
+      "scripts/runBrowserReadonlyProof.js"
+    ],
+    "likelyLayer": "agent_tool_layer/browser_observation_reporting",
+    "changeClass": "REPORTING_OR_ARTIFACT_CONSUMPTION",
+    "riskLevel": "LOW",
+    "requiresCodeChange": false,
+    "requiresBrowserMutation": false,
+    "requiresExternalProvider": false,
+    "expectedOutcome": "Future reports distinguish persisted UTF-8 text from terminal mojibake and avoid false UI repair requests.",
+    "verificationPlan": [
+      "Read BrowserObservationArtifact with Node fs.readFileSync(..., 'utf8').",
+      "Confirm valid Cyrillic markers such as 'Главная' and 'Единая' are present.",
+      "Confirm HTTP response remains text/html; charset=UTF-8.",
+      "Rerun one approved localhost read-only observation only after explicit approval."
+    ],
+    "rollbackPlan": "Remove generated Phase 20P repair artifacts; no application behavior was changed.",
+    "confidence": 0.84,
+    "approvalRequired": true,
+    "status": "WAITING_FOR_APPROVAL",
+    "createdAt": "2026-08-18T00:18:56.649Z"
+  }
+]

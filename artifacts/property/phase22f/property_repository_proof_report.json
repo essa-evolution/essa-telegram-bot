@@ -1,0 +1,406 @@
+{
+  "status": "PHASE_22F_PROPERTY_REPOSITORY_PROOF_PASS",
+  "route": "http://localhost:3140/workspace/#property",
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "results": [
+    {
+      "id": "property-list",
+      "label": "Scenario A - Property list/read model loads",
+      "status": "PASS",
+      "pass": true,
+      "api": {
+        "ok": true,
+        "status": "FOUND",
+        "readScope": "PUBLIC",
+        "summaries": [
+          {
+            "modelType": "PropertySummary",
+            "propertyId": "prop_ge_batumi_sea_view_a_1204",
+            "alias": "normal",
+            "label": "Normal/current property",
+            "propertyType": "APARTMENT_UNIT",
+            "country": "Georgia",
+            "city": "Batumi",
+            "currentStatus": "LISTED_FOR_SALE",
+            "observedPrice": 125000,
+            "currency": "USD",
+            "freshness": "CURRENT",
+            "verificationStatus": "PROFESSIONAL_REVIEW_REQUIRED",
+            "evidenceCompleteness": "PARTIAL_LOCAL_EVIDENCE",
+            "primaryRiskFlags": [
+              "OWNERSHIP_NOT_VERIFIED",
+              "LOCATION_PRECISION_NOT_VERIFIED",
+              "UNVERIFIED_FACTS_PRESENT"
+            ],
+            "providerCalls": 0,
+            "externalCalls": 0,
+            "dbMutations": 0,
+            "payments": 0
+          },
+          {
+            "modelType": "PropertySummary",
+            "propertyId": "prop_ge_batumi_sea_view_a_1204",
+            "alias": "stale",
+            "label": "Stale listing example",
+            "propertyType": "APARTMENT_UNIT",
+            "country": "Georgia",
+            "city": "Batumi",
+            "currentStatus": "LISTED_FOR_SALE",
+            "observedPrice": null,
+            "currency": null,
+            "freshness": "STALE",
+            "verificationStatus": "STALE_REVIEW_REQUIRED",
+            "evidenceCompleteness": "INCOMPLETE_LOCAL_EVIDENCE",
+            "primaryRiskFlags": [
+              "OWNERSHIP_NOT_VERIFIED",
+              "LOCATION_PRECISION_NOT_VERIFIED",
+              "STALE_LISTING_DATA",
+              "UNVERIFIED_FACTS_PRESENT"
+            ],
+            "providerCalls": 0,
+            "externalCalls": 0,
+            "dbMutations": 0,
+            "payments": 0
+          },
+          {
+            "modelType": "PropertySummary",
+            "propertyId": "prop_ge_batumi_incomplete_evidence",
+            "alias": "incomplete",
+            "label": "Incomplete evidence example",
+            "propertyType": "APARTMENT_UNIT",
+            "country": "Georgia",
+            "city": "Batumi",
+            "currentStatus": "UNKNOWN",
+            "observedPrice": null,
+            "currency": null,
+            "freshness": "CURRENT",
+            "verificationStatus": "PROFESSIONAL_REVIEW_REQUIRED",
+            "evidenceCompleteness": "INCOMPLETE_LOCAL_EVIDENCE",
+            "primaryRiskFlags": [
+              "OWNERSHIP_NOT_VERIFIED",
+              "LOCATION_PRECISION_NOT_VERIFIED",
+              "UNVERIFIED_FACTS_PRESENT"
+            ],
+            "providerCalls": 0,
+            "externalCalls": 0,
+            "dbMutations": 0,
+            "payments": 0
+          }
+        ],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "screenshots": [],
+      "finalUrl": "http://localhost:3140/api/property",
+      "checks": {
+        "hash": "",
+        "currentMode": "",
+        "selectedPropertyIds": "",
+        "repositoryProofVisible": false,
+        "lisaVisible": false,
+        "sourceVisible": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {},
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "unexpectedConsoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "property-passport",
+      "label": "Scenario B - Property to Passport",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22f\\01_repository_property_passport.png"
+      ],
+      "finalUrl": "http://localhost:3140/workspace/#property?fixture=normal&section=passport",
+      "checks": {
+        "hash": "#property?fixture=normal&section=passport",
+        "currentMode": "passport",
+        "selectedPropertyIds": "prop_ge_batumi_sea_view_a_1204,prop_ge_batumi_sea_view_a_1204",
+        "repositoryProofVisible": true,
+        "lisaVisible": true,
+        "sourceVisible": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "unexpectedConsoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "stale-listing",
+      "label": "Scenario C - Stale listing does not remove Property",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22f\\02_stale_listing_property_exists.png"
+      ],
+      "finalUrl": "http://localhost:3140/workspace/#property?fixture=stale&section=risks",
+      "checks": {
+        "hash": "#property?fixture=stale&section=risks",
+        "currentMode": "passport",
+        "selectedPropertyIds": "prop_ge_batumi_sea_view_a_1204,prop_ge_batumi_sea_view_a_1204",
+        "repositoryProofVisible": true,
+        "lisaVisible": true,
+        "sourceVisible": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "unexpectedConsoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "incomplete",
+      "label": "Scenario D - Incomplete evidence remains incomplete",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22f\\03_incomplete_repository_evidence.png"
+      ],
+      "finalUrl": "http://localhost:3140/workspace/#property?fixture=incomplete&section=verification",
+      "checks": {
+        "hash": "#property?fixture=incomplete&section=verification",
+        "currentMode": "passport",
+        "selectedPropertyIds": "prop_ge_batumi_sea_view_a_1204,prop_ge_batumi_sea_view_a_1204",
+        "repositoryProofVisible": true,
+        "lisaVisible": true,
+        "sourceVisible": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "unexpectedConsoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "comparison",
+      "label": "Scenario E - Comparison resolves multiple canonical property IDs",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22f\\04_repository_comparison.png"
+      ],
+      "finalUrl": "http://localhost:3140/workspace/#property?mode=compare&items=normal,stale,incomplete",
+      "checks": {
+        "hash": "#property?mode=compare&items=normal,stale,incomplete",
+        "currentMode": "compare",
+        "selectedPropertyIds": "prop_ge_batumi_sea_view_a_1204,prop_ge_batumi_sea_view_a_1204,prop_ge_batumi_incomplete_evidence",
+        "repositoryProofVisible": true,
+        "lisaVisible": true,
+        "sourceVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 920,
+          "clientHeight": 920
+        }
+      },
+      "consoleErrors": [],
+      "unexpectedConsoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "not-found",
+      "label": "Scenario F - Unknown Property ID returns safe NOT_FOUND",
+      "status": "PASS",
+      "pass": true,
+      "api": {
+        "ok": false,
+        "status": "NOT_FOUND",
+        "propertyId": "prop_unknown",
+        "property": null,
+        "reason": "PROPERTY_NOT_FOUND",
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "expectedConsoleErrors": [
+        "404"
+      ],
+      "screenshots": [],
+      "finalUrl": "http://localhost:3140/api/property/prop_unknown/passport",
+      "checks": {
+        "hash": "",
+        "currentMode": "",
+        "selectedPropertyIds": "",
+        "repositoryProofVisible": false,
+        "lisaVisible": false,
+        "sourceVisible": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {},
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [
+        "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "unexpectedConsoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "navigator-lisa",
+      "label": "Scenario G - Navigator/Lisa explanations still work",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22f\\05_repository_lisa_context.png"
+      ],
+      "finalUrl": "http://localhost:3140/workspace/#property?fixture=normal&section=lisa",
+      "checks": {
+        "hash": "#property?fixture=normal&section=lisa",
+        "currentMode": "passport",
+        "selectedPropertyIds": "prop_ge_batumi_sea_view_a_1204,prop_ge_batumi_sea_view_a_1204",
+        "repositoryProofVisible": true,
+        "lisaVisible": true,
+        "sourceVisible": false,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "unexpectedConsoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "mobile",
+      "label": "Scenario H - Mobile Property UI still works",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22f\\06_mobile_repository_property.png"
+      ],
+      "finalUrl": "http://localhost:3140/workspace/#property?mode=compare&items=normal,stale,incomplete",
+      "checks": {
+        "hash": "#property?mode=compare&items=normal,stale,incomplete",
+        "currentMode": "compare",
+        "selectedPropertyIds": "prop_ge_batumi_sea_view_a_1204,prop_ge_batumi_sea_view_a_1204,prop_ge_batumi_incomplete_evidence",
+        "repositoryProofVisible": true,
+        "lisaVisible": true,
+        "sourceVisible": true,
+        "noHorizontalOverflow": true,
+        "noRawMissingValues": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "scrollHeight": 6848,
+          "clientHeight": 844
+        }
+      },
+      "consoleErrors": [],
+      "unexpectedConsoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

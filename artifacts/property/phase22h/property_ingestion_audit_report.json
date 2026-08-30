@@ -1,0 +1,1116 @@
+{
+  "audits": [
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_owner_sub_batumi_0707",
+      "sourceRecordId": "owner_sub_batumi_0707",
+      "validationResult": {
+        "status": "ACCEPTED",
+        "errors": [],
+        "warnings": [],
+        "gaps": [],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": {
+        "modelType": "NormalizedPropertyCandidate",
+        "candidateId": "candidate_owner_sub_batumi_0707",
+        "sourceRecordId": "owner_sub_batumi_0707",
+        "normalizedLocation": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "Batumi",
+          "address": "Owner fixture address, Batumi"
+        },
+        "propertyType": "APARTMENT_UNIT",
+        "hierarchyHints": {
+          "projectName": "Owner Local Residence",
+          "buildingName": "Owner Tower",
+          "unitNumber": "0707",
+          "areaSqm": null,
+          "bedrooms": null
+        },
+        "listingObservation": {
+          "listingType": "SALE",
+          "listingStatus": "ACTIVE",
+          "availability": "AVAILABLE",
+          "stableListingKey": "owner_sub_batumi_0707",
+          "price": 99000,
+          "currency": "USD",
+          "observedAt": "2026-08-20T00:00:00.000Z",
+          "staleAfter": "2026-09-19T00:00:00.000Z",
+          "freshnessStatus": "CURRENT"
+        },
+        "normalizedFacts": [
+          {
+            "factType": "LOCATION",
+            "value": {
+              "country": "Georgia",
+              "region": "Adjara",
+              "city": "Batumi"
+            },
+            "sourceRef": {
+              "sourceType": "OWNER_SUBMISSION",
+              "sourceName": "local_owner_submission_fixture",
+              "sourceId": "owner_sub_batumi_0707",
+              "sourceUrl": null,
+              "observedAt": "2026-08-20T00:00:00.000Z",
+              "fetchedAt": "2026-08-20T00:00:00.000Z",
+              "effectiveAt": "2026-08-20T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          }
+        ],
+        "sourceRefs": [
+          {
+            "sourceType": "OWNER_SUBMISSION",
+            "sourceName": "local_owner_submission_fixture",
+            "sourceId": "owner_sub_batumi_0707",
+            "sourceUrl": null,
+            "observedAt": "2026-08-20T00:00:00.000Z",
+            "fetchedAt": "2026-08-20T00:00:00.000Z",
+            "effectiveAt": "2026-08-20T00:00:00.000Z",
+            "confidence": "MEDIUM",
+            "freshnessStatus": "CURRENT",
+            "verificationStatus": "PARTIALLY_VERIFIED"
+          }
+        ],
+        "evidenceGaps": [],
+        "normalizationWarnings": [],
+        "duplicateMatchHints": [
+          "hierarchy:owner_local_residence:owner_tower:0707"
+        ],
+        "confidence": "MEDIUM",
+        "freshnessStatus": "CURRENT"
+      },
+      "duplicateResolution": {
+        "outcome": "NO_MATCH_NEW_PROPERTY_CANDIDATE",
+        "propertyId": "prop_georgia_batumi_owner_local_residence_owner_tower_0707",
+        "reason": "new_deterministic_candidate"
+      },
+      "canonicalPropertyId": "prop_georgia_batumi_owner_local_residence_owner_tower_0707",
+      "listingSnapshotId": "listing_owner_sub_batumi_0707_owner_sub_batumi_0707",
+      "warnings": [],
+      "conflicts": [],
+      "gaps": [],
+      "timestamp": "2026-08-20T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    },
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_developer_unit_tower_b_0501",
+      "sourceRecordId": "developer_unit_tower_b_0501",
+      "validationResult": {
+        "status": "ACCEPTED",
+        "errors": [],
+        "warnings": [],
+        "gaps": [],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": {
+        "modelType": "NormalizedPropertyCandidate",
+        "candidateId": "candidate_developer_unit_tower_b_0501",
+        "sourceRecordId": "developer_unit_tower_b_0501",
+        "normalizedLocation": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "Batumi",
+          "address": "Developer Tower B, Batumi"
+        },
+        "propertyType": "APARTMENT_UNIT",
+        "hierarchyHints": {
+          "projectName": "Batumi Ingested Residence",
+          "buildingName": "Tower B",
+          "unitNumber": "0501",
+          "areaSqm": 61.4,
+          "bedrooms": 2
+        },
+        "listingObservation": {
+          "listingType": "SALE",
+          "listingStatus": "ACTIVE",
+          "availability": "AVAILABLE",
+          "stableListingKey": "developer_unit_tower_b_0501",
+          "price": 125000,
+          "currency": "USD",
+          "observedAt": "2026-08-20T00:00:00.000Z",
+          "staleAfter": "2026-09-19T00:00:00.000Z",
+          "freshnessStatus": "CURRENT"
+        },
+        "normalizedFacts": [
+          {
+            "factType": "LOCATION",
+            "value": {
+              "country": "Georgia",
+              "region": "Adjara",
+              "city": "Batumi"
+            },
+            "sourceRef": {
+              "sourceType": "DEVELOPER_FEED",
+              "sourceName": "local_developer_feed_fixture",
+              "sourceId": "developer_unit_tower_b_0501",
+              "sourceUrl": null,
+              "observedAt": "2026-08-20T00:00:00.000Z",
+              "fetchedAt": "2026-08-20T00:00:00.000Z",
+              "effectiveAt": "2026-08-20T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          },
+          {
+            "factType": "UNIT_AREA_SQM",
+            "value": 61.4,
+            "sourceRef": {
+              "sourceType": "DEVELOPER_FEED",
+              "sourceName": "local_developer_feed_fixture",
+              "sourceId": "developer_unit_tower_b_0501",
+              "sourceUrl": null,
+              "observedAt": "2026-08-20T00:00:00.000Z",
+              "fetchedAt": "2026-08-20T00:00:00.000Z",
+              "effectiveAt": "2026-08-20T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          },
+          {
+            "factType": "BEDROOMS",
+            "value": 2,
+            "sourceRef": {
+              "sourceType": "DEVELOPER_FEED",
+              "sourceName": "local_developer_feed_fixture",
+              "sourceId": "developer_unit_tower_b_0501",
+              "sourceUrl": null,
+              "observedAt": "2026-08-20T00:00:00.000Z",
+              "fetchedAt": "2026-08-20T00:00:00.000Z",
+              "effectiveAt": "2026-08-20T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          }
+        ],
+        "sourceRefs": [
+          {
+            "sourceType": "DEVELOPER_FEED",
+            "sourceName": "local_developer_feed_fixture",
+            "sourceId": "developer_unit_tower_b_0501",
+            "sourceUrl": null,
+            "observedAt": "2026-08-20T00:00:00.000Z",
+            "fetchedAt": "2026-08-20T00:00:00.000Z",
+            "effectiveAt": "2026-08-20T00:00:00.000Z",
+            "confidence": "MEDIUM",
+            "freshnessStatus": "CURRENT",
+            "verificationStatus": "PARTIALLY_VERIFIED"
+          }
+        ],
+        "evidenceGaps": [],
+        "normalizationWarnings": [],
+        "duplicateMatchHints": [
+          "hierarchy:batumi_ingested_residence:tower_b:0501"
+        ],
+        "confidence": "MEDIUM",
+        "freshnessStatus": "CURRENT"
+      },
+      "duplicateResolution": {
+        "outcome": "NO_MATCH_NEW_PROPERTY_CANDIDATE",
+        "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "reason": "new_deterministic_candidate"
+      },
+      "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+      "listingSnapshotId": "listing_developer_unit_tower_b_0501_developer_unit_tower_b_0501",
+      "warnings": [],
+      "conflicts": [],
+      "gaps": [],
+      "timestamp": "2026-08-20T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    },
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_agency_listing_tower_b_0501",
+      "sourceRecordId": "agency_listing_tower_b_0501",
+      "validationResult": {
+        "status": "ACCEPTED",
+        "errors": [],
+        "warnings": [],
+        "gaps": [],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": {
+        "modelType": "NormalizedPropertyCandidate",
+        "candidateId": "candidate_agency_listing_tower_b_0501",
+        "sourceRecordId": "agency_listing_tower_b_0501",
+        "normalizedLocation": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "Batumi",
+          "address": "Developer Tower B, Batumi"
+        },
+        "propertyType": "APARTMENT_UNIT",
+        "hierarchyHints": {
+          "projectName": "Batumi Ingested Residence",
+          "buildingName": "Tower B",
+          "unitNumber": "0501",
+          "areaSqm": null,
+          "bedrooms": null
+        },
+        "listingObservation": {
+          "listingType": "SALE",
+          "listingStatus": "ACTIVE",
+          "availability": "AVAILABLE",
+          "stableListingKey": "AG-B-0501",
+          "price": 125000,
+          "currency": "USD",
+          "observedAt": "2026-08-20T00:00:00.000Z",
+          "staleAfter": "2026-09-19T00:00:00.000Z",
+          "freshnessStatus": "CURRENT"
+        },
+        "normalizedFacts": [
+          {
+            "factType": "LOCATION",
+            "value": {
+              "country": "Georgia",
+              "region": "Adjara",
+              "city": "Batumi"
+            },
+            "sourceRef": {
+              "sourceType": "AGENCY_FEED",
+              "sourceName": "local_agency_listing_fixture",
+              "sourceId": "agency_listing_tower_b_0501",
+              "sourceUrl": null,
+              "observedAt": "2026-08-20T00:00:00.000Z",
+              "fetchedAt": "2026-08-20T00:00:00.000Z",
+              "effectiveAt": "2026-08-20T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          }
+        ],
+        "sourceRefs": [
+          {
+            "sourceType": "AGENCY_FEED",
+            "sourceName": "local_agency_listing_fixture",
+            "sourceId": "agency_listing_tower_b_0501",
+            "sourceUrl": null,
+            "observedAt": "2026-08-20T00:00:00.000Z",
+            "fetchedAt": "2026-08-20T00:00:00.000Z",
+            "effectiveAt": "2026-08-20T00:00:00.000Z",
+            "confidence": "MEDIUM",
+            "freshnessStatus": "CURRENT",
+            "verificationStatus": "PARTIALLY_VERIFIED"
+          }
+        ],
+        "evidenceGaps": [],
+        "normalizationWarnings": [],
+        "duplicateMatchHints": [
+          "hierarchy:batumi_ingested_residence:tower_b:0501"
+        ],
+        "confidence": "MEDIUM",
+        "freshnessStatus": "CURRENT"
+      },
+      "duplicateResolution": {
+        "outcome": "EXACT_MATCH",
+        "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "reason": "canonical_property_id"
+      },
+      "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+      "listingSnapshotId": "listing_ag_b_0501_agency_listing_tower_b_0501",
+      "warnings": [],
+      "conflicts": [],
+      "gaps": [],
+      "timestamp": "2026-08-20T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    },
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_duplicate_partner_tower_b_0501",
+      "sourceRecordId": "duplicate_partner_tower_b_0501",
+      "validationResult": {
+        "status": "ACCEPTED",
+        "errors": [],
+        "warnings": [],
+        "gaps": [],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": {
+        "modelType": "NormalizedPropertyCandidate",
+        "candidateId": "candidate_duplicate_partner_tower_b_0501",
+        "sourceRecordId": "duplicate_partner_tower_b_0501",
+        "normalizedLocation": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "Batumi",
+          "address": "Developer Tower B, Batumi"
+        },
+        "propertyType": "APARTMENT_UNIT",
+        "hierarchyHints": {
+          "projectName": "Batumi Ingested Residence",
+          "buildingName": "Tower B",
+          "unitNumber": "0501",
+          "areaSqm": null,
+          "bedrooms": null
+        },
+        "listingObservation": {
+          "listingType": "SALE",
+          "listingStatus": "ACTIVE",
+          "availability": "AVAILABLE",
+          "stableListingKey": "duplicate_partner_tower_b_0501",
+          "price": 125000,
+          "currency": "USD",
+          "observedAt": "2026-08-20T00:00:00.000Z",
+          "staleAfter": "2026-09-19T00:00:00.000Z",
+          "freshnessStatus": "CURRENT"
+        },
+        "normalizedFacts": [
+          {
+            "factType": "LOCATION",
+            "value": {
+              "country": "Georgia",
+              "region": "Adjara",
+              "city": "Batumi"
+            },
+            "sourceRef": {
+              "sourceType": "PARTNER_FEED",
+              "sourceName": "local_duplicate_partner_fixture",
+              "sourceId": "duplicate_partner_tower_b_0501",
+              "sourceUrl": null,
+              "observedAt": "2026-08-20T00:00:00.000Z",
+              "fetchedAt": "2026-08-20T00:00:00.000Z",
+              "effectiveAt": "2026-08-20T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          }
+        ],
+        "sourceRefs": [
+          {
+            "sourceType": "PARTNER_FEED",
+            "sourceName": "local_duplicate_partner_fixture",
+            "sourceId": "duplicate_partner_tower_b_0501",
+            "sourceUrl": null,
+            "observedAt": "2026-08-20T00:00:00.000Z",
+            "fetchedAt": "2026-08-20T00:00:00.000Z",
+            "effectiveAt": "2026-08-20T00:00:00.000Z",
+            "confidence": "MEDIUM",
+            "freshnessStatus": "CURRENT",
+            "verificationStatus": "PARTIALLY_VERIFIED"
+          }
+        ],
+        "evidenceGaps": [],
+        "normalizationWarnings": [],
+        "duplicateMatchHints": [
+          "hierarchy:batumi_ingested_residence:tower_b:0501"
+        ],
+        "confidence": "MEDIUM",
+        "freshnessStatus": "CURRENT"
+      },
+      "duplicateResolution": {
+        "outcome": "EXACT_MATCH",
+        "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "reason": "canonical_property_id"
+      },
+      "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+      "listingSnapshotId": "listing_duplicate_partner_tower_b_0501_duplicate_partner_tower_b_0501",
+      "warnings": [],
+      "conflicts": [],
+      "gaps": [],
+      "timestamp": "2026-08-20T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    },
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_agency_listing_tower_b_0501_price_130000",
+      "sourceRecordId": "agency_listing_tower_b_0501_price_130000",
+      "validationResult": {
+        "status": "ACCEPTED",
+        "errors": [],
+        "warnings": [],
+        "gaps": [],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": {
+        "modelType": "NormalizedPropertyCandidate",
+        "candidateId": "candidate_agency_listing_tower_b_0501_price_130000",
+        "sourceRecordId": "agency_listing_tower_b_0501_price_130000",
+        "normalizedLocation": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "Batumi",
+          "address": "Developer Tower B, Batumi"
+        },
+        "propertyType": "APARTMENT_UNIT",
+        "hierarchyHints": {
+          "projectName": "Batumi Ingested Residence",
+          "buildingName": "Tower B",
+          "unitNumber": "0501",
+          "areaSqm": null,
+          "bedrooms": null
+        },
+        "listingObservation": {
+          "listingType": "SALE",
+          "listingStatus": "ACTIVE",
+          "availability": "AVAILABLE",
+          "stableListingKey": "AG-B-0501-CONFLICT",
+          "price": 130000,
+          "currency": "USD",
+          "observedAt": "2026-08-20T00:00:00.000Z",
+          "staleAfter": "2026-09-19T00:00:00.000Z",
+          "freshnessStatus": "CURRENT"
+        },
+        "normalizedFacts": [
+          {
+            "factType": "LOCATION",
+            "value": {
+              "country": "Georgia",
+              "region": "Adjara",
+              "city": "Batumi"
+            },
+            "sourceRef": {
+              "sourceType": "AGENCY_FEED",
+              "sourceName": "local_conflicting_price_fixture",
+              "sourceId": "agency_listing_tower_b_0501_price_130000",
+              "sourceUrl": null,
+              "observedAt": "2026-08-20T00:00:00.000Z",
+              "fetchedAt": "2026-08-20T00:00:00.000Z",
+              "effectiveAt": "2026-08-20T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          }
+        ],
+        "sourceRefs": [
+          {
+            "sourceType": "AGENCY_FEED",
+            "sourceName": "local_conflicting_price_fixture",
+            "sourceId": "agency_listing_tower_b_0501_price_130000",
+            "sourceUrl": null,
+            "observedAt": "2026-08-20T00:00:00.000Z",
+            "fetchedAt": "2026-08-20T00:00:00.000Z",
+            "effectiveAt": "2026-08-20T00:00:00.000Z",
+            "confidence": "MEDIUM",
+            "freshnessStatus": "CURRENT",
+            "verificationStatus": "PARTIALLY_VERIFIED"
+          }
+        ],
+        "evidenceGaps": [],
+        "normalizationWarnings": [],
+        "duplicateMatchHints": [
+          "hierarchy:batumi_ingested_residence:tower_b:0501"
+        ],
+        "confidence": "MEDIUM",
+        "freshnessStatus": "CURRENT"
+      },
+      "duplicateResolution": {
+        "outcome": "CONFLICT_REVIEW_REQUIRED",
+        "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "reason": "canonical_property_id",
+        "conflicts": [
+          "conflicting_price_observation:125000,125000,125000->130000_USD"
+        ]
+      },
+      "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+      "listingSnapshotId": "listing_ag_b_0501_conflict_agency_listing_tower_b_0501_price_130000",
+      "warnings": [],
+      "conflicts": [
+        "conflicting_price_observation:125000,125000,125000->130000_USD"
+      ],
+      "gaps": [],
+      "timestamp": "2026-08-20T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    },
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_invalid_negative_area",
+      "sourceRecordId": "invalid_negative_area",
+      "validationResult": {
+        "status": "QUARANTINED",
+        "errors": [
+          "source_identity_missing",
+          "price_impossible_negative",
+          "area_impossible_negative"
+        ],
+        "warnings": [],
+        "gaps": [
+          "city_missing"
+        ],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": null,
+      "duplicateResolution": null,
+      "canonicalPropertyId": null,
+      "listingSnapshotId": null,
+      "warnings": [],
+      "conflicts": [],
+      "gaps": [
+        "city_missing"
+      ],
+      "timestamp": "2026-08-20T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    },
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_manual_gap_record_city_missing",
+      "sourceRecordId": "manual_gap_record_city_missing",
+      "validationResult": {
+        "status": "ACCEPTED_WITH_GAPS",
+        "errors": [],
+        "warnings": [],
+        "gaps": [
+          "city_missing"
+        ],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": {
+        "modelType": "NormalizedPropertyCandidate",
+        "candidateId": "candidate_manual_gap_record_city_missing",
+        "sourceRecordId": "manual_gap_record_city_missing",
+        "normalizedLocation": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "UNKNOWN",
+          "address": "Manual fixture address with missing city"
+        },
+        "propertyType": "UNKNOWN",
+        "hierarchyHints": {
+          "projectName": "",
+          "buildingName": "",
+          "unitNumber": "",
+          "areaSqm": null,
+          "bedrooms": null
+        },
+        "listingObservation": {
+          "listingType": "SALE",
+          "listingStatus": "ACTIVE",
+          "availability": "UNKNOWN",
+          "stableListingKey": "manual_gap_record_city_missing",
+          "price": null,
+          "currency": null,
+          "observedAt": "2026-08-20T00:00:00.000Z",
+          "staleAfter": "2026-09-19T00:00:00.000Z",
+          "freshnessStatus": "CURRENT"
+        },
+        "normalizedFacts": [
+          {
+            "factType": "LOCATION",
+            "value": {
+              "country": "Georgia",
+              "region": "Adjara",
+              "city": "UNKNOWN"
+            },
+            "sourceRef": {
+              "sourceType": "MANUAL_ADMIN_ENTRY",
+              "sourceName": "local_manual_gap_fixture",
+              "sourceId": "manual_gap_record_city_missing",
+              "sourceUrl": null,
+              "observedAt": "2026-08-20T00:00:00.000Z",
+              "fetchedAt": "2026-08-20T00:00:00.000Z",
+              "effectiveAt": "2026-08-20T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          }
+        ],
+        "sourceRefs": [
+          {
+            "sourceType": "MANUAL_ADMIN_ENTRY",
+            "sourceName": "local_manual_gap_fixture",
+            "sourceId": "manual_gap_record_city_missing",
+            "sourceUrl": null,
+            "observedAt": "2026-08-20T00:00:00.000Z",
+            "fetchedAt": "2026-08-20T00:00:00.000Z",
+            "effectiveAt": "2026-08-20T00:00:00.000Z",
+            "confidence": "MEDIUM",
+            "freshnessStatus": "CURRENT",
+            "verificationStatus": "PARTIALLY_VERIFIED"
+          }
+        ],
+        "evidenceGaps": [
+          "city_missing"
+        ],
+        "normalizationWarnings": [],
+        "duplicateMatchHints": [],
+        "confidence": "MEDIUM",
+        "freshnessStatus": "CURRENT"
+      },
+      "duplicateResolution": {
+        "outcome": "NO_MATCH_NEW_PROPERTY_CANDIDATE",
+        "propertyId": "prop_georgia_unknown_manual_gap_record_city_missing",
+        "reason": "new_deterministic_candidate"
+      },
+      "canonicalPropertyId": "prop_georgia_unknown_manual_gap_record_city_missing",
+      "listingSnapshotId": "listing_manual_gap_record_city_missing_manual_gap_record_city_missing",
+      "warnings": [],
+      "conflicts": [],
+      "gaps": [
+        "city_missing",
+        "city_missing"
+      ],
+      "timestamp": "2026-08-20T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    },
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_agency_listing_tower_b_0501_reobs_123000",
+      "sourceRecordId": "agency_listing_tower_b_0501_reobs_123000",
+      "validationResult": {
+        "status": "ACCEPTED",
+        "errors": [],
+        "warnings": [],
+        "gaps": [],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": {
+        "modelType": "NormalizedPropertyCandidate",
+        "candidateId": "candidate_agency_listing_tower_b_0501_reobs_123000",
+        "sourceRecordId": "agency_listing_tower_b_0501_reobs_123000",
+        "normalizedLocation": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "Batumi",
+          "address": "Developer Tower B, Batumi"
+        },
+        "propertyType": "APARTMENT_UNIT",
+        "hierarchyHints": {
+          "projectName": "Batumi Ingested Residence",
+          "buildingName": "Tower B",
+          "unitNumber": "0501",
+          "areaSqm": null,
+          "bedrooms": null
+        },
+        "listingObservation": {
+          "listingType": "SALE",
+          "listingStatus": "ACTIVE",
+          "availability": "AVAILABLE",
+          "stableListingKey": "AG-B-0501",
+          "price": 123000,
+          "currency": "USD",
+          "observedAt": "2026-08-21T00:00:00.000Z",
+          "staleAfter": "2026-09-19T00:00:00.000Z",
+          "freshnessStatus": "CURRENT"
+        },
+        "normalizedFacts": [
+          {
+            "factType": "LOCATION",
+            "value": {
+              "country": "Georgia",
+              "region": "Adjara",
+              "city": "Batumi"
+            },
+            "sourceRef": {
+              "sourceType": "AGENCY_FEED",
+              "sourceName": "local_reobserved_agency_fixture",
+              "sourceId": "agency_listing_tower_b_0501_reobs_123000",
+              "sourceUrl": null,
+              "observedAt": "2026-08-21T00:00:00.000Z",
+              "fetchedAt": "2026-08-21T00:00:00.000Z",
+              "effectiveAt": "2026-08-21T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          }
+        ],
+        "sourceRefs": [
+          {
+            "sourceType": "AGENCY_FEED",
+            "sourceName": "local_reobserved_agency_fixture",
+            "sourceId": "agency_listing_tower_b_0501_reobs_123000",
+            "sourceUrl": null,
+            "observedAt": "2026-08-21T00:00:00.000Z",
+            "fetchedAt": "2026-08-21T00:00:00.000Z",
+            "effectiveAt": "2026-08-21T00:00:00.000Z",
+            "confidence": "MEDIUM",
+            "freshnessStatus": "CURRENT",
+            "verificationStatus": "PARTIALLY_VERIFIED"
+          }
+        ],
+        "evidenceGaps": [],
+        "normalizationWarnings": [],
+        "duplicateMatchHints": [
+          "hierarchy:batumi_ingested_residence:tower_b:0501"
+        ],
+        "confidence": "MEDIUM",
+        "freshnessStatus": "CURRENT"
+      },
+      "duplicateResolution": {
+        "outcome": "CONFLICT_REVIEW_REQUIRED",
+        "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "reason": "canonical_property_id",
+        "conflicts": [
+          "conflicting_price_observation:125000,125000,125000,130000->123000_USD"
+        ]
+      },
+      "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+      "listingSnapshotId": "listing_ag_b_0501_agency_listing_tower_b_0501_reobs_123000",
+      "warnings": [],
+      "conflicts": [
+        "conflicting_price_observation:125000,125000,125000,130000->123000_USD"
+      ],
+      "gaps": [],
+      "timestamp": "2026-08-21T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    },
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_agency_listing_tower_b_0501_reobs_120000",
+      "sourceRecordId": "agency_listing_tower_b_0501_reobs_120000",
+      "validationResult": {
+        "status": "ACCEPTED",
+        "errors": [],
+        "warnings": [],
+        "gaps": [],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": {
+        "modelType": "NormalizedPropertyCandidate",
+        "candidateId": "candidate_agency_listing_tower_b_0501_reobs_120000",
+        "sourceRecordId": "agency_listing_tower_b_0501_reobs_120000",
+        "normalizedLocation": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "Batumi",
+          "address": "Developer Tower B, Batumi"
+        },
+        "propertyType": "APARTMENT_UNIT",
+        "hierarchyHints": {
+          "projectName": "Batumi Ingested Residence",
+          "buildingName": "Tower B",
+          "unitNumber": "0501",
+          "areaSqm": null,
+          "bedrooms": null
+        },
+        "listingObservation": {
+          "listingType": "SALE",
+          "listingStatus": "ACTIVE",
+          "availability": "AVAILABLE",
+          "stableListingKey": "AG-B-0501",
+          "price": 120000,
+          "currency": "USD",
+          "observedAt": "2026-08-22T00:00:00.000Z",
+          "staleAfter": "2026-09-19T00:00:00.000Z",
+          "freshnessStatus": "CURRENT"
+        },
+        "normalizedFacts": [
+          {
+            "factType": "LOCATION",
+            "value": {
+              "country": "Georgia",
+              "region": "Adjara",
+              "city": "Batumi"
+            },
+            "sourceRef": {
+              "sourceType": "AGENCY_FEED",
+              "sourceName": "local_reobserved_agency_fixture",
+              "sourceId": "agency_listing_tower_b_0501_reobs_120000",
+              "sourceUrl": null,
+              "observedAt": "2026-08-22T00:00:00.000Z",
+              "fetchedAt": "2026-08-22T00:00:00.000Z",
+              "effectiveAt": "2026-08-22T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          }
+        ],
+        "sourceRefs": [
+          {
+            "sourceType": "AGENCY_FEED",
+            "sourceName": "local_reobserved_agency_fixture",
+            "sourceId": "agency_listing_tower_b_0501_reobs_120000",
+            "sourceUrl": null,
+            "observedAt": "2026-08-22T00:00:00.000Z",
+            "fetchedAt": "2026-08-22T00:00:00.000Z",
+            "effectiveAt": "2026-08-22T00:00:00.000Z",
+            "confidence": "MEDIUM",
+            "freshnessStatus": "CURRENT",
+            "verificationStatus": "PARTIALLY_VERIFIED"
+          }
+        ],
+        "evidenceGaps": [],
+        "normalizationWarnings": [],
+        "duplicateMatchHints": [
+          "hierarchy:batumi_ingested_residence:tower_b:0501"
+        ],
+        "confidence": "MEDIUM",
+        "freshnessStatus": "CURRENT"
+      },
+      "duplicateResolution": {
+        "outcome": "CONFLICT_REVIEW_REQUIRED",
+        "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "reason": "canonical_property_id",
+        "conflicts": [
+          "conflicting_price_observation:125000,125000,125000,130000,123000->120000_USD"
+        ]
+      },
+      "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+      "listingSnapshotId": "listing_ag_b_0501_agency_listing_tower_b_0501_reobs_120000",
+      "warnings": [],
+      "conflicts": [
+        "conflicting_price_observation:125000,125000,125000,130000,123000->120000_USD"
+      ],
+      "gaps": [],
+      "timestamp": "2026-08-22T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    },
+    {
+      "modelType": "PropertyIngestionAudit",
+      "ingestionId": "ingest_agency_listing_tower_b_0501_removed",
+      "sourceRecordId": "agency_listing_tower_b_0501_removed",
+      "validationResult": {
+        "status": "ACCEPTED",
+        "errors": [],
+        "warnings": [],
+        "gaps": [],
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "normalizationResult": {
+        "modelType": "NormalizedPropertyCandidate",
+        "candidateId": "candidate_agency_listing_tower_b_0501_removed",
+        "sourceRecordId": "agency_listing_tower_b_0501_removed",
+        "normalizedLocation": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "Batumi",
+          "address": "Developer Tower B, Batumi"
+        },
+        "propertyType": "APARTMENT_UNIT",
+        "hierarchyHints": {
+          "projectName": "Batumi Ingested Residence",
+          "buildingName": "Tower B",
+          "unitNumber": "0501",
+          "areaSqm": null,
+          "bedrooms": null
+        },
+        "listingObservation": {
+          "listingType": "SALE",
+          "listingStatus": "SOURCE_REMOVED",
+          "availability": "SOURCE_REMOVED",
+          "stableListingKey": "AG-B-0501",
+          "price": null,
+          "currency": null,
+          "observedAt": "2026-08-23T00:00:00.000Z",
+          "staleAfter": "2026-09-19T00:00:00.000Z",
+          "freshnessStatus": "CURRENT"
+        },
+        "normalizedFacts": [
+          {
+            "factType": "LOCATION",
+            "value": {
+              "country": "Georgia",
+              "region": "Adjara",
+              "city": "Batumi"
+            },
+            "sourceRef": {
+              "sourceType": "AGENCY_FEED",
+              "sourceName": "local_reobserved_agency_fixture",
+              "sourceId": "agency_listing_tower_b_0501_removed",
+              "sourceUrl": null,
+              "observedAt": "2026-08-23T00:00:00.000Z",
+              "fetchedAt": "2026-08-23T00:00:00.000Z",
+              "effectiveAt": "2026-08-23T00:00:00.000Z",
+              "confidence": "MEDIUM",
+              "freshnessStatus": "CURRENT",
+              "verificationStatus": "PARTIALLY_VERIFIED"
+            }
+          }
+        ],
+        "sourceRefs": [
+          {
+            "sourceType": "AGENCY_FEED",
+            "sourceName": "local_reobserved_agency_fixture",
+            "sourceId": "agency_listing_tower_b_0501_removed",
+            "sourceUrl": null,
+            "observedAt": "2026-08-23T00:00:00.000Z",
+            "fetchedAt": "2026-08-23T00:00:00.000Z",
+            "effectiveAt": "2026-08-23T00:00:00.000Z",
+            "confidence": "MEDIUM",
+            "freshnessStatus": "CURRENT",
+            "verificationStatus": "PARTIALLY_VERIFIED"
+          }
+        ],
+        "evidenceGaps": [],
+        "normalizationWarnings": [],
+        "duplicateMatchHints": [
+          "hierarchy:batumi_ingested_residence:tower_b:0501"
+        ],
+        "confidence": "MEDIUM",
+        "freshnessStatus": "CURRENT"
+      },
+      "duplicateResolution": {
+        "outcome": "EXACT_MATCH",
+        "propertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+        "reason": "canonical_property_id"
+      },
+      "canonicalPropertyId": "prop_georgia_batumi_batumi_ingested_residence_tower_b_0501",
+      "listingSnapshotId": "listing_ag_b_0501_agency_listing_tower_b_0501_removed",
+      "warnings": [],
+      "conflicts": [],
+      "gaps": [],
+      "timestamp": "2026-08-23T00:00:00.000Z",
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "dbMutations": 0,
+      "payments": 0,
+      "bookingActions": 0,
+      "transactionActions": 0
+    }
+  ],
+  "quarantine": [
+    {
+      "record": {
+        "modelType": "PropertySourceRecord",
+        "readOnlyImport": true,
+        "sourceType": "OWNER_SUBMISSION",
+        "sourceName": "",
+        "sourceRecordId": "invalid_negative_area",
+        "sourceUrl": null,
+        "observedAt": "2026-08-20T00:00:00.000Z",
+        "fetchedAt": "2026-08-20T00:00:00.000Z",
+        "rawPayload": {
+          "areaSqm": -42,
+          "unit": "bad"
+        },
+        "declaredPropertyType": "APARTMENT_UNIT",
+        "location": {
+          "country": "Georgia",
+          "region": "Adjara",
+          "city": "",
+          "address": ""
+        },
+        "listing": {
+          "listingType": "SALE",
+          "listingStatus": "ACTIVE",
+          "availability": "AVAILABLE"
+        },
+        "price": -100,
+        "currency": "USD",
+        "mediaRefs": [],
+        "sourceConfidence": "MEDIUM",
+        "providerMetadata": {
+          "adapter": "LOCAL_FIXTURE_ONLY"
+        },
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0
+      },
+      "audit": {
+        "modelType": "PropertyIngestionAudit",
+        "ingestionId": "ingest_invalid_negative_area",
+        "sourceRecordId": "invalid_negative_area",
+        "validationResult": {
+          "status": "QUARANTINED",
+          "errors": [
+            "source_identity_missing",
+            "price_impossible_negative",
+            "area_impossible_negative"
+          ],
+          "warnings": [],
+          "gaps": [
+            "city_missing"
+          ],
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "dbMutations": 0,
+          "payments": 0
+        },
+        "normalizationResult": null,
+        "duplicateResolution": null,
+        "canonicalPropertyId": null,
+        "listingSnapshotId": null,
+        "warnings": [],
+        "conflicts": [],
+        "gaps": [
+          "city_missing"
+        ],
+        "timestamp": "2026-08-20T00:00:00.000Z",
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "dbMutations": 0,
+        "payments": 0,
+        "bookingActions": 0,
+        "transactionActions": 0
+      }
+    }
+  ]
+}

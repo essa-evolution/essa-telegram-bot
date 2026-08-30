@@ -1,0 +1,416 @@
+{
+  "status": "PHASE_22L_PROPERTY_REVIEW_WORKFLOW_PROOF_PASS",
+  "route": "http://localhost:3190/workspace/#property-review-queue",
+  "providerCalls": 0,
+  "externalCalls": 0,
+  "dbMutations": 0,
+  "paymentActions": 0,
+  "bookingActions": 0,
+  "transactionActions": 0,
+  "mergeActions": 0,
+  "publishActions": 0,
+  "quarantineMutations": 0,
+  "canonicalPropertyMutation": 0,
+  "results": [
+    {
+      "id": "queue-loads",
+      "label": "Scenario A - Review Queue loads",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\01_review_queue.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "filter-role-status",
+      "label": "Scenario B - Filter by role/status",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\02_filter_role_status.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue?reviewerRole=PROPERTY_COMPLIANCE&reviewStatus=NOT_STARTED",
+      "checks": {
+        "hash": "#property-review-queue?reviewerRole=PROPERTY_COMPLIANCE&reviewStatus=NOT_STARTED",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "scrollHeight": 900,
+          "clientHeight": 900
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "assign",
+      "label": "Scenario C - Assign local reviewer",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\03_assign_local_reviewer.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue?item=queue_ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-review-queue?item=queue_ingest_agency_listing_tower_b_0501",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "accept-start",
+      "label": "Scenario D - Reviewer accepts/starts review",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\04_accept_start_review.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue?item=queue_ingest_duplicate_partner_tower_b_0501",
+      "checks": {
+        "hash": "#property-review-queue?item=queue_ingest_duplicate_partner_tower_b_0501",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "more-evidence",
+      "label": "Scenario E - Request more evidence",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\05_more_evidence.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue?item=queue_ingest_manual_gap_record_city_missing",
+      "checks": {
+        "hash": "#property-review-queue?item=queue_ingest_manual_gap_record_city_missing",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "package-preview",
+      "label": "Scenario F - Open Review Case Package",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\06_package_preview.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue?item=queue_ingest_agency_listing_tower_b_0501",
+      "checks": {
+        "hash": "#property-review-queue?item=queue_ingest_agency_listing_tower_b_0501",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "decision-history",
+      "label": "Scenario G - Decision history linkage",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\07_decision_history.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue?item=queue_ingest_owner_sub_batumi_0707",
+      "checks": {
+        "hash": "#property-review-queue?item=queue_ingest_owner_sub_batumi_0707",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "complete-disabled",
+      "label": "Scenario H - Complete review while execution remains disabled",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\08_review_complete_no_execution.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue?item=queue_ingest_owner_sub_batumi_0707",
+      "checks": {
+        "hash": "#property-review-queue?item=queue_ingest_owner_sub_batumi_0707",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "returned",
+      "label": "Scenario I - Returned-to-queue workflow",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\09_returned_to_queue.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue?item=queue_ingest_duplicate_partner_tower_b_0501",
+      "checks": {
+        "hash": "#property-review-queue?item=queue_ingest_duplicate_partner_tower_b_0501",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 1280,
+          "clientWidth": 1280,
+          "scrollHeight": 820,
+          "clientHeight": 820
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "id": "mobile",
+      "label": "Scenario J - Mobile/narrow internal UI",
+      "status": "PASS",
+      "pass": true,
+      "screenshots": [
+        "artifacts\\property\\phase22l\\10_mobile_review_queue.png"
+      ],
+      "finalUrl": "http://localhost:3190/workspace/#property-review-queue",
+      "checks": {
+        "hash": "#property-review-queue",
+        "currentMode": "property-review-queue",
+        "accessBoundary": "INTERNAL / ADMIN / LOCAL PROOF",
+        "noHorizontalOverflow": true,
+        "noRawUnsafePayload": true,
+        "noExecutedWording": true,
+        "executionDisabledVisible": true,
+        "sideEffectsStillZero": true,
+        "counters": {
+          "providerCalls": "0",
+          "externalCalls": "0",
+          "dbMutations": "0",
+          "paymentActions": "0",
+          "bookingActions": "0",
+          "transactionActions": "0",
+          "mergeActions": "0",
+          "publishActions": "0",
+          "quarantineMutations": "0"
+        },
+        "documentMetrics": {
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "scrollHeight": 14624,
+          "clientHeight": 844
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ]
+}

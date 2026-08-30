@@ -1,0 +1,678 @@
+{
+  "artifactType": "SafeLocalCapabilityMatrixProof",
+  "phase": "21O",
+  "runtimeProvenReusable": true,
+  "registryValidation": [
+    {
+      "capabilityId": "MEDIA_PROBE",
+      "valid": true,
+      "blockers": []
+    },
+    {
+      "capabilityId": "VIDEO_TRIM",
+      "valid": true,
+      "blockers": []
+    },
+    {
+      "capabilityId": "VIDEO_RESIZE",
+      "valid": true,
+      "blockers": []
+    },
+    {
+      "capabilityId": "AUDIO_EXTRACT",
+      "valid": true,
+      "blockers": []
+    }
+  ],
+  "auditedLocalUtilities": {
+    "ffmpeg": {
+      "found": true,
+      "resolvedPath": "C:\\Users\\Lisa\\Tools\\ffmpeg\\ffmpeg-9.0.1-essentials_build\\bin\\ffmpeg.exe",
+      "source": "known_local_path"
+    },
+    "ffprobe": {
+      "found": true,
+      "resolvedPath": "C:\\Users\\Lisa\\Tools\\ffmpeg\\ffmpeg-9.0.1-essentials_build\\bin\\ffprobe.exe",
+      "source": "known_local_path"
+    },
+    "imageProcessor": {
+      "found": false,
+      "deferredCapabilities": [
+        "IMAGE_RESIZE",
+        "IMAGE_CONVERT"
+      ],
+      "reason": "No Sharp/ImageMagick/local image utility is present in package dependencies or repo-local safe wrappers."
+    },
+    "dependenciesAdded": 0
+  },
+  "enabledCapabilities": [
+    {
+      "capabilityId": "MEDIA_PROBE",
+      "executionMode": "LOCAL_READ_ONLY",
+      "availabilityBefore": "LOCAL_READY",
+      "availabilityAfter": "SAFE_LOCAL_EXECUTION_AVAILABLE",
+      "adapter": "FFMPEG_LOCAL",
+      "fixture": {
+        "sourceAssetId": "phase21o_synthetic_av_source",
+        "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21o\\fixtures\\phase21o_source_8s_av.mp4",
+        "durationSeconds": 8,
+        "dimensions": {
+          "width": 640,
+          "height": 360
+        },
+        "hasAudio": true,
+        "fingerprint": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+        "generated": true
+      },
+      "executionResult": {
+        "status": "SUCCEEDED",
+        "derivedArtifacts": [],
+        "observations": [
+          {
+            "modelType": "MediaProbeResult",
+            "capabilityId": "MEDIA_PROBE",
+            "sourceAssetRef": {
+              "sourceAssetId": "phase21o_synthetic_av_source",
+              "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21o\\fixtures\\phase21o_source_8s_av.mp4"
+            },
+            "duration": 8,
+            "container": "mov,mp4,m4a,3gp,3g2,mj2",
+            "video": {
+              "present": true,
+              "codecName": "h264",
+              "width": 640,
+              "height": 360,
+              "frameRate": "10/1"
+            },
+            "audio": {
+              "present": true,
+              "codecName": "aac",
+              "sampleRate": 44100,
+              "channels": 1
+            },
+            "dimensions": {
+              "width": 640,
+              "height": 360
+            },
+            "frameRate": "10/1",
+            "fileSize": 110166,
+            "verified": true,
+            "observedAt": "2026-08-30T06:28:00.364Z",
+            "provenance": {
+              "toolAdapterId": "FFMPEG_LOCAL",
+              "verificationProfileId": "MEDIA_PROBE_STRUCTURED_OBSERVATION"
+            }
+          }
+        ],
+        "userSummary": "Готово. Я локально проверила параметры медиафайла, исходник не изменён."
+      },
+      "verification": {
+        "modelType": "ExecutionVerificationResult",
+        "executionId": "phase21o_media_probe_execution",
+        "verificationProfileId": "MEDIA_PROBE_STRUCTURED_OBSERVATION",
+        "capabilityId": "MEDIA_PROBE",
+        "verified": true,
+        "checks": [
+          {
+            "code": "SOURCE_EXISTS",
+            "passed": true
+          },
+          {
+            "code": "SOURCE_READABLE",
+            "passed": true
+          },
+          {
+            "code": "OBSERVATION_STRUCTURED",
+            "passed": true
+          },
+          {
+            "code": "NO_DERIVED_ARTIFACT",
+            "passed": true
+          },
+          {
+            "code": "SOURCE_FINGERPRINT_UNCHANGED",
+            "passed": true
+          }
+        ],
+        "failures": [],
+        "warnings": [],
+        "sourceIntegrity": {
+          "before": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+          "after": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+          "state": "SOURCE_UNCHANGED"
+        },
+        "artifactIntegrity": null,
+        "observation": {
+          "modelType": "MediaProbeResult",
+          "capabilityId": "MEDIA_PROBE",
+          "sourceAssetRef": {
+            "sourceAssetId": "phase21o_synthetic_av_source",
+            "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21o\\fixtures\\phase21o_source_8s_av.mp4"
+          },
+          "duration": 8,
+          "container": "mov,mp4,m4a,3gp,3g2,mj2",
+          "video": {
+            "present": true,
+            "codecName": "h264",
+            "width": 640,
+            "height": 360,
+            "frameRate": "10/1"
+          },
+          "audio": {
+            "present": true,
+            "codecName": "aac",
+            "sampleRate": 44100,
+            "channels": 1
+          },
+          "dimensions": {
+            "width": 640,
+            "height": 360
+          },
+          "frameRate": "10/1",
+          "fileSize": 110166,
+          "verified": true,
+          "observedAt": "2026-08-30T06:28:00.364Z",
+          "provenance": {
+            "toolAdapterId": "FFMPEG_LOCAL",
+            "verificationProfileId": "MEDIA_PROBE_STRUCTURED_OBSERVATION"
+          }
+        },
+        "expectedVsObserved": {
+          "requestedDurationSeconds": null,
+          "observedDurationSeconds": null,
+          "requestedDimensions": null,
+          "observedDimensions": null,
+          "toleranceSeconds": 0.35
+        },
+        "verifiedAt": "2026-08-30T06:28:00.364Z"
+      },
+      "sourcePreservation": true,
+      "rollback": {
+        "modelType": "LocalExecutionRollback",
+        "executionId": "phase21o_media_probe_execution",
+        "available": false,
+        "rollbackType": "NOT_APPLICABLE",
+        "affectedArtifacts": [],
+        "sourceAffected": false,
+        "status": "NOT_APPLICABLE"
+      },
+      "externalCallCounters": {
+        "externalProviderCalls": 0,
+        "externalModelCalls": 0,
+        "paidProviderCalls": 0,
+        "externalCalls": 0,
+        "paymentActions": 0,
+        "publishActions": 0,
+        "deployActions": 0,
+        "adActions": 0,
+        "externalAccountMutations": 0,
+        "productionDbMutations": 0,
+        "envKeyBillingChanges": 0
+      }
+    },
+    {
+      "capabilityId": "VIDEO_TRIM",
+      "executionMode": "LOCAL_DERIVED_ARTIFACT",
+      "availabilityBefore": "LOCAL_READY",
+      "availabilityAfter": "SAFE_LOCAL_EXECUTION_AVAILABLE",
+      "adapter": "FFMPEG_LOCAL",
+      "fixture": {
+        "sourceAssetId": "phase21o_synthetic_av_source",
+        "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21o\\fixtures\\phase21o_source_8s_av.mp4",
+        "durationSeconds": 8,
+        "dimensions": {
+          "width": 640,
+          "height": 360
+        },
+        "hasAudio": true,
+        "fingerprint": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+        "generated": true
+      },
+      "executionResult": {
+        "status": "SUCCEEDED",
+        "derivedArtifacts": [
+          {
+            "modelType": "DerivedExecutionArtifact",
+            "artifactId": "artifact_phase21o_video_trim_execution",
+            "executionId": "phase21o_video_trim_execution",
+            "capabilityId": "VIDEO_TRIM",
+            "sourceAssetRefs": [
+              "phase21o_synthetic_av_source"
+            ],
+            "lineage": {
+              "sourceAssetId": "phase21o_synthetic_av_source",
+              "executionId": "phase21o_video_trim_execution",
+              "derivedArtifactId": "artifact_phase21o_video_trim_execution",
+              "capabilityId": "VIDEO_TRIM",
+              "operation": "trim",
+              "profile": "VIDEO_MP4_STANDARD",
+              "parameters": {
+                "operation": "trim",
+                "startSeconds": 2,
+                "endSeconds": 5,
+                "durationSeconds": 3,
+                "outputProfileId": "VIDEO_MP4_STANDARD"
+              },
+              "tool": "media.local.ffmpeg.video_trim",
+              "toolAdapterId": "FFMPEG_LOCAL",
+              "timestamp": "2026-08-30T06:28:00.676Z",
+              "verification": "VERIFIED"
+            },
+            "artifactType": "TrimmedVideoArtifact",
+            "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21o\\derived\\phase21o_source_8s_av_trim_0012.mp4",
+            "createdAt": "2026-08-30T06:28:00.676Z",
+            "toolRef": "media.local.ffmpeg.video_trim",
+            "parametersFingerprint": "faf6ce3f34ea6e820235328b966ccaf8bc57017a05c22ce1959b69839684076f",
+            "verificationState": "VERIFIED",
+            "rollbackState": "AVAILABLE",
+            "artifactFingerprint": "671f25ad62b745cfdf19367d2f5ed1e61c4d2226958d0fb1f70e8355be550f5c"
+          }
+        ],
+        "observations": [],
+        "userSummary": "Готово. Я локально обрезала видео, исходник не изменён, новый файл создан и проверен."
+      },
+      "verification": {
+        "modelType": "ExecutionVerificationResult",
+        "executionId": "phase21o_video_trim_execution",
+        "verificationProfileId": "VIDEO_TRIM_DURATION_STREAM_SOURCE",
+        "capabilityId": "VIDEO_TRIM",
+        "verified": true,
+        "checks": [
+          {
+            "code": "OUTPUT_EXISTS",
+            "passed": true
+          },
+          {
+            "code": "OUTPUT_READABLE",
+            "passed": true
+          },
+          {
+            "code": "SOURCE_EXISTS",
+            "passed": true
+          },
+          {
+            "code": "SOURCE_FINGERPRINT_UNCHANGED",
+            "passed": true
+          },
+          {
+            "code": "DURATION_MATCHES_REQUEST",
+            "passed": true,
+            "expected": 3,
+            "observed": 3.02322
+          },
+          {
+            "code": "STREAM_PRESENT",
+            "passed": true
+          }
+        ],
+        "failures": [],
+        "warnings": [],
+        "sourceIntegrity": {
+          "before": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+          "after": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+          "state": "SOURCE_UNCHANGED"
+        },
+        "artifactIntegrity": {
+          "artifactFingerprint": "671f25ad62b745cfdf19367d2f5ed1e61c4d2226958d0fb1f70e8355be550f5c",
+          "sizeBytes": 46460
+        },
+        "observation": null,
+        "expectedVsObserved": {
+          "requestedDurationSeconds": 3,
+          "observedDurationSeconds": 3.02322,
+          "requestedDimensions": null,
+          "observedDimensions": {
+            "width": 640,
+            "height": 360
+          },
+          "toleranceSeconds": 0.35
+        },
+        "verifiedAt": "2026-08-30T06:28:00.676Z"
+      },
+      "sourcePreservation": true,
+      "rollback": {
+        "modelType": "LocalExecutionRollback",
+        "executionId": "phase21o_video_trim_execution",
+        "available": true,
+        "rollbackType": "DELETE_DERIVED_ARTIFACT_ONLY",
+        "affectedArtifacts": [
+          "artifact_phase21o_video_trim_execution"
+        ],
+        "sourceAffected": false,
+        "status": "AVAILABLE"
+      },
+      "externalCallCounters": {
+        "externalProviderCalls": 0,
+        "externalModelCalls": 0,
+        "paidProviderCalls": 0,
+        "externalCalls": 0,
+        "paymentActions": 0,
+        "publishActions": 0,
+        "deployActions": 0,
+        "adActions": 0,
+        "externalAccountMutations": 0,
+        "productionDbMutations": 0,
+        "envKeyBillingChanges": 0
+      }
+    },
+    {
+      "capabilityId": "VIDEO_RESIZE",
+      "executionMode": "LOCAL_DERIVED_ARTIFACT",
+      "availabilityBefore": "LOCAL_READY",
+      "availabilityAfter": "SAFE_LOCAL_EXECUTION_AVAILABLE",
+      "adapter": "FFMPEG_LOCAL",
+      "fixture": {
+        "sourceAssetId": "phase21o_synthetic_av_source",
+        "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21o\\fixtures\\phase21o_source_8s_av.mp4",
+        "durationSeconds": 8,
+        "dimensions": {
+          "width": 640,
+          "height": 360
+        },
+        "hasAudio": true,
+        "fingerprint": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+        "generated": true
+      },
+      "executionResult": {
+        "status": "SUCCEEDED",
+        "derivedArtifacts": [
+          {
+            "modelType": "DerivedExecutionArtifact",
+            "artifactId": "artifact_phase21o_video_resize_execution",
+            "executionId": "phase21o_video_resize_execution",
+            "capabilityId": "VIDEO_RESIZE",
+            "sourceAssetRefs": [
+              "phase21o_synthetic_av_source"
+            ],
+            "lineage": {
+              "sourceAssetId": "phase21o_synthetic_av_source",
+              "executionId": "phase21o_video_resize_execution",
+              "derivedArtifactId": "artifact_phase21o_video_resize_execution",
+              "capabilityId": "VIDEO_RESIZE",
+              "operation": "resize",
+              "profile": "VIDEO_RESIZE_320x180",
+              "parameters": {
+                "operation": "resize",
+                "outputProfileId": "VIDEO_RESIZE_320x180",
+                "targetWidth": 320,
+                "targetHeight": 180,
+                "preserveAspectRatio": true
+              },
+              "tool": "media.local.ffmpeg.video_resize",
+              "toolAdapterId": "FFMPEG_LOCAL",
+              "timestamp": "2026-08-30T06:28:00.993Z",
+              "verification": "VERIFIED"
+            },
+            "artifactType": "ResizedVideoArtifact",
+            "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21o\\derived\\phase21o_source_8s_av_resize_0005.mp4",
+            "createdAt": "2026-08-30T06:28:00.993Z",
+            "toolRef": "media.local.ffmpeg.video_resize",
+            "parametersFingerprint": "d5bb0b992977a0b177b908131dca4e19806317004c491c7ed4ac6eb1b0f3cb91",
+            "verificationState": "VERIFIED",
+            "rollbackState": "AVAILABLE",
+            "artifactFingerprint": "662945e275e6c7407fb4d5f1f1b39a4d6a34473d4a37c628194f2ad035e8bee2"
+          }
+        ],
+        "observations": [],
+        "userSummary": "Готово. Я локально создала новую версию видео другого размера, исходник не изменён, результат проверен."
+      },
+      "verification": {
+        "modelType": "ExecutionVerificationResult",
+        "executionId": "phase21o_video_resize_execution",
+        "verificationProfileId": "VIDEO_RESIZE_DIMENSIONS_SOURCE",
+        "capabilityId": "VIDEO_RESIZE",
+        "verified": true,
+        "checks": [
+          {
+            "code": "OUTPUT_EXISTS",
+            "passed": true
+          },
+          {
+            "code": "OUTPUT_READABLE",
+            "passed": true
+          },
+          {
+            "code": "SOURCE_EXISTS",
+            "passed": true
+          },
+          {
+            "code": "SOURCE_FINGERPRINT_UNCHANGED",
+            "passed": true
+          },
+          {
+            "code": "DIMENSIONS_MATCH_REQUEST",
+            "passed": true,
+            "expected": {
+              "width": 320,
+              "height": 180
+            },
+            "observed": {
+              "width": 320,
+              "height": 180
+            }
+          },
+          {
+            "code": "STREAM_PRESENT",
+            "passed": true
+          }
+        ],
+        "failures": [],
+        "warnings": [],
+        "sourceIntegrity": {
+          "before": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+          "after": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+          "state": "SOURCE_UNCHANGED"
+        },
+        "artifactIntegrity": {
+          "artifactFingerprint": "662945e275e6c7407fb4d5f1f1b39a4d6a34473d4a37c628194f2ad035e8bee2",
+          "sizeBytes": 98936
+        },
+        "observation": null,
+        "expectedVsObserved": {
+          "requestedDurationSeconds": null,
+          "observedDurationSeconds": 8,
+          "requestedDimensions": {
+            "width": 320,
+            "height": 180
+          },
+          "observedDimensions": {
+            "width": 320,
+            "height": 180
+          },
+          "toleranceSeconds": 0.35
+        },
+        "verifiedAt": "2026-08-30T06:28:00.993Z"
+      },
+      "sourcePreservation": true,
+      "rollback": {
+        "modelType": "LocalExecutionRollback",
+        "executionId": "phase21o_video_resize_execution",
+        "available": true,
+        "rollbackType": "DELETE_DERIVED_ARTIFACT_ONLY",
+        "affectedArtifacts": [
+          "artifact_phase21o_video_resize_execution"
+        ],
+        "sourceAffected": false,
+        "status": "AVAILABLE"
+      },
+      "externalCallCounters": {
+        "externalProviderCalls": 0,
+        "externalModelCalls": 0,
+        "paidProviderCalls": 0,
+        "externalCalls": 0,
+        "paymentActions": 0,
+        "publishActions": 0,
+        "deployActions": 0,
+        "adActions": 0,
+        "externalAccountMutations": 0,
+        "productionDbMutations": 0,
+        "envKeyBillingChanges": 0
+      }
+    },
+    {
+      "capabilityId": "AUDIO_EXTRACT",
+      "executionMode": "LOCAL_DERIVED_ARTIFACT",
+      "availabilityBefore": "LOCAL_READY",
+      "availabilityAfter": "SAFE_LOCAL_EXECUTION_AVAILABLE",
+      "adapter": "FFMPEG_LOCAL",
+      "fixture": {
+        "sourceAssetId": "phase21o_synthetic_av_source",
+        "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21o\\fixtures\\phase21o_source_8s_av.mp4",
+        "durationSeconds": 8,
+        "dimensions": {
+          "width": 640,
+          "height": 360
+        },
+        "hasAudio": true,
+        "fingerprint": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+        "generated": true
+      },
+      "executionResult": {
+        "status": "SUCCEEDED",
+        "derivedArtifacts": [
+          {
+            "modelType": "DerivedExecutionArtifact",
+            "artifactId": "artifact_phase21o_audio_extract_execution",
+            "executionId": "phase21o_audio_extract_execution",
+            "capabilityId": "AUDIO_EXTRACT",
+            "sourceAssetRefs": [
+              "phase21o_synthetic_av_source"
+            ],
+            "lineage": {
+              "sourceAssetId": "phase21o_synthetic_av_source",
+              "executionId": "phase21o_audio_extract_execution",
+              "derivedArtifactId": "artifact_phase21o_audio_extract_execution",
+              "capabilityId": "AUDIO_EXTRACT",
+              "operation": "audio_extract",
+              "profile": "AUDIO_WAV_STANDARD",
+              "parameters": {
+                "operation": "audio_extract",
+                "outputProfileId": "AUDIO_WAV_STANDARD"
+              },
+              "tool": "media.local.ffmpeg.audio_extract",
+              "toolAdapterId": "FFMPEG_LOCAL",
+              "timestamp": "2026-08-30T06:28:01.206Z",
+              "verification": "VERIFIED"
+            },
+            "artifactType": "ExtractedAudioArtifact",
+            "localPathRef": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\artifacts\\execution\\phase21o\\derived\\phase21o_source_8s_av_audio_extract_0019.wav",
+            "createdAt": "2026-08-30T06:28:01.206Z",
+            "toolRef": "media.local.ffmpeg.audio_extract",
+            "parametersFingerprint": "3b44cd1ac1ec9e228805c6884eca6b2cd8fe4c6be334def9411de026839d1b09",
+            "verificationState": "VERIFIED",
+            "rollbackState": "AVAILABLE",
+            "artifactFingerprint": "86ce6b8703640b4afa3b6184edc6ed3ce7120be48816361dc0c1eafe8aae521e"
+          }
+        ],
+        "observations": [],
+        "userSummary": "Готово. Я локально извлекла аудиодорожку в новый файл, исходник не изменён, результат проверен."
+      },
+      "verification": {
+        "modelType": "ExecutionVerificationResult",
+        "executionId": "phase21o_audio_extract_execution",
+        "verificationProfileId": "AUDIO_EXTRACT_STREAM_SOURCE",
+        "capabilityId": "AUDIO_EXTRACT",
+        "verified": true,
+        "checks": [
+          {
+            "code": "OUTPUT_EXISTS",
+            "passed": true
+          },
+          {
+            "code": "OUTPUT_READABLE",
+            "passed": true
+          },
+          {
+            "code": "SOURCE_EXISTS",
+            "passed": true
+          },
+          {
+            "code": "SOURCE_FINGERPRINT_UNCHANGED",
+            "passed": true
+          },
+          {
+            "code": "AUDIO_STREAM_PRESENT",
+            "passed": true
+          },
+          {
+            "code": "NO_REQUIRED_VIDEO_STREAM",
+            "passed": true
+          }
+        ],
+        "failures": [],
+        "warnings": [],
+        "sourceIntegrity": {
+          "before": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+          "after": "166a138579032556a635b4f0d99f8680fa8e020d9915c588cdc75b89028fe2bd",
+          "state": "SOURCE_UNCHANGED"
+        },
+        "artifactIntegrity": {
+          "artifactFingerprint": "86ce6b8703640b4afa3b6184edc6ed3ce7120be48816361dc0c1eafe8aae521e",
+          "sizeBytes": 705678
+        },
+        "observation": null,
+        "expectedVsObserved": {
+          "requestedDurationSeconds": null,
+          "observedDurationSeconds": 8,
+          "requestedDimensions": null,
+          "observedDimensions": null,
+          "toleranceSeconds": 0.35
+        },
+        "verifiedAt": "2026-08-30T06:28:01.206Z"
+      },
+      "sourcePreservation": true,
+      "rollback": {
+        "modelType": "LocalExecutionRollback",
+        "executionId": "phase21o_audio_extract_execution",
+        "available": true,
+        "rollbackType": "DELETE_DERIVED_ARTIFACT_ONLY",
+        "affectedArtifacts": [
+          "artifact_phase21o_audio_extract_execution"
+        ],
+        "sourceAffected": false,
+        "status": "AVAILABLE"
+      },
+      "externalCallCounters": {
+        "externalProviderCalls": 0,
+        "externalModelCalls": 0,
+        "paidProviderCalls": 0,
+        "externalCalls": 0,
+        "paymentActions": 0,
+        "publishActions": 0,
+        "deployActions": 0,
+        "adActions": 0,
+        "externalAccountMutations": 0,
+        "productionDbMutations": 0,
+        "envKeyBillingChanges": 0
+      }
+    }
+  ],
+  "deferredCapabilities": [
+    {
+      "capabilityId": "VIDEO_TRANSCODE",
+      "deferredReason": "No existing canonical VIDEO_TRANSCODE capability id is present in the current Capability Fabric taxonomy."
+    },
+    {
+      "capabilityId": "IMAGE_RESIZE",
+      "deferredReason": "No existing safe local image processor such as Sharp or ImageMagick is available in package dependencies or repo utilities."
+    },
+    {
+      "capabilityId": "IMAGE_CONVERT",
+      "deferredReason": "No existing safe local image processor such as Sharp or ImageMagick is available in package dependencies or repo utilities."
+    }
+  ],
+  "externalCallCounters": {
+    "externalProviderCalls": 0,
+    "externalModelCalls": 0,
+    "paidProviderCalls": 0,
+    "externalCalls": 0,
+    "paymentActions": 0,
+    "publishActions": 0,
+    "deployActions": 0,
+    "adActions": 0,
+    "externalAccountMutations": 0,
+    "productionDbMutations": 0,
+    "envKeyBillingChanges": 0
+  },
+  "timestamp": "2026-08-30T06:28:01.207Z"
+}

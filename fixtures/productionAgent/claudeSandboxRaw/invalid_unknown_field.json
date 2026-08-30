@@ -1,0 +1,14 @@
+{
+  "providerId": "claude_agent_sdk",
+  "semanticSummary": "Unsafe response containing an unknown schema field.",
+  "proposedEditDecisions": [],
+  "subtitlePlan": [],
+  "visualRequests": [],
+  "unresolvedItems": [],
+  "toolRequests": [],
+  "artifacts": [],
+  "approvalRequired": true,
+  "completionState": "needs_approval",
+  "traceMetadata": {},
+  "providerSelectionAuthority": "claude"
+}

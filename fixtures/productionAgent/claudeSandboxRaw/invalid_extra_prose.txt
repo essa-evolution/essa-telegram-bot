@@ -1,0 +1,14 @@
+Here is the JSON:
+{
+  "providerId": "claude_agent_sdk",
+  "semanticSummary": "Extra prose should be rejected.",
+  "proposedEditDecisions": [],
+  "subtitlePlan": [],
+  "visualRequests": [],
+  "unresolvedItems": [],
+  "toolRequests": [],
+  "artifacts": [],
+  "approvalRequired": true,
+  "completionState": "needs_approval",
+  "traceMetadata": {}
+}

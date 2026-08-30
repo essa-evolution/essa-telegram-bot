@@ -9,7 +9,10 @@ const { createEmbedding } = require("./openaiClient");
 const { getSupabase } = require("./supabaseClient");
 
 async function extractDocumentText(absolutePath) {
-  if (absolutePath.toLowerCase().endsWith(".txt")) {
+  if (
+    absolutePath.toLowerCase().endsWith(".txt") ||
+    absolutePath.toLowerCase().endsWith(".md")
+  ) {
     return fs.promises.readFile(absolutePath, "utf8");
   }
 
@@ -69,7 +72,9 @@ async function replaceChunks(documentRow, chunks) {
 
 async function ingestCoreDocs() {
   for (const doc of CORE_DOCS) {
-    const absolutePath = path.join(config.essaOsKnowledgeRoot, doc.path);
+   const absolutePath = path.isAbsolute(doc.path)
+  ? doc.path
+  : path.join(config.essaOsKnowledgeRoot, doc.path);
     const text = await extractDocumentText(absolutePath);
     const chunks = chunkText(text);
     const documentRow = await upsertDocument(doc, text);

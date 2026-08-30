@@ -1,0 +1,206 @@
+{
+  "artifactType": "BusinessSprint04CLiveBackupAndCatalogArtifact",
+  "generatedAt": "2026-08-28T03:51:50.0031246+04:00",
+  "mode": "LIVE_READ_ONLY_PLUS_LOCAL_BACKUP_ARTIFACTS",
+  "mutationsPerformed": {
+    "liveDatabase": 0,
+    "migrationsApplied": 0,
+    "schemaChanges": 0,
+    "rlsChanges": 0,
+    "dataChanges": 0,
+    "renderChanges": 0,
+    "envChanges": 0,
+    "paymentProviderCalls": 0,
+    "externalAiProviderCalls": 0
+  },
+  "targetProject": {
+    "expectedProjectRef": "ebnkxqzgqpormgkxbevq",
+    "configuredUrl": "https://ebnkxqzgqpormgkxbevq.supabase.co",
+    "configuredProjectRef": "ebnkxqzgqpormgkxbevq",
+    "matchesCanonicalProject": true,
+    "configSource": ".env",
+    "secretValuesPrinted": false
+  },
+  "localTooling": {
+    "databaseUrlPresent": false,
+    "serviceRolePresent": true,
+    "anonKeyPresent": false,
+    "psqlAvailable": false,
+    "pgDumpAvailable": false
+  },
+  "backup": {
+    "privateBackupDirectoryExistedBeforeAudit": false,
+    "localDumpCreated": false,
+    "localDumpReasonUnavailable": "No direct PostgreSQL URL was configured and pg_dump was not installed.",
+    "gitignoreGuardAdded": ".gitignore excludes artifacts/private-backups/",
+    "recoveryStatus": "MANUAL_BACKUP_STATUS_CHECK_REQUIRED",
+    "recoveryStatusConfidence": "HIGH"
+  },
+  "directPostgresAccess": {
+    "available": false,
+    "catalogInspected": false,
+    "unavailableReasons": [
+      "No direct database URL in .env",
+      "psql is not installed",
+      "pg_dump is not installed"
+    ],
+    "catalogObjectsNotInspected": [
+      "pg_namespace",
+      "pg_class",
+      "pg_proc",
+      "pg_policies",
+      "pg_indexes",
+      "information_schema.tables",
+      "supabase migration history tables"
+    ]
+  },
+  "postgrestProbe": {
+    "method": "strict select limit 0 through configured Supabase service-role credential",
+    "projectRef": "ebnkxqzgqpormgkxbevq",
+    "tableResults": [
+      { "table": "business_organizations", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_organizations' in the schema cache" },
+      { "table": "business_organization_memberships", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_organization_memberships' in the schema cache" },
+      { "table": "business_memberships", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_memberships' in the schema cache" },
+      { "table": "business_profiles", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_profiles' in the schema cache" },
+      { "table": "business_workspaces", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_workspaces' in the schema cache" },
+      { "table": "business_intakes", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_intakes' in the schema cache" },
+      { "table": "business_diagnoses", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_diagnoses' in the schema cache" },
+      { "table": "business_growth_plans", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_growth_plans' in the schema cache" },
+      { "table": "business_offers", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_offers' in the schema cache" },
+      { "table": "business_artifacts", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_artifacts' in the schema cache" },
+      { "table": "business_partner_requests", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_partner_requests' in the schema cache" },
+      { "table": "business_projects", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_projects' in the schema cache" },
+      { "table": "business_commercial_requests", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_commercial_requests' in the schema cache" },
+      { "table": "business_funnel_events", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_funnel_events' in the schema cache" },
+      { "table": "business_analytics", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_analytics' in the schema cache" },
+      { "table": "business_audit_events", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_audit_events' in the schema cache" },
+      { "table": "business_payment_intents", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_payment_intents' in the schema cache" },
+      { "table": "business_commercial_onboardings", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_commercial_onboardings' in the schema cache" },
+      { "table": "business_payment_provider_events", "exists": false, "errorCode": "PGRST205", "message": "Could not find the table 'public.business_payment_provider_events' in the schema cache" }
+    ],
+    "rpcResult": {
+      "function": "public.essa_business_has_org_role",
+      "exists": false,
+      "httpStatus": 404,
+      "errorCode": "PGRST202",
+      "message": "Could not find the function public.essa_business_has_org_role(p_org_id, p_roles) in the schema cache"
+    }
+  },
+  "repositoryMigrations": [
+    {
+      "file": "supabase/migrations/20260827_business_v1_foundation.sql",
+      "order": 1,
+      "createsTables": [
+        "business_organizations",
+        "business_organization_memberships",
+        "business_profiles",
+        "business_workspaces",
+        "business_intakes",
+        "business_artifacts",
+        "business_projects",
+        "business_partner_requests",
+        "business_commercial_requests",
+        "business_funnel_events",
+        "business_audit_events"
+      ],
+      "createsIndexes": [
+        "idx_business_profiles_org",
+        "idx_business_memberships_user",
+        "idx_business_artifacts_business",
+        "idx_business_projects_business",
+        "idx_business_audit_business"
+      ],
+      "enablesRlsOnTables": 11,
+      "destructiveOperationsFound": false,
+      "notes": "Uses create table if not exists and create index if not exists."
+    },
+    {
+      "file": "supabase/migrations/20260827_business_v1_rls_policies.sql",
+      "order": 2,
+      "createsOrReplacesFunctions": [
+        "public.essa_business_role_rank",
+        "public.essa_business_has_org_role",
+        "public.essa_business_has_business_role"
+      ],
+      "createsPolicies": 25,
+      "destructiveOperationsFound": false,
+      "collisionRisk": "Plain create policy statements can fail if a partial prior apply already created policies."
+    },
+    {
+      "file": "supabase/migrations/20260827_business_sprint04_commercial_activation.sql",
+      "order": 3,
+      "altersTables": [
+        "business_projects"
+      ],
+      "addsColumns": [
+        "linked_payment_intent_id",
+        "linked_onboarding_id",
+        "commercial_status",
+        "onboarding_status",
+        "activation_timestamp",
+        "owner_team",
+        "next_action"
+      ],
+      "createsTables": [
+        "business_payment_intents",
+        "business_commercial_onboardings",
+        "business_payment_provider_events"
+      ],
+      "createsIndexes": [
+        "idx_business_payment_intents_business",
+        "idx_business_payment_intents_offer",
+        "idx_business_commercial_onboardings_business",
+        "idx_business_payment_provider_events_payment"
+      ],
+      "enablesRlsOnTables": 3,
+      "createsPolicies": 8,
+      "destructiveOperationsFound": false,
+      "notes": "The only added NOT NULL project column has a safe default."
+    }
+  ],
+  "migrationHistory": {
+    "repositoryBusinessMigrationsInventoried": true,
+    "liveMigrationHistoryAccessible": false,
+    "reason": "Direct PostgreSQL catalog access is unavailable; public PostgREST probes do not expose migration history."
+  },
+  "collisionAssessment": {
+    "postgrestVisibleBusinessObjectCollisionFound": false,
+    "catalogCollisionCheckComplete": false,
+    "policyCollisionRisk": "UNKNOWN_UNTIL_CATALOG_OR_CONTROLLED_APPLY",
+    "functionCollisionRisk": "LOWER_BUT_NOT_ZERO_BECAUSE_CREATE_OR_REPLACE"
+  },
+  "postgrestVsCatalogConclusion": {
+    "postgrestStatus": "BUSINESS_OBJECTS_NOT_IN_PUBLIC_SCHEMA_CACHE",
+    "catalogStatus": "UNKNOWN",
+    "bestCurrentInterpretation": "Earliest missing live-visible migration is 20260827_business_v1_foundation.sql.",
+    "alternatePossibleCauses": [
+      "PostgREST schema cache issue",
+      "objects exist in a wrong schema",
+      "partial objects exist but are not exposed"
+    ]
+  },
+  "nonBusinessDataSafety": {
+    "destructiveOperationsFoundInBusinessMigrations": false,
+    "nonBusinessTablesTargeted": false,
+    "assessment": "Existing non-Business data should remain intact if SQL is applied as-is to the canonical project only."
+  },
+  "readinessDecision": {
+    "safeToApplyMigration1Now": false,
+    "safeToApplyMigration1Reason": "Verified restorable backup/recovery point has not been confirmed and direct catalog inspection is unavailable.",
+    "safeToApplyFullChainNow": false,
+    "safeToApplyFullChainReason": "Requires backup verification, target confirmation, and ideally direct catalog/policy inspection before sequential live apply.",
+    "remainingBlockers": [
+      "MANUAL_BACKUP_STATUS_CHECK_REQUIRED",
+      "DIRECT_POSTGRES_CATALOG_ACCESS_UNAVAILABLE",
+      "LIVE_MIGRATION_HISTORY_UNAVAILABLE",
+      "POLICY_DUPLICATE_COLLISION_STATUS_UNKNOWN"
+    ],
+    "requiredHumanApproval": [
+      "Confirm restorable backup/recovery point for ebnkxqzgqpormgkxbevq",
+      "Confirm apply mechanism targets only ebnkxqzgqpormgkxbevq",
+      "Approve migration 1",
+      "Approve migration 2",
+      "Approve migration 3"
+    ]
+  }
+}

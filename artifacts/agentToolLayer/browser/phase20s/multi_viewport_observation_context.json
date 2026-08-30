@@ -1,0 +1,312 @@
+{
+  "status": "VISUAL_REVIEW_REQUIRED",
+  "target": "http://localhost:3000/workspace/#navigator",
+  "responsiveClassification": "RESPONSIVE",
+  "viewportSummaries": [
+    {
+      "viewport": {
+        "id": "desktop",
+        "label": "DESKTOP",
+        "width": 1440,
+        "height": 900,
+        "screenshotName": "desktop_1440x900.png"
+      },
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "workspacePresent": true,
+      "navigatorPresent": true,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\desktop_1440x900_after.png",
+      "consoleErrorCount": 0,
+      "pageErrorCount": 0,
+      "failedRequestCount": 0
+    },
+    {
+      "viewport": {
+        "id": "laptop",
+        "label": "LAPTOP",
+        "width": 1280,
+        "height": 720,
+        "screenshotName": "laptop_1280x720.png"
+      },
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "workspacePresent": true,
+      "navigatorPresent": true,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\laptop_1280x720_after.png",
+      "consoleErrorCount": 0,
+      "pageErrorCount": 0,
+      "failedRequestCount": 0
+    },
+    {
+      "viewport": {
+        "id": "tablet",
+        "label": "TABLET",
+        "width": 768,
+        "height": 1024,
+        "screenshotName": "tablet_768x1024.png"
+      },
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "workspacePresent": true,
+      "navigatorPresent": true,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\tablet_768x1024_after.png",
+      "consoleErrorCount": 0,
+      "pageErrorCount": 0,
+      "failedRequestCount": 0
+    },
+    {
+      "viewport": {
+        "id": "mobile",
+        "label": "MOBILE",
+        "width": 390,
+        "height": 844,
+        "screenshotName": "mobile_390x844.png"
+      },
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "workspacePresent": true,
+      "navigatorPresent": true,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\mobile_390x844_after.png",
+      "consoleErrorCount": 0,
+      "pageErrorCount": 0,
+      "failedRequestCount": 0
+    }
+  ],
+  "confirmedFindings": [
+    {
+      "findingId": "ui_finding_1787014931122_h14l3o",
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "severity": "MEDIUM",
+      "confidence": 0.86,
+      "viewport": {
+        "id": "tablet",
+        "label": "TABLET",
+        "width": 768,
+        "height": 1024
+      },
+      "location": "button.nav-item",
+      "summary": "TABLET has measurable clipped visible text: \"Главная\".",
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\tablet_768x1024_after.png",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "Главная",
+          "rect": {
+            "x": -56,
+            "y": 84,
+            "width": 80,
+            "height": 49,
+            "right": 24,
+            "bottom": 133
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ]
+    },
+    {
+      "findingId": "ui_finding_1787014931122_0gufuo",
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "severity": "MEDIUM",
+      "confidence": 0.86,
+      "viewport": {
+        "id": "tablet",
+        "label": "TABLET",
+        "width": 768,
+        "height": 1024
+      },
+      "location": "button.nav-item",
+      "summary": "TABLET has measurable clipped visible text: \"ESSA Production Studio\".",
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\tablet_768x1024_after.png",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "ESSA Production Studio",
+          "rect": {
+            "x": 635,
+            "y": 84,
+            "width": 189,
+            "height": 49,
+            "right": 824,
+            "bottom": 133
+          },
+          "clientWidth": 189,
+          "scrollWidth": 189,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ]
+    },
+    {
+      "findingId": "ui_finding_1787014931963_mpvy3g",
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "severity": "MEDIUM",
+      "confidence": 0.86,
+      "viewport": {
+        "id": "mobile",
+        "label": "MOBILE",
+        "width": 390,
+        "height": 844
+      },
+      "location": "button.nav-item",
+      "summary": "MOBILE has measurable clipped visible text: \"Главная\".",
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\mobile_390x844_after.png",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "Главная",
+          "rect": {
+            "x": -56,
+            "y": 84,
+            "width": 80,
+            "height": 49,
+            "right": 24,
+            "bottom": 133
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ]
+    },
+    {
+      "findingId": "ui_finding_1787014931963_9v3qng",
+      "type": "VISUAL_REVIEW_REQUIRED",
+      "severity": "MEDIUM",
+      "confidence": 0.86,
+      "viewport": {
+        "id": "mobile",
+        "label": "MOBILE",
+        "width": 390,
+        "height": 844
+      },
+      "location": "button.nav-item.active",
+      "summary": "MOBILE has measurable clipped visible text: \"Chat ESSA Navigator\".",
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\mobile_390x844_after.png",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item active",
+          "text": "Chat ESSA Navigator",
+          "rect": {
+            "x": 225,
+            "y": 84,
+            "width": 168,
+            "height": 49,
+            "right": 393,
+            "bottom": 133
+          },
+          "clientWidth": 168,
+          "scrollWidth": 168,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ]
+    }
+  ],
+  "repairProposals": [
+    {
+      "proposalId": "repair_proposal_1787014931963_00gf1p",
+      "findingId": "ui_finding_1787014931122_h14l3o",
+      "likelyFiles": [
+        "workspace/styles.css",
+        "workspace/index.html",
+        "workspace/app.js"
+      ],
+      "likelyLayer": "workspace runtime/resource handling",
+      "status": "WAITING_FOR_APPROVAL",
+      "approvalRequired": true
+    },
+    {
+      "proposalId": "repair_proposal_1787014931963_0gstt8",
+      "findingId": "ui_finding_1787014931122_0gufuo",
+      "likelyFiles": [
+        "workspace/styles.css",
+        "workspace/index.html",
+        "workspace/app.js"
+      ],
+      "likelyLayer": "workspace runtime/resource handling",
+      "status": "WAITING_FOR_APPROVAL",
+      "approvalRequired": true
+    },
+    {
+      "proposalId": "repair_proposal_1787014931963_0bqjyh",
+      "findingId": "ui_finding_1787014931963_mpvy3g",
+      "likelyFiles": [
+        "workspace/styles.css",
+        "workspace/index.html",
+        "workspace/app.js"
+      ],
+      "likelyLayer": "workspace runtime/resource handling",
+      "status": "WAITING_FOR_APPROVAL",
+      "approvalRequired": true
+    },
+    {
+      "proposalId": "repair_proposal_1787014931963_h8noqa",
+      "findingId": "ui_finding_1787014931963_9v3qng",
+      "likelyFiles": [
+        "workspace/styles.css",
+        "workspace/index.html",
+        "workspace/app.js"
+      ],
+      "likelyLayer": "workspace runtime/resource handling",
+      "status": "WAITING_FOR_APPROVAL",
+      "approvalRequired": true
+    }
+  ],
+  "screenshots": [
+    {
+      "viewport": "desktop",
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\desktop_1440x900_after.png"
+    },
+    {
+      "viewport": "laptop",
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\laptop_1280x720_after.png"
+    },
+    {
+      "viewport": "tablet",
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\tablet_768x1024_after.png"
+    },
+    {
+      "viewport": "mobile",
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20s\\mobile_390x844_after.png"
+    }
+  ],
+  "repairConstraints": {
+    "noRepairExecutionInPhase20R": true,
+    "browserInteractionDisabled": true,
+    "externalProvidersDisabled": true,
+    "fullDomExcluded": true
+  },
+  "bounded": true
+}

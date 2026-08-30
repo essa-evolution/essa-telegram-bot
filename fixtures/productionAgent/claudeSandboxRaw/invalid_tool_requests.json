@@ -1,0 +1,20 @@
+{
+  "providerId": "claude_agent_sdk",
+  "semanticSummary": "Unsafe response requesting a tool.",
+  "proposedEditDecisions": [],
+  "subtitlePlan": [],
+  "visualRequests": [],
+  "unresolvedItems": [],
+  "toolRequests": [
+    {
+      "toolId": "semantic_edit",
+      "input": {
+        "transcript": "fixture"
+      }
+    }
+  ],
+  "artifacts": [],
+  "approvalRequired": true,
+  "completionState": "needs_approval",
+  "traceMetadata": {}
+}

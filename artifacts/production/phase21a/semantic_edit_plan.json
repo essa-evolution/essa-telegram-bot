@@ -1,0 +1,84 @@
+{
+  "sourceVideo": {
+    "artifactId": "phase21a_media_inspection",
+    "type": "MediaInspection",
+    "sourcePath": "C:\\Users\\Lisa\\Downloads\\essa-telegram-bot-main\\essa-telegram-bot-main\\media\\input\\future_lisa_11s_source.mp4.mp4",
+    "sourceHash": "2df0dcd4ac4c4ef4020fb53d4f840f48edff4d3da3e3ab36f4a792143ece8363",
+    "fileSize": 977583,
+    "duration": 5.066667,
+    "width": 470,
+    "height": 848,
+    "aspectRatio": "235:424",
+    "frameRate": "30/1",
+    "fps": 30,
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "audioStreamPresent": true,
+    "sampleRate": 44100,
+    "probeScore": 100,
+    "rawProbePath": "artifacts/production/phase21a/media_inspection.ffprobe.json",
+    "suitableForFirstLocalTest": true,
+    "createdAt": "2026-08-18T02:36:59.985Z"
+  },
+  "targetFormat": "vertical_short",
+  "semanticStructure": {
+    "id": "semantic_video_structure_1787020621007",
+    "mode": "quiet_reflection",
+    "beatCount": 0,
+    "beats": [],
+    "summary": {
+      "topic": "visual performance with original music",
+      "strongestHook": "",
+      "primarySubjectIsAnchor": true
+    }
+  },
+  "editorialDecisions": [],
+  "timeline": [],
+  "visualRequests": [],
+  "subtitlePlan": {
+    "rawTranscriptRef": "transcript_artifact.json",
+    "correctedTranscriptRef": null,
+    "preserveRawAsEvidence": true,
+    "grouping": "semantic_phrase",
+    "correctionLayer": "separate_derived_layer",
+    "lineBreakIntent": "meaningful_phrase_breaks",
+    "emphasisWords": [],
+    "subtitleSafeTiming": true,
+    "unresolvedRequirements": [
+      "final_subtitle_visual_preset"
+    ]
+  },
+  "unresolvedRequirements": [],
+  "approvalGate": {
+    "state": "EDITOR_PLAN_READY_FOR_APPROVAL",
+    "requiresHumanApproval": true,
+    "inspectableItems": [
+      "selected_material",
+      "semantic_structure",
+      "editorial_decisions",
+      "visual_requests",
+      "subtitle_intent",
+      "unresolved_media_requirements"
+    ]
+  },
+  "renderPlan": {
+    "status": "ready_for_local_renderer",
+    "providerIndependent": true,
+    "notes": [
+      "This plan describes what should happen, not which provider or renderer must implement it."
+    ]
+  },
+  "sourceAssessment": {
+    "likelyCleanCameraSource": true,
+    "existingTextOverlays": false,
+    "existingWatermark": false,
+    "existingBakedSubtitles": false,
+    "existingBakedBroll": false,
+    "existingTransitions": false,
+    "sourceAlreadyEdited": false,
+    "suitabilityForReEdit": "good",
+    "warnings": [
+      "Low source resolution may limit high-quality reframing."
+    ]
+  }
+}

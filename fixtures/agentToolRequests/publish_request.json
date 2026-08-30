@@ -1,0 +1,21 @@
+{
+  "requestId": "phase20i_publish_request",
+  "taskId": "phase20i_task",
+  "requestedByProvider": "claude_agent_sdk",
+  "requestedByAgent": "production_agent",
+  "toolId": "deployment.provider.mock",
+  "capability": "publish",
+  "action": "publish",
+  "input": {
+    "writeScope": "production_deployment",
+    "platform": "Instagram Reels"
+  },
+  "intendedOutcome": "Publish prepared content.",
+  "permissionLevel": "READ_ONLY",
+  "environment": "PRODUCTION",
+  "estimatedCost": "UNKNOWN_COST",
+  "sideEffectClass": "PUBLISH",
+  "reason": "Provider asks to publish, which ESSA must not auto-run.",
+  "confidence": 0.7,
+  "traceId": "phase20i_publish_trace"
+}

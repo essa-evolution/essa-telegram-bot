@@ -1,0 +1,16 @@
+{
+  "status": "READY",
+  "playwrightAvailable": true,
+  "modulePath": "file:///C:/Users/Lisa/Downloads/essa-telegram-bot-main/essa-telegram-bot-main/node_modules/playwright/index.mjs",
+  "browserName": "chromium",
+  "executablePath": "C:\\Users\\Lisa\\AppData\\Local\\ms-playwright\\chromium-1234\\chrome-win64\\chrome.exe",
+  "executableExists": true,
+  "browserRuntimeExists": true,
+  "browserCache": "C:\\Users\\Lisa\\AppData\\Local\\ms-playwright",
+  "pathResolutionError": null,
+  "browserRuntimeAuditError": null,
+  "installationRequired": false,
+  "proposedInstallCommand": "npm install -D playwright",
+  "proposedBrowserInstallCommand": "npx playwright install chromium",
+  "diskImplication": "Chromium browser binaries are typically hundreds of MB locally."
+}

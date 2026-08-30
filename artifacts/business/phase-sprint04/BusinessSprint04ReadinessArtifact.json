@@ -1,0 +1,107 @@
+{
+  "artifactType": "BusinessSprint04ReadinessArtifact",
+  "checkedAt": "2026-08-27T23:38:55.6500084+04:00",
+  "mode": "BUILD_LOCAL_AND_MIGRATION_PREPARED",
+  "summary": {
+    "approvedOfferToCommercialFlowImplemented": true,
+    "serverAuthoritativePricingImplemented": true,
+    "paymentStateMachineImplemented": true,
+    "providerAdapterBoundaryImplemented": true,
+    "activePaymentProvider": "NOT_CONFIGURED",
+    "manualPaymentPathImplemented": true,
+    "clientSelfConfirmationDenied": true,
+    "crossTenantCommercialAccessDenied": true,
+    "paymentConfirmedRequiredBeforeActivation": true,
+    "onboardingPersists": true,
+    "projectActivationPersists": true,
+    "idempotencyImplemented": true,
+    "returningUserCommercialStatePersists": true,
+    "externalExecutionAfterPayment": false,
+    "realMoneyMoved": false,
+    "liveMigrationApplied": false
+  },
+  "commercialStates": [
+    "OFFER_DRAFT",
+    "OFFER_APPROVED",
+    "PAYMENT_REQUIRED",
+    "PAYMENT_PENDING",
+    "PAYMENT_CONFIRMED",
+    "ONBOARDING",
+    "PROJECT_ACTIVE",
+    "PAYMENT_FAILED",
+    "PAYMENT_CANCELLED"
+  ],
+  "paymentModels": [
+    "ONE_TIME",
+    "SETUP_FEE",
+    "RECURRING",
+    "SUBSCRIPTION",
+    "PERFORMANCE_FEE",
+    "SUCCESS_FEE",
+    "REVENUE_SHARE",
+    "TRANSACTION_COMMISSION",
+    "CUSTOM"
+  ],
+  "currencies": [
+    "USD",
+    "EUR",
+    "GEL"
+  ],
+  "newFiles": [
+    "src/business/businessPayments.js",
+    "scripts/testBusinessSprint04.js",
+    "supabase/migrations/20260827_business_sprint04_commercial_activation.sql",
+    "artifacts/business/BusinessSprint04Report.md",
+    "artifacts/business/phase-sprint04/BusinessSprint04ReadinessArtifact.json"
+  ],
+  "updatedFiles": [
+    "src/business/businessContracts.js",
+    "src/business/businessDiagnosis.js",
+    "src/business/businessStore.js",
+    "src/business/businessService.js",
+    "src/business/durableBusinessRepository.js",
+    "src/business/supabaseBusinessRepository.js",
+    "src/business/index.js",
+    "index.js",
+    "workspace/app.js",
+    "docs/ESSA_BUSINESS_V1_FOUNDATION.md",
+    "scripts/testBusinessSprint01.js"
+  ],
+  "tests": {
+    "passed": [
+      "node scripts/testBusinessSprint01.js",
+      "node scripts/testBusinessSprint02.js",
+      "node scripts/testBusinessSprint03.js",
+      "node scripts/testBusinessSprint04.js",
+      "node scripts/testEssaCore.js",
+      "node scripts/testNavigatorProductKnowledge.js",
+      "node scripts/testLeadIntelligence.js",
+      "node scripts/testProductionAgentContracts.js",
+      "node scripts/testExecutionPreflightUi.js",
+      "node scripts/testExecutionIntentDraftPreflight.js",
+      "node scripts/testPropertyExecutionIntent.js",
+      "node scripts/testPropertyCanonicalContracts.js",
+      "node --check index.js",
+      "node --check workspace/app.js",
+      "node --check src/business/businessStore.js",
+      "node --check src/business/businessPayments.js"
+    ],
+    "failed": []
+  },
+  "remainingBlockers": [
+    "Sprint 04 migration is prepared but not applied to live Supabase.",
+    "No automated payment provider is configured; provider adapter correctly returns NOT_CONFIGURED.",
+    "Webhook route is represented at adapter boundary only; provider-specific signature verification requires provider selection.",
+    "ESSA_BUSINESS_STORE remains unset in local non-production mode."
+  ],
+  "safety": {
+    "supabaseDataModified": false,
+    "migrationsApplied": false,
+    "schemaChangedLive": false,
+    "renderConfigChanged": false,
+    "secretsExposed": false,
+    "externalAiProviderCalls": 0,
+    "paymentProviderCharges": 0,
+    "sprint05Started": false
+  }
+}

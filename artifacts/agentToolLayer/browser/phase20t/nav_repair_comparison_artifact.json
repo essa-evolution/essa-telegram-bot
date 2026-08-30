@@ -1,0 +1,282 @@
+{
+  "artifactId": "phase20t_nav_comparison_1787015381560",
+  "type": "NavRepairComparisonArtifact",
+  "phase": "20T",
+  "target": "http://localhost:3000/workspace/#navigator",
+  "createdAt": "2026-08-18T01:09:41.560Z",
+  "rootCause": "The mobile/tablet horizontal nav scroller still exposes partially clipped edge items when the active route is aligned; Phase 20S scrollIntoView was not deterministic enough, and Phase 20T bounded scrollLeft fixed the active mobile item but did not eliminate all edge clipping.",
+  "changedFiles": [
+    "workspace/styles.css",
+    "workspace/app.js"
+  ],
+  "repairAttemptCount": 1,
+  "navResults": [
+    {
+      "text": "ESSA Production Studio",
+      "viewport": "tablet",
+      "phase20rRect": {
+        "x": 707,
+        "y": 84,
+        "width": 189,
+        "height": 49,
+        "right": 896,
+        "bottom": 133
+      },
+      "phase20sRect": {
+        "x": 635,
+        "y": 84,
+        "width": 189,
+        "height": 49,
+        "right": 824,
+        "bottom": 133
+      },
+      "phase20tRect": {
+        "x": 619,
+        "y": 84,
+        "width": 189,
+        "height": 49,
+        "right": 808,
+        "bottom": 133
+      },
+      "result": "NOT_FIXED"
+    },
+    {
+      "text": "Chat ESSA Navigator",
+      "viewport": "mobile",
+      "phase20rRect": {
+        "x": 297,
+        "y": 84,
+        "width": 168,
+        "height": 49,
+        "right": 465,
+        "bottom": 133
+      },
+      "phase20sRect": {
+        "x": 225,
+        "y": 84,
+        "width": 168,
+        "height": 49,
+        "right": 393,
+        "bottom": 133
+      },
+      "phase20tRect": null,
+      "result": "FIXED"
+    },
+    {
+      "text": "Главная",
+      "viewport": "tablet",
+      "phase20rRect": null,
+      "phase20sRect": {
+        "x": -56,
+        "y": 84,
+        "width": 80,
+        "height": 49,
+        "right": 24,
+        "bottom": 133
+      },
+      "phase20tRect": {
+        "x": -72,
+        "y": 84,
+        "width": 80,
+        "height": 49,
+        "right": 8,
+        "bottom": 133
+      },
+      "result": "REGRESSION"
+    },
+    {
+      "text": "Главная",
+      "viewport": "mobile",
+      "phase20rRect": null,
+      "phase20sRect": {
+        "x": -56,
+        "y": 84,
+        "width": 80,
+        "height": 49,
+        "right": 24,
+        "bottom": 133
+      },
+      "phase20tRect": {
+        "x": -72,
+        "y": 84,
+        "width": 80,
+        "height": 49,
+        "right": 8,
+        "bottom": 133
+      },
+      "result": "REGRESSION"
+    }
+  ],
+  "chatPromptRegression": {
+    "tablet": "FIXED_PRESERVED",
+    "mobile": "FIXED_PRESERVED"
+  },
+  "viewportSummary": [
+    {
+      "viewport": "desktop",
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20t\\desktop_1440x900_after.png"
+    },
+    {
+      "viewport": "laptop",
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20t\\laptop_1280x720_after.png"
+    },
+    {
+      "viewport": "tablet",
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20t\\tablet_768x1024_after.png"
+    },
+    {
+      "viewport": "mobile",
+      "status": "PASS",
+      "horizontalOverflow": false,
+      "overflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "screenshotRef": "artifacts\\agentToolLayer\\browser\\phase20t\\mobile_390x844_after.png"
+    }
+  ],
+  "newFindings": [
+    {
+      "viewport": "tablet",
+      "severity": "MEDIUM",
+      "summary": "TABLET has measurable clipped visible text: \"Главная\".",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "Главная",
+          "rect": {
+            "x": -72,
+            "y": 84,
+            "width": 80,
+            "height": 49,
+            "right": 8,
+            "bottom": 133
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ]
+    },
+    {
+      "viewport": "tablet",
+      "severity": "MEDIUM",
+      "summary": "TABLET has measurable clipped visible text: \"ESSA Production Studio\".",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "ESSA Production Studio",
+          "rect": {
+            "x": 619,
+            "y": 84,
+            "width": 189,
+            "height": 49,
+            "right": 808,
+            "bottom": 133
+          },
+          "clientWidth": 189,
+          "scrollWidth": 189,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "severity": "MEDIUM",
+      "summary": "MOBILE has measurable clipped visible text: \"Главная\".",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "Главная",
+          "rect": {
+            "x": -72,
+            "y": 84,
+            "width": 80,
+            "height": 49,
+            "right": 8,
+            "bottom": 133
+          },
+          "clientWidth": 80,
+          "scrollWidth": 80,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "severity": "MEDIUM",
+      "summary": "MOBILE has measurable clipped visible text: \"Путь ESSA\".",
+      "evidence": [
+        {
+          "kind": "clipped_text_element",
+          "tagName": "button",
+          "className": "nav-item",
+          "text": "Путь ESSA",
+          "rect": {
+            "x": 385,
+            "y": 84,
+            "width": 96,
+            "height": 49,
+            "right": 481,
+            "bottom": 133
+          },
+          "clientWidth": 96,
+          "scrollWidth": 96,
+          "clientHeight": 49,
+          "scrollHeight": 49,
+          "display": "block",
+          "visibility": "visible",
+          "horizontallyClipped": true,
+          "verticallyClipped": false
+        }
+      ]
+    }
+  ],
+  "overallResult": "REPAIR_PARTIAL",
+  "rollback": {
+    "performed": false,
+    "reason": "No HIGH/CRITICAL regression detected on desktop/laptop; Phase 20T is preserved for audit and because it fixed the mobile active nav clipping."
+  },
+  "interactionCount": 0,
+  "mutationCount": 0,
+  "providerApiCalls": 0
+}

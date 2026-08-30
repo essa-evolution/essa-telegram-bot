@@ -1,0 +1,154 @@
+{
+  "request": {
+    "requestId": "phase20l_context7_supabase_docs",
+    "taskId": "phase20l_context7_task",
+    "goalId": "phase20l_context7_goal",
+    "projectId": "phase20l_context7_project",
+    "workflowId": "phase20l_documentation_proof",
+    "requestedByProvider": "essa_local_agent",
+    "requestedByAgent": "agent_tool_layer_proof",
+    "toolId": "documentation.context7.mock",
+    "capability": "versioned_library_docs",
+    "action": "lookup_docs",
+    "input": {
+      "scope": "package_name",
+      "packageName": "@supabase/supabase-js",
+      "version": "^2.45.4",
+      "query": "What is the current official pattern for creating a Supabase JS client for the installed major version?"
+    },
+    "intendedOutcome": "Retrieve current documentation only; do not modify Supabase or project code.",
+    "permissionLevel": "READ_ONLY",
+    "environment": "DEVELOPMENT",
+    "estimatedCost": "FREE",
+    "sideEffectClass": "EXTERNAL_READ",
+    "reason": "Phase 20L first read-only documentation proof.",
+    "confidence": 0.95,
+    "traceId": "phase20l_context7_trace"
+  },
+  "decision": {
+    "requestId": "phase20l_context7_supabase_docs",
+    "toolId": "documentation.context7.mock",
+    "decision": "ALLOW",
+    "reason": "ready_for_future_execution_non_executable",
+    "registryStatus": "REGISTERED_NON_EXECUTABLE",
+    "permissionCheck": {
+      "ok": true,
+      "registryPermissionLevel": [
+        "READ_ONLY"
+      ],
+      "providerPermissionIgnored": true,
+      "approvalRequired": false,
+      "reasons": []
+    },
+    "scopeCheck": {
+      "ok": true,
+      "requestedScope": "package_name",
+      "registryScope": [
+        "package_name",
+        "version",
+        "official_docs_cache"
+      ],
+      "reasons": []
+    },
+    "costCheck": {
+      "ok": true,
+      "registryCost": "FREE",
+      "requestedCost": "FREE",
+      "approvalRequired": false,
+      "reasons": []
+    },
+    "environmentCheck": {
+      "ok": true,
+      "environment": "development",
+      "registryDefaultEnvironment": "development",
+      "reasons": []
+    },
+    "approvalRequired": false,
+    "normalizedInput": {
+      "scope": "package_name",
+      "packageName": "@supabase/supabase-js",
+      "version": "^2.45.4",
+      "query": "What is the current official pattern for creating a Supabase JS client for the installed major version?"
+    },
+    "blockedFields": [],
+    "traceId": "phase20l_context7_trace"
+  },
+  "executionIntent": {
+    "executionIntentId": "phase20l_context7_execution_intent",
+    "status": "READY_FOR_EXECUTION",
+    "toolId": "documentation.context7.mock",
+    "action": "lookup_docs",
+    "projectId": "phase20l_context7_project",
+    "taskId": "phase20l_context7_task",
+    "traceId": "phase20l_context7_trace"
+  },
+  "gateResult": {
+    "executionIntentId": "phase20l_context7_execution_intent",
+    "toolId": "documentation.context7.mock",
+    "decision": "READY",
+    "reason": "not_executed_phase_stub",
+    "policyVersion": "agent-tool-policy-v1",
+    "registryVersion": "agent-tool-registry-v1",
+    "approvalValid": true,
+    "scopeValid": true,
+    "environmentValid": true,
+    "costValid": true,
+    "idempotencyValid": true,
+    "resolvedExecutionProvider": {
+      "providerId": "future_context7_execution_provider",
+      "toolIds": [
+        "documentation.context7.mock"
+      ],
+      "capabilities": [
+        "versioned_library_docs",
+        "api_reference_lookup"
+      ],
+      "status": "non_executable",
+      "health": "stub_only",
+      "executable": false
+    },
+    "safeInput": {
+      "scope": "package_name",
+      "packageName": "@supabase/supabase-js",
+      "version": "^2.45.4",
+      "query": "What is the current official pattern for creating a Supabase JS client for the installed major version?"
+    },
+    "traceId": "phase20l_context7_trace",
+    "executed": false,
+    "trace": {
+      "event": "execution_gateway_preflight",
+      "decision": "READY",
+      "reason": "not_executed_phase_stub",
+      "traceId": "phase20l_context7_trace",
+      "at": "2026-08-17T23:36:15.148Z"
+    }
+  },
+  "phase20L3DryRunSummary": {
+    "requestedNpmPackage": "@supabase/supabase-js",
+    "installedVersion": "^2.45.4",
+    "providerId": "context7",
+    "resolverToolName": "resolve-library-id",
+    "resolverInput": {
+      "libraryName": "@supabase/supabase-js",
+      "query": "What is the current official pattern for creating a Supabase JS client for the installed major version?"
+    },
+    "selectedLibraryLogic": [
+      "exact package/project name match",
+      "official organization/project match",
+      "high trust/authority",
+      "documentation/snippet coverage",
+      "version compatibility when exposed"
+    ],
+    "ambiguousResolutionStopsBeforeDocs": true,
+    "queryDocsToolName": "query-docs",
+    "queryDocsInputTemplate": {
+      "libraryId": "<selected Context7-compatible libraryId from resolver>",
+      "query": "What is the current official pattern for creating a Supabase JS client for the installed major version?"
+    },
+    "docsQuery": "What is the current official pattern for creating a Supabase JS client for the installed major version?",
+    "maxExternalLogicalTasks": 1,
+    "retries": 0,
+    "noPackageNameAsLibraryIdUnlessResolverReturnedIt": true
+  },
+  "executeRequested": true
+}
