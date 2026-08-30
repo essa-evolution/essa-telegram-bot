@@ -1,0 +1,126 @@
+{
+  "artifactType": "Phase21RCheckpointProof",
+  "phase": "21R-CP",
+  "purpose": "Clean local canonical checkpoint for Phase 21R Goal-to-Content Workflow Foundation before Phase 21S.",
+  "createdAt": "2026-08-30T18:57:00+04:00",
+  "baseCommit": "fccdfedf03662a991d4f98b5a67fd771a9b94ebc",
+  "phase21rCommit": "cde2ff16714d951de3343754f6174ccab855e5c8",
+  "commitMessage": "ESSA Phase 21R goal-to-content workflow foundation",
+  "tag": {
+    "name": "essa-phase-21r-foundation",
+    "type": "annotated",
+    "annotation": "ESSA Goal-to-Content Workflow Foundation before live intelligence activation",
+    "localOnly": true
+  },
+  "stagedFileCount": 13,
+  "committedFiles": [
+    "artifacts/production/phase21r/GoalToContentWorkflowBrowserProof.json",
+    "artifacts/production/phase21r/GoalToContentWorkflowFoundationProof.json",
+    "docs/ESSA_GOAL_TO_CONTENT_WORKFLOW_FOUNDATION.md",
+    "index.js",
+    "scripts/testGoalToContentWorkflowFoundation.js",
+    "scripts/verifyGoalToContentWorkflowBrowserProof.js",
+    "src/capabilities/capabilityRegistry.js",
+    "src/production/goalToContentWorkflowFoundation.js",
+    "src/production/index.js",
+    "workspace/app.js",
+    "workspace/index.html",
+    "workspace/modules/productionWorkflowUi.js",
+    "workspace/styles.css"
+  ],
+  "excludedRegeneratedProofs": [
+    {
+      "path": "artifacts/execution/phase21n/SafeLocalExecutionE2EProof.json",
+      "reason": "Regenerated proof metadata only; no Phase 21R semantic change.",
+      "restoredBeforeCommit": true
+    },
+    {
+      "path": "artifacts/execution/phase21o/SafeLocalCapabilityMatrixProof.json",
+      "reason": "Regenerated proof metadata only; no Phase 21R semantic change.",
+      "restoredBeforeCommit": true
+    },
+    {
+      "path": "artifacts/execution/phase21q/AutonomousWorkflowOrchestrationProof.json",
+      "reason": "Regression run regenerated timestamp/run metadata only; restored before commit.",
+      "restoredBeforeCommit": true
+    }
+  ],
+  "semanticProofChangesIncluded": false,
+  "regressions": [
+    {
+      "command": "node scripts/testGoalToContentWorkflowFoundation.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testAutonomousWorkflowOrchestration.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testSafeLocalExecutionWorkspace.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testExecutionInputApprovalTokens.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testCapabilityFabric.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testIntelligenceFabric.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testExecutionGateway.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testLisaCharacterCore.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testLisaProductionProfile.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testContentIntelligenceRevenueLoop.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/testContentVariantSequentialExperimentation.js",
+      "status": "PASS"
+    },
+    {
+      "command": "node scripts/verifyGoalToContentWorkflowBrowserProof.js",
+      "status": "PASS",
+      "note": "Required elevated local execution after Windows spawn EPERM for Playwright Chromium."
+    }
+  ],
+  "secretScan": {
+    "scope": "git diff --cached staged blobs before commit",
+    "scannedFiles": 13,
+    "highConfidenceSecretFindings": 0,
+    "status": "PASS"
+  },
+  "workingTreeStateAfterCommitBeforeThisProof": {
+    "trackedChanges": "clean",
+    "untrackedFiles": [
+      "artifacts/repository/phase21q-cp/CanonicalCheckpointProof.json"
+    ]
+  },
+  "workingTreeStateAfterThisProof": {
+    "trackedChanges": "clean",
+    "intentionallyUntrackedFiles": [
+      "artifacts/repository/phase21q-cp/CanonicalCheckpointProof.json",
+      "artifacts/repository/phase21r-cp/Phase21RCheckpointProof.json"
+    ]
+  },
+  "remoteMutation": false,
+  "push": false,
+  "fetch": false,
+  "pull": false,
+  "historyRewrite": false,
+  "phase21sStarted": false,
+  "rollbackPointBeforeLiveExternalIntelligence": "essa-phase-21r-foundation"
+}

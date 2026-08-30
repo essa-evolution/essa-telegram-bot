@@ -1,0 +1,1014 @@
+{
+  "artifactType": "AgentSkillsResearchAdoptionAudit",
+  "phase": "21R-TA1",
+  "researchOnly": true,
+  "phase21sStarted": false,
+  "candidateIdentity": {
+    "candidateId": "github_addyosmani_agent_skills",
+    "name": "Agent Skills",
+    "repository": "https://github.com/addyosmani/agent-skills",
+    "repositoryFullName": "addyosmani/agent-skills",
+    "technologyType": "OPEN_SOURCE_TOOL",
+    "developer": "Addy Osmani",
+    "maintainersDocumentedByUpstream": [
+      "Addy Osmani",
+      "Federico Bartoli",
+      "Joan Leon"
+    ],
+    "license": "MIT",
+    "homepage": "https://skills.addy.ie"
+  },
+  "researchTimestamp": "2026-08-30T19:08:00+04:00",
+  "essaTechnologyIntelligenceProcess": [
+    "DISCOVER",
+    "RESEARCH",
+    "VERIFY",
+    "CLASSIFY",
+    "MAP_TO_ESSA",
+    "COMPARE",
+    "RISK_REVIEW",
+    "RECOMMEND",
+    "HUMAN_REVIEW",
+    "FUTURE_ADOPTION"
+  ],
+  "essaRolesUsed": [
+    "ESSA_TECH_SCOUT",
+    "ESSA_TECH_RESEARCHER",
+    "ESSA_TECH_VERIFIER",
+    "ESSA_TECH_FIT_ANALYZER"
+  ],
+  "sourceVerification": {
+    "primarySources": [
+      {
+        "url": "https://api.github.com/repos/addyosmani/agent-skills",
+        "trustTier": "TIER_1_OFFICIAL_REPOSITORY_API",
+        "usedFor": [
+          "repository identity",
+          "stars",
+          "forks",
+          "license",
+          "recent activity",
+          "default branch"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/README.md",
+        "trustTier": "TIER_1_UPSTREAM_REPOSITORY_CONTENT",
+        "usedFor": [
+          "skill catalog",
+          "supported agents",
+          "installation mechanisms",
+          "team claims"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/.codex-plugin/plugin.json",
+        "trustTier": "TIER_1_UPSTREAM_REPOSITORY_CONTENT",
+        "usedFor": [
+          "Codex plugin manifest",
+          "version",
+          "declared capabilities"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/hooks/hooks.json",
+        "trustTier": "TIER_1_UPSTREAM_REPOSITORY_CONTENT",
+        "usedFor": [
+          "hook behavior",
+          "command surface"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/hooks/session-start.sh",
+        "trustTier": "TIER_1_UPSTREAM_REPOSITORY_CONTENT",
+        "usedFor": [
+          "session-start hook behavior",
+          "jq dependency",
+          "meta-skill injection behavior"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/docs/skill-anatomy.md",
+        "trustTier": "TIER_1_UPSTREAM_REPOSITORY_CONTENT",
+        "usedFor": [
+          "skill structure",
+          "frontmatter discovery",
+          "scripts convention",
+          "progressive disclosure"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/docs/adoption-guide.md",
+        "trustTier": "TIER_1_UPSTREAM_REPOSITORY_CONTENT",
+        "usedFor": [
+          "adoption model",
+          "brownfield guidance"
+        ]
+      },
+      {
+        "url": "https://raw.githubusercontent.com/addyosmani/agent-skills/main/CONTRIBUTING.md",
+        "trustTier": "TIER_1_UPSTREAM_REPOSITORY_CONTENT",
+        "usedFor": [
+          "quality bar",
+          "eval requirements",
+          "hook test requirements"
+        ]
+      }
+    ],
+    "externalActionsPerformed": [
+      "read-only public GitHub API calls",
+      "read-only raw.githubusercontent.com file reads"
+    ],
+    "externalActionsNotPerformed": [
+      "clone",
+      "install",
+      "execute upstream scripts",
+      "enable MCP",
+      "change Codex configuration",
+      "push",
+      "fetch",
+      "pull",
+      "deploy",
+      "provider call",
+      "key or billing change"
+    ]
+  },
+  "upstreamState": {
+    "observedStars": 90889,
+    "observedForks": 9716,
+    "openIssues": 124,
+    "defaultBranch": "main",
+    "repositoryCreatedAt": "2026-02-15T20:20:26Z",
+    "repositoryUpdatedAt": "2026-08-30T15:57:23Z",
+    "repositoryPushedAt": "2026-08-28T23:31:50Z",
+    "language": "JavaScript",
+    "codexPluginVersion": "0.6.8",
+    "skillCountVerified": 25,
+    "skillCountNote": "Current upstream raw README and GitHub tree show 25 skills total: 24 lifecycle skills plus using-agent-skills. Older indexed search snippets still mention 24 total; treated as stale.",
+    "supportedAgentsDocumented": [
+      "Claude Code",
+      "Cursor",
+      "Antigravity CLI",
+      "Gemini CLI",
+      "Windsurf",
+      "OpenCode",
+      "GitHub Copilot",
+      "Kiro",
+      "Codex",
+      "Command Code",
+      "other Markdown-instruction agents",
+      "70+ agents through the open skills CLI"
+    ],
+    "installationMechanismsDocumented": [
+      "npx skills add addyosmani/agent-skills",
+      "per-skill npx install",
+      "Claude Code marketplace plugin",
+      "Codex plugin marketplace/add",
+      "tool-specific copying or native skill install",
+      "local clone for development"
+    ],
+    "dependenciesDocumented": [
+      "open skills CLI via npx for generic installation",
+      "git clone for marketplace/local clone paths",
+      "jq for Claude session-start hook payload construction",
+      "bash for hooks",
+      "chrome-devtools MCP for browser-testing-with-devtools skill when used"
+    ],
+    "hooksAndScripts": {
+      "rootHooks": [
+        "hooks/hooks.json",
+        "hooks/session-start.sh",
+        "hooks/session-start-test.sh",
+        "hooks/sdd-cache-pre.sh",
+        "hooks/sdd-cache-post.sh",
+        "hooks/simplify-ignore.sh"
+      ],
+      "skillScripts": [
+        "skills/idea-refine/scripts/idea-refine.sh"
+      ],
+      "hookFinding": "Codex plugin manifest declares an empty Codex hook config; upstream docs say this prevents auto-loading Claude-oriented hooks in Codex. Claude hook config can run bash session-start.sh to inject the meta-skill."
+    }
+  },
+  "claims": [
+    {
+      "claim": "The repository is public and owned by addyosmani.",
+      "trustClassification": "VERIFIED_FACT"
+    },
+    {
+      "claim": "The repository license is MIT.",
+      "trustClassification": "VERIFIED_FACT"
+    },
+    {
+      "claim": "The current upstream skill count is 25.",
+      "trustClassification": "VERIFIED_FACT"
+    },
+    {
+      "claim": "Agent Skills supports 70+ agents through the skills CLI.",
+      "trustClassification": "DOCUMENTED_CLAIM"
+    },
+    {
+      "claim": "Each skill is a step-by-step engineering workflow with verification gates and anti-rationalization tables.",
+      "trustClassification": "DOCUMENTED_CLAIM_WITH_PARTIAL_FILE_VERIFICATION"
+    },
+    {
+      "claim": "Skills can improve ESSA development quality directly.",
+      "trustClassification": "INFERENCE"
+    },
+    {
+      "claim": "Popularity proves quality.",
+      "trustClassification": "MARKETING_OR_SOCIAL_CLAIM_REJECTED"
+    }
+  ],
+  "skillInventory": [
+    {
+      "skillId": "using-agent-skills",
+      "stage": "META",
+      "purpose": "Map incoming work to the right workflow skill and define shared operating rules.",
+      "inputs": ["user task", "development phase", "available skill descriptions"],
+      "outputs": ["selected skill sequence", "shared operating behavior"],
+      "toolsUsed": ["agent context", "skill descriptions"],
+      "sideEffects": "May route an agent into workflows; no direct file mutation by itself.",
+      "canExecuteCommands": false,
+      "canModifyFiles": false,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_PROMPT_AUTHORITY",
+      "essaOverlap": "Navigator, Capability Resolver, Capability Composition, ExecutionWorkflow.",
+      "potentialEssaValue": "Useful lightweight routing taxonomy and assumption/confusion discipline.",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillId": "interview-me",
+      "stage": "DEFINE",
+      "purpose": "One-question-at-a-time requirement discovery.",
+      "inputs": ["underspecified request", "user answers"],
+      "outputs": ["confirmed intent", "open questions"],
+      "toolsUsed": ["conversation"],
+      "sideEffects": "No inherent code/file side effects.",
+      "canExecuteCommands": false,
+      "canModifyFiles": false,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "LOW",
+      "essaOverlap": "ESSA Navigator understanding/context mode.",
+      "potentialEssaValue": "Question cadence useful for ambiguous development goals.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "idea-refine",
+      "stage": "DEFINE",
+      "purpose": "Divergent/convergent refinement of raw ideas.",
+      "inputs": ["raw idea", "constraints"],
+      "outputs": ["one-page proposal", "assumptions", "MVP scope"],
+      "toolsUsed": ["conversation", "optional idea-refine.sh"],
+      "sideEffects": "May create idea documents if used as workflow.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "LOW_MEDIUM_FILE_WRITE",
+      "essaOverlap": "Navigator, Product Education, planning discipline.",
+      "potentialEssaValue": "Pattern extraction for idea stress-testing.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "spec-driven-development",
+      "stage": "DEFINE",
+      "purpose": "Write a PRD/spec before code.",
+      "inputs": ["feature idea", "requirements", "repo commands"],
+      "outputs": ["SPEC.md/PRD", "boundaries", "acceptance criteria"],
+      "toolsUsed": ["file reads/writes", "repo inspection"],
+      "sideEffects": "Can create specification artifacts.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "LOW_MEDIUM_FILE_WRITE",
+      "essaOverlap": "Phase scope docs, ExecutionWorkflow, approval preflight.",
+      "potentialEssaValue": "Useful as native ESSA Engineering Skills pattern.",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillId": "constraint-driven-development",
+      "stage": "DEFINE",
+      "purpose": "Establish written project quality constraints and catch weakened gates.",
+      "inputs": ["project standards", "diffs", "test/lint thresholds"],
+      "outputs": ["CONSTRAINTS.md", "quality bar checks"],
+      "toolsUsed": ["file writes", "diff inspection", "test/lint tools"],
+      "sideEffects": "Can alter project quality config if adopted directly.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_POLICY_MUTATION",
+      "essaOverlap": "Security/approval gates, regression discipline.",
+      "potentialEssaValue": "Genuine gap: explicit quality bar weakening detection.",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillId": "planning-and-task-breakdown",
+      "stage": "PLAN",
+      "purpose": "Break specs into small ordered tasks with acceptance criteria.",
+      "inputs": ["spec", "dependencies", "risk"],
+      "outputs": ["task plan", "checkpoints", "parallelization map"],
+      "toolsUsed": ["repo/context inspection", "optional file artifacts"],
+      "sideEffects": "May create plan/task files.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "LOW_MEDIUM_FILE_WRITE",
+      "essaOverlap": "ExecutionWorkflow orchestration and phase discipline.",
+      "potentialEssaValue": "Mostly equivalent; task-size heuristics useful.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "incremental-implementation",
+      "stage": "BUILD",
+      "purpose": "Thin vertical slices with verification after each slice.",
+      "inputs": ["plan", "repo conventions", "tests"],
+      "outputs": ["small working increments", "evidence per slice"],
+      "toolsUsed": ["file edits", "tests", "git checkpoints"],
+      "sideEffects": "Can modify code and create commits when used directly.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_CODE_MUTATION",
+      "essaOverlap": "Current Codex phase discipline and checkpoints.",
+      "potentialEssaValue": "Useful implementation detail: explicit slice sizing.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "test-driven-development",
+      "stage": "BUILD_VERIFY",
+      "purpose": "RED-GREEN-REFACTOR and bug reproduction before fix.",
+      "inputs": ["behavior change", "bug report", "repo test commands"],
+      "outputs": ["failing-then-passing tests", "regression guard"],
+      "toolsUsed": ["test runner", "file edits", "browser verifier when applicable"],
+      "sideEffects": "Modifies tests/code; runs local test commands.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_CODE_MUTATION",
+      "essaOverlap": "ESSA regression/proof discipline.",
+      "potentialEssaValue": "Genuine gap: enforced RED proof before GREEN for logic/bug fixes.",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillId": "context-engineering",
+      "stage": "BUILD",
+      "purpose": "Provide the right project context at the right time.",
+      "inputs": ["rules files", "specs", "source files", "errors"],
+      "outputs": ["context pack", "rules guidance"],
+      "toolsUsed": ["file reads/writes", "MCP integration references"],
+      "sideEffects": "Can write rules/context files if used directly.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_PROMPT_CONTEXT",
+      "essaOverlap": "Navigator context engine, TechnologyResearchContext, bounded context.",
+      "potentialEssaValue": "Mostly equivalent; concise context hierarchy useful.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "source-driven-development",
+      "stage": "BUILD",
+      "purpose": "Ground implementation in official documentation.",
+      "inputs": ["stack/version", "official docs"],
+      "outputs": ["source-cited implementation decisions"],
+      "toolsUsed": ["web/docs reads", "file edits", "tests"],
+      "sideEffects": "May use network for docs; modifies code when implementing.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": true,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_NETWORK_RESEARCH",
+      "essaOverlap": "Technology Intelligence, source trust tiers.",
+      "potentialEssaValue": "Already strong in ESSA; useful reminder for technical docs.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "doubt-driven-development",
+      "stage": "BUILD_REVIEW",
+      "purpose": "Fresh-context adversarial review of non-trivial decisions.",
+      "inputs": ["claim", "artifact", "contract"],
+      "outputs": ["doubt findings", "reconciled decision"],
+      "toolsUsed": ["optional secondary coding agent/model", "temp prompt files"],
+      "sideEffects": "Can call external/local agents if adopted directly.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": true,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "HIGH_EXTERNAL_AGENT_ESCALATION",
+      "essaOverlap": "Verifier, evidence-before-completion, security review.",
+      "potentialEssaValue": "Useful pattern only; direct adoption requires strict ESSA approval gate.",
+      "techRadar": "SECURITY_REVIEW"
+    },
+    {
+      "skillId": "frontend-ui-engineering",
+      "stage": "BUILD",
+      "purpose": "Production-quality accessible responsive UI.",
+      "inputs": ["UI requirements", "design system", "accessibility constraints"],
+      "outputs": ["UI implementation", "accessibility/runtime evidence"],
+      "toolsUsed": ["file edits", "browser/runtime verification"],
+      "sideEffects": "Modifies frontend code.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": false,
+      "riskClass": "MEDIUM_CODE_MUTATION",
+      "essaOverlap": "Current frontend design rules and browser proof discipline.",
+      "potentialEssaValue": "Mostly equivalent; checklist details useful.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "api-and-interface-design",
+      "stage": "BUILD",
+      "purpose": "Contract-first API/module boundary design.",
+      "inputs": ["endpoint/module boundary requirements"],
+      "outputs": ["stable contracts", "error semantics", "idempotency guidance"],
+      "toolsUsed": ["file edits", "tests"],
+      "sideEffects": "Can modify API/code contracts.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": false,
+      "riskClass": "MEDIUM_CONTRACT_CHANGE",
+      "essaOverlap": "Capability contracts and ExecutionWorkflow contracts.",
+      "potentialEssaValue": "Useful implementation detail for public ESSA interfaces.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "browser-testing-with-devtools",
+      "stage": "VERIFY",
+      "purpose": "Runtime browser verification through Chrome DevTools MCP.",
+      "inputs": ["browser app URL", "test plan", "runtime page state"],
+      "outputs": ["screenshots", "DOM/console/network/performance evidence"],
+      "toolsUsed": ["chrome-devtools MCP", "browser profile"],
+      "sideEffects": "Can inspect browser state and, if misused, see authenticated profile data.",
+      "canExecuteCommands": true,
+      "canModifyFiles": false,
+      "canAccessNetwork": true,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "HIGH_BROWSER_PROFILE_AND_PROMPT_INJECTION",
+      "essaOverlap": "ESSA browser proof and BrowserVerificationProvider.",
+      "potentialEssaValue": "Already equivalent locally; security boundaries worth extracting.",
+      "techRadar": "SECURITY_REVIEW"
+    },
+    {
+      "skillId": "debugging-and-error-recovery",
+      "stage": "VERIFY",
+      "purpose": "Reproduce, localize, reduce, fix, guard, verify.",
+      "inputs": ["failing test/build/runtime evidence"],
+      "outputs": ["root-cause fix", "regression guard"],
+      "toolsUsed": ["tests", "logs", "git bisect when authorized"],
+      "sideEffects": "Can run git/test/build commands and modify code.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_GIT_COMMAND_SURFACE",
+      "essaOverlap": "Execution verification and regression discipline.",
+      "potentialEssaValue": "Useful pattern extraction for stop-the-line debugging.",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillId": "code-review-and-quality",
+      "stage": "REVIEW",
+      "purpose": "Five-axis review: correctness, readability, architecture, security, performance.",
+      "inputs": ["diff", "spec", "tests", "verification evidence"],
+      "outputs": ["review findings", "quality verdict"],
+      "toolsUsed": ["git diff", "tests", "optional multi-model review"],
+      "sideEffects": "Read-only if used as review; may propose edits.",
+      "canExecuteCommands": true,
+      "canModifyFiles": false,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "LOW_MEDIUM_REVIEW_AUTHORITY",
+      "essaOverlap": "Current Codex review stance and checkpoint security scan.",
+      "potentialEssaValue": "Genuine gap: formal independent review axis matrix.",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillId": "code-simplification",
+      "stage": "REVIEW",
+      "purpose": "Behavior-preserving simplification using Chesterton's Fence.",
+      "inputs": ["working code", "tests", "complexity evidence"],
+      "outputs": ["simplified code", "unchanged behavior proof"],
+      "toolsUsed": ["file edits", "tests"],
+      "sideEffects": "Modifies code if used directly.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_REFACTOR_RISK",
+      "essaOverlap": "Existing conservative refactor discipline.",
+      "potentialEssaValue": "Pattern extraction for behavior-preserving simplification.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "security-and-hardening",
+      "stage": "REVIEW",
+      "purpose": "Threat model and harden code against vulnerabilities.",
+      "inputs": ["untrusted data surface", "auth/storage/external integration context"],
+      "outputs": ["security checklist findings", "hardening changes"],
+      "toolsUsed": ["dependency audit", "file edits", "tests"],
+      "sideEffects": "Can alter security-critical code/config.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": true,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_HIGH_SECURITY_CONFIG",
+      "essaOverlap": "ESSA security/approval policies.",
+      "potentialEssaValue": "Already strong in ESSA; checklist can inform native gates.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "performance-optimization",
+      "stage": "REVIEW",
+      "purpose": "Measure-first frontend/backend performance optimization.",
+      "inputs": ["performance concern", "profile data", "metrics"],
+      "outputs": ["measured bottleneck", "verified optimization"],
+      "toolsUsed": ["DevTools", "Lighthouse/CI", "profilers", "file edits"],
+      "sideEffects": "Can modify code/config; may use network/browser.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": true,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "MEDIUM_MEASUREMENT_AND_CODE_MUTATION",
+      "essaOverlap": "Browser proof, quality history future.",
+      "potentialEssaValue": "Useful later, not immediate.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "git-workflow-and-versioning",
+      "stage": "SHIP",
+      "purpose": "Atomic commits, branch/worktree hygiene, version tags, changelog.",
+      "inputs": ["diff", "branch state", "release intent"],
+      "outputs": ["commits", "tags", "changelog/version guidance"],
+      "toolsUsed": ["git status", "git diff", "git add", "git commit", "git tag", "git push when authorized"],
+      "sideEffects": "Can mutate git history/state if not constrained.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": true,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "HIGH_GIT_AUTHORITY",
+      "essaOverlap": "ESSA checkpoint and no-remote mutation discipline.",
+      "potentialEssaValue": "Only pattern extraction; direct adoption conflicts unless wrapped.",
+      "techRadar": "SECURITY_REVIEW"
+    },
+    {
+      "skillId": "ci-cd-and-automation",
+      "stage": "SHIP",
+      "purpose": "Set up CI/CD quality gates and deployment strategies.",
+      "inputs": ["pipeline requirements", "test/build commands", "deployment target"],
+      "outputs": ["workflow configs", "preview deploys", "automation policy"],
+      "toolsUsed": ["GitHub Actions", "dependency bots", "deployment providers"],
+      "sideEffects": "Can create CI/deploy config and trigger external systems if used.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": true,
+      "canPublishOrDeploy": true,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "HIGH_DEPLOY_AUTOMATION",
+      "essaOverlap": "ESSA execution approval gates and deployment prohibition.",
+      "potentialEssaValue": "Future architecture reference only; not pre-21S.",
+      "techRadar": "SECURITY_REVIEW"
+    },
+    {
+      "skillId": "deprecation-and-migration",
+      "stage": "SHIP",
+      "purpose": "Plan and execute deprecations and migrations.",
+      "inputs": ["old system", "replacement", "users/dependencies"],
+      "outputs": ["migration plan", "deprecation notice", "removal sequence"],
+      "toolsUsed": ["file edits", "tests", "migration scripts"],
+      "sideEffects": "Can remove code or alter data/schema if used directly.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "HIGH_REMOVAL_MIGRATION",
+      "essaOverlap": "Phase boundary and migration discipline.",
+      "potentialEssaValue": "Later, after stronger migration authority model.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "documentation-and-adrs",
+      "stage": "SHIP",
+      "purpose": "Document architecture decisions, APIs, changelogs, and agent docs.",
+      "inputs": ["architectural decision", "API change", "feature change"],
+      "outputs": ["ADR", "docs", "changelog entries"],
+      "toolsUsed": ["file edits"],
+      "sideEffects": "Modifies documentation.",
+      "canExecuteCommands": false,
+      "canModifyFiles": true,
+      "canAccessNetwork": false,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "LOW_FILE_WRITE",
+      "essaOverlap": "ESSA phase docs and canonical artifacts.",
+      "potentialEssaValue": "Equivalent; ADR template may be useful.",
+      "techRadar": "WATCH"
+    },
+    {
+      "skillId": "observability-and-instrumentation",
+      "stage": "SHIP",
+      "purpose": "Add logs, metrics, tracing, alerts.",
+      "inputs": ["production behavior questions", "signals"],
+      "outputs": ["telemetry plan", "instrumented code", "alerts"],
+      "toolsUsed": ["file edits", "observability providers"],
+      "sideEffects": "Can add telemetry and external data flows.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": true,
+      "canPublishOrDeploy": false,
+      "canInvokeOtherAgentsOrSkills": true,
+      "riskClass": "HIGH_TELEMETRY_DATA_FLOW",
+      "essaOverlap": "Quality history/provider health future, privacy boundary.",
+      "potentialEssaValue": "Future only after privacy and provider gates.",
+      "techRadar": "RESEARCH"
+    },
+    {
+      "skillId": "shipping-and-launch",
+      "stage": "SHIP",
+      "purpose": "Pre-launch checklist, feature flags, staged rollout, monitoring, rollback.",
+      "inputs": ["release candidate", "deployment plan", "monitoring"],
+      "outputs": ["launch checklist", "rollout/rollback plan"],
+      "toolsUsed": ["tests", "build", "dependency audit", "deployment and monitoring tools"],
+      "sideEffects": "Can prepare or encourage production deployment when used directly.",
+      "canExecuteCommands": true,
+      "canModifyFiles": true,
+      "canAccessNetwork": true,
+      "canPublishOrDeploy": true,
+      "canInvokeOtherAgentsOrSkills": false,
+      "riskClass": "HIGH_RELEASE_AUTHORITY",
+      "essaOverlap": "ESSA final report, rollback, STOP boundary.",
+      "potentialEssaValue": "Pattern extraction for pre-release checklist only.",
+      "techRadar": "SECURITY_REVIEW"
+    }
+  ],
+  "metaSkillRoutingBehavior": {
+    "actualBehavior": "using-agent-skills maps task phase to skill names through a Markdown flowchart and quick-reference table. It relies on host skill discovery via name/description frontmatter; it is not an executable router and does not include capability scoring.",
+    "comparisonWithEssa": {
+      "Navigator": "ESSA Navigator is broader: user intent, context, capability routing, product knowledge, approval and response modes.",
+      "CapabilityFabric": "ESSA has structured capability contracts and risk/approval policies; Agent Skills has workflow descriptions.",
+      "ExecutionWorkflow": "ESSA has explicit execution states, gates and proof artifacts; Agent Skills has human-readable lifecycle workflows.",
+      "TechnologyIntelligence": "ESSA has source trust tiers and adoption gates; Agent Skills has internal skill selection rules."
+    },
+    "routingIdeasEssaLacks": [
+      "Simple phase-to-skill quick-reference table for coding work.",
+      "Mandatory assumption/confusion surfacing as a meta-skill behavior.",
+      "Anti-rationalization tables embedded in each workflow."
+    ],
+    "routingIdeasEssaAlreadyHasBroaderEquivalent": [
+      "Capability resolution",
+      "approval gates",
+      "workflow orchestration",
+      "verification artifacts",
+      "human authority boundary"
+    ]
+  },
+  "developmentLoopComparison": {
+    "agentSkillsLoop": ["IDEA", "SPEC", "PLAN", "IMPLEMENT", "TEST", "REVIEW", "SHIP"],
+    "essaExecutionLoop": ["GOAL", "UNDERSTAND", "CONTEXT", "PLAN", "APPROVAL", "CAPABILITY_RESOLUTION", "EXECUTE", "VERIFY", "SAVE", "CONTINUE_OR_COMPLETE"],
+    "essaCodexPhaseLoop": ["SCOPE", "ARCHITECTURE_AUDIT", "REUSE", "IMPLEMENT", "TEST", "SECURITY_CHECK", "BROWSER_OR_PROOF", "REGRESSION", "FINAL_REPORT", "STOP_BOUNDARY"],
+    "finding": "Agent Skills is narrower and engineering-lifecycle-focused. ESSA is broader and governance-first. Agent Skills contributes useful local workflow micro-patterns, not a replacement for ESSA."
+  },
+  "gapAnalysis": [
+    {
+      "pattern": "anti-rationalization tables",
+      "classification": "GENUINE_GAP_IN_ESSA",
+      "note": "ESSA has strong rules, but not per-workflow rationalization/reality tables."
+    },
+    {
+      "pattern": "evidence-before-completion",
+      "classification": "ALREADY_STRONGER_IN_ESSA",
+      "note": "ESSA proof artifacts, browser proofs and regression lists are stronger."
+    },
+    {
+      "pattern": "verification gates",
+      "classification": "ALREADY_STRONGER_IN_ESSA",
+      "note": "ESSA has execution, security, approval and proof gates."
+    },
+    {
+      "pattern": "TDD red-green-refactor discipline",
+      "classification": "PARTIALLY_PRESENT_IN_ESSA",
+      "note": "ESSA requires tests but not always a recorded RED failure before implementation."
+    },
+    {
+      "pattern": "debugging stop-the-line discipline",
+      "classification": "PARTIALLY_PRESENT_IN_ESSA",
+      "note": "ESSA verifies and fixes regressions, but a named reproduce-localize-reduce-fix-guard protocol is useful."
+    },
+    {
+      "pattern": "code-review separation",
+      "classification": "PARTIALLY_PRESENT_IN_ESSA",
+      "note": "Codex review stance exists; a formal five-axis pre-merge matrix could improve consistency."
+    },
+    {
+      "pattern": "browser testing with DevTools MCP",
+      "classification": "ALREADY_EQUIVALENT_IN_ESSA",
+      "note": "ESSA already has browser proof workflows; upstream security boundary text is useful."
+    },
+    {
+      "pattern": "ship/release automation",
+      "classification": "CONFLICTS_WITH_ESSA",
+      "note": "Direct ship/deploy/push authority conflicts unless fully subordinated to ESSA approval."
+    },
+    {
+      "pattern": "skill auto-selection",
+      "classification": "USEFUL_IMPLEMENTATION_DETAIL",
+      "note": "Useful as a simple Engineering Skill Resolver vocabulary, but ESSA already owns routing."
+    }
+  ],
+  "securityFindings": [
+    {
+      "area": "license",
+      "finding": "MIT license verified from GitHub repository metadata and LICENSE file.",
+      "severity": "LOW"
+    },
+    {
+      "area": "install mechanism",
+      "finding": "Documented install paths include npx, marketplace plugin install, git clone, and tool-specific copy. Direct install would write to agent/plugin config and local skill directories.",
+      "severity": "MEDIUM"
+    },
+    {
+      "area": "scripts/hooks",
+      "finding": "Root hooks can execute bash at session start in Claude-oriented environments; one skill contains a runnable bash helper. Codex manifest documents empty hook config for Codex.",
+      "severity": "HIGH_IF_DIRECTLY_ENABLED"
+    },
+    {
+      "area": "network",
+      "finding": "Some skills instruct use of external docs, GitHub, DevTools MCP, CI/CD, deployment and monitoring tools. The skill pack itself is mostly Markdown, but workflows can lead to network use.",
+      "severity": "MEDIUM_HIGH"
+    },
+    {
+      "area": "prompt injection",
+      "finding": "Skill instructions are external prompt material. Direct adoption increases the prompt/instruction surface and must not override ESSA governance.",
+      "severity": "HIGH"
+    },
+    {
+      "area": "credential exposure",
+      "finding": "Browser DevTools guidance explicitly warns against real browser profile exposure, cookies/localStorage/sessionStorage, and browser-content-as-instructions. This is a documented mitigation, not proof of safety.",
+      "severity": "HIGH"
+    },
+    {
+      "area": "release authority",
+      "finding": "Ship, CI/CD and Git workflows can involve commits, tags, push, deployment, production flags and external providers. Direct use conflicts with ESSA's authority boundary unless wrapped.",
+      "severity": "HIGH"
+    },
+    {
+      "area": "automatic updates",
+      "finding": "Marketplace/npx install paths can pull current upstream state. Pinning/version review would be required before future adoption.",
+      "severity": "MEDIUM"
+    }
+  ],
+  "promptInstructionSecurity": {
+    "treatedAsUntrusted": true,
+    "foundDirectParentPolicyOverrideInstruction": false,
+    "foundDestructiveCommandInstruction": "No explicit malicious instruction found in sampled/targeted files, but git/deployment skills contain legitimate commands that become dangerous without ESSA gates.",
+    "foundSecretExfiltrationInstruction": false,
+    "foundAutoPublishOrDeploySurface": true,
+    "foundUnexpectedGitMutationSurface": true,
+    "assessment": "External skill instructions must be data for ESSA Technology Intelligence until separately approved. Future adoption must sandbox or rewrite them under ESSA authority."
+  },
+  "candidateShortlist": [
+    {
+      "skillOrPattern": "test-driven-development pattern",
+      "whatItAdds": "Recorded RED-GREEN-REFACTOR discipline and bug reproduction before fix.",
+      "essaAlreadyHas": "Regression tests and proof artifacts.",
+      "specificGapFilled": "ESSA does not always require a captured failing test before implementation.",
+      "integrationApproach": "Native ESSA Engineering Skills pattern, not direct upstream installation.",
+      "risk": "Medium code/test mutation risk.",
+      "requiredAdaptation": "Require ESSA approval and local-only command whitelist; record RED proof in artifacts for behavior changes.",
+      "preferredMode": "MODE_B_PATTERN_EXTRACTION"
+    },
+    {
+      "skillOrPattern": "debugging-and-error-recovery pattern",
+      "whatItAdds": "Stop-the-line reproduce/localize/reduce/fix/guard protocol.",
+      "essaAlreadyHas": "Verification and regression discipline.",
+      "specificGapFilled": "Named debugging protocol and guard-against-recurrence step.",
+      "integrationApproach": "Native checklist inside ESSA execution failure handling.",
+      "risk": "Medium; git bisect/build commands need guardrails.",
+      "requiredAdaptation": "No destructive git; no dependency install without approval; preserve evidence.",
+      "preferredMode": "MODE_B_PATTERN_EXTRACTION"
+    },
+    {
+      "skillOrPattern": "code-review-and-quality pattern",
+      "whatItAdds": "Five-axis review and verify-the-verification step.",
+      "essaAlreadyHas": "Security scan, regression and final report.",
+      "specificGapFilled": "Consistent review taxonomy independent of implementation author.",
+      "integrationApproach": "Use as ESSA review rubric for checkpoint phases.",
+      "risk": "Low if read-only.",
+      "requiredAdaptation": "Review-only by default; edits require normal ESSA implementation gates.",
+      "preferredMode": "MODE_B_PATTERN_EXTRACTION"
+    },
+    {
+      "skillOrPattern": "using-agent-skills meta pattern",
+      "whatItAdds": "Simple phase-to-skill quick reference and assumption/confusion surfacing.",
+      "essaAlreadyHas": "Navigator and Capability Resolver.",
+      "specificGapFilled": "Developer-facing skill vocabulary for software work.",
+      "integrationApproach": "Optional future ESSA Engineering Skills resolver below Navigator.",
+      "risk": "Medium prompt-authority risk if adopted directly.",
+      "requiredAdaptation": "ESSA governance must remain above it; no automatic skill instruction supremacy.",
+      "preferredMode": "MODE_B_PATTERN_EXTRACTION"
+    },
+    {
+      "skillOrPattern": "constraint-driven-development pattern",
+      "whatItAdds": "Explicit detection of agents weakening quality bars.",
+      "essaAlreadyHas": "Security and approval policy, but not a dedicated quality bar anti-weakening artifact.",
+      "specificGapFilled": "Diff-level quality bar regression detection.",
+      "integrationApproach": "Future native ESSA constraints artifact and scan.",
+      "risk": "Medium; can modify standards/config.",
+      "requiredAdaptation": "Human-approved constraints only; no silent threshold lowering.",
+      "preferredMode": "MODE_B_PATTERN_EXTRACTION"
+    }
+  ],
+  "adoptionModes": {
+    "MODE_A_DIRECT_SKILL_ADOPTION": {
+      "assessment": "Not recommended now.",
+      "reason": "Would install external prompt material and potentially hooks/scripts into the agent environment. It risks duplicate or conflicting authority with ESSA governance."
+    },
+    "MODE_B_PATTERN_EXTRACTION": {
+      "assessment": "Recommended.",
+      "reason": "Extract the useful engineering workflow patterns natively into ESSA while keeping ESSA approval/security/workflow contracts authoritative."
+    },
+    "MODE_C_HYBRID": {
+      "assessment": "Possible later after security review.",
+      "reason": "Could use selected upstream skills as optional development tooling, but only under an ESSA wrapper that strips push/deploy/provider/billing/secrets authority and pins reviewed versions."
+    }
+  },
+  "decisionMatrix": [
+    {
+      "skillOrPattern": "using-agent-skills",
+      "upstreamPurpose": "Skill routing and shared operating rules",
+      "essaEquivalent": "Navigator + Capability Resolver",
+      "overlap": "High",
+      "gap": "Developer skill quick-reference",
+      "value": "Medium",
+      "securityRisk": "Medium",
+      "integrationComplexity": "Medium",
+      "recommendedMode": "PATTERN_EXTRACTION",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillOrPattern": "test-driven-development",
+      "upstreamPurpose": "Red-green-refactor and prove-it tests",
+      "essaEquivalent": "Regression/proof discipline",
+      "overlap": "Medium",
+      "gap": "Mandatory RED evidence",
+      "value": "High",
+      "securityRisk": "Medium",
+      "integrationComplexity": "Medium",
+      "recommendedMode": "PATTERN_EXTRACTION",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillOrPattern": "debugging-and-error-recovery",
+      "upstreamPurpose": "Systematic root-cause debugging",
+      "essaEquivalent": "Verify/fix/regression",
+      "overlap": "Medium",
+      "gap": "Named stop-the-line protocol",
+      "value": "High",
+      "securityRisk": "Medium",
+      "integrationComplexity": "Low",
+      "recommendedMode": "PATTERN_EXTRACTION",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillOrPattern": "code-review-and-quality",
+      "upstreamPurpose": "Five-axis review",
+      "essaEquivalent": "Review stance + checkpoint scans",
+      "overlap": "Medium",
+      "gap": "Consistent rubric",
+      "value": "High",
+      "securityRisk": "Low",
+      "integrationComplexity": "Low",
+      "recommendedMode": "PATTERN_EXTRACTION",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillOrPattern": "constraint-driven-development",
+      "upstreamPurpose": "Quality bar contract and anti-weakening guard",
+      "essaEquivalent": "Policies and approvals",
+      "overlap": "Medium",
+      "gap": "Explicit quality bar regression scan",
+      "value": "Medium High",
+      "securityRisk": "Medium",
+      "integrationComplexity": "Medium",
+      "recommendedMode": "PATTERN_EXTRACTION",
+      "techRadar": "ADOPTION_REVIEW"
+    },
+    {
+      "skillOrPattern": "browser-testing-with-devtools",
+      "upstreamPurpose": "Runtime browser inspection through DevTools MCP",
+      "essaEquivalent": "Browser proof/provider",
+      "overlap": "High",
+      "gap": "Profile isolation warning language",
+      "value": "Medium",
+      "securityRisk": "High",
+      "integrationComplexity": "Medium",
+      "recommendedMode": "PATTERN_EXTRACTION",
+      "techRadar": "SECURITY_REVIEW"
+    },
+    {
+      "skillOrPattern": "git-workflow-and-versioning",
+      "upstreamPurpose": "Atomic commits and release versioning",
+      "essaEquivalent": "Checkpoint commits/tags",
+      "overlap": "High",
+      "gap": "None material",
+      "value": "Low Medium",
+      "securityRisk": "High",
+      "integrationComplexity": "High",
+      "recommendedMode": "PATTERN_EXTRACTION_ONLY",
+      "techRadar": "SECURITY_REVIEW"
+    },
+    {
+      "skillOrPattern": "ci-cd-and-automation",
+      "upstreamPurpose": "CI/CD quality gates and deploy automation",
+      "essaEquivalent": "Execution approval and future deployment gates",
+      "overlap": "Medium",
+      "gap": "Future CI design reference",
+      "value": "Medium Future",
+      "securityRisk": "High",
+      "integrationComplexity": "High",
+      "recommendedMode": "RESEARCH_ONLY",
+      "techRadar": "SECURITY_REVIEW"
+    },
+    {
+      "skillOrPattern": "shipping-and-launch",
+      "upstreamPurpose": "Launch checklist and rollout/rollback",
+      "essaEquivalent": "Final report, rollback point, STOP boundary",
+      "overlap": "Medium High",
+      "gap": "Production rollout threshold examples",
+      "value": "Medium Future",
+      "securityRisk": "High",
+      "integrationComplexity": "High",
+      "recommendedMode": "PATTERN_EXTRACTION_ONLY",
+      "techRadar": "SECURITY_REVIEW"
+    }
+  ],
+  "perSkillTechRadar": {
+    "using-agent-skills": "ADOPTION_REVIEW",
+    "interview-me": "WATCH",
+    "idea-refine": "WATCH",
+    "spec-driven-development": "ADOPTION_REVIEW",
+    "constraint-driven-development": "ADOPTION_REVIEW",
+    "planning-and-task-breakdown": "WATCH",
+    "incremental-implementation": "WATCH",
+    "test-driven-development": "ADOPTION_REVIEW",
+    "context-engineering": "WATCH",
+    "source-driven-development": "WATCH",
+    "doubt-driven-development": "SECURITY_REVIEW",
+    "frontend-ui-engineering": "WATCH",
+    "api-and-interface-design": "WATCH",
+    "browser-testing-with-devtools": "SECURITY_REVIEW",
+    "debugging-and-error-recovery": "ADOPTION_REVIEW",
+    "code-review-and-quality": "ADOPTION_REVIEW",
+    "code-simplification": "WATCH",
+    "security-and-hardening": "WATCH",
+    "performance-optimization": "WATCH",
+    "git-workflow-and-versioning": "SECURITY_REVIEW",
+    "ci-cd-and-automation": "SECURITY_REVIEW",
+    "deprecation-and-migration": "WATCH",
+    "documentation-and-adrs": "WATCH",
+    "observability-and-instrumentation": "RESEARCH",
+    "shipping-and-launch": "SECURITY_REVIEW"
+  },
+  "finalRecommendation": {
+    "repositoryRecommendation": "RESEARCH",
+    "installationRecommendedNow": false,
+    "implementationBeforePhase21SRecommended": false,
+    "bestAdoptionModel": "MODE_B_PATTERN_EXTRACTION",
+    "smallestSafeNextAction": "After Phase 21S boundary decisions, create a native ESSA Engineering Skills concept note for TDD RED evidence, debugging stop-the-line, review rubric and anti-rationalization tables. Do not install upstream skills first.",
+    "humanDecisionRequired": [
+      "Whether ESSA should add a native Engineering Skills layer.",
+      "Whether any future direct/hybrid upstream installation is worth a separate security review.",
+      "Which workflows, if any, should become mandatory for ESSA coding phases."
+    ]
+  }
+}

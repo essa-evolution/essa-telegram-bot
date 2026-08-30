@@ -1,0 +1,51 @@
+{
+  "artifactType": "CanonicalCheckpointProof",
+  "phase": "21Q-CP",
+  "baseHead": "f25ff0492945ed3934a9dfa777c6acae5f79f61d",
+  "checkpointHead": "fccdfedf03662a991d4f98b5a67fd771a9b94ebc",
+  "branch": "main",
+  "commitCreated": true,
+  "commitMessage": "ESSA canonical checkpoint after Phase 21Q",
+  "tagCreated": true,
+  "tagName": "essa-phase-21q-checkpoint",
+  "tagTarget": "fccdfedf03662a991d4f98b5a67fd771a9b94ebc",
+  "stagedFileCount": 707,
+  "classificationSummary": {
+    "canonicalSource": 271,
+    "canonicalTests": 158,
+    "canonicalDocs": 45,
+    "canonicalConfiguration": 7,
+    "canonicalProofMetadata": 177,
+    "generatedTransientArtifact": 5,
+    "largeMediaOrScreenshot": 678,
+    "localRuntimeFile": 6,
+    "cacheOrDependency": 4333,
+    "secretOrSensitive": 1,
+    "unknownRequiresReview": 0,
+    "intentionalDeletions": 49
+  },
+  "testResults": {
+    "mandatoryPhase21QCP": "PASS 20/20",
+    "maintainedTestSuite": "PASS 81/81",
+    "rerunAfterSafetyFixtureSanitization": "PASS 81/81"
+  },
+  "secretCheck": {
+    "envPrinted": false,
+    "envTracked": false,
+    "forbiddenFilenameCount": 0,
+    "forbiddenContentFileCount": 0,
+    "literalCredentialShapedFixtureValuesRemoved": true,
+    "envVariableNameReferencesOnly": true,
+    "result": "PASS"
+  },
+  "canonicalFilesRemainingUnstaged": [],
+  "workingTreeClean": true,
+  "postCommitStatus": [],
+  "remoteMutated": false,
+  "pushPerformed": false,
+  "fetchPerformed": false,
+  "pullPerformed": false,
+  "historyRewritten": false,
+  "proofCommitSelfReferenceNote": "This proof is generated after the checkpoint commit so it can contain the actual checkpointHead without amending history or creating a second checkpoint commit.",
+  "createdAt": "2026-08-30T06:49:57.9372326Z"
+}
