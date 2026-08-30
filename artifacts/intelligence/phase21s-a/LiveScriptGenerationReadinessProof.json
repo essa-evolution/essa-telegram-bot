@@ -1,0 +1,465 @@
+{
+  "artifactType": "LiveScriptGenerationReadinessProof",
+  "phase": "21S-A",
+  "baselineCommit": "04fb9504607dc62b8212b4dc0333df80fd56b59d",
+  "architectureReused": [
+    "Intelligence Fabric",
+    "Intelligence Router",
+    "provider/model registry",
+    "provider health",
+    "cost policy",
+    "Capability Fabric",
+    "ExecutionGateway boundary",
+    "Scoped Approval Tokens",
+    "ProductionGoal",
+    "ProductionIntent",
+    "ExecutionWorkflow",
+    "ExecutionFrontier",
+    "Goal-to-Content Workflow Foundation",
+    "Lisa Character Core",
+    "Lisa Production Profile"
+  ],
+  "providerAdaptersDiscovered": [
+    {
+      "providerId": "local",
+      "executable": true,
+      "activationState": "READY_FOR_ACTIVATION"
+    },
+    {
+      "providerId": "openai",
+      "executable": false,
+      "activationState": "READY_FOR_ACTIVATION"
+    },
+    {
+      "providerId": "z-ai",
+      "executable": false,
+      "activationState": "ARCHITECTURE_ONLY"
+    },
+    {
+      "providerId": "anthropic",
+      "executable": false,
+      "activationState": "ARCHITECTURE_ONLY"
+    }
+  ],
+  "credentialPresenceStates": {
+    "OPENAI_API_KEY": "CREDENTIAL_PRESENT",
+    "ANTHROPIC_API_KEY": "CREDENTIAL_ABSENT",
+    "ELEVENLABS_API_KEY": "CREDENTIAL_ABSENT"
+  },
+  "candidateRoutes": [
+    {
+      "providerId": "openai",
+      "modelId": "gpt-5.6-luna",
+      "reasoningEffort": "low",
+      "endpoint": "responses_api_future",
+      "automaticFallbackAllowed": false,
+      "maxExternalAttempts": 1,
+      "recommendation": "FIRST_LIVE_SCRIPT_GENERATE_PRIMARY_ROUTE"
+    },
+    {
+      "providerId": "openai",
+      "modelId": "gpt-5.6-terra",
+      "recommendation": "WATCH_HIGHER_COST_THAN_NEEDED"
+    },
+    {
+      "providerId": "openai",
+      "modelId": "gpt-5.6-sol",
+      "recommendation": "REJECT_FOR_FIRST_PROOF_TOO_EXPENSIVE"
+    },
+    {
+      "providerId": "anthropic",
+      "modelId": "claude_agent_sdk",
+      "recommendation": "REJECT_NO_PAID_FALLBACK_FOR_FIRST_PROOF"
+    }
+  ],
+  "pricingProvenance": {
+    "verifiedAt": "2026-08-30",
+    "sources": [
+      "https://developers.openai.com/api/docs/models",
+      "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/"
+    ]
+  },
+  "selectedCandidateRecommendation": {
+    "route": {
+      "providerId": "openai",
+      "modelId": "gpt-5.6-luna",
+      "reasoningEffort": "low",
+      "endpoint": "responses_api_future",
+      "automaticFallbackAllowed": false,
+      "maxExternalAttempts": 1,
+      "recommendation": "FIRST_LIVE_SCRIPT_GENERATE_PRIMARY_ROUTE"
+    },
+    "why": "Lowest verified OpenAI GPT-5.6 text route already represented in ESSA registry and sufficient for a small script-generation proof."
+  },
+  "scriptExecutionContract": {
+    "modelType": "ScriptGenerateExecutionContract",
+    "workflowId": "workflow_goal_to_content_60aff51ca6d5",
+    "workflowVersion": "1.0.0-2db75e0bb300",
+    "productionGoalId": "production_goal_7e1f3304b3e3",
+    "contentBriefId": "content_brief_60aff51ca6d5",
+    "stepId": "STEP_2_SCRIPT_GENERATE",
+    "capabilityId": "SCRIPT_GENERATE",
+    "inputSource": "CANONICAL_ARTIFACTS_ONLY",
+    "inputs": {
+      "productionGoalRef": "production_goal_7e1f3304b3e3",
+      "contentBriefRef": "content_brief_60aff51ca6d5",
+      "characterCoreRef": "02_AGENTS/07_LISA/00_CORE/LISA_CHARACTER_CORE.md",
+      "productionProfileRef": "lisa_production_profile",
+      "format": "master_podcast",
+      "language": "ru",
+      "targetDuration": "small_podcast_script_proof",
+      "audience": null,
+      "topic": "почему человек теряет себя в отношениях",
+      "toneStyleConstraints": [
+        "meaning_first",
+        "Lisa_identity_bound",
+        "no_generic_assistant_personality"
+      ],
+      "safetyProductConstraints": [
+        "no_secrets",
+        "no_unrelated_repository_context",
+        "no_publish_or_distribution",
+        "no_voice_or_avatar_execution"
+      ]
+    },
+    "missingInputs": [],
+    "providerRoute": {
+      "providerId": "openai",
+      "modelId": "gpt-5.6-luna",
+      "reasoningEffort": "low",
+      "endpoint": "responses_api_future",
+      "automaticFallbackAllowed": false,
+      "maxExternalAttempts": 1,
+      "recommendation": "FIRST_LIVE_SCRIPT_GENERATE_PRIMARY_ROUTE"
+    },
+    "tokenBounds": {
+      "maxInputTokens": 6000,
+      "maxOutputTokens": 4500,
+      "maxRequests": 1,
+      "maxExternalAttempts": 1,
+      "contextStrategy": "MINIMUM_NECESSARY_CANONICAL_ARTIFACTS_ONLY"
+    },
+    "outputContract": {
+      "modelType": "ProductionScriptArtifact",
+      "artifactId": "future_production_script_artifact",
+      "workflowId": "workflow_goal_to_content_60aff51ca6d5",
+      "workflowVersion": "1.0.0-2db75e0bb300",
+      "productionGoalId": "production_goal_7e1f3304b3e3",
+      "contentBriefId": "content_brief_60aff51ca6d5",
+      "scriptGenerateStepId": "STEP_2_SCRIPT_GENERATE",
+      "modelRouteProvenance": {
+        "providerId": "openai",
+        "modelId": "gpt-5.6-luna",
+        "reasoningEffort": "low",
+        "internalOnly": true
+      },
+      "generationTimestamp": null,
+      "inputLineage": [],
+      "characterCoreRef": "02_AGENTS/07_LISA/00_CORE/LISA_CHARACTER_CORE.md",
+      "productionProfileRef": "lisa_production_profile",
+      "scriptContent": null,
+      "language": "ru",
+      "estimatedDurationSeconds": null,
+      "verificationStatus": "PENDING_GENERATION",
+      "qualityReviewStatus": "NOT_RUN",
+      "contentHash": null,
+      "parentArtifactIds": [],
+      "derivedArtifactIds": []
+    }
+  },
+  "artifactContract": {
+    "modelType": "ProductionScriptArtifact",
+    "artifactId": "future_production_script_artifact",
+    "workflowId": "workflow_goal_to_content_60aff51ca6d5",
+    "workflowVersion": "1.0.0-2db75e0bb300",
+    "productionGoalId": "production_goal_7e1f3304b3e3",
+    "contentBriefId": "content_brief_60aff51ca6d5",
+    "scriptGenerateStepId": "STEP_2_SCRIPT_GENERATE",
+    "modelRouteProvenance": {
+      "providerId": "openai",
+      "modelId": "gpt-5.6-luna",
+      "reasoningEffort": "low",
+      "internalOnly": true
+    },
+    "generationTimestamp": null,
+    "inputLineage": [],
+    "characterCoreRef": "02_AGENTS/07_LISA/00_CORE/LISA_CHARACTER_CORE.md",
+    "productionProfileRef": "lisa_production_profile",
+    "scriptContent": null,
+    "language": "ru",
+    "estimatedDurationSeconds": null,
+    "verificationStatus": "PENDING_GENERATION",
+    "qualityReviewStatus": "NOT_RUN",
+    "contentHash": null,
+    "parentArtifactIds": [],
+    "derivedArtifactIds": []
+  },
+  "lisaIdentityBinding": {
+    "characterCoreBound": true,
+    "productionProfileBound": true,
+    "genericAssistantPersonalityAllowed": false
+  },
+  "qualityGate": {
+    "modelType": "DeterministicScriptQualityGate",
+    "status": "PREPARED_NOT_RUN",
+    "checks": [
+      "script_exists",
+      "script_non_empty",
+      "requested_language",
+      "topic_relevance",
+      "structural_completeness",
+      "character_core_binding",
+      "production_profile_binding",
+      "format_compliance",
+      "obvious_truncation_absent",
+      "artifact_integrity",
+      "lineage_integrity"
+    ],
+    "modelBasedReviewRequiresSeparateApproval": true,
+    "boundContractHash": "6b5754be8e5afdd2f271ed09a89793afed3851b18ed093d1a643f134157126f8"
+  },
+  "approvalContract": {
+    "modelType": "ScopedApprovalContract",
+    "approvalType": "COST_AND_EXTERNAL_MODEL_EXECUTION",
+    "scope": {
+      "workflowId": "workflow_goal_to_content_60aff51ca6d5",
+      "workflowVersion": "1.0.0-2db75e0bb300",
+      "stepId": "STEP_2_SCRIPT_GENERATE",
+      "capabilityId": "SCRIPT_GENERATE",
+      "providerId": "openai",
+      "modelId": "gpt-5.6-luna",
+      "maxRequestCount": 1,
+      "maxExternalAttempts": 1,
+      "maxInputTokens": 6000,
+      "maxOutputTokens": 4500,
+      "maxSpendingCeilingUsd": 0.01,
+      "automaticPaidFallbackAllowed": false,
+      "expiresAt": "FUTURE_HUMAN_SELECTED_SHORT_EXPIRATION"
+    },
+    "doesNotAuthorize": [
+      "VOICE_RENDER",
+      "AVATAR_RENDER",
+      "publishing",
+      "deployment",
+      "advertising",
+      "social_dispatch",
+      "provider_activation",
+      "billing_changes",
+      "additional_model_calls",
+      "unbounded_retries"
+    ],
+    "singleUse": true,
+    "executionAuthorityNow": false
+  },
+  "costGuard": {
+    "status": "PASS",
+    "estimatedMaximumUsd": 0.0066,
+    "proposedCeilingUsd": 0.01,
+    "unknownPricingFailsClosed": true
+  },
+  "tokenBounds": {
+    "maxInputTokens": 6000,
+    "maxOutputTokens": 4500,
+    "maxRequests": 1,
+    "maxExternalAttempts": 1,
+    "contextStrategy": "MINIMUM_NECESSARY_CANONICAL_ARTIFACTS_ONLY"
+  },
+  "retryPolicy": {
+    "maxExternalAttempts": 1,
+    "automaticPaidRetryAllowed": false,
+    "onTransportOrProviderFailure": "STOP_REQUIRE_EXPLICIT_NEW_DECISION"
+  },
+  "dataBoundary": {
+    "sentExternallyInFutureLiveCall": [
+      "ProductionGoal topic/raw goal minimum necessary text",
+      "ContentBrief fields required for script generation",
+      "Lisa Character Core reference-derived production constraints",
+      "Lisa Production Profile reference-derived production constraints",
+      "format, language, target duration, audience if supplied"
+    ],
+    "keptLocal": [
+      "secrets and environment variables",
+      "full repository source",
+      "unrelated memory",
+      "billing/payment data",
+      "voice/avatar rights material not needed for SCRIPT_GENERATE"
+    ],
+    "storedAsProvenance": [
+      "providerId/modelId internal route metadata",
+      "token/cost bounds",
+      "input artifact ids",
+      "content hash after successful generation"
+    ],
+    "neverSent": [
+      "API keys",
+      "tokens",
+      "private keys",
+      ".env contents",
+      "browser profiles",
+      "unrelated project repository content"
+    ],
+    "contractHash": "6b5754be8e5afdd2f271ed09a89793afed3851b18ed093d1a643f134157126f8"
+  },
+  "privacyFindings": {
+    "provider": "openai",
+    "route": "OpenAI API / Responses API future route",
+    "trainingPolicy": {
+      "status": "VERIFIED",
+      "finding": "OpenAI states API inputs/outputs are not used to train models by default unless the customer explicitly opts in."
+    },
+    "retentionPolicy": {
+      "status": "VERIFIED_WITH_ACCOUNT_DEPENDENT_OPTIONS",
+      "finding": "Default abuse monitoring logs may be retained up to 30 days; Zero Data Retention or Modified Abuse Monitoring require eligibility/configuration."
+    },
+    "applicationState": {
+      "status": "CONFIGURABLE",
+      "finding": "For Responses API, avoid storing response state for this proof; future execution should set store=false when supported."
+    },
+    "regionalPrivacy": {
+      "status": "UNKNOWN_OR_ACCOUNT_DEPENDENT",
+      "finding": "No region/data residency guarantee is inferred for Lisa's account in this phase."
+    },
+    "sources": [
+      "https://platform.openai.com/docs/models/default-usage-policies-by-endpoint",
+      "https://openai.com/business-data/"
+    ]
+  },
+  "dryRunResult": {
+    "status": "READY_FOR_LIVE_SCRIPT_GENERATION",
+    "liveExecutionState": "LIVE_EXECUTION_NOT_AUTHORIZED",
+    "externalProviderCallMade": false,
+    "liveScriptGenerateCallMade": false
+  },
+  "failureTests": [
+    {
+      "name": "credential absent",
+      "expected": "CREDENTIAL_ABSENT",
+      "passed": true,
+      "observedReason": "CREDENTIAL_ABSENT",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "provider disabled",
+      "expected": "PROVIDER_DISABLED",
+      "passed": true,
+      "observedReason": "PROVIDER_DISABLED",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "pricing unknown",
+      "expected": "COST_GUARD_FAILED",
+      "passed": true,
+      "observedReason": "COST_GUARD_FAILED",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "approval absent",
+      "expected": "LIVE_PROVIDER_EXECUTION_APPROVAL_REQUIRED",
+      "passed": true,
+      "observedReason": "LIVE_PROVIDER_EXECUTION_APPROVAL_REQUIRED",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "approval expired",
+      "expected": "APPROVAL_EXPIRED",
+      "passed": true,
+      "observedReason": "APPROVAL_EXPIRED",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "approval wrong workflow",
+      "expected": "APPROVAL_WRONG_WORKFLOW",
+      "passed": true,
+      "observedReason": "APPROVAL_WRONG_WORKFLOW",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "approval wrong step",
+      "expected": "APPROVAL_WRONG_STEP",
+      "passed": true,
+      "observedReason": "APPROVAL_WRONG_STEP",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "approval wrong provider/model",
+      "expected": "APPROVAL_WRONG_PROVIDER_MODEL",
+      "passed": true,
+      "observedReason": "APPROVAL_WRONG_PROVIDER_MODEL",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "cost ceiling exceeded",
+      "expected": "COST_GUARD_FAILED",
+      "passed": true,
+      "observedReason": "COST_GUARD_FAILED",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "attempt count exceeded",
+      "expected": "ATTEMPT_COUNT_EXCEEDED",
+      "passed": true,
+      "observedReason": "ATTEMPT_COUNT_EXCEEDED",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "fallback requested but not approved",
+      "expected": "FALLBACK_REQUESTED_BUT_NOT_APPROVED",
+      "passed": true,
+      "observedReason": "FALLBACK_REQUESTED_BUT_NOT_APPROVED",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "missing ProductionGoal input",
+      "expected": "MISSING_PRODUCTION_GOAL_INPUT",
+      "passed": true,
+      "observedReason": "MISSING_PRODUCTION_GOAL_INPUT",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "missing ContentBrief",
+      "expected": "MISSING_CONTENT_BRIEF",
+      "passed": true,
+      "observedReason": "MISSING_CONTENT_BRIEF",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "missing Lisa identity binding",
+      "expected": "MISSING_LISA_IDENTITY_BINDING",
+      "passed": true,
+      "observedReason": "MISSING_LISA_IDENTITY_BINDING",
+      "failedClosedBeforeExternalExecution": true
+    },
+    {
+      "name": "stale workflow version",
+      "expected": "APPROVAL_WRONG_WORKFLOW",
+      "passed": true,
+      "observedReason": "APPROVAL_WRONG_WORKFLOW",
+      "failedClosedBeforeExternalExecution": true
+    }
+  ],
+  "externalCounters": {
+    "paidModelCalls": 0,
+    "externalModelCalls": 0,
+    "voiceCalls": 0,
+    "avatarCalls": 0,
+    "publishCalls": 0,
+    "deploymentCalls": 0,
+    "billingMutations": 0,
+    "providerActivations": 0,
+    "productionDbMutations": 0
+  },
+  "frontierState": {
+    "state": "BLOCKED_ON_PROVIDER_BOUNDARY",
+    "currentStepId": "STEP_2_SCRIPT_GENERATE",
+    "nextBlockedStepId": "STEP_2_SCRIPT_GENERATE",
+    "blocker": "LIVE_PROVIDER_EXECUTION_APPROVAL_REQUIRED",
+    "doesNotAdvanceToVoiceRender": true
+  },
+  "blockers": [
+    "LIVE_PROVIDER_EXECUTION_APPROVAL_REQUIRED"
+  ],
+  "readinessStatus": "READY_FOR_LIVE_SCRIPT_GENERATION",
+  "liveExecutionAuthorized": false,
+  "noPaidProviderCalls": true,
+  "phase21sLiveCallStoppedBeforeExecution": true
+}
