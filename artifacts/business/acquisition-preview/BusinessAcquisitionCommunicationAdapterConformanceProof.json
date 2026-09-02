@@ -1,0 +1,1499 @@
+{
+  "artifactType": "BusinessAcquisitionCommunicationAdapterConformanceProof",
+  "phase": "BUSINESS_ACQUISITION_PHASE_J",
+  "status": "BUSINESS_ACQUISITION_PHASE_J_PASS",
+  "canonicalCheckpoint": "d2a537f37900ee339fc1a6ac01133a321b40f74a",
+  "canonicalPassingAdapterScenario": {
+    "adapterId": "VALID_LOCAL_DRY_RUN_ADAPTER",
+    "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+    "capabilityId": "EMAIL_DELIVERY",
+    "phase": "BUSINESS_ACQUISITION_PHASE_J",
+    "contractVersion": "communication-adapter-conformance-v1",
+    "status": "CONTRACT_COMPATIBLE",
+    "passed": true,
+    "checks": [
+      {
+        "checkId": "ADAPTER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "PROVIDER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "SUPPORTS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "VALIDATE_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "ESTIMATE_COST_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CHECK_READINESS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "EXECUTE_METHOD_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CAPABILITY_DECLARATION_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "capabilityId": "EMAIL_DELIVERY",
+          "declaredCapabilities": [
+            "EMAIL_DELIVERY",
+            "WHATSAPP_DELIVERY",
+            "TELEGRAM_DELIVERY",
+            "BUSINESS_DM_DELIVERY"
+          ],
+          "supported": true
+        }
+      },
+      {
+        "checkId": "VALIDATION_RESULT_SHAPE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "validationOk": true
+        }
+      },
+      {
+        "checkId": "COST_ESTIMATE_METADATA_ONLY",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "costEstimate": {
+            "costClass": "LOCAL_DRY_RUN",
+            "estimatedAmount": 0,
+            "currency": null,
+            "billable": false,
+            "providerPricingFetched": false
+          }
+        }
+      },
+      {
+        "checkId": "READINESS_STATE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "readiness": "AVAILABLE"
+        }
+      },
+      {
+        "checkId": "EXECUTION_GATEWAY_REQUIRED",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "gatewayDecision": "READY"
+        }
+      },
+      {
+        "checkId": "NO_CREDENTIAL_RESOLUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "NO_NETWORK_EXECUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_RESULT_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "status": "DRY_RUN_VALIDATED"
+        }
+      },
+      {
+        "checkId": "DRY_RUN_ZERO_SIDE_EFFECTS",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "sendActions": 0,
+          "outreachActions": 0
+        }
+      },
+      {
+        "checkId": "LIVE_RESULT_STATUS_FORBIDDEN",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "status": "DRY_RUN_VALIDATED"
+        }
+      }
+    ],
+    "failures": [],
+    "warnings": [],
+    "readinessObserved": "AVAILABLE",
+    "gatewayRequired": true,
+    "dryRunVerified": true,
+    "liveExecutionTested": false,
+    "credentialsResolved": false,
+    "networkTested": false,
+    "providerVerified": false,
+    "liveReady": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "dryRunResultStatus": "DRY_RUN_VALIDATED",
+    "dryRunResultValidation": {
+      "ok": true,
+      "reason": null
+    }
+  },
+  "malformedAdapterScenario": {
+    "adapterId": "MALFORMED_ADAPTER_MISSING_METHOD",
+    "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+    "capabilityId": "EMAIL_DELIVERY",
+    "phase": "BUSINESS_ACQUISITION_PHASE_J",
+    "contractVersion": "communication-adapter-conformance-v1",
+    "status": "CONTRACT_INCOMPATIBLE",
+    "passed": false,
+    "checks": [
+      {
+        "checkId": "ADAPTER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "PROVIDER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "SUPPORTS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "VALIDATE_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "ESTIMATE_COST_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CHECK_READINESS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_METHOD_VALID",
+        "passed": false,
+        "failureCode": "DRY_RUN_METHOD_VALID",
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "EXECUTE_METHOD_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CAPABILITY_DECLARATION_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "capabilityId": "EMAIL_DELIVERY",
+          "declaredCapabilities": [
+            "EMAIL_DELIVERY",
+            "WHATSAPP_DELIVERY",
+            "TELEGRAM_DELIVERY",
+            "BUSINESS_DM_DELIVERY"
+          ],
+          "supported": true
+        }
+      },
+      {
+        "checkId": "VALIDATION_RESULT_SHAPE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "validationOk": true
+        }
+      },
+      {
+        "checkId": "COST_ESTIMATE_METADATA_ONLY",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "costEstimate": {
+            "costClass": "LOCAL_DRY_RUN",
+            "estimatedAmount": 0,
+            "currency": null,
+            "billable": false,
+            "providerPricingFetched": false
+          }
+        }
+      },
+      {
+        "checkId": "READINESS_STATE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "readiness": "AVAILABLE"
+        }
+      },
+      {
+        "checkId": "EXECUTION_GATEWAY_REQUIRED",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "gatewayDecision": "READY"
+        }
+      },
+      {
+        "checkId": "NO_CREDENTIAL_RESOLUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "NO_NETWORK_EXECUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_RESULT_VALID",
+        "passed": false,
+        "failureCode": "DRY_RUN_NOT_EXECUTED_OR_INVALID_SHAPE",
+        "warningCode": null,
+        "details": {
+          "status": null
+        }
+      },
+      {
+        "checkId": "DRY_RUN_ZERO_SIDE_EFFECTS",
+        "passed": false,
+        "failureCode": "DRY_RUN_SIDE_EFFECT_COUNTER_VIOLATION",
+        "warningCode": null,
+        "details": {
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "sendActions": 0,
+          "outreachActions": 0
+        }
+      },
+      {
+        "checkId": "LIVE_RESULT_STATUS_FORBIDDEN",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "status": null
+        }
+      }
+    ],
+    "failures": [
+      "DRY_RUN_METHOD_VALID",
+      "DRY_RUN_NOT_EXECUTED_OR_INVALID_SHAPE",
+      "DRY_RUN_SIDE_EFFECT_COUNTER_VIOLATION"
+    ],
+    "warnings": [],
+    "readinessObserved": "AVAILABLE",
+    "gatewayRequired": true,
+    "dryRunVerified": false,
+    "liveExecutionTested": false,
+    "credentialsResolved": false,
+    "networkTested": false,
+    "providerVerified": false,
+    "liveReady": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "dryRunResultStatus": null,
+    "dryRunResultValidation": {
+      "ok": false,
+      "reason": "DRY_RUN_NOT_EXECUTED_OR_INVALID_SHAPE"
+    }
+  },
+  "invalidDryRunStatusScenario": {
+    "adapterId": "INVALID_DRY_RUN_STATUS_SENT_ADAPTER",
+    "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+    "capabilityId": "EMAIL_DELIVERY",
+    "phase": "BUSINESS_ACQUISITION_PHASE_J",
+    "contractVersion": "communication-adapter-conformance-v1",
+    "status": "DRY_RUN_INVALID",
+    "passed": false,
+    "checks": [
+      {
+        "checkId": "ADAPTER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "PROVIDER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "SUPPORTS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "VALIDATE_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "ESTIMATE_COST_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CHECK_READINESS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "EXECUTE_METHOD_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CAPABILITY_DECLARATION_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "capabilityId": "EMAIL_DELIVERY",
+          "declaredCapabilities": [
+            "EMAIL_DELIVERY",
+            "WHATSAPP_DELIVERY",
+            "TELEGRAM_DELIVERY",
+            "BUSINESS_DM_DELIVERY"
+          ],
+          "supported": true
+        }
+      },
+      {
+        "checkId": "VALIDATION_RESULT_SHAPE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "validationOk": true
+        }
+      },
+      {
+        "checkId": "COST_ESTIMATE_METADATA_ONLY",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "costEstimate": {
+            "costClass": "LOCAL_DRY_RUN",
+            "estimatedAmount": 0,
+            "currency": null,
+            "billable": false,
+            "providerPricingFetched": false
+          }
+        }
+      },
+      {
+        "checkId": "READINESS_STATE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "readiness": "AVAILABLE"
+        }
+      },
+      {
+        "checkId": "EXECUTION_GATEWAY_REQUIRED",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "gatewayDecision": "READY"
+        }
+      },
+      {
+        "checkId": "NO_CREDENTIAL_RESOLUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "NO_NETWORK_EXECUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_RESULT_VALID",
+        "passed": false,
+        "failureCode": "LIVE_DELIVERY_RESULT_NOT_ALLOWED_IN_DRY_RUN",
+        "warningCode": null,
+        "details": {
+          "status": "SENT"
+        }
+      },
+      {
+        "checkId": "DRY_RUN_ZERO_SIDE_EFFECTS",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "sendActions": 0,
+          "outreachActions": 0
+        }
+      },
+      {
+        "checkId": "LIVE_RESULT_STATUS_FORBIDDEN",
+        "passed": false,
+        "failureCode": "LIVE_DELIVERY_RESULT_NOT_ALLOWED_IN_DRY_RUN",
+        "warningCode": null,
+        "details": {
+          "status": "SENT"
+        }
+      }
+    ],
+    "failures": [
+      "LIVE_DELIVERY_RESULT_NOT_ALLOWED_IN_DRY_RUN"
+    ],
+    "warnings": [],
+    "readinessObserved": "AVAILABLE",
+    "gatewayRequired": true,
+    "dryRunVerified": false,
+    "liveExecutionTested": false,
+    "credentialsResolved": false,
+    "networkTested": false,
+    "providerVerified": false,
+    "liveReady": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "dryRunResultStatus": "SENT",
+    "dryRunResultValidation": {
+      "ok": false,
+      "reason": "LIVE_DELIVERY_RESULT_NOT_ALLOWED_IN_DRY_RUN"
+    }
+  },
+  "unsupportedDryRunStatusScenario": {
+    "adapterId": "INVALID_DRY_RUN_UNKNOWN_STATUS_ADAPTER",
+    "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+    "capabilityId": "EMAIL_DELIVERY",
+    "phase": "BUSINESS_ACQUISITION_PHASE_J",
+    "contractVersion": "communication-adapter-conformance-v1",
+    "status": "DRY_RUN_INVALID",
+    "passed": false,
+    "checks": [
+      {
+        "checkId": "ADAPTER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "PROVIDER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "SUPPORTS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "VALIDATE_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "ESTIMATE_COST_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CHECK_READINESS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "EXECUTE_METHOD_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CAPABILITY_DECLARATION_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "capabilityId": "EMAIL_DELIVERY",
+          "declaredCapabilities": [
+            "EMAIL_DELIVERY",
+            "WHATSAPP_DELIVERY",
+            "TELEGRAM_DELIVERY",
+            "BUSINESS_DM_DELIVERY"
+          ],
+          "supported": true
+        }
+      },
+      {
+        "checkId": "VALIDATION_RESULT_SHAPE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "validationOk": true
+        }
+      },
+      {
+        "checkId": "COST_ESTIMATE_METADATA_ONLY",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "costEstimate": {
+            "costClass": "LOCAL_DRY_RUN",
+            "estimatedAmount": 0,
+            "currency": null,
+            "billable": false,
+            "providerPricingFetched": false
+          }
+        }
+      },
+      {
+        "checkId": "READINESS_STATE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "readiness": "AVAILABLE"
+        }
+      },
+      {
+        "checkId": "EXECUTION_GATEWAY_REQUIRED",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "gatewayDecision": "READY"
+        }
+      },
+      {
+        "checkId": "NO_CREDENTIAL_RESOLUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "NO_NETWORK_EXECUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_RESULT_VALID",
+        "passed": false,
+        "failureCode": "DRY_RUN_STATUS_UNSUPPORTED",
+        "warningCode": null,
+        "details": {
+          "status": "SOMETHING_UNRECOGNIZED"
+        }
+      },
+      {
+        "checkId": "DRY_RUN_ZERO_SIDE_EFFECTS",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "sendActions": 0,
+          "outreachActions": 0
+        }
+      },
+      {
+        "checkId": "LIVE_RESULT_STATUS_FORBIDDEN",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "status": "SOMETHING_UNRECOGNIZED"
+        }
+      }
+    ],
+    "failures": [
+      "DRY_RUN_STATUS_UNSUPPORTED"
+    ],
+    "warnings": [],
+    "readinessObserved": "AVAILABLE",
+    "gatewayRequired": true,
+    "dryRunVerified": false,
+    "liveExecutionTested": false,
+    "credentialsResolved": false,
+    "networkTested": false,
+    "providerVerified": false,
+    "liveReady": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "dryRunResultStatus": "SOMETHING_UNRECOGNIZED",
+    "dryRunResultValidation": {
+      "ok": false,
+      "reason": "DRY_RUN_STATUS_UNSUPPORTED"
+    }
+  },
+  "gatewayRequirementScenario": {
+    "adapterId": "VALID_LOCAL_DRY_RUN_ADAPTER",
+    "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+    "capabilityId": "EMAIL_DELIVERY",
+    "phase": "BUSINESS_ACQUISITION_PHASE_J",
+    "contractVersion": "communication-adapter-conformance-v1",
+    "status": "GATEWAY_REQUIREMENT_FAILED",
+    "passed": false,
+    "checks": [
+      {
+        "checkId": "ADAPTER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "PROVIDER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "SUPPORTS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "VALIDATE_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "ESTIMATE_COST_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CHECK_READINESS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "EXECUTE_METHOD_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CAPABILITY_DECLARATION_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "capabilityId": "EMAIL_DELIVERY",
+          "declaredCapabilities": [
+            "EMAIL_DELIVERY",
+            "WHATSAPP_DELIVERY",
+            "TELEGRAM_DELIVERY",
+            "BUSINESS_DM_DELIVERY"
+          ],
+          "supported": true
+        }
+      },
+      {
+        "checkId": "VALIDATION_RESULT_SHAPE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "validationOk": true
+        }
+      },
+      {
+        "checkId": "COST_ESTIMATE_METADATA_ONLY",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "costEstimate": {
+            "costClass": "LOCAL_DRY_RUN",
+            "estimatedAmount": 0,
+            "currency": null,
+            "billable": false,
+            "providerPricingFetched": false
+          }
+        }
+      },
+      {
+        "checkId": "READINESS_STATE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "readiness": "AVAILABLE"
+        }
+      },
+      {
+        "checkId": "EXECUTION_GATEWAY_REQUIRED",
+        "passed": false,
+        "failureCode": "EXECUTION_GATEWAY_REQUIRED",
+        "warningCode": null,
+        "details": {
+          "gatewayDecision": null
+        }
+      },
+      {
+        "checkId": "NO_CREDENTIAL_RESOLUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "NO_NETWORK_EXECUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_RESULT_VALID",
+        "passed": false,
+        "failureCode": "DRY_RUN_NOT_EXECUTED_OR_INVALID_SHAPE",
+        "warningCode": null,
+        "details": {
+          "status": null
+        }
+      },
+      {
+        "checkId": "DRY_RUN_ZERO_SIDE_EFFECTS",
+        "passed": false,
+        "failureCode": "DRY_RUN_SIDE_EFFECT_COUNTER_VIOLATION",
+        "warningCode": null,
+        "details": {
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "sendActions": 0,
+          "outreachActions": 0
+        }
+      },
+      {
+        "checkId": "LIVE_RESULT_STATUS_FORBIDDEN",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "status": null
+        }
+      }
+    ],
+    "failures": [
+      "EXECUTION_GATEWAY_REQUIRED",
+      "DRY_RUN_NOT_EXECUTED_OR_INVALID_SHAPE",
+      "DRY_RUN_SIDE_EFFECT_COUNTER_VIOLATION"
+    ],
+    "warnings": [],
+    "readinessObserved": "AVAILABLE",
+    "gatewayRequired": true,
+    "dryRunVerified": false,
+    "liveExecutionTested": false,
+    "credentialsResolved": false,
+    "networkTested": false,
+    "providerVerified": false,
+    "liveReady": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "dryRunResultStatus": null,
+    "dryRunResultValidation": {
+      "ok": false,
+      "reason": "DRY_RUN_NOT_EXECUTED_OR_INVALID_SHAPE"
+    }
+  },
+  "sideEffectCounterScenario": {
+    "adapterId": "SIDE_EFFECT_COUNTER_VIOLATION_ADAPTER",
+    "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+    "capabilityId": "EMAIL_DELIVERY",
+    "phase": "BUSINESS_ACQUISITION_PHASE_J",
+    "contractVersion": "communication-adapter-conformance-v1",
+    "status": "DRY_RUN_INVALID",
+    "passed": false,
+    "checks": [
+      {
+        "checkId": "ADAPTER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "PROVIDER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "SUPPORTS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "VALIDATE_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "ESTIMATE_COST_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CHECK_READINESS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "EXECUTE_METHOD_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CAPABILITY_DECLARATION_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "capabilityId": "EMAIL_DELIVERY",
+          "declaredCapabilities": [
+            "EMAIL_DELIVERY",
+            "WHATSAPP_DELIVERY",
+            "TELEGRAM_DELIVERY",
+            "BUSINESS_DM_DELIVERY"
+          ],
+          "supported": true
+        }
+      },
+      {
+        "checkId": "VALIDATION_RESULT_SHAPE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "validationOk": true
+        }
+      },
+      {
+        "checkId": "COST_ESTIMATE_METADATA_ONLY",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "costEstimate": {
+            "costClass": "LOCAL_DRY_RUN",
+            "estimatedAmount": 0,
+            "currency": null,
+            "billable": false,
+            "providerPricingFetched": false
+          }
+        }
+      },
+      {
+        "checkId": "READINESS_STATE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "readiness": "AVAILABLE"
+        }
+      },
+      {
+        "checkId": "EXECUTION_GATEWAY_REQUIRED",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "gatewayDecision": "READY"
+        }
+      },
+      {
+        "checkId": "NO_CREDENTIAL_RESOLUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "NO_NETWORK_EXECUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_RESULT_VALID",
+        "passed": false,
+        "failureCode": "DRY_RUN_SIDE_EFFECT_COUNTER_VIOLATION",
+        "warningCode": null,
+        "details": {
+          "status": "DRY_RUN_VALIDATED"
+        }
+      },
+      {
+        "checkId": "DRY_RUN_ZERO_SIDE_EFFECTS",
+        "passed": false,
+        "failureCode": "DRY_RUN_SIDE_EFFECT_COUNTER_VIOLATION",
+        "warningCode": null,
+        "details": {
+          "providerCalls": 1,
+          "externalCalls": 0,
+          "sendActions": 0,
+          "outreachActions": 0
+        }
+      },
+      {
+        "checkId": "LIVE_RESULT_STATUS_FORBIDDEN",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "status": "DRY_RUN_VALIDATED"
+        }
+      }
+    ],
+    "failures": [
+      "DRY_RUN_SIDE_EFFECT_COUNTER_VIOLATION"
+    ],
+    "warnings": [],
+    "readinessObserved": "AVAILABLE",
+    "gatewayRequired": true,
+    "dryRunVerified": false,
+    "liveExecutionTested": false,
+    "credentialsResolved": false,
+    "networkTested": false,
+    "providerVerified": false,
+    "liveReady": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "dryRunResultStatus": "DRY_RUN_VALIDATED",
+    "dryRunResultValidation": {
+      "ok": false,
+      "reason": "DRY_RUN_SIDE_EFFECT_COUNTER_VIOLATION"
+    }
+  },
+  "liveExecutionClaimScenario": {
+    "adapterId": "LIVE_EXECUTION_CLAIM_ADAPTER",
+    "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+    "capabilityId": "EMAIL_DELIVERY",
+    "phase": "BUSINESS_ACQUISITION_PHASE_J",
+    "contractVersion": "communication-adapter-conformance-v1",
+    "status": "LIVE_EXECUTION_FORBIDDEN",
+    "passed": false,
+    "checks": [
+      {
+        "checkId": "ADAPTER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "PROVIDER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "SUPPORTS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "VALIDATE_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "ESTIMATE_COST_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CHECK_READINESS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "EXECUTE_METHOD_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "CAPABILITY_DECLARATION_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "capabilityId": "EMAIL_DELIVERY",
+          "declaredCapabilities": [
+            "EMAIL_DELIVERY",
+            "WHATSAPP_DELIVERY",
+            "TELEGRAM_DELIVERY",
+            "BUSINESS_DM_DELIVERY"
+          ],
+          "supported": true
+        }
+      },
+      {
+        "checkId": "VALIDATION_RESULT_SHAPE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "validationOk": true
+        }
+      },
+      {
+        "checkId": "COST_ESTIMATE_METADATA_ONLY",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "costEstimate": {
+            "costClass": "LOCAL_DRY_RUN",
+            "estimatedAmount": 0,
+            "currency": null,
+            "billable": false,
+            "providerPricingFetched": false
+          }
+        }
+      },
+      {
+        "checkId": "READINESS_STATE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "readiness": "AVAILABLE"
+        }
+      },
+      {
+        "checkId": "EXECUTION_GATEWAY_REQUIRED",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "gatewayDecision": "READY"
+        }
+      },
+      {
+        "checkId": "NO_CREDENTIAL_RESOLUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "NO_NETWORK_EXECUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {}
+      },
+      {
+        "checkId": "DRY_RUN_RESULT_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "status": "DRY_RUN_VALIDATED"
+        }
+      },
+      {
+        "checkId": "DRY_RUN_ZERO_SIDE_EFFECTS",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "providerCalls": 0,
+          "externalCalls": 0,
+          "sendActions": 0,
+          "outreachActions": 0
+        }
+      },
+      {
+        "checkId": "LIVE_RESULT_STATUS_FORBIDDEN",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null,
+        "details": {
+          "status": "DRY_RUN_VALIDATED"
+        }
+      }
+    ],
+    "failures": [],
+    "warnings": [],
+    "readinessObserved": "AVAILABLE",
+    "gatewayRequired": true,
+    "dryRunVerified": false,
+    "liveExecutionTested": false,
+    "credentialsResolved": false,
+    "networkTested": false,
+    "providerVerified": false,
+    "liveReady": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "dryRunResultStatus": "DRY_RUN_VALIDATED",
+    "dryRunResultValidation": {
+      "ok": true,
+      "reason": null
+    }
+  },
+  "audit": {
+    "artifactType": "CommunicationAdapterConformanceAudit",
+    "phase": "BUSINESS_ACQUISITION_PHASE_J",
+    "contractVersion": "communication-adapter-conformance-v1",
+    "adapterId": "VALID_LOCAL_DRY_RUN_ADAPTER",
+    "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+    "capabilityId": "EMAIL_DELIVERY",
+    "status": "CONTRACT_COMPATIBLE",
+    "passed": true,
+    "checkResults": [
+      {
+        "checkId": "ADAPTER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "PROVIDER_ID_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "SUPPORTS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "VALIDATE_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "ESTIMATE_COST_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "CHECK_READINESS_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "DRY_RUN_METHOD_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "EXECUTE_METHOD_PRESENT",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "CAPABILITY_DECLARATION_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "VALIDATION_RESULT_SHAPE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "COST_ESTIMATE_METADATA_ONLY",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "READINESS_STATE_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "EXECUTION_GATEWAY_REQUIRED",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "NO_CREDENTIAL_RESOLUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "NO_NETWORK_EXECUTION",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "DRY_RUN_RESULT_VALID",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "DRY_RUN_ZERO_SIDE_EFFECTS",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      },
+      {
+        "checkId": "LIVE_RESULT_STATUS_FORBIDDEN",
+        "passed": true,
+        "failureCode": null,
+        "warningCode": null
+      }
+    ],
+    "failureCodes": [],
+    "warningCodes": [],
+    "gatewayRequired": true,
+    "dryRunOnly": true,
+    "credentialsResolved": false,
+    "networkTested": false,
+    "liveExecutionAllowed": false,
+    "providerVerified": false,
+    "liveReady": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "outreachActions": 0,
+    "createdAt": "2026-09-02T00:00:00.000Z"
+  },
+  "boundaryStatement": "Provider Readiness != Adapter Conformance != Live Readiness. CONTRACT_COMPATIBLE != LIVE_READY.",
+  "explicitNonLiveFlags": {
+    "liveExecutionTested": false,
+    "credentialsResolved": false,
+    "networkTested": false,
+    "providerVerified": false,
+    "liveReady": false,
+    "liveExecutionAllowed": false
+  },
+  "counters": {
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "outreachActions": 0,
+    "publishActions": 0,
+    "paymentActions": 0,
+    "productionHandoffs": 0
+  },
+  "scenarios": [
+    "A canonical local dry-run adapter passes contract conformance",
+    "B missing required adapter method fails",
+    "C unsupported capability fails",
+    "D invalid readiness value fails",
+    "E dryRun returning SENT fails",
+    "F dryRun returning DELIVERED fails",
+    "G arbitrary unsupported dryRun status fails closed",
+    "H non-zero providerCalls fails",
+    "I non-zero externalCalls/sendActions fails",
+    "J missing Gateway READY decision remains blocked",
+    "K Gateway bypass attempt fails",
+    "L live execution request is not tested/executed and remains forbidden",
+    "M passing conformance does not set live readiness flags",
+    "N Phase I deterministic provider selection remains unchanged",
+    "O Phase H communication delivery dry-run behavior remains unchanged",
+    "P no provider/network/external calls"
+  ]
+}

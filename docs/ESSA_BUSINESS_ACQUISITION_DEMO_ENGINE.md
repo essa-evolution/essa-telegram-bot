@@ -417,6 +417,52 @@ Live execution remains blocked in Phase I. Selection decisions and audits always
 
 Requests for live execution are rejected with `LIVE_EXECUTION_BLOCKED_PHASE_I`. No message may be sent, no credential may be resolved and no real communication vendor is integrated.
 
+## Phase J: Communication Provider Adapter Contract Harness
+
+Phase J adds a provider-neutral adapter conformance layer after provider selection and before any future provider adapter is allowed to participate in the communication execution architecture:
+
+`Communication Capability -> Provider Registry -> Provider Selection -> Adapter Contract Validation -> Adapter Conformance Harness -> ExecutionGateway -> DRY RUN -> Conformance Result -> Audit`
+
+The conformance harness answers only whether an adapter is contract-compatible with ESSA's communication execution boundary. It does not answer whether a real provider can send messages, whether credentials are valid, whether a provider account is configured or whether a network path is reachable.
+
+`CONTRACT_COMPATIBLE` means the adapter shape matches the existing Phase H communication adapter interface:
+
+`supports(capability) -> validate(request) -> estimateCost(request) -> checkReadiness() -> dryRun(request) -> execute(request)`
+
+The harness validates adapter identity, provider identity, capability declaration, method shape, validation result shape, metadata-only cost estimates, known readiness state, dry-run result shape, forbidden live dry-run statuses and zero side-effect counters. Phase J dry-run status validation is fail-closed: only canonical non-live dry-run statuses are accepted, and unknown or unsupported statuses are rejected. `execute()` is checked for presence only; Phase J does not call a real execute implementation.
+
+### ExecutionGateway Preservation
+
+ExecutionGateway remains the execution authority. The conformance harness evaluates adapters; it does not deliver communications and does not become an alternate execution route. A dry-run conformance check requires a Gateway `READY` decision with `executed:false`; missing Gateway readiness, direct-execution claims and bypass attempts fail safely.
+
+### Readiness, Conformance and Live Readiness
+
+Provider readiness, adapter conformance and live readiness are separate dimensions:
+
+- Provider readiness: registry metadata such as `AVAILABLE`, `DEGRADED`, `NOT_CONFIGURED` or `DISABLED`.
+- Adapter conformance: contract compatibility with the local ESSA adapter interface.
+- Live readiness: not implemented in Phase J.
+
+`Provider Readiness != Adapter Conformance != Live Readiness`
+
+`CONTRACT_COMPATIBLE != LIVE_READY`
+
+For example, a provider can be `AVAILABLE` in the Phase I readiness registry and an adapter can be `CONTRACT_COMPATIBLE` in Phase J, while live delivery still remains blocked. Future live eligibility would require independent gates such as a real provider configuration, secure credential resolution, legal/policy approval, provider connectivity checks, account or sender verification and explicit live execution approval. Phase J implements none of those gates.
+
+Phase J audits always record:
+
+- `gatewayRequired: true`
+- `dryRunOnly: true`
+- `liveExecutionAllowed: false`
+- `credentialsResolved: false`
+- `networkTested: false`
+- `providerVerified: false`
+- `liveReady: false`
+- `providerCalls: 0`
+- `externalCalls: 0`
+- `sendActions: 0`
+- `outreachActions: 0`
+
 Canonical flow:
 
 `DISCOVER -> ANALYZE -> SCORE -> BUILD DEMO -> PERSONALIZE OFFER -> CONTACT -> PREVIEW -> PURCHASE -> ACTIVATE -> GROW`

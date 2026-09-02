@@ -104,6 +104,15 @@ export {
   selectCommunicationProviderForCapability
 } from "./communicationProviderSelection.js";
 export {
+  communicationAdapterConformanceCheckIds,
+  communicationAdapterConformanceContractVersion,
+  communicationAdapterConformancePhase,
+  communicationAdapterConformanceStatuses,
+  createCommunicationAdapterConformanceAudit,
+  runCommunicationAdapterConformance,
+  validateCommunicationAdapterContract
+} from "./communicationAdapterConformance.js";
+export {
   clearDocumentationCache,
   context7McpEndpoint,
   context7ProviderId,
