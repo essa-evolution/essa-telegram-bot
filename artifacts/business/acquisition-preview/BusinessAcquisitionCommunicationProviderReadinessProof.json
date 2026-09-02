@@ -1,0 +1,374 @@
+{
+  "artifactType": "BusinessAcquisitionCommunicationProviderReadinessProof",
+  "phase": "BUSINESS_ACQUISITION_PHASE_I",
+  "status": "BUSINESS_ACQUISITION_PHASE_I_PASS",
+  "decision": {
+    "modelType": "CommunicationProviderSelectionDecision",
+    "capabilityId": "EMAIL_DELIVERY",
+    "status": "SELECTED",
+    "selectedProviderId": "HYPOTHETICAL_EMAIL_PRIMARY",
+    "selectedAdapterId": "HYPOTHETICAL_EMAIL_PRIMARY_ADAPTER",
+    "selectedReadiness": "AVAILABLE",
+    "rankedCandidates": [
+      {
+        "providerId": "HYPOTHETICAL_EMAIL_PRIMARY",
+        "adapterId": "HYPOTHETICAL_EMAIL_PRIMARY_ADAPTER",
+        "readiness": "AVAILABLE",
+        "priority": 10,
+        "rank": 1,
+        "dryRunOnly": true,
+        "supportsLiveExecution": false,
+        "executableNow": false,
+        "hypothetical": true,
+        "reasonCodes": [
+          "SELECTED_BY_READINESS_PRIORITY",
+          "CONFIGURATION_INCOMPLETE",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      },
+      {
+        "providerId": "HYPOTHETICAL_EMAIL_FALLBACK",
+        "adapterId": "HYPOTHETICAL_EMAIL_FALLBACK_ADAPTER",
+        "readiness": "AVAILABLE",
+        "priority": 20,
+        "rank": 2,
+        "dryRunOnly": true,
+        "supportsLiveExecution": false,
+        "executableNow": false,
+        "hypothetical": true,
+        "reasonCodes": [
+          "LOWER_PRIORITY",
+          "CONFIGURATION_INCOMPLETE",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      },
+      {
+        "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+        "adapterId": "LOCAL_COMMUNICATION_DRY_RUN_ADAPTER",
+        "readiness": "AVAILABLE",
+        "priority": 900,
+        "rank": 3,
+        "dryRunOnly": true,
+        "supportsLiveExecution": false,
+        "executableNow": false,
+        "hypothetical": false,
+        "reasonCodes": [
+          "LOWER_PRIORITY",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      }
+    ],
+    "fallbackProviderIds": [
+      "HYPOTHETICAL_EMAIL_FALLBACK",
+      "LOCAL_COMMUNICATION_DRY_RUN"
+    ],
+    "rejectedCandidates": [
+      {
+        "providerId": "HYPOTHETICAL_WHATSAPP_PRIMARY",
+        "adapterId": "HYPOTHETICAL_WHATSAPP_PRIMARY_ADAPTER",
+        "readiness": "NOT_CONFIGURED",
+        "reasonCodes": [
+          "CAPABILITY_MISMATCH",
+          "PROVIDER_NOT_CONFIGURED",
+          "CONFIGURATION_INCOMPLETE",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      },
+      {
+        "providerId": "HYPOTHETICAL_TELEGRAM_PRIMARY",
+        "adapterId": "HYPOTHETICAL_TELEGRAM_PRIMARY_ADAPTER",
+        "readiness": "DEGRADED",
+        "reasonCodes": [
+          "CAPABILITY_MISMATCH",
+          "CONFIGURATION_INCOMPLETE",
+          "PROVIDER_DEGRADED",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      },
+      {
+        "providerId": "HYPOTHETICAL_BUSINESS_DM_PRIMARY",
+        "adapterId": "HYPOTHETICAL_BUSINESS_DM_PRIMARY_ADAPTER",
+        "readiness": "DISABLED",
+        "reasonCodes": [
+          "CAPABILITY_MISMATCH",
+          "PROVIDER_DISABLED",
+          "CONFIGURATION_INCOMPLETE",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      }
+    ],
+    "selectionReasonCodes": [
+      "SELECTED_BY_READINESS_PRIORITY",
+      "CAPABILITY_MISMATCH",
+      "PROVIDER_NOT_CONFIGURED",
+      "CONFIGURATION_INCOMPLETE",
+      "DRY_RUN_ONLY",
+      "LIVE_EXECUTION_UNSUPPORTED",
+      "PROVIDER_DEGRADED",
+      "PROVIDER_DISABLED",
+      "LOWER_PRIORITY"
+    ],
+    "liveExecutionAllowed": false,
+    "providerExecutionAllowed": false,
+    "externalExecution": false,
+    "credentialsResolved": false,
+    "liveProviderConfigured": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "outreachActions": 0
+  },
+  "audit": {
+    "artifactType": "CommunicationProviderSelectionAudit",
+    "phase": "BUSINESS_ACQUISITION_PHASE_I",
+    "policyVersion": "communication-provider-selection-policy-v1",
+    "capabilityId": "EMAIL_DELIVERY",
+    "registryVersion": "communication-provider-readiness-registry-v1",
+    "evaluatedProviderIds": [
+      "LOCAL_COMMUNICATION_DRY_RUN",
+      "HYPOTHETICAL_EMAIL_PRIMARY",
+      "HYPOTHETICAL_EMAIL_FALLBACK",
+      "HYPOTHETICAL_WHATSAPP_PRIMARY",
+      "HYPOTHETICAL_TELEGRAM_PRIMARY",
+      "HYPOTHETICAL_BUSINESS_DM_PRIMARY"
+    ],
+    "selectedProviderId": "HYPOTHETICAL_EMAIL_PRIMARY",
+    "fallbackProviderIds": [
+      "HYPOTHETICAL_EMAIL_FALLBACK",
+      "LOCAL_COMMUNICATION_DRY_RUN"
+    ],
+    "rejectedProviderIds": [
+      "HYPOTHETICAL_WHATSAPP_PRIMARY",
+      "HYPOTHETICAL_TELEGRAM_PRIMARY",
+      "HYPOTHETICAL_BUSINESS_DM_PRIMARY"
+    ],
+    "reasonCodes": [
+      "SELECTED_BY_READINESS_PRIORITY",
+      "CAPABILITY_MISMATCH",
+      "PROVIDER_NOT_CONFIGURED",
+      "CONFIGURATION_INCOMPLETE",
+      "DRY_RUN_ONLY",
+      "LIVE_EXECUTION_UNSUPPORTED",
+      "PROVIDER_DEGRADED",
+      "PROVIDER_DISABLED",
+      "LOWER_PRIORITY"
+    ],
+    "readinessSnapshot": [
+      {
+        "providerId": "HYPOTHETICAL_EMAIL_PRIMARY",
+        "adapterId": "HYPOTHETICAL_EMAIL_PRIMARY_ADAPTER",
+        "readiness": "AVAILABLE",
+        "rank": 1,
+        "reasonCodes": [
+          "SELECTED_BY_READINESS_PRIORITY",
+          "CONFIGURATION_INCOMPLETE",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      },
+      {
+        "providerId": "HYPOTHETICAL_EMAIL_FALLBACK",
+        "adapterId": "HYPOTHETICAL_EMAIL_FALLBACK_ADAPTER",
+        "readiness": "AVAILABLE",
+        "rank": 2,
+        "reasonCodes": [
+          "LOWER_PRIORITY",
+          "CONFIGURATION_INCOMPLETE",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      },
+      {
+        "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+        "adapterId": "LOCAL_COMMUNICATION_DRY_RUN_ADAPTER",
+        "readiness": "AVAILABLE",
+        "rank": 3,
+        "reasonCodes": [
+          "LOWER_PRIORITY",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      },
+      {
+        "providerId": "HYPOTHETICAL_WHATSAPP_PRIMARY",
+        "adapterId": "HYPOTHETICAL_WHATSAPP_PRIMARY_ADAPTER",
+        "readiness": "NOT_CONFIGURED",
+        "rejected": true,
+        "reasonCodes": [
+          "CAPABILITY_MISMATCH",
+          "PROVIDER_NOT_CONFIGURED",
+          "CONFIGURATION_INCOMPLETE",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      },
+      {
+        "providerId": "HYPOTHETICAL_TELEGRAM_PRIMARY",
+        "adapterId": "HYPOTHETICAL_TELEGRAM_PRIMARY_ADAPTER",
+        "readiness": "DEGRADED",
+        "rejected": true,
+        "reasonCodes": [
+          "CAPABILITY_MISMATCH",
+          "CONFIGURATION_INCOMPLETE",
+          "PROVIDER_DEGRADED",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      },
+      {
+        "providerId": "HYPOTHETICAL_BUSINESS_DM_PRIMARY",
+        "adapterId": "HYPOTHETICAL_BUSINESS_DM_PRIMARY_ADAPTER",
+        "readiness": "DISABLED",
+        "rejected": true,
+        "reasonCodes": [
+          "CAPABILITY_MISMATCH",
+          "PROVIDER_DISABLED",
+          "CONFIGURATION_INCOMPLETE",
+          "DRY_RUN_ONLY",
+          "LIVE_EXECUTION_UNSUPPORTED"
+        ]
+      }
+    ],
+    "gatewayRequired": true,
+    "liveExecutionAllowed": false,
+    "credentialsResolved": false,
+    "externalExecution": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "createdAt": "2026-09-02T00:00:00.000Z"
+  },
+  "registrySummary": [
+    {
+      "providerId": "LOCAL_COMMUNICATION_DRY_RUN",
+      "adapterId": "LOCAL_COMMUNICATION_DRY_RUN_ADAPTER",
+      "capabilityIds": [
+        "EMAIL_DELIVERY",
+        "WHATSAPP_DELIVERY",
+        "TELEGRAM_DELIVERY",
+        "BUSINESS_DM_DELIVERY"
+      ],
+      "readiness": "AVAILABLE",
+      "enabled": true,
+      "dryRunOnly": true,
+      "supportsLiveExecution": false,
+      "executableNow": false,
+      "hypothetical": false,
+      "credentialTypes": []
+    },
+    {
+      "providerId": "HYPOTHETICAL_EMAIL_PRIMARY",
+      "adapterId": "HYPOTHETICAL_EMAIL_PRIMARY_ADAPTER",
+      "capabilityIds": [
+        "EMAIL_DELIVERY"
+      ],
+      "readiness": "AVAILABLE",
+      "enabled": true,
+      "dryRunOnly": true,
+      "supportsLiveExecution": false,
+      "executableNow": false,
+      "hypothetical": true,
+      "credentialTypes": [
+        "API_TOKEN",
+        "SENDER_ID"
+      ]
+    },
+    {
+      "providerId": "HYPOTHETICAL_EMAIL_FALLBACK",
+      "adapterId": "HYPOTHETICAL_EMAIL_FALLBACK_ADAPTER",
+      "capabilityIds": [
+        "EMAIL_DELIVERY"
+      ],
+      "readiness": "AVAILABLE",
+      "enabled": true,
+      "dryRunOnly": true,
+      "supportsLiveExecution": false,
+      "executableNow": false,
+      "hypothetical": true,
+      "credentialTypes": [
+        "API_TOKEN",
+        "ACCOUNT_ID"
+      ]
+    },
+    {
+      "providerId": "HYPOTHETICAL_WHATSAPP_PRIMARY",
+      "adapterId": "HYPOTHETICAL_WHATSAPP_PRIMARY_ADAPTER",
+      "capabilityIds": [
+        "WHATSAPP_DELIVERY"
+      ],
+      "readiness": "NOT_CONFIGURED",
+      "enabled": true,
+      "dryRunOnly": true,
+      "supportsLiveExecution": false,
+      "executableNow": false,
+      "hypothetical": true,
+      "credentialTypes": [
+        "API_TOKEN",
+        "BUSINESS_ACCOUNT_ID",
+        "SENDER_ID"
+      ]
+    },
+    {
+      "providerId": "HYPOTHETICAL_TELEGRAM_PRIMARY",
+      "adapterId": "HYPOTHETICAL_TELEGRAM_PRIMARY_ADAPTER",
+      "capabilityIds": [
+        "TELEGRAM_DELIVERY"
+      ],
+      "readiness": "DEGRADED",
+      "enabled": true,
+      "dryRunOnly": true,
+      "supportsLiveExecution": false,
+      "executableNow": false,
+      "hypothetical": true,
+      "credentialTypes": [
+        "BOT_TOKEN"
+      ]
+    },
+    {
+      "providerId": "HYPOTHETICAL_BUSINESS_DM_PRIMARY",
+      "adapterId": "HYPOTHETICAL_BUSINESS_DM_PRIMARY_ADAPTER",
+      "capabilityIds": [
+        "BUSINESS_DM_DELIVERY"
+      ],
+      "readiness": "DISABLED",
+      "enabled": false,
+      "dryRunOnly": true,
+      "supportsLiveExecution": false,
+      "executableNow": false,
+      "hypothetical": true,
+      "credentialTypes": [
+        "API_TOKEN",
+        "ACCOUNT_ID"
+      ]
+    }
+  ],
+  "scenarios": [
+    "A AVAILABLE primary plus AVAILABLE fallback selects primary by priority and plans fallback",
+    "B primary DISABLED is rejected and fallback selected",
+    "C primary UNAVAILABLE is rejected and fallback selected",
+    "D AVAILABLE wins over DEGRADED even when degraded has stronger priority",
+    "E NOT_CONFIGURED provider is not selected when a usable candidate exists",
+    "F capability mismatch is rejected",
+    "G equal readiness and equal priority use stable providerId tie-break",
+    "H no eligible providers returns safe no-provider result and no execution",
+    "I liveExecutionRequested is blocked with zero provider calls",
+    "J missing Gateway READY decision during delivery dry-run preserves gateway-required behavior",
+    "K credential requirement metadata exposes types only and never resolves values",
+    "L hypothetical provider fixtures are non-executable, dry-run-only and non-live"
+  ],
+  "counters": {
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "outreachActions": 0,
+    "publishActions": 0,
+    "paymentActions": 0,
+    "productionHandoffs": 0
+  }
+}

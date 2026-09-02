@@ -87,6 +87,15 @@ export const executionProviderRegistry = [
     status: "local_gateway_checked_proof",
     health: "local_only",
     executable: false
+  },
+  {
+    ...executionProviderContract,
+    providerId: "essa_business_acquisition_dry_run",
+    toolIds: ["business_acquisition.delivery.dry_run"],
+    capabilities: ["EMAIL_DELIVERY", "WHATSAPP_DELIVERY", "TELEGRAM_DELIVERY", "BUSINESS_DM_DELIVERY"],
+    status: "dry_run_only",
+    health: "local_only",
+    executable: false
   }
 ];
 

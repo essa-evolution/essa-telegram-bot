@@ -143,6 +143,24 @@ export const agentToolRegistry = [
     adapter: { kind: "ResearchProvider", status: "non_executable" }
   }),
   createAgentToolContract({
+    toolId: "business_acquisition.delivery.dry_run",
+    providerId: "essa_business_acquisition_dry_run",
+    category: "communication",
+    capabilities: ["EMAIL_DELIVERY", "WHATSAPP_DELIVERY", "TELEGRAM_DELIVERY", "BUSINESS_DM_DELIVERY"],
+    permissions: [toolPermissionClasses.readOnly],
+    readScope: ["business_acquisition_delivery_dry_run"],
+    writeScope: [],
+    externalSideEffects: false,
+    costClass: toolCostClasses.none,
+    requiresSecrets: false,
+    environment: toolEnvironments.local,
+    productionAccess: "deny_by_default",
+    approvalRequired: false,
+    executable: false,
+    rollback: { supported: false, strategy: "dry_run_no_mutation" },
+    adapter: { kind: "BusinessAcquisitionDeliveryDryRun", status: "dry_run_gateway_only" }
+  }),
+  createAgentToolContract({
     toolId: "property.local.execution",
     providerId: "essa_property_local_execution_proof",
     category: "property",

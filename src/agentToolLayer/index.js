@@ -87,6 +87,23 @@ export {
   validateCommunicationDeliveryResult
 } from "./communicationDelivery.js";
 export {
+  communicationCredentialRequirementTypes,
+  communicationProviderCostClasses,
+  communicationProviderRegistry,
+  communicationProviderRegistryVersion,
+  createCommunicationProviderDefinition,
+  evaluateCommunicationProviderReadiness,
+  getCommunicationProviderDefinition,
+  listCommunicationProviderDefinitions
+} from "./communicationProviderRegistry.js";
+export {
+  communicationProviderSelectionPolicyVersion,
+  communicationProviderSelectionReasonCodes,
+  communicationProviderSelectionStatuses,
+  createCommunicationProviderSelectionAudit,
+  selectCommunicationProviderForCapability
+} from "./communicationProviderSelection.js";
+export {
   clearDocumentationCache,
   context7McpEndpoint,
   context7ProviderId,

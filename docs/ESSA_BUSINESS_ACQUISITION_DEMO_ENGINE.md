@@ -359,6 +359,64 @@ Future live delivery may follow:
 
 Fallback is allowed only between compatible providers for the same capability and exact approved action scope. Changing vendors must not require Business Acquisition domain changes.
 
+## Phase I: Provider Readiness Registry & Provider Selection Policy
+
+Phase I adds a provider-neutral communication readiness layer after the Phase H communication capability boundary:
+
+`Communication Capability -> Provider Requirements -> Provider Readiness Registry -> Provider Selection Policy -> Ranked Provider Candidates -> Selected Adapter / Fallback Plan -> ExecutionGateway -> DRY RUN ONLY`
+
+The Business Acquisition domain still requests capabilities such as `EMAIL_DELIVERY`, `WHATSAPP_DELIVERY`, `TELEGRAM_DELIVERY` and `BUSINESS_DM_DELIVERY`. It does not name vendors, choose providers or carry credentials. Provider readiness and selection belong in the Agent Tool Layer.
+
+### Provider Readiness Registry
+
+`communicationProviderRegistry` defines local architecture metadata for providers that could theoretically satisfy a communication capability. Each definition records provider id, adapter id, display label, capability ids, readiness, enabled state, dry-run/live flags, non-secret credential requirement types, configuration requirements, region/channel constraints, cost class, priority, experimental state, source of truth and notes.
+
+Credential requirements are type metadata only, such as `API_TOKEN`, `ACCOUNT_ID`, `SENDER_ID`, `BOT_TOKEN` and `BUSINESS_ACCOUNT_ID`. Phase I does not read environment variables, resolve credentials, load provider SDKs, call vendor APIs or run network health checks.
+
+The preserved `LOCAL_COMMUNICATION_DRY_RUN` provider remains the only local dry-run boundary. Additional fixtures such as `HYPOTHETICAL_EMAIL_PRIMARY`, `HYPOTHETICAL_EMAIL_FALLBACK`, `HYPOTHETICAL_WHATSAPP_PRIMARY`, `HYPOTHETICAL_TELEGRAM_PRIMARY` and `HYPOTHETICAL_BUSINESS_DM_PRIMARY` are explicitly non-live:
+
+- `hypothetical: true`
+- `executableNow: false`
+- `dryRunOnly: true`
+- `supportsLiveExecution: false`
+
+Hypothetical provider support is recorded in `providerCapabilityMap` as `DECLARED_NOT_VERIFIED`, not `VERIFIED`, because no real provider contract has been integrated.
+
+### Selection and Fallback Policy
+
+`communicationProviderSelection` evaluates providers from registry state only, using the existing readiness states: `AVAILABLE`, `DEGRADED`, `UNAVAILABLE`, `NOT_CONFIGURED` and `DISABLED`.
+
+Selection is deterministic:
+
+- filter by required communication capability
+- reject disabled, unavailable and not-configured providers
+- prefer `AVAILABLE` over `DEGRADED`
+- apply priority
+- use stable `providerId` tie-breaks
+- return ranked candidates, fallback provider ids and rejected candidates with reason codes
+
+Fallback is planned only. Phase I can say which provider would be primary, which providers are fallback candidates and why other candidates were rejected, but it never executes fallback and never calls a provider.
+
+### ExecutionGateway Preservation
+
+Provider selection is a planning/readiness concern. It is not an execution path and does not create `selector -> provider.execute()`. Any dry-run delivery that reaches adapter invocation must still have a `READY` decision from `ExecutionGateway`; otherwise the existing `EXECUTION_GATEWAY_READY_DECISION_REQUIRED` behavior remains in force.
+
+### Live Execution Safety
+
+Live execution remains blocked in Phase I. Selection decisions and audits always record:
+
+- `liveExecutionAllowed: false`
+- `providerExecutionAllowed: false`
+- `externalExecution: false`
+- `credentialsResolved: false`
+- `liveProviderConfigured: false`
+- `providerCalls: 0`
+- `externalCalls: 0`
+- `sendActions: 0`
+- `outreachActions: 0`
+
+Requests for live execution are rejected with `LIVE_EXECUTION_BLOCKED_PHASE_I`. No message may be sent, no credential may be resolved and no real communication vendor is integrated.
+
 Canonical flow:
 
 `DISCOVER -> ANALYZE -> SCORE -> BUILD DEMO -> PERSONALIZE OFFER -> CONTACT -> PREVIEW -> PURCHASE -> ACTIVATE -> GROW`

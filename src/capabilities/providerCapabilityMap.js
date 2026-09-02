@@ -57,6 +57,57 @@ export const providerCapabilityMap = {
     dryRunOnly: true,
     note: "Provider-neutral local dry-run boundary only. No live communication provider is configured."
   },
+  HYPOTHETICAL_EMAIL_PRIMARY: {
+    providerId: "HYPOTHETICAL_EMAIL_PRIMARY",
+    capabilities: {
+      EMAIL_DELIVERY: providerCapabilitySupport.declaredNotVerified
+    },
+    executableNow: false,
+    dryRunOnly: true,
+    hypothetical: true,
+    note: "Phase I non-live fixture. Declared only for provider-selection policy tests; no vendor integration or credential resolution."
+  },
+  HYPOTHETICAL_EMAIL_FALLBACK: {
+    providerId: "HYPOTHETICAL_EMAIL_FALLBACK",
+    capabilities: {
+      EMAIL_DELIVERY: providerCapabilitySupport.declaredNotVerified
+    },
+    executableNow: false,
+    dryRunOnly: true,
+    hypothetical: true,
+    note: "Phase I non-live fallback fixture. Declared, not verified against a real provider."
+  },
+  HYPOTHETICAL_WHATSAPP_PRIMARY: {
+    providerId: "HYPOTHETICAL_WHATSAPP_PRIMARY",
+    capabilities: {
+      WHATSAPP_DELIVERY: providerCapabilitySupport.declaredNotVerified
+    },
+    executableNow: false,
+    dryRunOnly: true,
+    hypothetical: true,
+    note: "Phase I non-live fixture. WhatsApp support is declared metadata only."
+  },
+  HYPOTHETICAL_TELEGRAM_PRIMARY: {
+    providerId: "HYPOTHETICAL_TELEGRAM_PRIMARY",
+    capabilities: {
+      TELEGRAM_DELIVERY: providerCapabilitySupport.declaredNotVerified
+    },
+    executableNow: false,
+    dryRunOnly: true,
+    hypothetical: true,
+    experimental: true,
+    note: "Phase I non-live fixture. Telegram support is declared metadata only."
+  },
+  HYPOTHETICAL_BUSINESS_DM_PRIMARY: {
+    providerId: "HYPOTHETICAL_BUSINESS_DM_PRIMARY",
+    capabilities: {
+      BUSINESS_DM_DELIVERY: providerCapabilitySupport.declaredNotVerified
+    },
+    executableNow: false,
+    dryRunOnly: true,
+    hypothetical: true,
+    note: "Phase I disabled non-live fixture. Business DM support is declared metadata only."
+  },
   OPENAI: {
     providerId: "OPENAI",
     capabilities: {},
