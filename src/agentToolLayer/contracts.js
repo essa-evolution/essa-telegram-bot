@@ -9,7 +9,8 @@ export const toolCategories = [
   "code",
   "media",
   "deployment",
-  "property"
+  "property",
+  "communication"
 ];
 
 export const toolPermissionClasses = {

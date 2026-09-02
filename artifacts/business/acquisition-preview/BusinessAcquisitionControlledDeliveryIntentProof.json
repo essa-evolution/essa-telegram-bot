@@ -1,0 +1,94 @@
+{
+  "artifactType": "BusinessAcquisitionControlledDeliveryIntentProof",
+  "phase": "BUSINESS_ACQUISITION_PHASE_F",
+  "status": "BUSINESS_ACQUISITION_PHASE_F_PASS",
+  "deliveryAudit": {
+    "artifactType": "BusinessAcquisitionDeliveryApprovalAudit",
+    "phase": "BUSINESS_ACQUISITION_PHASE_F",
+    "deliveryIntentId": "delivery_intent_1788315568767_hcz1bq",
+    "sharePackageId": "client_preview_share_package_1788315568766_zsmtbs",
+    "previewId": "preview_530d98957966fed0",
+    "previewVersion": "1.0.0",
+    "recipientEligibilityRef": "recipient_eligibility_1788315568761_1qpxty",
+    "redactedRecipient": "he***@servicestudio.example",
+    "channel": "EMAIL",
+    "messageFingerprint": "81fcc3409321407108023ed54b0b7f98ae938d5ac746e267e147156c2e72ff64",
+    "evidenceRefs": [
+      "fixture_service_directory_valid",
+      "client_preview_share_package_1788315568766_zsmtbs"
+    ],
+    "preflightResult": {
+      "status": "PASS",
+      "reasonCodes": [],
+      "warnings": []
+    },
+    "actionFingerprint": "2fcba8353d92285e1f7161e94001212434d580a0107fcbbfe7a45870dbc5c5ab",
+    "approvalRef": "send_approval_1788315568768_usfmi2",
+    "approvalState": "ACTIVE",
+    "expiration": "2026-09-10T00:00:00.000Z",
+    "revocation": null,
+    "finalValidationResult": {
+      "status": "APPROVED_FOR_FUTURE_DELIVERY",
+      "reasonCodes": [],
+      "executionIntentCreationAllowed": true
+    },
+    "stateTransitions": [
+      {
+        "from": "DRAFT",
+        "to": "PREFLIGHT_READY"
+      },
+      {
+        "from": "PREFLIGHT_READY",
+        "to": "AWAITING_HUMAN_APPROVAL"
+      },
+      {
+        "from": "AWAITING_HUMAN_APPROVAL",
+        "to": "HUMAN_APPROVED"
+      },
+      {
+        "from": "HUMAN_APPROVED",
+        "to": "FINAL_VALIDATION_PASSED"
+      },
+      {
+        "from": "FINAL_VALIDATION_PASSED",
+        "to": "APPROVED_FOR_FUTURE_DELIVERY"
+      }
+    ],
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "outreachActions": 0,
+    "sendActions": 0,
+    "publishActions": 0,
+    "paymentActions": 0,
+    "productionHandoffs": 0,
+    "createdAt": "2026-09-02T00:00:00.000Z"
+  },
+  "scenarios": [
+    "A exact safe EMAIL action reaches APPROVED_FOR_FUTURE_DELIVERY",
+    "B missing human approval cannot reach approved state",
+    "C message changes after approval require reapproval",
+    "D recipient changes after approval require reapproval",
+    "E channel changes after approval require reapproval",
+    "F preview/version changes invalidate old approval",
+    "G artifact integrity changes are blocked",
+    "H recipient opt-out after approval is blocked",
+    "I suppressed prospect after approval is blocked",
+    "J expired share package is blocked",
+    "K revoked share package is blocked",
+    "L unsafe or fabricated message claim blocks preflight",
+    "M unsupported channel blocks preflight",
+    "N expired human approval is expired and requires new approval",
+    "O revoked human approval is revoked",
+    "P duplicate identical intent and approval are deterministic",
+    "Q SENT transition is invalid and no delivery execution state exists"
+  ],
+  "counters": {
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "outreachActions": 0,
+    "publishActions": 0,
+    "paymentActions": 0,
+    "productionHandoffs": 0
+  }
+}

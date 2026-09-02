@@ -1,0 +1,185 @@
+{
+  "artifactType": "BusinessAcquisitionClientPreviewSharingProof",
+  "phase": "BUSINESS_ACQUISITION_PHASE_E",
+  "status": "BUSINESS_ACQUISITION_PHASE_E_PASS",
+  "shareAudit": {
+    "artifactType": "ClientPreviewShareAudit",
+    "phase": "BUSINESS_ACQUISITION_PHASE_E",
+    "sharePreparationId": "phase_e_share_base",
+    "sharePackageId": "client_preview_share_package_1788315562459_0rxns5",
+    "prospectId": "prospect_phase_e_service_base",
+    "previewId": "preview_bd4153af297bc4a3",
+    "previewVersion": "1.0.0",
+    "reviewApprovalRef": "preview_review_1788315562454_e5g1cf",
+    "recipientEligibilityResult": {
+      "recipientEligibilityId": "recipient_eligibility_1788315562454_m2jwku",
+      "prospectId": "prospect_phase_e_service_base",
+      "recipientChannel": "PUBLIC_BUSINESS_EMAIL",
+      "recipientBasis": "VERIFIED_PUBLIC_BUSINESS_CONTACT",
+      "status": "ELIGIBLE",
+      "reasonCodes": [],
+      "provenanceRefs": [
+        "fixture_service_directory_base"
+      ],
+      "suppressionCheck": {
+        "prospectSuppressed": false,
+        "contactOptedOut": false,
+        "recipientBlocked": false
+      },
+      "redactedRecipient": "he***@servicestudio.example"
+    },
+    "recipientProvenance": [
+      "fixture_service_directory_base"
+    ],
+    "suppressionCheck": {
+      "prospectSuppressed": false,
+      "contactOptedOut": false,
+      "recipientBlocked": false
+    },
+    "accessPolicy": {
+      "modelType": "ShareAccessPolicy",
+      "accessPolicyId": "share_access_policy_1788315562454_555tff",
+      "policyTypes": [
+        "PRIVATE_PREVIEW",
+        "MANUAL_RECIPIENT_ONLY",
+        "EXPIRING_ACCESS"
+      ],
+      "expiresAt": "2026-09-07T00:00:00.000Z",
+      "allowedRecipientScope": "EXACT_ELIGIBLE_RECIPIENT_ONLY",
+      "futureAuthenticationRequired": true,
+      "downloadAllowed": false,
+      "forwardingPolicy": "FORWARDING_NOT_AUTHORIZED",
+      "sourceAccessAllowed": false,
+      "productionUseAllowed": false,
+      "publicAccessAllowed": false,
+      "revocationState": "ACTIVE",
+      "watermarkRequired": true,
+      "disclaimerRequirements": [
+        "ESSA DEMO / CONCEPT",
+        "NOT OFFICIAL WEBSITE",
+        "NON_PRODUCTION_PREVIEW"
+      ],
+      "createdAt": "2026-09-02T02:19:22.454Z"
+    },
+    "expiration": "2026-09-07T00:00:00.000Z",
+    "permissions": {
+      "clientShareAllowed": true,
+      "sendAllowed": false,
+      "publicAccessAllowed": false,
+      "downloadAllowed": false,
+      "sourceTransferAllowed": false,
+      "editAllowed": false,
+      "productionUseAllowed": false,
+      "commercialUseAllowed": false,
+      "publishAllowed": false
+    },
+    "stateTransitions": [
+      {
+        "from": "DRAFT",
+        "to": "ELIGIBILITY_CHECKED"
+      },
+      {
+        "from": "ELIGIBILITY_CHECKED",
+        "to": "ACCESS_POLICY_READY"
+      },
+      {
+        "from": "ACCESS_POLICY_READY",
+        "to": "MANUAL_SHARE_READY"
+      }
+    ],
+    "revocation": null,
+    "safetySnapshot": {
+      "blockers": [],
+      "unsafePermissions": {
+        "publicAccessAllowed": false,
+        "sourceTransferAllowed": false,
+        "productionUseAllowed": false,
+        "sendRequested": false
+      }
+    },
+    "artifactIntegrityRefs": [
+      {
+        "artifactName": "preview.json",
+        "previewId": "preview_bd4153af297bc4a3",
+        "previewVersion": "1.0.0",
+        "relativePath": "artifacts/business/acquisition-preview/preview_bd4153af297bc4a3/preview.json",
+        "hashAlgorithm": "sha256",
+        "hash": "c215c47b52ae324b946de7510c0e40e4ab71b46e94df8e0e36bbcc2fd60e568d"
+      },
+      {
+        "artifactName": "index.html",
+        "previewId": "preview_bd4153af297bc4a3",
+        "previewVersion": "1.0.0",
+        "relativePath": "artifacts/business/acquisition-preview/preview_bd4153af297bc4a3/index.html",
+        "hashAlgorithm": "sha256",
+        "hash": "2de5330360010bbcc1d4c4c4b48d1930d957c2a1e86f330cb08da4cc1b3ec71b"
+      },
+      {
+        "artifactName": "preview.css",
+        "previewId": "preview_bd4153af297bc4a3",
+        "previewVersion": "1.0.0",
+        "relativePath": "artifacts/business/acquisition-preview/preview_bd4153af297bc4a3/preview.css",
+        "hashAlgorithm": "sha256",
+        "hash": "4d3788cef906a721e194f0403628bad443776cdef5c5bdd734985da36feeeba8"
+      },
+      {
+        "artifactName": "audit.json",
+        "previewId": "preview_bd4153af297bc4a3",
+        "previewVersion": "1.0.0",
+        "relativePath": "artifacts/business/acquisition-preview/preview_bd4153af297bc4a3/audit.json",
+        "hashAlgorithm": "sha256",
+        "hash": "529fc8836ee55ce6a4c4919908649f637a1b0928f6c0a631f6165d67256fccf2"
+      },
+      {
+        "artifactName": "content-spec.json",
+        "previewId": "preview_bd4153af297bc4a3",
+        "previewVersion": "1.0.0",
+        "relativePath": "artifacts/business/acquisition-preview/preview_bd4153af297bc4a3/content-spec.json",
+        "hashAlgorithm": "sha256",
+        "hash": "a0aedb40641ad9fd1fa32523563997fa8bae930812ee7dcc21d791c8477a1a2d"
+      },
+      {
+        "artifactName": "navigation-flow.json",
+        "previewId": "preview_bd4153af297bc4a3",
+        "previewVersion": "1.0.0",
+        "relativePath": "artifacts/business/acquisition-preview/preview_bd4153af297bc4a3/navigation-flow.json",
+        "hashAlgorithm": "sha256",
+        "hash": "f976bf5033fcbe9bc047a7c709f2c974a98de57aa7341f70e647b420cc67481c"
+      }
+    ],
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "outreachActions": 0,
+    "sendActions": 0,
+    "publishActions": 0,
+    "paymentActions": 0,
+    "productionHandoffs": 0,
+    "createdAt": "2026-09-02T02:19:22.459Z"
+  },
+  "scenarios": [
+    "MANUAL_SHARE_READY",
+    "PREVIEW_NOT_APPROVED_BLOCKED",
+    "SUPPRESSION_BLOCKED",
+    "OPT_OUT_BLOCKED",
+    "PRIVATE_CONTACT_BLOCKED",
+    "MISSING_PROVENANCE_BLOCKED",
+    "EXPIRED",
+    "REVOKED",
+    "SUPERSEDED_STALE",
+    "PUBLIC_ACCESS_BLOCKED",
+    "SOURCE_TRANSFER_BLOCKED",
+    "PRODUCTION_USE_BLOCKED",
+    "SENT_TRANSITION_BLOCKED",
+    "IDEMPOTENCY",
+    "VERSION_ARTIFACT_LOCK"
+  ],
+  "counters": {
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "outreachActions": 0,
+    "publishActions": 0,
+    "paymentActions": 0,
+    "productionHandoffs": 0
+  }
+}

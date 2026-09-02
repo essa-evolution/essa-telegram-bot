@@ -45,6 +45,18 @@ export const providerCapabilityMap = {
     },
     executableNow: false
   },
+  LOCAL_COMMUNICATION_DRY_RUN: {
+    providerId: "LOCAL_COMMUNICATION_DRY_RUN",
+    capabilities: {
+      EMAIL_DELIVERY: providerCapabilitySupport.verified,
+      WHATSAPP_DELIVERY: providerCapabilitySupport.verified,
+      TELEGRAM_DELIVERY: providerCapabilitySupport.verified,
+      BUSINESS_DM_DELIVERY: providerCapabilitySupport.verified
+    },
+    executableNow: false,
+    dryRunOnly: true,
+    note: "Provider-neutral local dry-run boundary only. No live communication provider is configured."
+  },
   OPENAI: {
     providerId: "OPENAI",
     capabilities: {},

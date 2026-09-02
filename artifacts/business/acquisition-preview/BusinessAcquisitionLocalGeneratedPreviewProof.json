@@ -1,0 +1,53 @@
+{
+  "artifactType": "BusinessAcquisitionLocalGeneratedPreviewProof",
+  "phase": "BUSINESS_ACQUISITION_PHASE_C",
+  "status": "BUSINESS_ACQUISITION_PHASE_C_PASS",
+  "scenarios": {
+    "service": "preview_01cc2e99351fd1d0",
+    "retail": "preview_f4e00a72f21b769a",
+    "hotel": "preview_dcfa7148088525c3",
+    "construction": "preview_769b0be9d4cdf7ee"
+  },
+  "generatedPackages": [
+    {
+      "previewId": "preview_01cc2e99351fd1d0",
+      "demoType": "SERVICE_LANDING_PREVIEW",
+      "packageDir": "artifacts/business/acquisition-preview/preview_01cc2e99351fd1d0",
+      "qcStatus": "PASS_WITH_WARNINGS",
+      "providerCalls": 0,
+      "externalCalls": 0
+    },
+    {
+      "previewId": "preview_f4e00a72f21b769a",
+      "demoType": "STOREFRONT_PREVIEW",
+      "packageDir": "artifacts/business/acquisition-preview/preview_f4e00a72f21b769a",
+      "qcStatus": "PASS_WITH_WARNINGS",
+      "providerCalls": 0,
+      "externalCalls": 0
+    },
+    {
+      "previewId": "preview_dcfa7148088525c3",
+      "demoType": "BOOKING_FLOW_PREVIEW",
+      "packageDir": "artifacts/business/acquisition-preview/preview_dcfa7148088525c3",
+      "qcStatus": "PASS_WITH_WARNINGS",
+      "providerCalls": 0,
+      "externalCalls": 0
+    },
+    {
+      "previewId": "preview_769b0be9d4cdf7ee",
+      "demoType": "PROJECT_PORTFOLIO_PREVIEW",
+      "packageDir": "artifacts/business/acquisition-preview/preview_769b0be9d4cdf7ee",
+      "qcStatus": "PASS_WITH_WARNINGS",
+      "providerCalls": 0,
+      "externalCalls": 0
+    }
+  ],
+  "counters": {
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "publishActions": 0,
+    "outreachActions": 0,
+    "paymentActions": 0,
+    "productionHandoffs": 0
+  }
+}

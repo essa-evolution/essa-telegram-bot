@@ -1,0 +1,361 @@
+{
+  "artifactType": "BusinessAcquisitionExecutionBridgeProof",
+  "phase": "BUSINESS_ACQUISITION_PHASE_G",
+  "status": "BUSINESS_ACQUISITION_PHASE_G_PASS",
+  "bridgeAudit": {
+    "artifactType": "BusinessAcquisitionExecutionBridgeAudit",
+    "phase": "BUSINESS_ACQUISITION_PHASE_G",
+    "bridgeVersion": "business-acquisition-execution-bridge-v1",
+    "prospectId": "prospect_phase_g_service_valid",
+    "demoPlanId": "demo_plan_1788315573270_l11js4",
+    "previewId": "preview_1c0e364e02476243",
+    "previewVersion": "1.0.0",
+    "reviewId": "preview_review_1788315573279_0t4vil",
+    "sharePackageId": "client_preview_share_package_1788315573285_bbu9qw",
+    "deliveryIntentId": "delivery_intent_1788315573286_h2xgee",
+    "humanSendApprovalRef": "send_approval_1788315573287_y9d4xy",
+    "actionFingerprint": "27148b0bf6cb5ab8a7164cf870d0e0ca0695f6518801f15fb64984d5a4297f19",
+    "recipientEligibilityRef": "recipient_eligibility_1788315573280_nl896p",
+    "redactedRecipient": "he***@servicestudio.example",
+    "channel": "EMAIL",
+    "messageFingerprint": "c27c533a4970674917ad91dd7c7d80d9133c7efcf195ff3b590f7f350a299934",
+    "requiredCapability": "EMAIL_DELIVERY",
+    "executionIntentId": "execution_intent_1788315573294_cdskju",
+    "gatewayDecision": {
+      "executionIntentId": "execution_intent_1788315573294_cdskju",
+      "toolId": "business_acquisition.delivery.dry_run",
+      "decision": "READY",
+      "reason": "not_executed_phase_stub",
+      "policyVersion": "agent-tool-policy-v1",
+      "registryVersion": "agent-tool-registry-v1",
+      "approvalValid": true,
+      "scopeValid": true,
+      "environmentValid": true,
+      "costValid": true,
+      "idempotencyValid": true,
+      "resolvedExecutionProvider": {
+        "providerId": "essa_business_acquisition_dry_run",
+        "toolIds": [
+          "business_acquisition.delivery.dry_run"
+        ],
+        "capabilities": [
+          "EMAIL_DELIVERY"
+        ],
+        "status": "dry_run_only",
+        "health": "local_only",
+        "executable": false
+      },
+      "safeInput": {
+        "scope": "business_acquisition_delivery_dry_run",
+        "operation": "prepare_future_delivery",
+        "dryRun": true,
+        "providerExecutionAllowed": false,
+        "acquisition": {
+          "deliveryIntentId": "delivery_intent_1788315573286_h2xgee",
+          "sharePackageId": "client_preview_share_package_1788315573285_bbu9qw",
+          "previewId": "preview_1c0e364e02476243",
+          "previewVersion": "1.0.0",
+          "actionFingerprint": "27148b0bf6cb5ab8a7164cf870d0e0ca0695f6518801f15fb64984d5a4297f19",
+          "humanSendApprovalRef": "send_approval_1788315573287_y9d4xy",
+          "recipientEligibilityRef": "recipient_eligibility_1788315573280_nl896p",
+          "redactedRecipient": "he***@servicestudio.example",
+          "artifactIntegrityRefs": [
+            {
+              "artifactName": "preview.json",
+              "previewId": "preview_1c0e364e02476243",
+              "previewVersion": "1.0.0",
+              "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/preview.json",
+              "hashAlgorithm": "sha256",
+              "hash": "8e7ef30518f79c6af0ed0fb1966089e21fc7f804771c1e80608986f9f7caa6cb"
+            },
+            {
+              "artifactName": "index.html",
+              "previewId": "preview_1c0e364e02476243",
+              "previewVersion": "1.0.0",
+              "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/index.html",
+              "hashAlgorithm": "sha256",
+              "hash": "db4d8d2d85329c59f94b956184ecbe86f70295555cea7ec3192ec02e52dbfe55"
+            },
+            {
+              "artifactName": "preview.css",
+              "previewId": "preview_1c0e364e02476243",
+              "previewVersion": "1.0.0",
+              "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/preview.css",
+              "hashAlgorithm": "sha256",
+              "hash": "4d3788cef906a721e194f0403628bad443776cdef5c5bdd734985da36feeeba8"
+            },
+            {
+              "artifactName": "audit.json",
+              "previewId": "preview_1c0e364e02476243",
+              "previewVersion": "1.0.0",
+              "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/audit.json",
+              "hashAlgorithm": "sha256",
+              "hash": "652fbdf547add613fa09b8e15ae5263d45534cf8be99295e44b0bbb633c819fd"
+            },
+            {
+              "artifactName": "content-spec.json",
+              "previewId": "preview_1c0e364e02476243",
+              "previewVersion": "1.0.0",
+              "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/content-spec.json",
+              "hashAlgorithm": "sha256",
+              "hash": "a0aedb40641ad9fd1fa32523563997fa8bae930812ee7dcc21d791c8477a1a2d"
+            },
+            {
+              "artifactName": "navigation-flow.json",
+              "previewId": "preview_1c0e364e02476243",
+              "previewVersion": "1.0.0",
+              "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/navigation-flow.json",
+              "hashAlgorithm": "sha256",
+              "hash": "f976bf5033fcbe9bc047a7c709f2c974a98de57aa7341f70e647b420cc67481c"
+            }
+          ],
+          "channel": "EMAIL",
+          "messageFingerprint": "c27c533a4970674917ad91dd7c7d80d9133c7efcf195ff3b590f7f350a299934",
+          "finalValidationRef": "final_pre_execution_validation_1788315573294_qaqxla"
+        }
+      },
+      "traceId": "acquisition_bridge_trace_delivery_intent_1788315573286_h2xgee",
+      "executed": false,
+      "trace": {
+        "event": "execution_gateway_preflight",
+        "decision": "READY",
+        "reason": "not_executed_phase_stub",
+        "traceId": "acquisition_bridge_trace_delivery_intent_1788315573286_h2xgee",
+        "at": "2026-09-02T02:19:33.294Z"
+      }
+    },
+    "bridgeStatus": "DRY_RUN_ALLOWED",
+    "reasonCodes": [],
+    "lineage": {
+      "prospectId": "prospect_phase_g_service_valid",
+      "demoPlanId": "demo_plan_1788315573270_l11js4",
+      "previewId": "preview_1c0e364e02476243",
+      "previewVersion": "1.0.0",
+      "reviewId": "preview_review_1788315573279_0t4vil",
+      "sharePackageId": "client_preview_share_package_1788315573285_bbu9qw",
+      "deliveryIntentId": "delivery_intent_1788315573286_h2xgee",
+      "humanSendApprovalRef": "send_approval_1788315573287_y9d4xy",
+      "executionIntentId": "execution_intent_1788315573294_cdskju"
+    },
+    "executed": false,
+    "gatewayRequired": true,
+    "gatewayBypassAllowed": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "outreachActions": 0,
+    "sendActions": 0,
+    "publishActions": 0,
+    "paymentActions": 0,
+    "productionHandoffs": 0,
+    "createdAt": "2026-09-02T02:19:33.294Z"
+  },
+  "executionIntent": {
+    "modelType": "ExecutionIntent",
+    "executionIntentId": "execution_intent_1788315573294_cdskju",
+    "status": "READY_FOR_EXECUTION",
+    "toolId": "business_acquisition.delivery.dry_run",
+    "capability": "EMAIL_DELIVERY",
+    "action": "prepare_future_delivery",
+    "idempotencyKey": "business_acquisition_delivery::27148b0bf6cb5ab8a7164cf870d0e0ca0695f6518801f15fb64984d5a4297f19",
+    "acquisitionActionFingerprint": "27148b0bf6cb5ab8a7164cf870d0e0ca0695f6518801f15fb64984d5a4297f19",
+    "normalizedInput": {
+      "scope": "business_acquisition_delivery_dry_run",
+      "operation": "prepare_future_delivery",
+      "dryRun": true,
+      "providerExecutionAllowed": false,
+      "acquisition": {
+        "deliveryIntentId": "delivery_intent_1788315573286_h2xgee",
+        "sharePackageId": "client_preview_share_package_1788315573285_bbu9qw",
+        "previewId": "preview_1c0e364e02476243",
+        "previewVersion": "1.0.0",
+        "actionFingerprint": "27148b0bf6cb5ab8a7164cf870d0e0ca0695f6518801f15fb64984d5a4297f19",
+        "humanSendApprovalRef": "send_approval_1788315573287_y9d4xy",
+        "recipientEligibilityRef": "recipient_eligibility_1788315573280_nl896p",
+        "redactedRecipient": "he***@servicestudio.example",
+        "artifactIntegrityRefs": [
+          {
+            "artifactName": "preview.json",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/preview.json",
+            "hashAlgorithm": "sha256",
+            "hash": "8e7ef30518f79c6af0ed0fb1966089e21fc7f804771c1e80608986f9f7caa6cb"
+          },
+          {
+            "artifactName": "index.html",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/index.html",
+            "hashAlgorithm": "sha256",
+            "hash": "db4d8d2d85329c59f94b956184ecbe86f70295555cea7ec3192ec02e52dbfe55"
+          },
+          {
+            "artifactName": "preview.css",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/preview.css",
+            "hashAlgorithm": "sha256",
+            "hash": "4d3788cef906a721e194f0403628bad443776cdef5c5bdd734985da36feeeba8"
+          },
+          {
+            "artifactName": "audit.json",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/audit.json",
+            "hashAlgorithm": "sha256",
+            "hash": "652fbdf547add613fa09b8e15ae5263d45534cf8be99295e44b0bbb633c819fd"
+          },
+          {
+            "artifactName": "content-spec.json",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/content-spec.json",
+            "hashAlgorithm": "sha256",
+            "hash": "a0aedb40641ad9fd1fa32523563997fa8bae930812ee7dcc21d791c8477a1a2d"
+          },
+          {
+            "artifactName": "navigation-flow.json",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/navigation-flow.json",
+            "hashAlgorithm": "sha256",
+            "hash": "f976bf5033fcbe9bc047a7c709f2c974a98de57aa7341f70e647b420cc67481c"
+          }
+        ],
+        "channel": "EMAIL",
+        "messageFingerprint": "c27c533a4970674917ad91dd7c7d80d9133c7efcf195ff3b590f7f350a299934",
+        "finalValidationRef": "final_pre_execution_validation_1788315573294_qaqxla"
+      }
+    }
+  },
+  "gatewayDecision": {
+    "executionIntentId": "execution_intent_1788315573294_cdskju",
+    "toolId": "business_acquisition.delivery.dry_run",
+    "decision": "READY",
+    "reason": "not_executed_phase_stub",
+    "policyVersion": "agent-tool-policy-v1",
+    "registryVersion": "agent-tool-registry-v1",
+    "approvalValid": true,
+    "scopeValid": true,
+    "environmentValid": true,
+    "costValid": true,
+    "idempotencyValid": true,
+    "resolvedExecutionProvider": {
+      "providerId": "essa_business_acquisition_dry_run",
+      "toolIds": [
+        "business_acquisition.delivery.dry_run"
+      ],
+      "capabilities": [
+        "EMAIL_DELIVERY"
+      ],
+      "status": "dry_run_only",
+      "health": "local_only",
+      "executable": false
+    },
+    "safeInput": {
+      "scope": "business_acquisition_delivery_dry_run",
+      "operation": "prepare_future_delivery",
+      "dryRun": true,
+      "providerExecutionAllowed": false,
+      "acquisition": {
+        "deliveryIntentId": "delivery_intent_1788315573286_h2xgee",
+        "sharePackageId": "client_preview_share_package_1788315573285_bbu9qw",
+        "previewId": "preview_1c0e364e02476243",
+        "previewVersion": "1.0.0",
+        "actionFingerprint": "27148b0bf6cb5ab8a7164cf870d0e0ca0695f6518801f15fb64984d5a4297f19",
+        "humanSendApprovalRef": "send_approval_1788315573287_y9d4xy",
+        "recipientEligibilityRef": "recipient_eligibility_1788315573280_nl896p",
+        "redactedRecipient": "he***@servicestudio.example",
+        "artifactIntegrityRefs": [
+          {
+            "artifactName": "preview.json",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/preview.json",
+            "hashAlgorithm": "sha256",
+            "hash": "8e7ef30518f79c6af0ed0fb1966089e21fc7f804771c1e80608986f9f7caa6cb"
+          },
+          {
+            "artifactName": "index.html",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/index.html",
+            "hashAlgorithm": "sha256",
+            "hash": "db4d8d2d85329c59f94b956184ecbe86f70295555cea7ec3192ec02e52dbfe55"
+          },
+          {
+            "artifactName": "preview.css",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/preview.css",
+            "hashAlgorithm": "sha256",
+            "hash": "4d3788cef906a721e194f0403628bad443776cdef5c5bdd734985da36feeeba8"
+          },
+          {
+            "artifactName": "audit.json",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/audit.json",
+            "hashAlgorithm": "sha256",
+            "hash": "652fbdf547add613fa09b8e15ae5263d45534cf8be99295e44b0bbb633c819fd"
+          },
+          {
+            "artifactName": "content-spec.json",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/content-spec.json",
+            "hashAlgorithm": "sha256",
+            "hash": "a0aedb40641ad9fd1fa32523563997fa8bae930812ee7dcc21d791c8477a1a2d"
+          },
+          {
+            "artifactName": "navigation-flow.json",
+            "previewId": "preview_1c0e364e02476243",
+            "previewVersion": "1.0.0",
+            "relativePath": "artifacts/business/acquisition-preview/preview_1c0e364e02476243/navigation-flow.json",
+            "hashAlgorithm": "sha256",
+            "hash": "f976bf5033fcbe9bc047a7c709f2c974a98de57aa7341f70e647b420cc67481c"
+          }
+        ],
+        "channel": "EMAIL",
+        "messageFingerprint": "c27c533a4970674917ad91dd7c7d80d9133c7efcf195ff3b590f7f350a299934",
+        "finalValidationRef": "final_pre_execution_validation_1788315573294_qaqxla"
+      }
+    },
+    "traceId": "acquisition_bridge_trace_delivery_intent_1788315573286_h2xgee",
+    "executed": false,
+    "trace": {
+      "event": "execution_gateway_preflight",
+      "decision": "READY",
+      "reason": "not_executed_phase_stub",
+      "traceId": "acquisition_bridge_trace_delivery_intent_1788315573286_h2xgee",
+      "at": "2026-09-02T02:19:33.294Z"
+    }
+  },
+  "scenarios": [
+    "A valid approved EMAIL action creates ExecutionIntent and reaches DRY_RUN_ALLOWED",
+    "B no HumanSendApproval blocks bridge",
+    "C expired approval blocks bridge",
+    "D revoked approval blocks bridge",
+    "E changed message fingerprint blocks bridge",
+    "F changed recipient blocks bridge",
+    "G changed channel blocks bridge",
+    "H changed preview/version blocks bridge",
+    "I changed artifact integrity blocks bridge",
+    "J prospect suppression after approval blocks bridge",
+    "K recipient opt-out after approval blocks bridge",
+    "L unavailable execution capability returns CAPABILITY_UNAVAILABLE",
+    "M bypassing ExecutionGateway is not accepted as proof",
+    "N duplicate identical execution preparation is idempotent",
+    "O provider execution enablement is blocked in Phase G",
+    "P SENT/DELIVERED transition remains invalid"
+  ],
+  "counters": {
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "sendActions": 0,
+    "outreachActions": 0,
+    "publishActions": 0,
+    "paymentActions": 0,
+    "productionHandoffs": 0
+  }
+}

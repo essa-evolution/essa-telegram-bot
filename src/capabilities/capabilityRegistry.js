@@ -149,7 +149,8 @@ export const capabilityCategories = {
   ],
   mirror: ["PATTERN_REFLECTION", "QUESTION_GENERATION", "REFLECTION_SUMMARY", "PATTERN_TIMELINE"],
   kids_education: ["LESSON_GENERATE", "STORY_GENERATE", "EDUCATIONAL_EXPLAIN", "KIDS_CONTENT_PLAN"],
-  research: ["DOCUMENTATION_LOOKUP", "WEB_RESEARCH", "SOURCE_COMPARE", "FACT_EXTRACT"]
+  research: ["DOCUMENTATION_LOOKUP", "WEB_RESEARCH", "SOURCE_COMPARE", "FACT_EXTRACT"],
+  communication: ["EMAIL_DELIVERY", "WHATSAPP_DELIVERY", "TELEGRAM_DELIVERY", "BUSINESS_DM_DELIVERY"]
 };
 
 function categoryFor(capabilityId) {
@@ -767,6 +768,106 @@ const overrides = [
     costClass: capabilityCostClasses.free,
     approvalRequirements: ["human_approval"],
     activationState: capabilityActivationStates.architectureOnly
+  }),
+  base("EMAIL_DELIVERY", {
+    description: "Provider-neutral capability for sending an approved message through email in a future execution phase.",
+    domainTags: ["communication", "business_acquisition", "delivery"],
+    inputTypes: ["CommunicationDeliveryRequest"],
+    outputTypes: ["CommunicationDeliveryResult"],
+    deterministicPossible: true,
+    localPossible: true,
+    externalProviderPossible: true,
+    riskClass: capabilityRiskClasses.externalMutation,
+    costClass: capabilityCostClasses.metered,
+    approvalRequirements: ["human_send_approval", "recipient_eligibility", "execution_gateway"],
+    supportedProviders: ["LOCAL_COMMUNICATION_DRY_RUN"],
+    activationState: capabilityActivationStates.architectureOnly,
+    metadata: {
+      capabilityType: "COMMUNICATION_DELIVERY",
+      supportsDryRun: true,
+      supportsLiveExecution: false,
+      requiresRecipientEligibility: true,
+      requiresIdempotency: true,
+      supportsAttachments: true,
+      supportsRichContent: false,
+      providerSelectionPolicyRef: "communication_provider_selection_v1",
+      safetyPolicyRef: "business_acquisition_delivery_safety_v1"
+    }
+  }),
+  base("WHATSAPP_DELIVERY", {
+    description: "Provider-neutral capability for future approved WhatsApp delivery.",
+    domainTags: ["communication", "business_acquisition", "delivery"],
+    inputTypes: ["CommunicationDeliveryRequest"],
+    outputTypes: ["CommunicationDeliveryResult"],
+    deterministicPossible: true,
+    localPossible: true,
+    externalProviderPossible: true,
+    riskClass: capabilityRiskClasses.externalMutation,
+    costClass: capabilityCostClasses.metered,
+    approvalRequirements: ["human_send_approval", "recipient_eligibility", "execution_gateway"],
+    supportedProviders: ["LOCAL_COMMUNICATION_DRY_RUN"],
+    activationState: capabilityActivationStates.architectureOnly,
+    metadata: {
+      capabilityType: "COMMUNICATION_DELIVERY",
+      supportsDryRun: true,
+      supportsLiveExecution: false,
+      requiresRecipientEligibility: true,
+      requiresIdempotency: true,
+      supportsAttachments: false,
+      supportsRichContent: false,
+      providerSelectionPolicyRef: "communication_provider_selection_v1",
+      safetyPolicyRef: "business_acquisition_delivery_safety_v1"
+    }
+  }),
+  base("TELEGRAM_DELIVERY", {
+    description: "Provider-neutral capability for future approved Telegram delivery.",
+    domainTags: ["communication", "business_acquisition", "delivery"],
+    inputTypes: ["CommunicationDeliveryRequest"],
+    outputTypes: ["CommunicationDeliveryResult"],
+    deterministicPossible: true,
+    localPossible: true,
+    externalProviderPossible: true,
+    riskClass: capabilityRiskClasses.externalMutation,
+    costClass: capabilityCostClasses.metered,
+    approvalRequirements: ["human_send_approval", "recipient_eligibility", "execution_gateway"],
+    supportedProviders: ["LOCAL_COMMUNICATION_DRY_RUN"],
+    activationState: capabilityActivationStates.architectureOnly,
+    metadata: {
+      capabilityType: "COMMUNICATION_DELIVERY",
+      supportsDryRun: true,
+      supportsLiveExecution: false,
+      requiresRecipientEligibility: true,
+      requiresIdempotency: true,
+      supportsAttachments: false,
+      supportsRichContent: false,
+      providerSelectionPolicyRef: "communication_provider_selection_v1",
+      safetyPolicyRef: "business_acquisition_delivery_safety_v1"
+    }
+  }),
+  base("BUSINESS_DM_DELIVERY", {
+    description: "Provider-neutral capability for future approved business direct message delivery.",
+    domainTags: ["communication", "business_acquisition", "delivery"],
+    inputTypes: ["CommunicationDeliveryRequest"],
+    outputTypes: ["CommunicationDeliveryResult"],
+    deterministicPossible: true,
+    localPossible: true,
+    externalProviderPossible: true,
+    riskClass: capabilityRiskClasses.externalMutation,
+    costClass: capabilityCostClasses.metered,
+    approvalRequirements: ["human_send_approval", "recipient_eligibility", "execution_gateway"],
+    supportedProviders: ["LOCAL_COMMUNICATION_DRY_RUN"],
+    activationState: capabilityActivationStates.architectureOnly,
+    metadata: {
+      capabilityType: "COMMUNICATION_DELIVERY",
+      supportsDryRun: true,
+      supportsLiveExecution: false,
+      requiresRecipientEligibility: true,
+      requiresIdempotency: true,
+      supportsAttachments: false,
+      supportsRichContent: false,
+      providerSelectionPolicyRef: "communication_provider_selection_v1",
+      safetyPolicyRef: "business_acquisition_delivery_safety_v1"
+    }
   })
 ];
 

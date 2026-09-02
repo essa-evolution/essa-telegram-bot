@@ -71,6 +71,22 @@ export {
   prepareExecution
 } from "./executionGateway.js";
 export {
+  communicationDeliveryCapabilities,
+  communicationDeliveryPolicyVersion,
+  communicationDeliveryResultStatuses,
+  communicationProviderReadinessStates,
+  communicationRoutingStatuses,
+  createCommunicationDeliveryAudit,
+  createCommunicationDeliveryRequest,
+  createCommunicationDeliveryResult,
+  createCommunicationProviderAdapter,
+  createLocalCommunicationDryRunAdapter,
+  runCommunicationDeliveryDryRun,
+  selectCommunicationProviderAdapter,
+  validateCommunicationDeliveryRequest,
+  validateCommunicationDeliveryResult
+} from "./communicationDelivery.js";
+export {
   clearDocumentationCache,
   context7McpEndpoint,
   context7ProviderId,

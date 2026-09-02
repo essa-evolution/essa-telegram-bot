@@ -1,0 +1,64 @@
+{
+  "artifactType": "BusinessAcquisitionDemoEngineProof",
+  "phase": "BUSINESS_ACQUISITION_PHASE_A",
+  "status": "BUSINESS_ACQUISITION_PHASE_A_PASS",
+  "prospectId": "prospect_batumi_bistro_1",
+  "digitalAuditId": "digital_opportunity_audit_1788315540968_lregba",
+  "scoreId": "opportunity_score_1788315540968_t9dhjh",
+  "demoProjectId": "demo_project_1788315540969_ai3xaj",
+  "acquisitionOfferId": "acquisition_offer_1788315540969_5n3qdu",
+  "lifecycleState": "DEMO_READY",
+  "exactArtifacts": [
+    "src/businessAcquisition/businessAcquisitionContracts.js",
+    "src/businessAcquisition/digitalOpportunityAudit.js",
+    "src/businessAcquisition/opportunityScoring.js",
+    "src/businessAcquisition/instantDemoPlanner.js",
+    "src/businessAcquisition/acquisitionOffer.js",
+    "src/businessAcquisition/acquisitionActivation.js",
+    "src/businessAcquisition/acquisitionAudit.js",
+    "src/businessAcquisition/index.js",
+    "scripts/testBusinessAcquisitionDemoEngine.js"
+  ],
+  "sourceRefs": [
+    {
+      "modelType": "ProspectSource",
+      "sourceId": "fixture_directory",
+      "sourceType": "PUBLIC_BUSINESS_SOURCE",
+      "sourceRef": null,
+      "retrievedAt": "2026-08-20T00:00:00.000Z",
+      "freshnessStatus": "CURRENT",
+      "dataClass": "PUBLIC_BUSINESS_DATA",
+      "factType": "OBSERVED",
+      "publicDataOnly": true,
+      "termsReviewRequired": true,
+      "robotsReviewRequired": true
+    }
+  ],
+  "counters": {
+    "publicBusinessDataOnly": true,
+    "demoOnlyBeforePurchase": true,
+    "noSourceFileTransferBeforePurchase": true,
+    "noProductionDomainHandoffBeforePurchase": true,
+    "noFakeOfficialWebsite": true,
+    "noAutomatedOutreach": true,
+    "outreachSendEnabled": false,
+    "crmMutationEnabled": false,
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "externalModelCalls": 0,
+    "paymentActions": 0,
+    "publishActions": 0,
+    "deployActions": 0,
+    "businessProfileCreated": false,
+    "supabaseMutation": false
+  },
+  "safety": {
+    "publicDataOnly": true,
+    "noBusinessProfileCreationBeforeVerification": true,
+    "demoSeparatedFromProduction": true,
+    "noOutreachSend": true,
+    "noSupabaseMigration": true,
+    "noSupabaseMutation": true
+  },
+  "createdAt": "2026-09-02T02:19:00.969Z"
+}

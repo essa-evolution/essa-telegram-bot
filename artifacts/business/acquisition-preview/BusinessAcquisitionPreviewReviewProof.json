@@ -1,0 +1,159 @@
+{
+  "artifactType": "BusinessAcquisitionPreviewReviewProof",
+  "phase": "BUSINESS_ACQUISITION_PHASE_D",
+  "status": "BUSINESS_ACQUISITION_PHASE_D_PASS",
+  "audit": {
+    "artifactType": "BusinessAcquisitionPreviewReviewAudit",
+    "phase": "BUSINESS_ACQUISITION_PHASE_D",
+    "previewId": "preview_a51099ee6daf3b13",
+    "previewVersion": "1.0.0",
+    "demoPlanId": "demo_plan_1788315557785_3t8bjd",
+    "prospectId": "prospect_phase_d_service_approve",
+    "reviewId": "preview_review_1788315557809_90evbm",
+    "reviewer": {
+      "reviewerType": "HUMAN_OPERATOR",
+      "reviewerRef": "lisa_operator"
+    },
+    "decision": "APPROVE_FOR_CLIENT_PREVIEW",
+    "reviewedAt": "2026-09-02T02:19:17.809Z",
+    "reasonCodes": [
+      "SAFE_FOR_CLIENT_PREVIEW_SCOPE_ONLY"
+    ],
+    "comments": "Approved for later client preview only.",
+    "requestedChanges": [],
+    "priorState": "PREVIEW_READY_FOR_HUMAN_REVIEW",
+    "resultingState": "CLIENT_PREVIEW_READY",
+    "qcSnapshot": {
+      "modelType": "PreviewQC",
+      "status": "PASS_WITH_WARNINGS",
+      "checks": {
+        "demoPlanLinkageValid": true,
+        "prospectLinkageValid": true,
+        "evidenceRefsValid": true,
+        "sourceSnapshotExists": true,
+        "noUnsupportedFactualClaims": true,
+        "assumptionsClearlyMarked": true,
+        "noPersonalSensitiveData": true,
+        "demoConceptLabelExists": true,
+        "notOfficialNoticeExists": true,
+        "noProductionClaims": true,
+        "noPublishPermissions": true,
+        "noCommercialHandoffPermissions": true,
+        "noProviderCalls": true,
+        "noExternalCalls": true,
+        "noOutreachActions": true,
+        "noPaymentActions": true,
+        "noProductionMutations": true,
+        "noSecretLikeStrings": true,
+        "requiredArtifactFilesGenerated": true,
+        "htmlStructurallyValidEnough": true
+      },
+      "failedChecks": [],
+      "warnings": [
+        "BOUNDED_PLACEHOLDERS_USED",
+        "MISSING_IMAGES_OR_BRAND_ASSETS"
+      ],
+      "blockedClaims": [],
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "publishActions": 0,
+      "outreachActions": 0,
+      "paymentActions": 0,
+      "productionHandoffs": 0
+    },
+    "safetySnapshot": {
+      "modelType": "PreviewReviewSafetyGate",
+      "ok": true,
+      "checks": {
+        "supportedDecision": true,
+        "productionApprovalNotSupported": true,
+        "qcPassesPolicy": true,
+        "noSensitivePersonalData": true,
+        "factualityChecksPass": true,
+        "demoConceptNoticeExists": true,
+        "notOfficialNoticeExists": true,
+        "publishRemainsFalse": true,
+        "productionReadyRemainsFalse": true,
+        "commercialUseRemainsFalse": true,
+        "noOutreachActionAttached": true,
+        "noPaymentActionAttached": true,
+        "noExternalCalls": true,
+        "noProviderCalls": true
+      },
+      "blockers": [],
+      "warnings": [
+        "QC_PASS_WITH_WARNINGS_REVIEWED_BY_POLICY"
+      ],
+      "permissionsBeforeDecision": {
+        "clientShareAllowed": false,
+        "publishAllowed": false,
+        "productionReady": false,
+        "commercialUseAllowed": false,
+        "handoffAllowed": false,
+        "providerCalls": 0,
+        "externalCalls": 0,
+        "outreachActions": 0,
+        "paymentActions": 0,
+        "publishActions": 0,
+        "productionHandoffs": 0
+      },
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "outreachActions": 0,
+      "paymentActions": 0,
+      "publishActions": 0,
+      "productionHandoffs": 0
+    },
+    "permissionsBeforeDecision": {
+      "clientShareAllowed": false,
+      "publishAllowed": false,
+      "productionReady": false,
+      "commercialUseAllowed": false,
+      "handoffAllowed": false,
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "outreachActions": 0,
+      "paymentActions": 0,
+      "publishActions": 0,
+      "productionHandoffs": 0
+    },
+    "permissionsAfterDecision": {
+      "clientShareAllowed": true,
+      "publishAllowed": false,
+      "productionUseAllowed": false,
+      "commercialHandoffAllowed": false,
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "outreachActions": 0,
+      "paymentActions": 0,
+      "publishActions": 0,
+      "productionHandoffs": 0
+    },
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "outreachActions": 0,
+    "paymentActions": 0,
+    "publishActions": 0,
+    "productionHandoffs": 0
+  },
+  "scenarios": [
+    "APPROVE_FOR_CLIENT_PREVIEW",
+    "REQUEST_REVISION",
+    "REJECT_PREVIEW",
+    "QC_BLOCKED_APPROVAL_BLOCKED",
+    "PASS_WITH_WARNINGS_POLICY",
+    "PUBLISH_BLOCK",
+    "PRODUCTION_BLOCK",
+    "INVALID_TRANSITION",
+    "IDEMPOTENCY",
+    "REVISION_LINEAGE"
+  ],
+  "counters": {
+    "providerCalls": 0,
+    "externalCalls": 0,
+    "outreachActions": 0,
+    "paymentActions": 0,
+    "publishActions": 0,
+    "productionHandoffs": 0
+  }
+}

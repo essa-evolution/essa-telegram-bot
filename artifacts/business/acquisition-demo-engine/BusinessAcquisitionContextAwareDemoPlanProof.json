@@ -1,0 +1,383 @@
+{
+  "proof": {
+    "artifactType": "BusinessAcquisitionDemoPlanProof",
+    "phase": "BUSINESS_ACQUISITION_PHASE_B",
+    "status": "BUSINESS_ACQUISITION_PHASE_B_PASS",
+    "prospectId": "prospect_batumi_bistro_1",
+    "digitalAuditId": "digital_opportunity_audit_1788315546557_x6chdx",
+    "scoreId": "opportunity_score_1788315546557_nnr6wd",
+    "lifecycleState": "DEMO_PLAN_RECOMMENDED",
+    "exactArtifacts": [
+      "src/businessAcquisition/demoTypeRegistry.js",
+      "src/businessAcquisition/contextAwareDemoPlanner.js",
+      "src/businessAcquisition/demoSafetyGates.js",
+      "src/businessAcquisition/demoPlanAudit.js",
+      "scripts/testBusinessAcquisitionContextAwareDemoPlanning.js"
+    ],
+    "sourceRefs": [
+      {
+        "modelType": "ProspectSource",
+        "sourceId": "fixture_directory",
+        "sourceType": "PUBLIC_BUSINESS_SOURCE",
+        "sourceRef": null,
+        "retrievedAt": "2026-08-20T00:00:00.000Z",
+        "freshnessStatus": "CURRENT",
+        "dataClass": "PUBLIC_BUSINESS_DATA",
+        "factType": "OBSERVED",
+        "publicDataOnly": true,
+        "termsReviewRequired": true,
+        "robotsReviewRequired": true
+      }
+    ],
+    "counters": {
+      "publicBusinessDataOnly": true,
+      "demoOnlyBeforePurchase": true,
+      "noSourceFileTransferBeforePurchase": true,
+      "noProductionDomainHandoffBeforePurchase": true,
+      "noFakeOfficialWebsite": true,
+      "noAutomatedOutreach": true,
+      "outreachSendEnabled": false,
+      "crmMutationEnabled": false,
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "externalModelCalls": 0,
+      "paymentActions": 0,
+      "publishActions": 0,
+      "deployActions": 0,
+      "businessProfileCreated": false,
+      "supabaseMutation": false,
+      "outreachActions": 0
+    },
+    "safety": {
+      "publicDataOnly": true,
+      "noBusinessProfileCreationBeforeVerification": true,
+      "demoSeparatedFromProduction": true,
+      "noOutreachSend": true,
+      "noSupabaseMigration": true,
+      "noSupabaseMutation": true
+    },
+    "createdAt": "2026-09-02T02:19:06.566Z",
+    "inputProspect": {
+      "modelType": "BusinessProspect",
+      "prospectId": "prospect_batumi_bistro_1",
+      "sourceBusinessEntityId": "batumi_bistro_1",
+      "legalOrDisplayName": "Batumi Harbor Bistro",
+      "businessType": "restaurant",
+      "industry": "hospitality",
+      "subIndustry": "restaurant",
+      "country": "Georgia",
+      "region": "Adjara",
+      "city": "Batumi",
+      "website": null,
+      "publicBusinessEmail": "hello@harborbistro.example",
+      "publicBusinessPhone": "+995555010101",
+      "socialProfiles": [],
+      "directoryProfiles": [
+        "directory.example/batumi-harbor-bistro"
+      ],
+      "publicDescription": "Fictional seaside restaurant; booking absent in fixture profile.",
+      "sourceRefs": [
+        {
+          "modelType": "ProspectSource",
+          "sourceId": "fixture_directory",
+          "sourceType": "PUBLIC_BUSINESS_SOURCE",
+          "sourceRef": null,
+          "retrievedAt": "2026-08-20T00:00:00.000Z",
+          "freshnessStatus": "CURRENT",
+          "dataClass": "PUBLIC_BUSINESS_DATA",
+          "factType": "OBSERVED",
+          "publicDataOnly": true,
+          "termsReviewRequired": true,
+          "robotsReviewRequired": true
+        }
+      ],
+      "verificationStatus": "VERIFIED",
+      "dataFreshness": "CURRENT",
+      "lifecycleState": "VERIFIED_PUBLIC_RECORD",
+      "publicDataOnly": true,
+      "businessProfileCreated": false,
+      "linkedBusinessId": null,
+      "suppressionStatus": null,
+      "createdAt": "2026-09-02T02:19:06.554Z",
+      "updatedAt": "2026-09-02T02:19:06.554Z"
+    },
+    "opportunityEvidence": {
+      "observedFacts": [
+        "Public business name observed: Batumi Harbor Bistro.",
+        "Public location observed: Batumi, Adjara, Georgia.",
+        "No public website/domain was present in the checked source record.",
+        "Public business email was present in the checked source record.",
+        "Public business phone was present in the checked source record.",
+        "No public social profile was present in the checked source record."
+      ],
+      "inferredOpportunities": [
+        "Potential digital front-door improvement.",
+        "Potential booking, inquiry or conversion-flow improvement.",
+        "Potential content or public presentation improvement.",
+        "Potential campaign planning opportunity after offer and channel review.",
+        "Potential ESSA Business audit/growth planning opportunity."
+      ],
+      "missingEvidence": [
+        "live_website_quality_not_verified",
+        "traffic_not_verified",
+        "conversion_not_verified",
+        "revenue_not_verified",
+        "owner_authority_not_verified"
+      ],
+      "opportunityCodes": [
+        "NO_WEBSITE_FOUND",
+        "OUTDATED_WEB_EXPERIENCE",
+        "NO_VISIBLE_BOOKING_FLOW",
+        "WEAK_SOCIAL_CONTENT",
+        "MENU_OR_ORDER_OPPORTUNITY",
+        "VISUAL_BUSINESS",
+        "CONTACT_PATH_PRESENT"
+      ]
+    },
+    "selectedDemo": {
+      "demoPlanId": "demo_plan_1788315546558_qr2teo",
+      "demoType": "MENU_ORDER_PREVIEW",
+      "businessContext": "RESTAURANT",
+      "targetProblem": "Menu, order or reservation value is easier to show as a small flow than as a full site.",
+      "expectedValue": "Show how a guest could explore and start an order without claiming live ordering.",
+      "reasoningCodes": [
+        "CONTEXT_RESTAURANT",
+        "MENU_OR_ORDER_OPPORTUNITY",
+        "NO_WEBSITE_FOUND",
+        "NO_VISIBLE_BOOKING_FLOW",
+        "EVIDENCE_MATCHED"
+      ],
+      "evidenceRefs": [
+        "MENU_OR_ORDER_OPPORTUNITY",
+        "NO_WEBSITE_FOUND",
+        "NO_VISIBLE_BOOKING_FLOW"
+      ]
+    },
+    "rejectedDemoAlternatives": [
+      {
+        "demoType": "CONTENT_CREATIVE_PREVIEW",
+        "score": 49,
+        "priority": 68,
+        "reasoningCodes": [
+          "CONTEXT_RESTAURANT",
+          "WEAK_SOCIAL_CONTENT",
+          "VISUAL_BUSINESS",
+          "EVIDENCE_MATCHED"
+        ],
+        "rejectionReasons": [
+          "LOWER_CONTEXT_EVIDENCE_SCORE"
+        ]
+      },
+      {
+        "demoType": "SERVICE_LANDING_PREVIEW",
+        "score": 49,
+        "priority": 60,
+        "reasoningCodes": [
+          "CONTEXT_RESTAURANT",
+          "NO_WEBSITE_FOUND",
+          "CONTACT_PATH_PRESENT",
+          "EVIDENCE_MATCHED"
+        ],
+        "rejectionReasons": [
+          "LOWER_CONTEXT_EVIDENCE_SCORE"
+        ]
+      },
+      {
+        "demoType": "HOMEPAGE_CONCEPT",
+        "score": 47,
+        "priority": 45,
+        "reasoningCodes": [
+          "CONTEXT_RESTAURANT",
+          "NO_WEBSITE_FOUND",
+          "OUTDATED_WEB_EXPERIENCE",
+          "EVIDENCE_MATCHED"
+        ],
+        "rejectionReasons": [
+          "LOWER_CONTEXT_EVIDENCE_SCORE"
+        ]
+      },
+      {
+        "demoType": "BOOKING_FLOW_PREVIEW",
+        "score": 40,
+        "priority": 90,
+        "reasoningCodes": [
+          "CONTEXT_RESTAURANT",
+          "NO_VISIBLE_BOOKING_FLOW",
+          "EVIDENCE_MATCHED"
+        ],
+        "rejectionReasons": [
+          "LOWER_CONTEXT_EVIDENCE_SCORE"
+        ]
+      },
+      {
+        "demoType": "CATALOG_PREVIEW",
+        "score": 38,
+        "priority": 70,
+        "reasoningCodes": [
+          "CONTEXT_RESTAURANT",
+          "OUTDATED_WEB_EXPERIENCE",
+          "EVIDENCE_MATCHED"
+        ],
+        "rejectionReasons": [
+          "LOWER_CONTEXT_EVIDENCE_SCORE"
+        ]
+      },
+      {
+        "demoType": "LEAD_CAPTURE_PREVIEW",
+        "score": 36,
+        "priority": 58,
+        "reasoningCodes": [
+          "CONTEXT_RESTAURANT",
+          "CONTACT_PATH_PRESENT",
+          "EVIDENCE_MATCHED"
+        ],
+        "rejectionReasons": [
+          "LOWER_CONTEXT_EVIDENCE_SCORE"
+        ]
+      },
+      {
+        "demoType": "BUSINESS_DASHBOARD_PREVIEW",
+        "score": 22,
+        "priority": 35,
+        "reasoningCodes": [
+          "CONTEXT_RESTAURANT"
+        ],
+        "rejectionReasons": [
+          "LOWER_CONTEXT_EVIDENCE_SCORE"
+        ]
+      },
+      {
+        "demoType": "STOREFRONT_PREVIEW",
+        "score": 2,
+        "priority": 72,
+        "reasoningCodes": [
+          "CONTEXT_RESTAURANT",
+          "NO_WEBSITE_FOUND",
+          "EVIDENCE_MATCHED"
+        ],
+        "rejectionReasons": [
+          "LOWER_CONTEXT_EVIDENCE_SCORE"
+        ]
+      }
+    ],
+    "assumptions": [
+      "Owner authority is not verified.",
+      "Visual direction must be replaced with client-approved materials before any production work."
+    ],
+    "missingInputs": [
+      "live_website_quality_not_verified",
+      "traffic_not_verified",
+      "conversion_not_verified",
+      "revenue_not_verified",
+      "owner_authority_not_verified",
+      "client_approved_brand_assets",
+      "commercial_acceptance"
+    ],
+    "capabilities": {
+      "required": [
+        "WEBSITE_GENERATE",
+        "ARCHITECTURE_DESIGN",
+        "UI_GENERATE",
+        "CODE_GENERATE",
+        "BROWSER_OBSERVE",
+        "UI_VERIFY"
+      ],
+      "optional": [
+        "TEXT_EDIT"
+      ],
+      "providerRequirements": [
+        {
+          "capabilityId": "BROWSER_OBSERVE",
+          "providerId": "PLAYWRIGHT",
+          "supportStatus": "VERIFIED",
+          "executableNow": false
+        },
+        {
+          "capabilityId": "UI_VERIFY",
+          "providerId": "PLAYWRIGHT",
+          "supportStatus": "VERIFIED",
+          "executableNow": false
+        }
+      ]
+    },
+    "safetyGate": {
+      "modelType": "DemoGenerationSafetyGate",
+      "status": "EXECUTION_DISABLED_PHASE_B",
+      "demoPlanAllowed": true,
+      "generatedPreviewAllowed": false,
+      "productionDeliverableAllowed": false,
+      "executionEnabled": false,
+      "publishAllowed": false,
+      "handoffAllowed": false,
+      "providerCalls": 0,
+      "externalCalls": 0,
+      "checks": {
+        "sourceEvidenceValid": true,
+        "prospectNotSuppressedOrRejected": true,
+        "opportunityScoreAboveThreshold": true,
+        "demoPlanJustified": true,
+        "noProhibitedPersonalSensitiveData": true,
+        "noTrademarkIdentityImpersonation": true,
+        "noFalseTestimonialsReviews": true,
+        "noFabricatedPricesProductsServices": true,
+        "costCeilingKnown": true,
+        "approvalRequirementKnown": true,
+        "executionDisabledInPhaseB": true
+      },
+      "blockers": [],
+      "warnings": [
+        "REVIEW_INFERRED_OPPORTUNITIES_FOR_OVERCLAIMING"
+      ],
+      "requiredBeforeFutureGeneration": [
+        "human_generation_approval",
+        "provider_activation_policy",
+        "cost_ceiling_confirmation",
+        "source_evidence_revalidation"
+      ],
+      "requiredBeforeProduction": [
+        "client_acceptance",
+        "commercial_boundary",
+        "ownership_or_authority_verification",
+        "payment_or_signed_agreement",
+        "production_workspace_creation"
+      ]
+    },
+    "boundaries": {
+      "demoPlanSeparateFromGeneratedDemo": true,
+      "generatedDemoSeparateFromPaidProductionDeliverable": true,
+      "businessProfileCreationAllowed": false,
+      "executionEnabled": false,
+      "publishAllowed": false,
+      "handoffAllowed": false
+    }
+  },
+  "scenarios": {
+    "restaurant": "MENU_ORDER_PREVIEW",
+    "hotel": "BOOKING_FLOW_PREVIEW",
+    "construction": "DEVELOPER_PROJECT_PREVIEW",
+    "retail": "STOREFRONT_PREVIEW",
+    "insufficient": [
+      "SOURCE_EVIDENCE_INVALID_OR_MISSING",
+      "OPPORTUNITY_SCORE_BELOW_THRESHOLD"
+    ],
+    "stale": [
+      "PROSPECT_SUPPRESSED_REJECTED_OR_STALE"
+    ],
+    "weakScore": [
+      "OPPORTUNITY_SCORE_BELOW_THRESHOLD"
+    ],
+    "suppressed": [
+      "PROSPECT_SUPPRESSED_REJECTED_OR_STALE"
+    ],
+    "tieBreak": {
+      "selected": "SERVICE_LANDING_PREVIEW",
+      "rejected": [
+        "LEAD_CAPTURE_PREVIEW",
+        "HOMEPAGE_CONCEPT",
+        "BUSINESS_DASHBOARD_PREVIEW",
+        "MENU_ORDER_PREVIEW",
+        "STOREFRONT_PREVIEW"
+      ]
+    }
+  }
+}
